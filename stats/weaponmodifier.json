@@ -1,7 +1,7 @@
 {
     "ALL ROUNDER": {
         "Half-Tracked": 105,
-        "Hover": 115,
+        "Hover": 95,
         "Legged": 60,
         "Lift": 100,
         "Tracked": 100,
@@ -17,7 +17,7 @@
     },
     "ANTI TANK": {
         "Half-Tracked": 120,
-        "Hover": 80,
+        "Hover": 110,
         "Legged": 35,
         "Lift": 20,
         "Tracked": 115,
@@ -26,7 +26,7 @@
     "ARTILLERY ROUND": {
         "Half-Tracked": 100,
         "Hover": 120,
-        "Legged": 150,
+        "Legged": 125,
         "Lift": 100,
         "Tracked": 80,
         "Wheeled": 130
