@@ -9,12 +9,15 @@ var victoryFlag;
 
 const TRANSPORT_TEAM = 1;
 const COLLECTIVE_RES = [
-	"R-Defense-WallUpgrade03", "R-Struc-Materials03", "R-Vehicle-Engine04",
-	"R-Vehicle-Metals04", "R-Cyborg-Metals04", "R-Wpn-Cannon-Accuracy02",
-	"R-Wpn-Cannon-Damage04", "R-Wpn-Cannon-ROF01", "R-Wpn-Flamer-Damage04", "R-Wpn-Flamer-ROF01",
-	"R-Wpn-MG-Damage04", "R-Wpn-MG-ROF02", "R-Sys-Sensor-Upgrade01",
-	"R-Wpn-Mortar-Damage03", "R-Wpn-Mortar-ROF01", "R-Wpn-RocketSlow-Accuracy03",
-	"R-Wpn-RocketSlow-Damage03",
+	"R-Defense-WallUpgrade06", "R-Struc-Materials06", "R-Struc-Factory-Upgrade03",
+	"R-Vehicle-Engine03", "R-Vehicle-Metals03", "R-Cyborg-Metals03",
+	"R-Wpn-Cannon-Accuracy02", "R-Wpn-Cannon-Damage04",
+	"R-Wpn-Cannon-ROF01", "R-Wpn-Flamer-Damage03", "R-Wpn-Flamer-ROF01",
+	"R-Wpn-MG-Damage05", "R-Wpn-MG-ROF02", "R-Wpn-Mortar-Acc01",
+	"R-Wpn-Mortar-Damage03", "R-Wpn-Mortar-ROF01",
+	"R-Wpn-Rocket-Accuracy02", "R-Wpn-Rocket-Damage04",
+	"R-Wpn-Rocket-ROF03", "R-Wpn-RocketSlow-Accuracy03",
+	"R-Wpn-RocketSlow-Damage04", "R-Sys-Sensor-Upgrade01"
 ];
 
 //trigger event when droid reaches the downed transport.
