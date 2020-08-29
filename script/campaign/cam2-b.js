@@ -4,7 +4,7 @@ include("script/campaign/templates.js");
 const COLLECTIVE_RES = [
 	"R-Defense-WallUpgrade06", "R-Struc-Materials06", "R-Struc-Factory-Upgrade04",
 	"R-Vehicle-Engine04", "R-Vehicle-Metals04", "R-Cyborg-Metals04",
-	"R-Wpn-Cannon-Accuracy02", "R-Wpn-Cannon-Damage05",
+	"R-Wpn-Cannon-Accuracy02", "R-Wpn-Cannon-Damage05", "R-Struc-Factory-Cyborg-Upgrade03",
 	"R-Wpn-Cannon-ROF01", "R-Wpn-Flamer-Damage06", "R-Wpn-Flamer-ROF01",
 	"R-Wpn-MG-Damage06", "R-Wpn-MG-ROF02", "R-Wpn-Mortar-Acc01",
 	"R-Wpn-Mortar-Damage03", "R-Wpn-Mortar-ROF01",
