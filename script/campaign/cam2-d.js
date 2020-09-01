@@ -8,7 +8,7 @@ const COLLECTIVE_RES = [
 	"R-Wpn-Cannon-Accuracy02", "R-Wpn-Cannon-Damage05","R-Wpn-Cannon-ROF02",
 	"R-Wpn-Flamer-Damage06", "R-Wpn-Flamer-ROF03", "R-Wpn-MG-Damage07",
 	"R-Wpn-MG-ROF02", "R-Wpn-Mortar-Acc02", "R-Wpn-Mortar-Damage03",
-	"R-Wpn-Mortar-ROF01", "R-Wpn-Rocket-Accuracy02", "R-Wpn-Rocket-Damage06",
+	"R-Wpn-Mortar-ROF02", "R-Wpn-Rocket-Accuracy02", "R-Wpn-Rocket-Damage06",
 	"R-Wpn-Rocket-ROF03", "R-Wpn-RocketSlow-Accuracy03", "R-Wpn-RocketSlow-Damage05",
 	"R-Sys-Sensor-Upgrade01", "R-Wpn-RocketSlow-ROF02", "R-Wpn-Howitzer-ROF02",
 	"R-Wpn-Howitzer-Damage02", "R-Cyborg-Armor-Heat01", "R-Vehicle-Armor-Heat01",
