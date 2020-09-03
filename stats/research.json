@@ -3069,14 +3069,14 @@
                 "filterParameter": "ImpactClass",
                 "filterValue": "ROCKET",
                 "parameter": "Damage",
-                "value": 30
+                "value": 100
             },
             {
                 "class": "Weapon",
                 "filterParameter": "ImpactClass",
                 "filterValue": "ROCKET",
                 "parameter": "RadiusDamage",
-                "value": 30
+                "value": 100
             }
         ],
         "statID": "Rocket-Pod",
@@ -5406,14 +5406,14 @@
                 "filterParameter": "ImpactClass",
                 "filterValue": "HOWITZERS",
                 "parameter": "FirePause",
-                "value": -10
+                "value": -20
             },
             {
                 "class": "Weapon",
                 "filterParameter": "ImpactClass",
                 "filterValue": "HOWITZERS",
                 "parameter": "ReloadTime",
-                "value": -10
+                "value": -20
             }
         ],
         "statID": "Howitzer105Mk1",
@@ -5436,14 +5436,14 @@
                 "filterParameter": "ImpactClass",
                 "filterValue": "HOWITZERS",
                 "parameter": "FirePause",
-                "value": -10
+                "value": -20
             },
             {
                 "class": "Weapon",
                 "filterParameter": "ImpactClass",
                 "filterValue": "HOWITZERS",
                 "parameter": "ReloadTime",
-                "value": -10
+                "value": -20
             }
         ],
         "statID": "Howitzer105Mk1",
@@ -5614,14 +5614,14 @@
                 "filterParameter": "ImpactClass",
                 "filterValue": "MACHINE GUN",
                 "parameter": "FirePause",
-                "value": -20
+                "value": -10
             },
             {
                 "class": "Weapon",
                 "filterParameter": "ImpactClass",
                 "filterValue": "MACHINE GUN",
                 "parameter": "ReloadTime",
-                "value": -20
+                "value": -10
             }
         ],
         "statID": "MG1Mk1",
@@ -5644,14 +5644,14 @@
                 "filterParameter": "ImpactClass",
                 "filterValue": "MACHINE GUN",
                 "parameter": "FirePause",
-                "value": -20
+                "value": -10
             },
             {
                 "class": "Weapon",
                 "filterParameter": "ImpactClass",
                 "filterValue": "MACHINE GUN",
                 "parameter": "ReloadTime",
-                "value": -20
+                "value": -10
             }
         ],
         "statID": "MG1Mk1",
