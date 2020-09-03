@@ -1658,7 +1658,7 @@
     "Howitzer03-Rot": {
         "buildPoints": 1600,
         "buildPower": 400,
-        "damage": 100,
+        "damage": 150,
         "designable": 1,
         "effectSize": 200,
         "explosionWav": "lrgexpl.ogg",
@@ -1748,7 +1748,7 @@
         "explosionWav": "lrgexpl.ogg",
         "facePlayer": 1,
         "fireOnMove": 0,
-        "firePause": 300,
+        "firePause": 100,
         "flightGfx": "FXCAmmo.PIE",
         "flightSpeed": 1000,
         "hitGfx": "FXVLExp.PIE",
