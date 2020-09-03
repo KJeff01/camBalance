@@ -4,7 +4,7 @@
 const ALPHA_RESEARCH_NEW = [
 	// 1
 	"R-Wpn-MG1Mk1", "R-Vehicle-Body01", "R-Sys-Spade1Mk1", "R-Vehicle-Prop-Wheels",
-	"R-Sys-MobileRepairTurret01", "R-Wpn-Flamer01Mk1", "R-Wpn-MG-Damage01",
+	"R-Sys-MobileRepairTurret01", "R-Sys-Engineering01", "R-Wpn-Flamer01Mk1", "R-Wpn-MG-Damage01",
 	"R-Wpn-MG-ROF01", "R-Defense-Tower01", "R-Defense-TankTrap01", "R-Defense-Tower04",
 
 	// 2
@@ -20,7 +20,7 @@ const ALPHA_RESEARCH_NEW = [
 	"R-Wpn-Mortar-ROF01","R-Wpn-Cannon-Damage01", "R-Wpn-Cannon-Damage02",
 
 	// 5
-	"R-Struc-Factory-Module", "R-Vehicle-Engine01", "R-Wpn-Flamer-Damage03",
+	"R-Struc-Factory-Module", "R-Wpn-Flamer-Damage03",
 	"R-Struc-Factory-Upgrade01", "R-Struc-Factory-Upgrade02", "R-Defense-HardcreteWall",
 	"R-Struc-CommandRelay", "R-Comp-CommandTurret01", "R-Struc-RepairFacility",
 	"R-Struc-RprFac-Upgrade01", "R-Struc-RprFac-Upgrade02", "R-Defense-MortarPit",
@@ -50,6 +50,7 @@ const ALPHA_RESEARCH_NEW = [
 	"R-Comp-SynapticLink", "R-Vehicle-Body08", "R-Vehicle-Engine02", "R-Struc-Factory-Upgrade03",
 	"R-Struc-Factory-Cyborg", "R-Cyborg-Wpn-MG", "R-Cyborg-Metals01", "R-Cyborg-Metals02",
 	"R-Cyborg-Metals03", "R-Cyborg-Wpn-Cannon", "R-Cyborg-Wpn-Flamer", "R-Cyborg-Wpn-Rocket",
+	"R-Cyborg-Legs01",
 
 	// 10
 
@@ -75,6 +76,8 @@ const PLAYER_RES_BETA = [
 	"R-Wpn-AAGun03",
 	"R-Defense-AASite-QuadMg1",
 	"R-Sys-Sensor-Tower02",
+	"R-Vehicle-Engine03",
+	"R-Defense-HvyMor",
 ];
 
 //GAMMA 3-A

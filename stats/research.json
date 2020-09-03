@@ -5577,6 +5577,7 @@
     "R-Wpn-MG-Damage07": {
         "iconID": "IMAGE_RES_WEAPONTECH",
         "id": "R-Wpn-MG-Damage07",
+        "keyTopic": 1,
         "name": "Tungsten-Tipped MG Bullets Mk3",
         "requiredResearch": [
             "R-Wpn-MG-Damage06"
@@ -5966,6 +5967,7 @@
     "R-Wpn-Rocket-Damage06": {
         "iconID": "IMAGE_RES_WEAPONTECH",
         "id": "R-Wpn-Rocket-Damage06",
+        "keyTopic": 1,
         "name": "HEAP Mini-Rockets Mk3",
         "requiredResearch": [
             "R-Wpn-Rocket-Damage05"
