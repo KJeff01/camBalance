@@ -5407,14 +5407,14 @@
                 "filterParameter": "ImpactClass",
                 "filterValue": "HOWITZERS",
                 "parameter": "FirePause",
-                "value": -20
+                "value": -10
             },
             {
                 "class": "Weapon",
                 "filterParameter": "ImpactClass",
                 "filterValue": "HOWITZERS",
                 "parameter": "ReloadTime",
-                "value": -20
+                "value": -10
             }
         ],
         "statID": "Howitzer105Mk1",
@@ -5436,14 +5436,14 @@
                 "filterParameter": "ImpactClass",
                 "filterValue": "HOWITZERS",
                 "parameter": "FirePause",
-                "value": -20
+                "value": -10
             },
             {
                 "class": "Weapon",
                 "filterParameter": "ImpactClass",
                 "filterValue": "HOWITZERS",
                 "parameter": "ReloadTime",
-                "value": -20
+                "value": -10
             }
         ],
         "statID": "Howitzer105Mk1",
@@ -5466,14 +5466,14 @@
                 "filterParameter": "ImpactClass",
                 "filterValue": "HOWITZERS",
                 "parameter": "FirePause",
-                "value": -20
+                "value": -10
             },
             {
                 "class": "Weapon",
                 "filterParameter": "ImpactClass",
                 "filterValue": "HOWITZERS",
                 "parameter": "ReloadTime",
-                "value": -20
+                "value": -10
             }
         ],
         "statID": "Howitzer105Mk1",
@@ -5545,7 +5545,7 @@
                 "filterParameter": "ImpactClass",
                 "filterValue": "MACHINE GUN",
                 "parameter": "Damage",
-                "value": 30
+                "value": 20
             }
         ],
         "statID": "MG1Mk1",
@@ -5567,7 +5567,7 @@
                 "filterParameter": "ImpactClass",
                 "filterValue": "MACHINE GUN",
                 "parameter": "Damage",
-                "value": 30
+                "value": 20
             }
         ],
         "statID": "MG1Mk1",
@@ -5590,7 +5590,7 @@
                 "filterParameter": "ImpactClass",
                 "filterValue": "MACHINE GUN",
                 "parameter": "Damage",
-                "value": 30
+                "value": 20
             }
         ],
         "statID": "MG1Mk1",
@@ -6047,14 +6047,14 @@
                 "filterParameter": "ImpactClass",
                 "filterValue": "SLOW ROCKET",
                 "parameter": "Damage",
-                "value": 25
+                "value": 20
             },
             {
                 "class": "Weapon",
                 "filterParameter": "ImpactClass",
                 "filterValue": "SLOW ROCKET",
                 "parameter": "RadiusDamage",
-                "value": 25
+                "value": 20
             }
         ],
         "statID": "Rocket-LtA-T",
@@ -6076,14 +6076,14 @@
                 "filterParameter": "ImpactClass",
                 "filterValue": "SLOW ROCKET",
                 "parameter": "Damage",
-                "value": 25
+                "value": 20
             },
             {
                 "class": "Weapon",
                 "filterParameter": "ImpactClass",
                 "filterValue": "SLOW ROCKET",
                 "parameter": "RadiusDamage",
-                "value": 25
+                "value": 20
             }
         ],
         "statID": "Rocket-LtA-T",
@@ -6107,14 +6107,14 @@
                 "filterParameter": "ImpactClass",
                 "filterValue": "SLOW ROCKET",
                 "parameter": "Damage",
-                "value": 25
+                "value": 20
             },
             {
                 "class": "Weapon",
                 "filterParameter": "ImpactClass",
                 "filterValue": "SLOW ROCKET",
                 "parameter": "RadiusDamage",
-                "value": 25
+                "value": 20
             }
         ],
         "statID": "Rocket-LtA-T",
@@ -6138,14 +6138,14 @@
                 "filterParameter": "ImpactClass",
                 "filterValue": "SLOW ROCKET",
                 "parameter": "FirePause",
-                "value": -20
+                "value": -10
             },
             {
                 "class": "Weapon",
                 "filterParameter": "ImpactClass",
                 "filterValue": "SLOW ROCKET",
                 "parameter": "ReloadTime",
-                "value": -20
+                "value": -10
             }
         ],
         "statID": "Rocket-LtA-T",
@@ -6168,14 +6168,14 @@
                 "filterParameter": "ImpactClass",
                 "filterValue": "SLOW ROCKET",
                 "parameter": "FirePause",
-                "value": -20
+                "value": -10
             },
             {
                 "class": "Weapon",
                 "filterParameter": "ImpactClass",
                 "filterValue": "SLOW ROCKET",
                 "parameter": "ReloadTime",
-                "value": -20
+                "value": -10
             }
         ],
         "statID": "Rocket-LtA-T",
@@ -6198,14 +6198,14 @@
                 "filterParameter": "ImpactClass",
                 "filterValue": "SLOW ROCKET",
                 "parameter": "FirePause",
-                "value": -20
+                "value": -10
             },
             {
                 "class": "Weapon",
                 "filterParameter": "ImpactClass",
                 "filterValue": "SLOW ROCKET",
                 "parameter": "ReloadTime",
-                "value": -20
+                "value": -10
             }
         ],
         "statID": "Rocket-LtA-T",
@@ -7904,14 +7904,14 @@
                 "filterParameter": "ImpactClass",
                 "filterValue": "HOWITZERS",
                 "parameter": "FirePause",
-                "value": -20
+                "value": -10
             },
             {
                 "class": "Weapon",
                 "filterParameter": "ImpactClass",
                 "filterValue": "HOWITZERS",
                 "parameter": "ReloadTime",
-                "value": -20
+                "value": -10
             }
         ],
         "statID": "Howitzer105Mk1",
