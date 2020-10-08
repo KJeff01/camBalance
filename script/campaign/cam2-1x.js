@@ -70,14 +70,8 @@ function setupCyborgGroups()
 		regroup: false
 	});
 
-	//East cyborg group patrols around the bombard pits
-	camManageGroup(camMakeGroup("cyborgPositionEast"), CAM_ORDER_PATROL, {
-		pos: [
-			camMakePos ("cybEastPatrol1"),
-			camMakePos ("cybEastPatrol2"),
-			camMakePos ("cybEastPatrol3"),
-		],
-		interval: camSecondsToMilliseconds(20),
+	//create group of cyborgs and send them on war path
+	camManageGroup(camMakeGroup("cyborgPositionEast"), CAM_ORDER_ATTACK, {
 		regroup: false
 	});
 }
