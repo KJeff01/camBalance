@@ -1621,7 +1621,7 @@
         "designable": 1,
         "effectSize": 1,
         "facePlayer": 1,
-        "firePause": 150,
+        "firePause": 50,
         "flightGfx": "FXLProj.PIE",
         "flightSpeed": 800,
         "hitGfx": "FXMNExp.PIE",
