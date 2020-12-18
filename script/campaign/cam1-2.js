@@ -4,7 +4,8 @@ include("script/campaign/templates.js");
 
 const SCAVENGER_RES = [
 	"R-Wpn-Flamer-Damage02", "R-Wpn-Flamer-Range01", "R-Wpn-Flamer-ROF01",
-	"R-Wpn-MG-Damage02", "R-Wpn-MG-ROF01",
+	"R-Wpn-MG-Damage02", "R-Wpn-MG-ROF01", "R-Wpn-Mortar-Damage02",
+	"R-Wpn-Mortar-ROF01",
 ];
 
 function exposeNorthBase()

@@ -7,13 +7,16 @@ include("script/campaign/templates.js");
 const NEW_PARADIGM_RES = [
 	"R-Wpn-MG1Mk1", "R-Vehicle-Body01", "R-Sys-Spade1Mk1", "R-Vehicle-Prop-Wheels",
 	"R-Sys-Engineering01", "R-Wpn-MG-Damage03", "R-Wpn-MG-ROF01", "R-Wpn-Cannon-Damage01",
-	"R-Wpn-Flamer-Damage02", "R-Wpn-Flamer-Range01", "R-Wpn-Flamer-ROF01",
-	"R-Defense-WallUpgrade01","R-Struc-Materials01", "R-Vehicle-Engine01",
+	"R-Wpn-Flamer-Damage03", "R-Wpn-Flamer-Range01", "R-Wpn-Flamer-ROF01",
+	"R-Defense-WallUpgrade02","R-Struc-Materials02", "R-Vehicle-Engine01",
 	"R-Struc-RprFac-Upgrade01", "R-Wpn-Rocket-Damage02", "R-Wpn-Rocket-ROF01",
+	"R-Wpn-Mortar-Damage02", "R-Wpn-Mortar-ROF01",
 ];
 const SCAVENGER_RES = [
 	"R-Wpn-Flamer-Damage02", "R-Wpn-Flamer-Range01", "R-Wpn-Flamer-ROF01",
 	"R-Wpn-MG-Damage03", "R-Wpn-MG-ROF01", "R-Wpn-Rocket-Damage01", "R-Wpn-Cannon-Damage01",
+	"R-Wpn-Mortar-Damage02", "R-Wpn-Mortar-ROF01", "R-Wpn-Rocket-ROF01",
+	"R-Defense-WallUpgrade02","R-Struc-Materials02",
 ];
 var NPDefenseGroup, NPScoutGroup, NPFactory;
 

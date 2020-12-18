@@ -14,9 +14,11 @@ const NEW_PARADIGM_RES = [
 ];
 const SCAVENGER_RES = [
 	"R-Wpn-Flamer-Damage03", "R-Wpn-Flamer-Range01", "R-Wpn-Flamer-ROF01",
-	"R-Wpn-MG-Damage04", "R-Wpn-MG-ROF02", "R-Wpn-Rocket-Damage03", "R-Wpn-Cannon-Damage03",
-	"R-Wpn-Rocket-Accuracy02", "R-Wpn-Rocket-ROF02", "R-Vehicle-Metals03",
+	"R-Wpn-MG-Damage04", "R-Wpn-MG-ROF01", "R-Wpn-Rocket-Damage03",
+	"R-Wpn-Cannon-Damage03", "R-Wpn-Mortar-Damage03", "R-Wpn-Mortar-ROF01",
+	"R-Wpn-Rocket-Accuracy02", "R-Wpn-Rocket-ROF03", "R-Vehicle-Metals02",
 	"R-Defense-WallUpgrade03", "R-Struc-Materials03", "R-Wpn-Cannon-Accuracy01",
+	"R-Wpn-Mortar-Acc01",
 ];
 var artiGroup; //Droids that take the artifact
 var enemyHasArtifact; //Do they have the artifact
