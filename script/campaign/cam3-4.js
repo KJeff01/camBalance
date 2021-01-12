@@ -6,7 +6,7 @@ const NEXUS_RES = [
 	"R-Struc-VTOLPad-Upgrade06", "R-Vehicle-Engine09", "R-Vehicle-Metals09",
 	"R-Cyborg-Metals08", "R-Vehicle-Armor-Heat06", "R-Cyborg-Armor-Heat06",
 	"R-Sys-Engineering03", "R-Vehicle-Prop-Hover02", "R-Vehicle-Prop-VTOL02",
-	"R-Wpn-Bomb-Accuracy03", "R-Wpn-Energy-Accuracy01", "R-Wpn-Energy-Damage03",
+	"R-Wpn-Bomb-Damage03", "R-Wpn-Energy-Accuracy01", "R-Wpn-Energy-Damage03",
 	"R-Wpn-Energy-ROF03", "R-Wpn-Missile-Accuracy01", "R-Wpn-Missile-Damage03",
 	"R-Wpn-Rail-Damage03", "R-Wpn-Rail-ROF03", "R-Sys-Sensor-Upgrade01",
 	"R-Sys-NEXUSrepair", "R-Wpn-Flamer-Damage06",
@@ -95,10 +95,11 @@ function truckDefense()
 	{
 		var list = [
 			"Sys-NEXUSLinkTOW", "P0-AASite-SAM2", "Emplacement-PrisLas",
-			"NX-Tower-ATMiss", "Sys-NX-CBTower"
+			"NX-Tower-ATMiss", "Sys-NX-CBTower", "Emplacement-HvART-pit",
+			"Sys-SensoTower02"
 		];
 
-		for (var i = 0; i < truckNum * 2; ++i)
+		for (var i = 0; i < truckNum; ++i)
 		{
 			camQueueBuilding(NEXUS, list[camRand(list.length)]);
 		}
@@ -133,7 +134,6 @@ function eventStartLevel()
 	camCompleteRequiredResearch(NEXUS_RES, NEXUS);
 	setupNexusPatrols();
 	camManageTrucks(NEXUS);
-	truckDefense();
 
 	camSetArtifacts({
 		"NX-NWCyborgFactory": { tech: "R-Wpn-RailGun03" },
@@ -191,7 +191,7 @@ function eventStartLevel()
 				repair: 45,
 				count: -1,
 			},
-			templates: [cTempl.nxhgauss, cTempl.nxmpulseh, cTempl.nxmscouh, cTempl.nxmsamh, cTempl.nxmstrike]
+			templates: [cTempl.nxhgauss, cTempl.nxmpulseh, cTempl.nxmscouh, cTempl.nxmsamh, cTempl.nxmsens]
 		},
 		"NX-NWFactory2": {
 			assembly: "NX-NWFactory2Assembly",
@@ -203,7 +203,7 @@ function eventStartLevel()
 				repair: 45,
 				count: -1,
 			},
-			templates: [cTempl.nxhgauss, cTempl.nxmpulseh, cTempl.nxmscouh, cTempl.nxmsamh, cTempl.nxmstrike]
+			templates: [cTempl.nxhgauss, cTempl.nxmpulseh, cTempl.nxmscouh, cTempl.nxmsamh, cTempl.nxmsens]
 		},
 		"NX-NWCyborgFactory": {
 			assembly: "NX-NWCyborgFactoryAssembly",
@@ -227,7 +227,7 @@ function eventStartLevel()
 				repair: 45,
 				count: -1,
 			},
-			templates: [cTempl.nxhgauss, cTempl.nxmpulseh, cTempl.nxmscouh, cTempl.nxmsamh, cTempl.nxmstrike]
+			templates: [cTempl.nxhgauss, cTempl.nxmpulseh, cTempl.nxmscouh, cTempl.nxmsamh, cTempl.nxmsens]
 		},
 		"NX-SWFactory": {
 			assembly: "NX-SWFactoryAssembly",
@@ -288,7 +288,7 @@ function eventStartLevel()
 				repair: 45,
 				count: -1,
 			},
-			templates: [cTempl.nxhgauss, cTempl.nxmpulseh, cTempl.nxmscouh, cTempl.nxmsamh, cTempl.nxmstrike]
+			templates: [cTempl.nxhgauss, cTempl.nxmpulseh, cTempl.nxmscouh, cTempl.nxmsamh, cTempl.nxmsens]
 		},
 		"NX-VtolFactory1": {
 			assembly: "NX-VtolFactory1Assembly",
@@ -316,19 +316,10 @@ function eventStartLevel()
 		},
 	});
 
-	const START_FACTORIES = [
-		"NX-VtolFactory1", "NX-VtolFactory2", "NX-SEFactory", "NX-NEFactory",
-		"NX-NWCyborgFactory"
-	];
-	for (var i = 0, l = START_FACTORIES.length; i < l; ++i)
-	{
-		camEnableFactory(START_FACTORIES[i]);
-	}
-
 	//Show Project transport flying video.
 	hackAddMessage("MB3_4_MSG3", MISS_MSG, CAM_HUMAN_PLAYER, true);
 	hackAddMessage("CM34_OBJ1", PROX_MSG, CAM_HUMAN_PLAYER);
 
-	queue("enableAllFactories", camChangeOnDiff(camMinutesToMilliseconds(10)));
-	setTimer("truckDefense", camChangeOnDiff(camMinutesToMilliseconds(5)));
+	queue("enableAllFactories", camChangeOnDiff(camMinutesToMilliseconds(5)));
+	setTimer("truckDefense", camChangeOnDiff(camMinutesToMilliseconds(15)));
 }

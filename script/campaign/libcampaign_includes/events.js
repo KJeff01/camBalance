@@ -48,7 +48,7 @@ function cam_eventChat(from, to, message)
 	{
 		__camShowVictoryConditions(true);
 	}
-	if (!__camCheatMode)
+	if (!camIsCheating())
 	{
 		return;
 	}
@@ -94,7 +94,7 @@ function cam_eventChat(from, to, message)
 
 function cam_eventStartLevel()
 {
-	isReceivingAllEvents = true;
+	receiveAllEvents(true);
 	// Variables initialized here are the ones that should not be
 	// re-initialized on save-load. Otherwise, they are initialized
 	// on the global scope (or wherever necessary).
@@ -164,9 +164,26 @@ function cam_eventDroidBuilt(droid, structure)
 function cam_eventDestroyed(obj)
 {
 	__camCheckPlaceArtifact(obj);
-	if (obj.type === DROID && obj.droidType === DROID_CONSTRUCT)
+	if (obj.type === DROID)
 	{
-		__camCheckDeadTruck(obj);
+		if (obj.droidType === DROID_CONSTRUCT)
+		{
+			__camCheckDeadTruck(obj);
+		}
+		else if (camIsTransporter(obj))
+		{
+			__camRemoveIncomingTransporter(obj.player);
+			if (obj.player === CAM_HUMAN_PLAYER)
+			{
+				// Player will lose if their transporter gets destroyed
+				__camGameLost();
+				return;
+			}
+			if (camDef(__camPlayerTransports[obj.player]))
+			{
+				delete __camPlayerTransports[obj.player];
+			}
+		}
 	}
 }
 
@@ -205,11 +222,7 @@ function cam_eventTransporterExit(transport)
 		(__camWinLossCallback === CAM_VICTORY_STANDARD &&
 		transport.player === CAM_HUMAN_PLAYER))
 	{
-		// allow the next transport to enter
-		if (camDef(__camIncomingTransports[transport.player]))
-		{
-			delete __camIncomingTransports[transport.player];
-		}
+		__camRemoveIncomingTransporter(transport.player);
 	}
 	else if (__camWinLossCallback === CAM_VICTORY_PRE_OFFWORLD)
 	{
@@ -281,6 +294,15 @@ function cam_eventAttacked(victim, attacker)
 			if (camDef(__camGroupInfo[victim.group]))
 			{
 				__camGroupInfo[victim.group].lastHit = gameTime;
+
+				//Increased Nexus intelligence if struck on cam3-4
+				if (__camNextLevel === "GAMMA_OUT")
+				{
+					if (__camGroupInfo[victim.group].order === CAM_ORDER_PATROL)
+					{
+						__camGroupInfo[victim.group].order = CAM_ORDER_ATTACK;
+					}
+				}
 			}
 		}
 	}
@@ -289,7 +311,7 @@ function cam_eventAttacked(victim, attacker)
 //Work around some things that break on save-load.
 function cam_eventGameLoaded()
 {
-	isReceivingAllEvents = true;
+	receiveAllEvents(true);
 	__camSaveLoading = true;
 	const SCAV_KEVLAR_MISSIONS = [
 		"CAM_1CA", "SUB_1_4AS", "SUB_1_4A", "SUB_1_5S", "SUB_1_5",
@@ -319,6 +341,10 @@ function cam_eventGameLoaded()
 
 	//Subscribe to eventGroupSeen again.
 	camSetEnemyBases();
+
+	//Reset any vars
+	__camCheatMode = false;
+
 	__camSaveLoading = false;
 }
 

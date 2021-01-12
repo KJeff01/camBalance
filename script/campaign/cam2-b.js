@@ -19,7 +19,7 @@ camAreaEvent("vtolRemoveZone", function(droid)
 	{
 		camSafeRemoveObject(droid, false);
 	}
-	resetLabel("vtolRemoveZone");
+	resetLabel("vtolRemoveZone", THE_COLLECTIVE);
 });
 
 camAreaEvent("factoryTrigger", function(droid)
