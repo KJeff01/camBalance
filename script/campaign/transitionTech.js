@@ -158,12 +158,13 @@ const GAMMA_RESEARCH_NEW = [
 	"R-Wpn-Energy-Accuracy01", "R-Wpn-Bomb-Accuracy03", "R-Vehicle-Metals07",
 	"R-Vehicle-Engine07", "R-Wpn-AAGun-ROF04", "R-Wpn-Mortar-ROF04", "R-Wpn-Energy-Damage01",
 	"R-Wpn-Energy-Damage02", "R-Wpn-Energy-ROF01", "R-Cyborg-Metals07", "R-Vehicle-Armor-Heat04",
-	"R-Wpn-Howitzer-ROF04", "R-Cyborg-Armor-Heat04",
+	"R-Wpn-Howitzer-ROF04", "R-Cyborg-Armor-Heat04", "R-Wpn-RocketSlow-ROF04",
 
 
 	// 4
 	"R-Wpn-Cannon-ROF05", "R-Wpn-Cannon-ROF06", "R-Wpn-Cannon-Damage09", "R-Wpn-AAGun-Damage06",
-	"R-Wpn-Howitzer-Damage06", "R-Wpn-AAGun-ROF05", "R-Wpn-AAGun-ROF06",
+	"R-Wpn-Howitzer-Damage06", "R-Wpn-AAGun-ROF05", "R-Wpn-AAGun-ROF06", "R-Wpn-RocketSlow-ROF05",
+	"R-Wpn-RocketSlow-ROF06",
 
 	// 5
 
