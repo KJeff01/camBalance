@@ -7475,14 +7475,14 @@
                 "filterParameter": "ImpactClass",
                 "filterValue": "CANNON",
                 "parameter": "FirePause",
-                "value": -15
+                "value": -5
             },
             {
                 "class": "Weapon",
                 "filterParameter": "ImpactClass",
                 "filterValue": "CANNON",
                 "parameter": "ReloadTime",
-                "value": -15
+                "value": -5
             }
         ],
         "statID": "Cannon1Mk1",
@@ -7504,14 +7504,14 @@
                 "filterParameter": "ImpactClass",
                 "filterValue": "CANNON",
                 "parameter": "FirePause",
-                "value": -15
+                "value": -5
             },
             {
                 "class": "Weapon",
                 "filterParameter": "ImpactClass",
                 "filterValue": "CANNON",
                 "parameter": "ReloadTime",
-                "value": -15
+                "value": -5
             }
         ],
         "statID": "Cannon1Mk1",
@@ -7533,17 +7533,106 @@
                 "filterParameter": "ImpactClass",
                 "filterValue": "CANNON",
                 "parameter": "FirePause",
-                "value": -10
+                "value": -5
             },
             {
                 "class": "Weapon",
                 "filterParameter": "ImpactClass",
                 "filterValue": "CANNON",
                 "parameter": "ReloadTime",
-                "value": -10
+                "value": -5
             }
         ],
         "statID": "Cannon1Mk1",
+        "subgroupIconID": "IMAGE_RES_GRPROF",
+        "techCode": 1
+    },
+    "R-Wpn-RocketSlow-ROF04": {
+        "iconID": "IMAGE_RES_WEAPONTECH",
+        "id": "R-Wpn-RocketSlow-ROF04",
+        "keyTopic": 1,
+        "msgName": "RES_W_SRK_ROF4",
+        "name": "Rocket Rapid Loader",
+        "requiredResearch": [
+            "R-Wpn-Cannon-ROF04"
+        ],
+        "researchPoints": 10000,
+        "researchPower": 312,
+        "results": [
+            {
+                "class": "Weapon",
+                "filterParameter": "ImpactClass",
+                "filterValue": "SLOW ROCKET",
+                "parameter": "FirePause",
+                "value": -5
+            },
+            {
+                "class": "Weapon",
+                "filterParameter": "ImpactClass",
+                "filterValue": "SLOW ROCKET",
+                "parameter": "ReloadTime",
+                "value": -5
+            }
+        ],
+        "statID": "Rocket-LtA-T",
+        "subgroupIconID": "IMAGE_RES_GRPROF"
+    },
+    "R-Wpn-RocketSlow-ROF05": {
+        "iconID": "IMAGE_RES_WEAPONTECH",
+        "id": "R-Wpn-RocketSlow-ROF05,
+        "keyTopic": 1,
+        "name": "Rocket Rapid Loader Mk2",
+        "requiredResearch": [
+            "R-Wpn-Cannon-ROF05",
+        ],
+        "researchPoints": 12000,
+        "researchPower": 375,
+        "results": [
+            {
+                "class": "Weapon",
+                "filterParameter": "ImpactClass",
+                "filterValue": "SLOW ROCKET",
+                "parameter": "FirePause",
+                "value": -5
+            },
+            {
+                "class": "Weapon",
+                "filterParameter": "ImpactClass",
+                "filterValue": "SLOW ROCKET",
+                "parameter": "ReloadTime",
+                "value": -5
+            }
+        ],
+        "statID": "Rocket-LtA-T",
+        "subgroupIconID": "IMAGE_RES_GRPROF",
+        "techCode": 1
+    },
+    "R-Wpn-RocketSlow-ROF06": {
+        "iconID": "IMAGE_RES_WEAPONTECH",
+        "id": "R-Wpn-RocketSlow-ROF06",
+        "name": "Rocket Rapid Loader Mk3",
+        "requiredResearch": [
+            "R-Wpn-RocketSlow-ROF05",
+        ],
+        "researchPoints": 14000,
+        "researchPower": 437,
+        "results": [
+            {
+                "class": "Weapon",
+                "filterParameter": "ImpactClass",
+                "filterValue": "SLOW ROCKET",
+                "parameter": "FirePause",
+                "value": -5
+            },
+            {
+                "class": "Weapon",
+                "filterParameter": "ImpactClass",
+                "filterValue": "SLOW ROCKET",
+                "parameter": "ReloadTime",
+                "value": -5
+            }
+        ],
+        "statID": "Rocket-LtA-T",
         "subgroupIconID": "IMAGE_RES_GRPROF",
         "techCode": 1
     },
