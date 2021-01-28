@@ -2228,7 +2228,7 @@
         "id": "R-Wpn-Cannon-Damage02",
         "name": "HEAT Cannon Shells Mk2",
         "requiredResearch": [
-            "R-Wpn-Cannon-Damage01"
+            "R-Wpn-Cannon2Mk1"
         ],
         "researchPoints": 2400,
         "researchPower": 75,
