@@ -17,7 +17,7 @@ const ALPHA_RESEARCH_NEW = [
 	// 4
 	"R-Wpn-Flamer-Damage02", "R-Wpn-Mortar01Lt", "R-Vehicle-Prop-Halftracks",
 	"R-Wpn-Cannon1Mk1", "R-Wpn-Mortar-Damage01", "R-Wpn-Mortar-Damage02",
-	"R-Wpn-Mortar-ROF01","R-Wpn-Cannon-Damage01", "R-Wpn-Cannon-Damage02",
+	"R-Wpn-Mortar-ROF01","R-Wpn-Cannon-Damage01",
 
 	// 5
 	"R-Struc-Factory-Module", "R-Wpn-Flamer-Damage03",
@@ -32,7 +32,7 @@ const ALPHA_RESEARCH_NEW = [
 	// 6
 	"R-Wpn-Cannon2Mk1", "R-Defense-WallTower03", "R-Wpn-Rocket05-MiniPod", "R-Struc-Research-Module",
 	"R-Vehicle-Prop-Tracks", "R-Vehicle-Engine01", "R-Defense-Tower06", "R-Defense-Pillbox06",
-	"R-Wpn-Rocket-Damage01", "R-Wpn-Rocket-Damage02", "R-Wpn-Rocket-ROF01",
+	"R-Wpn-Rocket-Damage01", "R-Wpn-Rocket-Damage02", "R-Wpn-Rocket-ROF01", "R-Wpn-Cannon-Damage02",
 	"R-Wpn-Rocket-ROF02", "R-Wpn-Rocket-ROF03", "R-Defense-WallTower06",
 	"R-Wpn-Rocket01-LtAT", "R-Wpn-Rocket03-HvAT", "R-Wpn-RocketSlow-Damage01",
 
