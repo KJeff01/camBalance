@@ -2305,7 +2305,7 @@
         "name": "Medium Cannon",
         "requiredResearch": [
             "R-Struc-Factory-Module",
-            "R-Wpn-Cannon-Damage02"
+            "R-Wpn-Cannon-Damage01"
         ],
         "researchPoints": 4800,
         "researchPower": 150,
