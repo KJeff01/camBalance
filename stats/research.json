@@ -8135,14 +8135,14 @@
                 "filterParameter": "ImpactClass",
                 "filterValue": "MISSILE",
                 "parameter": "Damage",
-                "value": 30
+                "value": 40
             },
             {
                 "class": "Weapon",
                 "filterParameter": "ImpactClass",
                 "filterValue": "MISSILE",
                 "parameter": "RadiusDamage",
-                "value": 30
+                "value": 40
             }
         ],
         "statID": "Missile-LtSAM",
@@ -8163,14 +8163,14 @@
                 "filterParameter": "ImpactClass",
                 "filterValue": "MISSILE",
                 "parameter": "Damage",
-                "value": 30
+                "value": 20
             },
             {
                 "class": "Weapon",
                 "filterParameter": "ImpactClass",
                 "filterValue": "MISSILE",
                 "parameter": "RadiusDamage",
-                "value": 30
+                "value": 20
             }
         ],
         "statID": "Missile-A-T",
@@ -8193,14 +8193,14 @@
                 "filterParameter": "ImpactClass",
                 "filterValue": "MISSILE",
                 "parameter": "Damage",
-                "value": 30
+                "value": 10
             },
             {
                 "class": "Weapon",
                 "filterParameter": "ImpactClass",
                 "filterValue": "MISSILE",
                 "parameter": "RadiusDamage",
-                "value": 30
+                "value": 10
             }
         ],
         "statID": "Missile-A-T",
@@ -8449,14 +8449,14 @@
                 "filterParameter": "ImpactClass",
                 "filterValue": "GAUSS",
                 "parameter": "Damage",
-                "value": 30
+                "value": 25
             },
             {
                 "class": "Weapon",
                 "filterParameter": "ImpactClass",
                 "filterValue": "GAUSS",
                 "parameter": "RadiusDamage",
-                "value": 30
+                "value": 25
             }
         ],
         "statID": "RailGun1Mk1",
@@ -8478,14 +8478,14 @@
                 "filterParameter": "ImpactClass",
                 "filterValue": "GAUSS",
                 "parameter": "Damage",
-                "value": 10
+                "value": 15
             },
             {
                 "class": "Weapon",
                 "filterParameter": "ImpactClass",
                 "filterValue": "GAUSS",
                 "parameter": "RadiusDamage",
-                "value": 10
+                "value": 15
             }
         ],
         "statID": "RailGun1Mk1",
