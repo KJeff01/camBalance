@@ -2228,7 +2228,8 @@
         "id": "R-Wpn-Cannon-Damage02",
         "name": "HEAT Cannon Shells Mk2",
         "requiredResearch": [
-            "R-Wpn-Cannon-Damage01"
+            "R-Wpn-Cannon-Damage01",
+			"R-Wpn-Cannon2Mk1"
         ],
         "researchPoints": 2400,
         "researchPower": 75,
@@ -2304,7 +2305,7 @@
         "name": "Medium Cannon",
         "requiredResearch": [
             "R-Struc-Factory-Module",
-            "R-Wpn-Cannon-Damage02"
+            "R-Wpn-Cannon-Damage01"
         ],
         "researchPoints": 4800,
         "researchPower": 150,
@@ -2500,71 +2501,6 @@
             "Flame1Mk1"
         ],
         "statID": "Flame1Mk1"
-    },
-    "R-Wpn-MG-Damage01-BaBa": {
-        "iconID": "IMAGE_RES_WEAPONTECH",
-        "id": "R-Wpn-MG-Damage01-BaBa",
-        "keyTopic": 1,
-        "msgName": "RES_W_MG_D1",
-        "name": "Hardened MG Bullets",
-        "requiredResearch": [
-            "R-Wpn-MG1Mk1"
-        ],
-        "researchPoints": 600,
-        "researchPower": 18,
-        "results": [
-            {
-                "class": "Weapon",
-                "filterParameter": "ImpactClass",
-                "filterValue": "MACHINE GUN",
-                "parameter": "Damage",
-                "value": 40
-            }
-        ],
-        "statID": "MG1Mk1",
-        "subgroupIconID": "IMAGE_RES_GRPDAM"
-    },
-    "R-Wpn-MG-Damage02-BaBa": {
-        "iconID": "IMAGE_RES_WEAPONTECH",
-        "id": "R-Wpn-MG-Damage02-BaBa",
-        "keyTopic": 1,
-        "msgName": "RES_W_MG_D2",
-        "name": "APDSB MG Bullets",
-        "requiredResearch": [
-            "R-Wpn-MG-Damage01-BaBa"
-        ],
-        "researchPoints": 600,
-        "researchPower": 18,
-        "results": [
-            {
-                "class": "Weapon",
-                "filterParameter": "ImpactClass",
-                "filterValue": "MACHINE GUN",
-                "parameter": "Damage",
-                "value": 40
-            }
-        ],
-        "statID": "MG1Mk1",
-        "subgroupIconID": "IMAGE_RES_GRPDAM"
-    },
-    "R-Wpn-MG-Range01-BaBa": {
-        "iconID": "IMAGE_RES_WEAPONTECH",
-        "id": "R-Wpn-MG-Range01-BaBa",
-        "keyTopic": 1,
-        "name": "Scavenger Machine-gun range upgrade",
-        "researchPoints": 2200,
-        "researchPower": 60,
-        "results": [
-            {
-                "class": "Weapon",
-                "filterParameter": "ImpactClass",
-                "filterValue": "MACHINE GUN",
-                "parameter": "MaxRange",
-                "value": 25
-            }
-        ],
-        "statID": "MG1Mk1",
-        "subgroupIconID": "IMAGE_RES_GRPUPG"
     },
     "R-Wpn-MG-Damage01": {
         "iconID": "IMAGE_RES_WEAPONTECH",
