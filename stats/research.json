@@ -8153,7 +8153,8 @@
         "id": "R-Wpn-Missile-Damage02",
         "name": "Advanced Missile Warhead Mk2",
         "requiredResearch": [
-            "R-Wpn-Missile2A-T"
+            "R-Wpn-Missile-Damage01",
+            "R-Wpn-MdArtMissile"
         ],
         "researchPoints": 28800,
         "researchPower": 450,
@@ -8243,8 +8244,7 @@
         "msgName": "RES_W_MS_ROF1",
         "name": "Advanced Missile Allocation System",
         "requiredResearch": [
-            "R-Wpn-Missile-Damage02",
-            "R-Wpn-Missile2A-T"
+            "R-Wpn-Missile-Damage01"
         ],
         "researchPoints": 14400,
         "researchPower": 450,
@@ -8272,7 +8272,6 @@
         "id": "R-Wpn-Missile-ROF02",
         "name": "Advanced Missile Allocation System Mk2",
         "requiredResearch": [
-            "R-Wpn-MdArtMissile",
             "R-Wpn-Missile-ROF01",
             "R-Wpn-Missile-Damage02"
         ],
