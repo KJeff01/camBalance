@@ -1258,9 +1258,6 @@
         "id": "R-Defense-Tower03",
         "msgName": "RES_TOWER3",
         "name": "Heavy Machinegun Guard Tower",
-        "redComponents": [
-            "GuardTower1"
-        ],
         "requiredResearch": [
             "R-Wpn-MG3Mk1"
         ],
