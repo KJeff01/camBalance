@@ -183,7 +183,6 @@ function eventStartLevel()
 	camUpgradeOnMapTemplates(cTempl.buggy, cTempl.buggyheavy, SCAV_7);
 	camUpgradeOnMapTemplates(cTempl.bjeep, cTempl.bjeepheavy, SCAV_7);
 	camUpgradeOnMapTemplates(cTempl.rbjeep, cTempl.rbjeep8, SCAV_7);
-	camUpgradeOnMapTemplates(cTempl.rbuggy, cTempl.rbuggy4, SCAV_7);
 	
 	camSetEnemyBases({
 		"ScavNorthGroup": {
@@ -262,7 +261,7 @@ function eventStartLevel()
 			order: CAM_ORDER_ATTACK,
 			groupSize: 4,
 			throttle: camChangeOnDiff(camSecondsToMilliseconds(15)),
-			templates: [ cTempl.firecan, cTempl.rbjeep8, cTempl.rbuggy4, cTempl.blokeheavy ],
+			templates: [ cTempl.firecan, cTempl.rbjeep8, cTempl.rbuggy, cTempl.blokeheavy ],
 			data: {
 				regroup: false,
 				count: -1,
@@ -273,7 +272,7 @@ function eventStartLevel()
 			order: CAM_ORDER_ATTACK,
 			groupSize: 4,
 			throttle: camChangeOnDiff(camSecondsToMilliseconds(15)),
-			templates: [ cTempl.firecan, cTempl.rbjeep8, cTempl.rbuggy4, cTempl.blokeheavy ],
+			templates: [ cTempl.firecan, cTempl.rbjeep8, cTempl.rbuggy, cTempl.blokeheavy ],
 			data: {
 				regroup: false,
 				count: -1,
@@ -284,7 +283,7 @@ function eventStartLevel()
 			order: CAM_ORDER_ATTACK,
 			groupSize: 4,
 			throttle: camChangeOnDiff(camSecondsToMilliseconds(15)),
-			templates: [ cTempl.firecan, cTempl.rbjeep8, cTempl.rbuggy4, cTempl.blokeheavy ],
+			templates: [ cTempl.firecan, cTempl.rbjeep8, cTempl.rbuggy, cTempl.blokeheavy ],
 			data: {
 				regroup: false,
 				count: -1,

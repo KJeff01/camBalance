@@ -279,7 +279,6 @@ function eventStartLevel()
 	camUpgradeOnMapTemplates(cTempl.buggy, cTempl.buggyheavy, SCAV_7);
 	camUpgradeOnMapTemplates(cTempl.bjeep, cTempl.bjeepheavy, SCAV_7);
 	camUpgradeOnMapTemplates(cTempl.rbjeep, cTempl.rbjeep8, SCAV_7);
-	camUpgradeOnMapTemplates(cTempl.rbuggy, cTempl.rbuggy4, SCAV_7);
 
 	camSetEnemyBases({
 		"ScavMiddleGroup": {
@@ -312,7 +311,7 @@ function eventStartLevel()
 				regroup: true,
 				count: -1,
 			},
-			templates: [ cTempl.firecan, cTempl.rbjeep8, cTempl.rbuggy4, cTempl.blokeheavy ]
+			templates: [ cTempl.firecan, cTempl.rbjeep8, cTempl.rbuggy, cTempl.blokeheavy ]
 		},
 		"scavSouthEastFactory": {
 			assembly: "southAssembly",
@@ -323,7 +322,7 @@ function eventStartLevel()
 				regroup: true,
 				count: -1,
 			},
-			templates: [ cTempl.firecan, cTempl.rbjeep8, cTempl.rbuggy4, cTempl.blokeheavy ]
+			templates: [ cTempl.firecan, cTempl.rbjeep8, cTempl.rbuggy, cTempl.blokeheavy ]
 		},
 		"scavNorthEastFactory": {
 			assembly: "northAssembly",
@@ -334,7 +333,7 @@ function eventStartLevel()
 				regroup: true,
 				count: -1,
 			},
-			templates: [ cTempl.firecan, cTempl.rbjeep8, cTempl.rbuggy4, cTempl.blokeheavy ]
+			templates: [ cTempl.firecan, cTempl.rbjeep8, cTempl.rbuggy, cTempl.blokeheavy ]
 		},
 	});
 

@@ -293,7 +293,7 @@ function eventStartLevel()
 			groupSize: 4,
 			maxSize: 10,
 			throttle: camChangeOnDiff(camSecondsToMilliseconds(25)),
-			templates: [ cTempl.rbjeep8, cTempl.buscan, cTempl.rbuggy4, cTempl.firecan ]
+			templates: [ cTempl.rbjeep8, cTempl.buscan, cTempl.rbuggy, cTempl.firecan ]
 		},
 	});
 

@@ -497,7 +497,7 @@
         "weaponWav": "rocket.ogg",
         "weight": 500
     },
-    "BabaRocket4": {
+    "BabaRocket": {
         "buildPoints": 10,
         "buildPower": 10,
         "damage": 20,

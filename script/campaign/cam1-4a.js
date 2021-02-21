@@ -138,7 +138,6 @@ function eventStartLevel()
 	camUpgradeOnMapTemplates(cTempl.buggy, cTempl.buggyheavy, SCAV_7);
 	camUpgradeOnMapTemplates(cTempl.bjeep, cTempl.bjeepheavy, SCAV_7);
 	camUpgradeOnMapTemplates(cTempl.rbjeep, cTempl.rbjeep8, SCAV_7);
-	camUpgradeOnMapTemplates(cTempl.rbuggy, cTempl.rbuggy4, SCAV_7);
 
 	camSetEnemyBases({
 		"SouthScavBaseGroup": {
@@ -177,7 +176,7 @@ function eventStartLevel()
 			groupSize: 4,
 			maxSize: 6,
 			throttle: camChangeOnDiff(camSecondsToMilliseconds(20)),
-			templates: [ cTempl.rbuggy4, cTempl.bjeepheavy, cTempl.buscan, cTempl.trikeheavy ]
+			templates: [ cTempl.rbuggy, cTempl.bjeepheavy, cTempl.buscan, cTempl.trikeheavy ]
 		},
 		"NorthScavFactory": {
 			assembly: "NorthScavFactoryAssembly",
