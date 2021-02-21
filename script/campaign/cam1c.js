@@ -279,21 +279,21 @@ function eventStartLevel()
 			order: CAM_ORDER_ATTACK,
 			groupSize: 4,
 			throttle: camChangeOnDiff(camSecondsToMilliseconds(20)),
-			templates: [ cTempl.buscan, cTempl.rbjeep, cTempl.trikeheavy, cTempl.buggyheavy ]
+			templates: [ cTempl.buscan, cTempl.rbjeep8, cTempl.trikeheavy, cTempl.buggyheavy ]
 		},
 		"ScavCentralFactory": {
 			assembly: "ScavCentralFactoryAssembly",
 			order: CAM_ORDER_ATTACK,
 			groupSize: 4,
 			throttle: camChangeOnDiff(camSecondsToMilliseconds(20)),
-			templates: [ cTempl.firecan, cTempl.rbuggy, cTempl.bjeepheavy, cTempl.blokeheavy ]
+			templates: [ cTempl.firecan, cTempl.rbuggy4, cTempl.bjeepheavy, cTempl.blokeheavy ]
 		},
 		"ScavNorthFactory": {
 			assembly: "ScavNorthFactoryAssembly",
 			order: CAM_ORDER_ATTACK,
 			groupSize: 4,
 			throttle: camChangeOnDiff(camSecondsToMilliseconds(20)),
-			templates: [ cTempl.firecan, cTempl.rbuggy, cTempl.buscan, cTempl.trikeheavy ]
+			templates: [ cTempl.firecan, cTempl.rbuggy4, cTempl.buscan, cTempl.trikeheavy ]
 		},
 		"NPCentralFactory": {
 			assembly: "NPCentralFactoryAssembly",

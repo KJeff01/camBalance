@@ -226,6 +226,7 @@ function eventStartLevel()
 	camUpgradeOnMapTemplates(cTempl.trike, cTempl.trikeheavy, 7);
 	camUpgradeOnMapTemplates(cTempl.buggy, cTempl.buggyheavy, 7);
 	camUpgradeOnMapTemplates(cTempl.bjeep, cTempl.bjeepheavy, 7);
+	camUpgradeOnMapTemplates(cTempl.rbjeep, cTempl.rbjeep8, 7);	
 
 	camSetEnemyBases({
 		"ScavBaseGroup": {
@@ -292,7 +293,7 @@ function eventStartLevel()
 			groupSize: 4,
 			maxSize: 10,
 			throttle: camChangeOnDiff(camSecondsToMilliseconds(25)),
-			templates: [ cTempl.rbjeep, cTempl.buscan, cTempl.rbuggy, cTempl.firecan ]
+			templates: [ cTempl.rbjeep8, cTempl.buscan, cTempl.rbuggy4, cTempl.firecan ]
 		},
 	});
 

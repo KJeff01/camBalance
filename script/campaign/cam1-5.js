@@ -260,7 +260,7 @@ function eventStartLevel()
 			order: CAM_ORDER_ATTACK,
 			groupSize: 4,
 			throttle: camChangeOnDiff(camSecondsToMilliseconds(15)),
-			templates: [ cTempl.firecan, cTempl.rbjeep, cTempl.rbuggy, cTempl.blokeheavy ],
+			templates: [ cTempl.firecan, cTempl.rbjeep8, cTempl.rbuggy4, cTempl.blokeheavy ],
 			data: {
 				regroup: false,
 				count: -1,
@@ -271,7 +271,7 @@ function eventStartLevel()
 			order: CAM_ORDER_ATTACK,
 			groupSize: 4,
 			throttle: camChangeOnDiff(camSecondsToMilliseconds(15)),
-			templates: [ cTempl.firecan, cTempl.rbjeep, cTempl.rbuggy, cTempl.blokeheavy ],
+			templates: [ cTempl.firecan, cTempl.rbjeep8, cTempl.rbuggy4, cTempl.blokeheavy ],
 			data: {
 				regroup: false,
 				count: -1,
@@ -282,7 +282,7 @@ function eventStartLevel()
 			order: CAM_ORDER_ATTACK,
 			groupSize: 4,
 			throttle: camChangeOnDiff(camSecondsToMilliseconds(15)),
-			templates: [ cTempl.firecan, cTempl.rbjeep, cTempl.rbuggy, cTempl.blokeheavy ],
+			templates: [ cTempl.firecan, cTempl.rbjeep8, cTempl.rbuggy4, cTempl.blokeheavy ],
 			data: {
 				regroup: false,
 				count: -1,

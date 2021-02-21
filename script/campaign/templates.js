@@ -22,8 +22,8 @@ bjeepheavy: { body: "B2JeepBody", prop: "BaBaProp", weap: "BabaJeepHeavyMG" },
 // SUB_1_2
 
 // SUB_1_3
-rbjeep: { body: "B2RKJeepBody", prop: "BaBaProp", weap: "BabaRocket8" },
-rbuggy: { body: "B3bodyRKbuggy01", prop: "BaBaProp", weap: "BabaRocket4" },
+rbjeep8: { body: "B2RKJeepBody", prop: "BaBaProp", weap: "BabaRocket8" },
+rbuggy4: { body: "B3bodyRKbuggy01", prop: "BaBaProp", weap: "BabaRocket4" },
 nppod: { body: "Body4ABT", prop: "wheeled01", weap: "Rocket-Pod" },
 nphmg: { body: "Body4ABT", prop: "HalfTrack", weap: "MG3Mk1" },
 npsmc: { body: "Body8MBT", prop: "HalfTrack", weap: "Cannon2A-TMk1" },
