@@ -4664,12 +4664,12 @@
     "R-Wpn-Bomb-Damage02": {
         "iconID": "IMAGE_RES_WEAPONTECH",
         "id": "R-Wpn-Bomb-Damage02",
+		"keyTopic": 1,
         "imdName": "trlvtlhe.PIE",
         "msgName": "RES_W_BDMG2",
         "name": "Improved Bomb Warhead",
         "requiredResearch": [
-            "R-Wpn-Bomb-Damage01",
-            "R-Wpn-Bomb02"
+            "R-Wpn-Bomb-Damage01"
         ],
         "researchPoints": 9200,
         "researchPower": 287,
