@@ -2564,7 +2564,7 @@
     "Missile-HvyArt": {
         "buildPoints": 1500,
         "buildPower": 500,
-        "damage": 300,
+        "damage": 275,
         "designable": 1,
         "effectSize": 100,
         "explosionWav": "lrgexpl.ogg",
