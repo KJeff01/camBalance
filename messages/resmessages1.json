@@ -577,6 +577,7 @@
         "sequenceName": "res_weapons.ogg",
         "text": [
             "Flamer Upgrade",
+			"High-pressure gas throws the flamer gel further",
             "Increases Flamer range",
             "All flamers upgraded automatically"
         ]
