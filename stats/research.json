@@ -2349,7 +2349,7 @@
         "iconID": "IMAGE_RES_WEAPONTECH",
         "id": "R-Wpn-Flamer-Range01",
         "msgName": "RES_W_FL_R1",
-        "name": "Flamer Range Upgrade",
+        "name": "High-Pressure Gas Container",
         "requiredResearch": [
             "R-Wpn-Flamer-Damage01"
         ],
