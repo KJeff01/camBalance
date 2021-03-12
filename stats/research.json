@@ -2256,7 +2256,7 @@
         "name": "HEAT Cannon Shells Mk3",
         "requiredResearch": [
             "R-Wpn-Cannon-Damage02",
-            "R-Wpn-Rocket-Damage03"
+            "R-Wpn-Rocket-Damage02"
         ],
         "researchPoints": 3600,
         "researchPower": 112,
@@ -2944,14 +2944,14 @@
                 "filterParameter": "ImpactClass",
                 "filterValue": "ROCKET",
                 "parameter": "Damage",
-                "value": 30
+                "value": 60
             },
             {
                 "class": "Weapon",
                 "filterParameter": "ImpactClass",
                 "filterValue": "ROCKET",
                 "parameter": "RadiusDamage",
-                "value": 30
+                "value": 60
             }
         ],
         "statID": "Rocket-Pod",
@@ -2960,6 +2960,7 @@
     "R-Wpn-Rocket-Damage02": {
         "iconID": "IMAGE_RES_WEAPONTECH",
         "id": "R-Wpn-Rocket-Damage02",
+        "keyTopic": 1,
         "name": "HE Mini-Rockets Mk2",
         "requiredResearch": [
             "R-Wpn-Rocket-Damage01"
@@ -2972,14 +2973,14 @@
                 "filterParameter": "ImpactClass",
                 "filterValue": "ROCKET",
                 "parameter": "Damage",
-                "value": 30
+                "value": 60
             },
             {
                 "class": "Weapon",
                 "filterParameter": "ImpactClass",
                 "filterValue": "ROCKET",
                 "parameter": "RadiusDamage",
-                "value": 30
+                "value": 60
             }
         ],
         "statID": "Rocket-Pod",
@@ -2989,10 +2990,10 @@
     "R-Wpn-Rocket-Damage03": {
         "iconID": "IMAGE_RES_WEAPONTECH",
         "id": "R-Wpn-Rocket-Damage03",
-        "keyTopic": 1,
         "name": "HE Mini-Rockets Mk3",
         "requiredResearch": [
-            "R-Wpn-Rocket-Damage02"
+            "R-Wpn-Cannon3Mk1",
+			"R-Wpn-Rocket-Damage02"
         ],
         "researchPoints": 3600,
         "researchPower": 112,
@@ -3002,14 +3003,14 @@
                 "filterParameter": "ImpactClass",
                 "filterValue": "ROCKET",
                 "parameter": "Damage",
-                "value": 100
+                "value": 60
             },
             {
                 "class": "Weapon",
                 "filterParameter": "ImpactClass",
                 "filterValue": "ROCKET",
                 "parameter": "RadiusDamage",
-                "value": 100
+                "value": 60
             }
         ],
         "statID": "Rocket-Pod",
@@ -3290,7 +3291,7 @@
         "name": "HEAT Rocket Warhead Mk2",
         "requiredResearch": [
             "R-Wpn-RocketSlow-Damage01",
-            "R-Wpn-Rocket-Damage03"
+            "R-Wpn-Rocket-Damage02"
         ],
         "researchPoints": 3600,
         "researchPower": 112,
@@ -5854,14 +5855,14 @@
                 "filterParameter": "ImpactClass",
                 "filterValue": "ROCKET",
                 "parameter": "Damage",
-                "value": 30
+                "value": 60
             },
             {
                 "class": "Weapon",
                 "filterParameter": "ImpactClass",
                 "filterValue": "ROCKET",
                 "parameter": "RadiusDamage",
-                "value": 30
+                "value": 60
             }
         ],
         "statID": "Rocket-Pod",
@@ -5883,14 +5884,14 @@
                 "filterParameter": "ImpactClass",
                 "filterValue": "ROCKET",
                 "parameter": "Damage",
-                "value": 30
+                "value": 60
             },
             {
                 "class": "Weapon",
                 "filterParameter": "ImpactClass",
                 "filterValue": "ROCKET",
                 "parameter": "RadiusDamage",
-                "value": 30
+                "value": 60
             }
         ],
         "statID": "Rocket-Pod",
