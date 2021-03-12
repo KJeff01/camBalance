@@ -166,7 +166,7 @@ function eventStartLevel()
 		"NPCommandCenter": { tech: "R-Vehicle-Metals01" },
 		"NPResearchFacility": { tech: "R-Wpn-MG-Damage04" },
 		"MediumNPFactory": { tech: "R-Wpn-Rocket02-MRL" },
-		"HeavyNPFactory": { tech: "R-Wpn-Rocket-Damage03" },
+		"HeavyNPFactory": { tech: "R-Wpn-Rocket-Damage02" },
 	});
 
 	camSetFactories({
