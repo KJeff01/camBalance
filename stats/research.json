@@ -3361,7 +3361,7 @@
         "name": "Cyclone AA Flak Site",
 		"redStructures": [
 		"AASite-QuadMg1"
-		]
+		],
         "requiredResearch": [
             "R-Wpn-AAGun02"
         ],
@@ -4983,7 +4983,7 @@
         "name": "Hyper Velocity Cannon",
         "redComponents": [
             "Cannon375mmMk1",
-			"Cannon1-VTOL",
+			"Cannon1-VTOL"
         ],
         "requiredResearch": [
 			"R-Wpn-Cannon3Mk1"
@@ -6322,7 +6322,7 @@
         "msgName": "RES_EMP_Rail2",
         "name": "Rail Gun Emplacement",
 		"redStructures": [
-			"Emplacement-HPVcannon"
+			"Emplacement-HPVcannon",
 			"Wall-VulcanCan"
 		],
         "requiredResearch": [
