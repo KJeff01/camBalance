@@ -296,6 +296,6 @@ function eventStartLevel()
 	queue("setAlphaExp", camSecondsToMilliseconds(2));
 	queue("setupPatrolGroups", camMinutesToMilliseconds(1.5));
 
-	setTimer("phantomFactoryNE", camChangeOnDiff(camMinutesToMilliseconds(4)));
-	setTimer("phantomFactorySW", camChangeOnDiff(camMinutesToMilliseconds(6)));
+	setTimer("phantomFactoryNE", camChangeOnDiff(camMinutesToMilliseconds(3.5)));
+	setTimer("phantomFactorySW", camChangeOnDiff(camMinutesToMilliseconds(5.5)));
 }
