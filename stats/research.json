@@ -3350,6 +3350,9 @@
         "id": "R-Defense-AASite-QuadBof",
         "msgName": "RES_EMP_AA1",
         "name": "Cyclone AA Flak Site",
+		"redStructures": [
+		"AASite-QuadMg1"
+		]
         "requiredResearch": [
             "R-Wpn-AAGun02"
         ],
@@ -3382,7 +3385,7 @@
         "msgName": "RES_EMP_AA3",
         "name": "Whirlwind AA Site",
         "redStructures": [
-            "AASite-QuadMg1"
+            "AASite-QuadBof"
         ],
         "requiredResearch": [
             "R-Wpn-AAGun04",
@@ -4582,6 +4585,9 @@
         "keyTopic": 1,
         "msgName": "RES_W_AA2",
         "name": "Cyclone Flak Turret",
+        "redComponents": [
+            "QuadMg1AAGun"
+        ],
         "requiredResearch": [
             "R-Wpn-AAGun03",
             "R-Wpn-AAGun-Damage02"
@@ -4612,7 +4618,7 @@
         "msgName": "RES_W_AA4",
         "name": "Whirlwind AA Turret",
         "redComponents": [
-            "QuadMg1AAGun"
+            "AAGun2Mk1"
         ],
         "requiredResearch": [
             "R-Wpn-MG4",
@@ -4721,6 +4727,9 @@
         "keyTopic": 1,
         "msgName": "RES_W_BMB2",
         "name": "HEAP Bomb Bay",
+		"redComponents": [
+			"Bomb1-VTOL-LtHE"
+        ],
         "requiredResearch": [
             "R-Wpn-Bomb01",
             "R-Wpn-Bomb-Damage01"
@@ -6362,6 +6371,9 @@
         "id": "R-Defense-SamSite2",
         "msgName": "RES_EMP_SAM2",
         "name": "Vindicator SAM Site",
+        "redStructures": [
+            "P0-AASite-SAM1"
+        ],
         "requiredResearch": [
             "R-Wpn-Missile-HvSAM"
         ],
@@ -7291,6 +7303,9 @@
         "imdName": "trmvtlin.PIE",
         "msgName": "RES_W_BMB4",
         "name": "Thermite Bomb Bay",
+		"redComponents": [
+            "Bomb3-VTOL-LtINC"
+        ],
         "requiredResearch": [
 			"R-Wpn-Flamer-Damage05",
             "R-Wpn-Bomb03",
@@ -8208,6 +8223,9 @@
         "id": "R-Wpn-Missile-HvSAM",
         "msgName": "RES_W_MS_HvSAM1",
         "name": "Vindicator SAM",
+		"redComponents": [
+			"Missile-LtSAM"
+		],
         "requiredResearch": [
             "R-Wpn-Missile-Damage02",
             "R-Wpn-Missile-ROF01",
