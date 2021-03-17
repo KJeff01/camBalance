@@ -1340,6 +1340,9 @@
         "id": "R-Defense-WallTower04",
         "msgName": "RES_WT4_HC",
         "name": "Heavy Cannon Hardpoint",
+        "redStructures": [
+            "WallTower03"
+        ],
         "requiredResearch": [
             "R-Defense-WallTower03",
             "R-Wpn-Cannon3Mk1"
@@ -2300,6 +2303,9 @@
         "keyTopic": 1,
         "msgName": "RES_CN2MK1",
         "name": "Medium Cannon",
+		"redComponents": [
+			"Cannon1Mk1"
+		],
         "requiredResearch": [
             "R-Struc-Factory-Module",
             "R-Wpn-Cannon-Damage01"
@@ -2317,6 +2323,9 @@
         "keyTopic": 1,
         "msgName": "RES_CN3MK1",
         "name": "Heavy Cannon",
+		"redComponents": [
+			"Cannon2A-TMk1"
+		],
         "requiredResearch": [
             "R-Wpn-Cannon2Mk1",
             "R-Vehicle-Body11",
@@ -3579,9 +3588,6 @@
         "id": "R-Defense-Wall-VulcanCan",
         "msgName": "RES_WT8_RC",
         "name": "Assault Cannon Hardpoint",
-        "redStructures": [
-            "WallTower03"
-        ],
         "requiredResearch": [
             "R-Wpn-Cannon5"
         ],
@@ -3597,6 +3603,9 @@
         "id": "R-Defense-WallTower-HPVcannon",
         "msgName": "RES_WT13_HPV",
         "name": "HPV Cannon Hardpoint",
+        "redStructures": [
+            "WallTower04"
+        ],
         "requiredResearch": [
             "R-Wpn-Cannon4AMk1"
         ],
@@ -4972,6 +4981,10 @@
         "keyTopic": 1,
         "msgName": "RES_W_CN_4A",
         "name": "Hyper Velocity Cannon",
+        "redComponents": [
+            "Cannon375mmMk1",
+			"Cannon1-VTOL",
+        ],
         "requiredResearch": [
 			"R-Wpn-Cannon3Mk1"
         ],
@@ -6308,6 +6321,10 @@
         "id": "R-Defense-Rail2",
         "msgName": "RES_EMP_Rail2",
         "name": "Rail Gun Emplacement",
+		"redStructures": [
+			"Emplacement-HPVcannon"
+			"Wall-VulcanCan"
+		],
         "requiredResearch": [
             "R-Wpn-RailGun02"
         ],
@@ -6323,6 +6340,9 @@
         "id": "R-Defense-Rail3",
         "msgName": "RES_EMP_Rail3",
         "name": "Gauss Cannon Emplacement",
+		"redStructures": [
+			"Emplacement-Rail2"
+		],
         "requiredResearch": [
             "R-Wpn-RailGun03"
         ],
@@ -6437,6 +6457,10 @@
         "id": "R-Defense-WallTower-Rail2",
         "msgName": "RES_WT15_RL2",
         "name": "Rail Gun Hardpoint",
+        "redStructures": [
+            "Wall-VulcanCan",
+			"WallTower-HPVcannon"
+        ],
         "requiredResearch": [
             "R-Wpn-RailGun02"
         ],
@@ -6452,6 +6476,9 @@
         "id": "R-Defense-WallTower-Rail3",
         "msgName": "RES_WT15_RL3",
         "name": "Gauss Cannon Hardpoint",
+        "redStructures": [
+            "WallTower-Rail2"
+        ],	
         "requiredResearch": [
             "R-Wpn-RailGun03"
         ],
@@ -8629,6 +8656,12 @@
         "keyTopic": 1,
         "msgName": "RES_W_RAIL1",
         "name": "Needle Gun",
+        "redComponents": [
+            "Cannon4AUTOMk1",
+			"Cannon4AUTO-VTOL",
+			"Cannon5VulcanMk1",
+			"Cannon5Vulcan-VTOL"
+        ],
         "researchPoints": 14400,
         "researchPower": 450,
         "resultComponents": [
@@ -8643,7 +8676,11 @@
         "keyTopic": 1,
         "msgName": "RES_W_RAIL2",
         "name": "Rail Gun",
+        "redComponents": [
+            "RailGun1Mk1"
+        ],		
         "requiredResearch": [
+			"RailGun1-VTOL",
 			"R-Wpn-RailGun01"
         ],
         "researchPoints": 28800,
@@ -8660,6 +8697,9 @@
         "keyTopic": 1,
         "msgName": "RES_W_RAIL3",
         "name": "Gauss Cannon",
+        "redComponents": [
+            "RailGun2Mk1"
+        ],
         "requiredResearch": [
             "R-Wpn-RailGun02"
         ],
