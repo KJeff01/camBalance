@@ -3370,7 +3370,7 @@
         "msgName": "RES_EMP_AA1",
         "name": "Cyclone AA Flak Site",
 		"redStructures": [
-		"AASite-QuadMg1"
+			"AASite-QuadMg1"
 		],
         "requiredResearch": [
             "R-Wpn-AAGun02"
@@ -6380,9 +6380,6 @@
         "id": "R-Defense-RotHow",
         "msgName": "RES_EMP_RotHOW",
         "name": "Hellstorm Emplacement",
-        "redStructures": [
-            "Emplacement-Howitzer105"
-        ],
         "requiredResearch": [
             "R-Wpn-Howitzer03-Rot"
         ],
@@ -8713,7 +8710,8 @@
         "msgName": "RES_W_RAIL2",
         "name": "Rail Gun",
         "redComponents": [
-            "RailGun1Mk1"
+            "RailGun1-VTOL",
+			"RailGun1Mk1"
         ],		
         "requiredResearch": [
 			"RailGun1-VTOL",
