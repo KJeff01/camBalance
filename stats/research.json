@@ -2872,6 +2872,9 @@
         "id": "R-Wpn-Mortar02Hvy",
         "msgName": "RES_W_M2",
         "name": "Heavy Mortar - Bombard",
+		"redComponents": [
+            "Mortar1Mk1"
+        ],
         "requiredResearch": [
             "R-Wpn-Mortar01Lt",
             "R-Wpn-Mortar-Damage02",
@@ -3562,7 +3565,7 @@
         "msgName": "RES_EMP_RotMor",
         "name": "Pepperpot Pit",
         "redStructures": [
-            "Emplacement-MortarPit01"
+            "Emplacement-MortarPit02"
         ],
         "requiredResearch": [
             "R-Wpn-Mortar3"
@@ -5855,7 +5858,7 @@
         "msgName": "RES_W_M3",
         "name": "Rotary Mortar - Pepperpot",
         "redComponents": [
-            "Mortar1Mk1"
+            "Mortar2Mk1"
         ],
         "requiredResearch": [
 			"R-Wpn-Mortar02Hvy"
@@ -6281,7 +6284,6 @@
         "msgName": "RES_EMP_MdAM",
         "name": "Angel Missile Battery",
         "redStructures": [
-            "Emplacement-MortarPit02",
             "Emplacement-MRL-pit"
         ],
         "requiredResearch": [
