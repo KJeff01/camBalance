@@ -6266,7 +6266,7 @@
         "msgName": "RES_EMP_HvAM",
         "name": "Archangel Missile Battery",
         "redStructures": [
-            "Emplacement-Howitzer105"
+            "R-Wpn-MdArtMissile"
         ],
         "requiredResearch": [
             "R-Wpn-HvArtMissile"
@@ -8010,6 +8010,9 @@
         "keyTopic": 1,
         "msgName": "RES_W_MS_HART",
         "name": "Archangel Missile",
+		"redComponents": [
+            "Missile-MdArt"
+        ],
         "requiredResearch": [
 			"R-Wpn-MdArtMissile"
         ],
