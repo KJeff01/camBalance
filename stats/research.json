@@ -5985,6 +5985,12 @@
         "keyTopic": 1,
         "msgName": "RES_W_RK_HvAT",
         "name": "Tank Killer Rocket",
+		"redComponents": [
+            "Rocket-Pod",
+            "Rocket-VTOL-Pod",
+			"Rocket-LtA-T",
+            "Rocket-VTOL-LtA-T"
+        ],
         "requiredResearch": [
             "R-Wpn-Rocket03-HvAT"
         ],
@@ -6220,6 +6226,9 @@
         "id": "R-Defense-GuardTower-ATMiss",
         "msgName": "RES_EMP_ATMTOW",
         "name": "Scourge Missile Tower",
+		"redStructures": [
+            "GuardTower6"
+        ],
         "requiredResearch": [
             "R-Wpn-Missile2A-T"
         ],
@@ -6423,7 +6432,7 @@
         "msgName": "RES_WT9_ATM",
         "name": "Scourge Missile Hardpoint",
         "redStructures": [
-            "WallTower06"
+            "WallTower-HvATrocket"
         ],
         "requiredResearch": [
             "R-Wpn-Missile2A-T"
@@ -6440,6 +6449,9 @@
         "id": "R-Defense-WallTower-HvyA-Trocket",
         "msgName": "RES_WT12_HAT",
         "name": "Tank Killer Hardpoint",
+		"redStructures": [
+            "WallTower06"
+        ],
         "requiredResearch": [
             "R-Wpn-Rocket07-Tank-Killer"
         ],
@@ -8392,6 +8404,10 @@
         "iconID": "IMAGE_RES_WEAPONTECH",
         "id": "R-Wpn-Missile2A-T",
         "name": "Scourge Missile",
+		"redComponents": [
+            "Rocket-HvyA-T",
+            "Rocket-VTOL-HvyA-T"
+        ],
         "requiredResearch": [
             "R-Wpn-Missile-Accuracy01"
         ],
