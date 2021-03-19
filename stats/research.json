@@ -6306,6 +6306,9 @@
         "id": "R-Defense-PulseLas",
         "msgName": "RES_EMP_PulseLas",
         "name": "Pulse Laser Emplacement",
+		"redStructures": [
+			"Emplacement-PrisLas"
+		],
         "requiredResearch": [
             "R-Wpn-Laser02"
         ],
@@ -8027,6 +8030,10 @@
         "keyTopic": 1,
         "msgName": "RES_W_LAS2",
         "name": "Pulse Laser",
+		"redComponents": [
+		    "Laser3BEAM-VTOL",
+            "Laser3BEAMMk1"
+        ],
         "requiredResearch": [
             "R-Wpn-Laser01"
         ],
