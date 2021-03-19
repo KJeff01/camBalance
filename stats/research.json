@@ -1258,6 +1258,9 @@
         "id": "R-Defense-Tower03",
         "msgName": "RES_TOWER3",
         "name": "Heavy Machinegun Guard Tower",
+		"redStructures": [
+            "GuardTower1"
+        ],		
         "requiredResearch": [
             "R-Wpn-MG3Mk1"
         ],
@@ -2639,7 +2642,6 @@
         "researchPoints": 60,
         "researchPower": 1,
         "resultComponents": [
-            "MG1-VTOL",
             "MG1Mk1"
         ],
         "statID": "MG1Mk1"
@@ -2650,13 +2652,15 @@
         "keyTopic": 1,
         "msgName": "RES_MG2MK1",
         "name": "Twin Machinegun",
+		"redComponents": [
+		    "MG1Mk1"
+        ],
         "requiredResearch": [
             "R-Wpn-MG-Damage01"
         ],
         "researchPoints": 1200,
         "researchPower": 37,
         "resultComponents": [
-            "MG2-VTOL",
             "MG2Mk1"
         ],
         "statID": "MG2Mk1"
@@ -2667,6 +2671,9 @@
         "keyTopic": 1,
         "msgName": "RES_MG3MK1",
         "name": "Heavy Machinegun",
+		"redComponents": [
+		    "MG2Mk1"
+        ],
         "requiredResearch": [
             "R-Wpn-MG2Mk1",
             "R-Wpn-MG-Damage02"
@@ -3536,6 +3543,9 @@
         "id": "R-Defense-RotMG",
         "msgName": "RES_DEF_RotMG",
         "name": "Assault Gun Guard Tower",
+		"redStructures": [
+            "GuardTower3"
+        ],
         "requiredResearch": [
             "R-Wpn-MG4"
         ],
@@ -5620,9 +5630,7 @@
         "msgName": "RES_W_MG4",
         "name": "Assault Gun",
         "redComponents": [
-            "MG1-VTOL",
             "MG1Mk1",
-            "MG2-VTOL",
             "MG2Mk1",
             "MG3-VTOL",
             "MG3Mk1"
