@@ -2992,14 +2992,14 @@
                 "filterParameter": "ImpactClass",
                 "filterValue": "ROCKET",
                 "parameter": "Damage",
-                "value": 60
+                "value": 30
             },
             {
                 "class": "Weapon",
                 "filterParameter": "ImpactClass",
                 "filterValue": "ROCKET",
                 "parameter": "RadiusDamage",
-                "value": 60
+                "value": 30
             }
         ],
         "statID": "Rocket-Pod",
@@ -3022,14 +3022,14 @@
                 "filterParameter": "ImpactClass",
                 "filterValue": "ROCKET",
                 "parameter": "Damage",
-                "value": 60
+                "value": 20
             },
             {
                 "class": "Weapon",
                 "filterParameter": "ImpactClass",
                 "filterValue": "ROCKET",
                 "parameter": "RadiusDamage",
-                "value": 60
+                "value": 20
             }
         ],
         "statID": "Rocket-Pod",
@@ -5888,14 +5888,14 @@
                 "filterParameter": "ImpactClass",
                 "filterValue": "ROCKET",
                 "parameter": "Damage",
-                "value": 60
+                "value": 35
             },
             {
                 "class": "Weapon",
                 "filterParameter": "ImpactClass",
                 "filterValue": "ROCKET",
                 "parameter": "RadiusDamage",
-                "value": 60
+                "value": 35
             }
         ],
         "statID": "Rocket-Pod",
@@ -5947,14 +5947,14 @@
                 "filterParameter": "ImpactClass",
                 "filterValue": "ROCKET",
                 "parameter": "Damage",
-                "value": 30
+                "value": 20
             },
             {
                 "class": "Weapon",
                 "filterParameter": "ImpactClass",
                 "filterValue": "ROCKET",
                 "parameter": "RadiusDamage",
-                "value": 30
+                "value": 20
             }
         ],
         "statID": "Rocket-Pod",
