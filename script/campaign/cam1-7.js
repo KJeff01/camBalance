@@ -280,6 +280,11 @@ function eventStartLevel()
 	camUpgradeOnMapTemplates(cTempl.bjeep, cTempl.bjeepheavy, SCAV_7);
 	camUpgradeOnMapTemplates(cTempl.rbjeep, cTempl.rbjeep8, SCAV_7);
 
+// New MRA Mantis Tracks units on the hill
+	addDroid(NEW_PARADIGM, 29, 16, "MRA Manits Tracks", "Body12SUP", "tracked01", "", "", "Rocket-MRL");
+	addDroid(NEW_PARADIGM, 29, 17, "MRA Manits Tracks", "Body12SUP", "tracked01", "", "", "Rocket-MRL");
+	addDroid(NEW_PARADIGM, 29, 18, "MRA Manits Tracks", "Body12SUP", "tracked01", "", "", "Rocket-MRL");
+
 	camSetEnemyBases({
 		"ScavMiddleGroup": {
 			cleanup: "scavMiddle",
