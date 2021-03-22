@@ -6275,7 +6275,7 @@
         "msgName": "RES_EMP_HvAM",
         "name": "Archangel Missile Battery",
         "redStructures": [
-            "R-Wpn-MdArtMissile"
+            "Emplacement-MdART-pit"
         ],
         "requiredResearch": [
             "R-Wpn-HvArtMissile"
@@ -8714,7 +8714,6 @@
 			"RailGun1Mk1"
         ],		
         "requiredResearch": [
-			"RailGun1-VTOL",
 			"R-Wpn-RailGun01"
         ],
         "researchPoints": 28800,
