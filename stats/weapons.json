@@ -221,7 +221,7 @@
         "effectSize": 1,
         "facePlayer": 1,
         "fireOnMove": 1,
-        "firePause": 20,
+        "firePause": 30,
         "flightGfx": "FXLThrow.PIE",
         "flightSpeed": 600,
         "hitGfx": "FXMETHIT.PIE",
