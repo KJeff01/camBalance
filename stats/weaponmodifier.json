@@ -18,7 +18,7 @@
     "ANTI TANK": {
         "Half-Tracked": 120,
         "Hover": 115,
-        "Legged": 30,
+        "Legged": 35,
         "Lift": 20,
         "Tracked": 110,
         "Wheeled": 125
