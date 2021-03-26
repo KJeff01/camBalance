@@ -6599,6 +6599,52 @@
         "subgroupIconID": "IMAGE_RES_GRPUPG",
         "techCode": 1
     },
+    "R-Defense-WallUpgrade10": {
+        "iconID": "IMAGE_RES_DEFENCE",
+        "id": "R-Defense-WallUpgrade10",
+        "imdName": "BLWALLH.PIE",
+        "results": [
+            {
+                "class": "Building",
+                "filterParameter": "Type",
+                "filterValue": "Wall",
+                "parameter": "Armour",
+                "value": 30
+            },
+            {
+                "class": "Building",
+                "filterParameter": "Type",
+                "filterValue": "Wall",
+                "parameter": "HitPoints",
+                "value": 30
+            }
+        ],
+        "subgroupIconID": "IMAGE_RES_GRPUPG",
+        "techCode": 1
+    },
+    "R-Defense-WallUpgrade11": {
+        "iconID": "IMAGE_RES_DEFENCE",
+        "id": "R-Defense-WallUpgrade11",
+        "imdName": "BLWALLH.PIE",
+        "results": [
+            {
+                "class": "Building",
+                "filterParameter": "Type",
+                "filterValue": "Wall",
+                "parameter": "Armour",
+                "value": 30
+            },
+            {
+                "class": "Building",
+                "filterParameter": "Type",
+                "filterValue": "Wall",
+                "parameter": "HitPoints",
+                "value": 30
+            }
+        ],
+        "subgroupIconID": "IMAGE_RES_GRPUPG",
+        "techCode": 1
+    },
     "R-Struc-Materials07": {
         "iconID": "IMAGE_RES_STRUCTURETECH",
         "id": "R-Struc-Materials07",
@@ -6668,6 +6714,52 @@
         ],
         "researchPoints": 16000,
         "researchPower": 450,
+        "results": [
+            {
+                "class": "Building",
+                "filterParameter": "Type",
+                "filterValue": "Structure",
+                "parameter": "Armour",
+                "value": 30
+            },
+            {
+                "class": "Building",
+                "filterParameter": "Type",
+                "filterValue": "Structure",
+                "parameter": "HitPoints",
+                "value": 30
+            }
+        ],
+        "subgroupIconID": "IMAGE_RES_GRPUPG",
+        "techCode": 1
+    },
+    "R-Struc-Materials10": {
+        "iconID": "IMAGE_RES_STRUCTURETECH",
+        "id": "R-Struc-Materials10",
+        "imdName": "icmolql.pie",
+        "results": [
+            {
+                "class": "Building",
+                "filterParameter": "Type",
+                "filterValue": "Structure",
+                "parameter": "Armour",
+                "value": 30
+            },
+            {
+                "class": "Building",
+                "filterParameter": "Type",
+                "filterValue": "Structure",
+                "parameter": "HitPoints",
+                "value": 30
+            }
+        ],
+        "subgroupIconID": "IMAGE_RES_GRPUPG",
+        "techCode": 1
+    },
+    "R-Struc-Materials11": {
+        "iconID": "IMAGE_RES_STRUCTURETECH",
+        "id": "R-Struc-Materials11",
+        "imdName": "icmolql.pie",
         "results": [
             {
                 "class": "Building",
