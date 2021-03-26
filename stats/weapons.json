@@ -1353,7 +1353,7 @@
     "Cyb-Wpn-Rail1": {
         "buildPoints": 800,
         "buildPower": 200,
-        "damage": 210,
+        "damage": 200,
         "effectSize": 100,
         "explosionWav": "gaussgun.ogg",
         "facePlayer": 1,
@@ -2943,7 +2943,7 @@
     "NX-Cyb-Rail1": {
         "buildPoints": 800,
         "buildPower": 200,
-        "damage": 210,
+        "damage": 200,
         "effectSize": 100,
         "explosionWav": "smlexpl.ogg",
         "facePlayer": 1,
@@ -3221,7 +3221,7 @@
     "RailGun1-VTOL": {
         "buildPoints": 1000,
         "buildPower": 250,
-        "damage": 420,
+        "damage": 400,
         "designable": 1,
         "effectSize": 75,
         "explosionWav": "smlexpl.ogg",
@@ -3258,7 +3258,7 @@
     "RailGun1Mk1": {
         "buildPoints": 1000,
         "buildPower": 250,
-        "damage": 210,
+        "damage": 200,
         "designable": 1,
         "effectSize": 100,
         "explosionWav": "gaussgun.ogg",
@@ -3295,7 +3295,7 @@
     "RailGun2-VTOL": {
         "buildPoints": 1200,
         "buildPower": 300,
-        "damage": 630,
+        "damage": 600,
         "designable": 1,
         "effectSize": 100,
         "explosionWav": "lrgexpl.ogg",
@@ -3332,7 +3332,7 @@
     "RailGun2Mk1": {
         "buildPoints": 1200,
         "buildPower": 300,
-        "damage": 315,
+        "damage": 300,
         "designable": 1,
         "effectSize": 100,
         "explosionWav": "lrgexpl.ogg",
@@ -3369,7 +3369,7 @@
     "RailGun3Mk1": {
         "buildPoints": 1600,
         "buildPower": 400,
-        "damage": 420,
+        "damage": 400,
         "designable": 1,
         "effectSize": 150,
         "explosionWav": "lrgexpl.ogg",
