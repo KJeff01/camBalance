@@ -6602,6 +6602,7 @@
     "R-Defense-WallUpgrade10": {
         "iconID": "IMAGE_RES_DEFENCE",
         "id": "R-Defense-WallUpgrade10",
+        "keyTopic": 1,
         "imdName": "BLWALLH.PIE",
         "results": [
             {
@@ -6625,6 +6626,7 @@
     "R-Defense-WallUpgrade11": {
         "iconID": "IMAGE_RES_DEFENCE",
         "id": "R-Defense-WallUpgrade11",
+        "keyTopic": 1,
         "imdName": "BLWALLH.PIE",
         "results": [
             {
@@ -6736,6 +6738,7 @@
     "R-Struc-Materials10": {
         "iconID": "IMAGE_RES_STRUCTURETECH",
         "id": "R-Struc-Materials10",
+        "keyTopic": 1,
         "imdName": "icmolql.pie",
         "results": [
             {
@@ -6759,6 +6762,7 @@
     "R-Struc-Materials11": {
         "iconID": "IMAGE_RES_STRUCTURETECH",
         "id": "R-Struc-Materials11",
+        "keyTopic": 1,
         "imdName": "icmolql.pie",
         "results": [
             {
