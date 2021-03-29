@@ -429,6 +429,54 @@
         "subgroupIconID": "IMAGE_RES_GRPUPG",
         "techCode": 1
     },
+    "R-Cyborg-Metals10": {
+        "iconID": "IMAGE_RES_CYBORGTECH",
+        "id": "R-Cyborg-Metals10",
+        "keyTopic": 1,
+        "imdName": "icmolql.pie",
+        "results": [
+            {
+                "class": "Body",
+                "filterParameter": "BodyClass",
+                "filterValue": "Cyborgs",
+                "parameter": "Armour",
+                "value": 30
+            },
+            {
+                "class": "Body",
+                "filterParameter": "BodyClass",
+                "filterValue": "Cyborgs",
+                "parameter": "HitPointPct",
+                "value": 30
+            }
+        ],
+        "subgroupIconID": "IMAGE_RES_GRPUPG",
+        "techCode": 1
+    },
+    "R-Cyborg-Metals11": {
+        "iconID": "IMAGE_RES_CYBORGTECH",
+        "id": "R-Cyborg-Metals11",
+        "keyTopic": 1,
+        "imdName": "icmolql.pie",
+        "results": [
+            {
+                "class": "Body",
+                "filterParameter": "BodyClass",
+                "filterValue": "Cyborgs",
+                "parameter": "Armour",
+                "value": 30
+            },
+            {
+                "class": "Body",
+                "filterParameter": "BodyClass",
+                "filterValue": "Cyborgs",
+                "parameter": "HitPointPct",
+                "value": 30
+            }
+        ],
+        "subgroupIconID": "IMAGE_RES_GRPUPG",
+        "techCode": 1
+    },
 	"R-Cyborg-Armor-Heat01": {
         "iconID": "IMAGE_RES_CYBORGTECH",
         "id": "R-Cyborg-Armor-Heat01",
@@ -553,6 +601,40 @@
         ],
         "researchPoints": 12000,
         "researchPower": 375,
+        "results": [
+            {
+                "class": "Body",
+                "filterParameter": "BodyClass",
+                "filterValue": "Cyborgs",
+                "parameter": "Thermal",
+                "value": 40
+            }
+        ],
+        "subgroupIconID": "IMAGE_RES_GRPUPG",
+        "techCode": 1
+    },
+    "R-Cyborg-Armor-Heat07": {
+        "iconID": "IMAGE_RES_CYBORGTECH",
+        "id": "R-Cyborg-Armor-Heat07",
+        "keyTopic": 1,
+        "imdName": "icamrhot.pie",
+        "results": [
+            {
+                "class": "Body",
+                "filterParameter": "BodyClass",
+                "filterValue": "Cyborgs",
+                "parameter": "Thermal",
+                "value": 40
+            }
+        ],
+        "subgroupIconID": "IMAGE_RES_GRPUPG",
+        "techCode": 1
+    },
+    "R-Cyborg-Armor-Heat08": {
+        "iconID": "IMAGE_RES_CYBORGTECH",
+        "id": "R-Cyborg-Armor-Heat08",
+        "keyTopic": 1,
+        "imdName": "icamrhot.pie",
         "results": [
             {
                 "class": "Body",
@@ -835,6 +917,52 @@
         "subgroupIconID": "IMAGE_RES_GRPUPG",
         "techCode": 1
     },
+	"R-Vehicle-Metals10": {
+        "iconID": "IMAGE_RES_DROIDTECH",
+        "id": "R-Vehicle-Metals10",
+        "imdName": "icmolql.pie",
+        "keyTopic": 1,
+        "results": [
+            {
+                "class": "Body",
+                "filterParameter": "BodyClass",
+                "filterValue": "Droids",
+                "parameter": "Armour",
+                "value": 30
+            },
+            {
+                "class": "Body",
+                "filterParameter": "BodyClass",
+                "filterValue": "Droids",
+                "parameter": "HitPointPct",
+                "value": 30
+            }
+        ],
+        "subgroupIconID": "IMAGE_RES_GRPUPG"
+    },
+	"R-Vehicle-Metals11": {
+        "iconID": "IMAGE_RES_DROIDTECH",
+        "id": "R-Vehicle-Metals11",
+        "imdName": "icmolql.pie",
+        "keyTopic": 1,
+        "results": [
+            {
+                "class": "Body",
+                "filterParameter": "BodyClass",
+                "filterValue": "Droids",
+                "parameter": "Armour",
+                "value": 30
+            },
+            {
+                "class": "Body",
+                "filterParameter": "BodyClass",
+                "filterValue": "Droids",
+                "parameter": "HitPointPct",
+                "value": 30
+            }
+        ],
+        "subgroupIconID": "IMAGE_RES_GRPUPG"
+    },
 	"R-Vehicle-Armor-Heat01": {
         "iconID": "IMAGE_RES_DROIDTECH",
         "id": "R-Vehicle-Armor-Heat01",
@@ -959,6 +1087,40 @@
         ],
         "researchPoints": 15000,
         "researchPower": 450,
+        "results": [
+            {
+                "class": "Body",
+                "filterParameter": "BodyClass",
+                "filterValue": "Droids",
+                "parameter": "Thermal",
+                "value": 40
+            }
+        ],
+        "subgroupIconID": "IMAGE_RES_GRPUPG",
+        "techCode": 1
+    },
+    "R-Vehicle-Armor-Heat07": {
+        "iconID": "IMAGE_RES_DROIDTECH",
+        "id": "R-Vehicle-Armor-Heat07",
+		"keyTopic": 1,
+        "imdName": "icamrhot.pie",
+        "results": [
+            {
+                "class": "Body",
+                "filterParameter": "BodyClass",
+                "filterValue": "Droids",
+                "parameter": "Thermal",
+                "value": 40
+            }
+        ],
+        "subgroupIconID": "IMAGE_RES_GRPUPG",
+        "techCode": 1
+    },
+    "R-Vehicle-Armor-Heat08": {
+        "iconID": "IMAGE_RES_DROIDTECH",
+        "id": "R-Vehicle-Armor-Heat08",
+		"keyTopic": 1,
+        "imdName": "icamrhot.pie",
         "results": [
             {
                 "class": "Body",
