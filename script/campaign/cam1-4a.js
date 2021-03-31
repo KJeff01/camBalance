@@ -8,14 +8,14 @@ const NEW_PARADIGM_RES = [
 	"R-Wpn-Flamer-Damage03", "R-Wpn-Flamer-Range01", "R-Wpn-Flamer-ROF01",
 	"R-Defense-WallUpgrade03","R-Struc-Materials03", "R-Vehicle-Engine02",
 	"R-Struc-RprFac-Upgrade03", "R-Wpn-Rocket-Damage02", "R-Wpn-Rocket-ROF03",
-	"R-Vehicle-Metals02", "R-Wpn-Mortar-Damage03", "R-Wpn-Rocket-Accuracy01",
+	"R-Vehicle-Metals02", "R-Wpn-Mortar-Damage03",
 	"R-Wpn-RocketSlow-Damage02", "R-Wpn-Mortar-ROF01",
 ];
 const SCAVENGER_RES = [
 	"R-Wpn-Flamer-Damage03", "R-Wpn-Flamer-Range01", "R-Wpn-Flamer-ROF01",
 	"R-Wpn-MG-Damage04", "R-Wpn-MG-ROF01", "R-Wpn-Rocket-Damage02",
 	"R-Wpn-Cannon-Damage02", "R-Wpn-Mortar-Damage03", "R-Wpn-Mortar-ROF01",
-	"R-Wpn-Rocket-Accuracy01", "R-Wpn-Rocket-ROF03", "R-Vehicle-Metals02",
+	"R-Wpn-Rocket-ROF03", "R-Vehicle-Metals02",
 	"R-Defense-WallUpgrade03", "R-Struc-Materials03",
 ];
 
@@ -195,7 +195,7 @@ function eventStartLevel()
 			order: CAM_ORDER_ATTACK,
 			groupSize: 4,
 			maxSize: 6,         // this one was exclusively producing trucks
-			throttle: camChangeOnDiff(camSecondsToMilliseconds(40)),    // but we simplify this out
+			throttle: camChangeOnDiff(camSecondsToMilliseconds(55)),    // but we simplify this out
 			templates: [ cTempl.npmmct, cTempl.npsmct, cTempl.npsmc ]
 		},
 		"MediumNPFactory": {
@@ -203,7 +203,7 @@ function eventStartLevel()
 			order: CAM_ORDER_ATTACK,
 			groupSize: 4,
 			maxSize: 6,
-			throttle: camChangeOnDiff(camSecondsToMilliseconds(40)),
+			throttle: camChangeOnDiff(camSecondsToMilliseconds(45)),
 			templates: [ cTempl.npmrl, cTempl.nphmg, cTempl.npsbb, cTempl.npmor ]
 		},
 	});
