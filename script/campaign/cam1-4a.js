@@ -77,16 +77,14 @@ camAreaEvent("LandingZoneTrigger", function()
 function NPBaseDetect()
 {
 	// Send tanks
-	camManageGroup(camMakeGroup("AttackGroupLight"), CAM_ORDER_DEFEND, {
+	camManageGroup(camMakeGroup("AttackGroupLight"), CAM_ORDER_ATTACK, {
 		pos: camMakePos("nearSensor"),
 		radius: 10,
-		regroup: true
 	});
 
-	camManageGroup(camMakeGroup("AttackGroupMedium"), CAM_ORDER_DEFEND, {
+	camManageGroup(camMakeGroup("AttackGroupMedium"), CAM_ORDER_ATTACK, {
 		pos: camMakePos("nearSensor"),
 		radius: 10,
-		regroup: true
 	});
 
 	camEnableFactory("HeavyNPFactory");
