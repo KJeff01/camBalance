@@ -431,3 +431,74 @@ function __camSetOffworldLimits()
 	setStructureLimits("A0CommandCentre", 0, CAM_HUMAN_PLAYER);
 	setStructureLimits("A0ComDroidControl", 0, CAM_HUMAN_PLAYER);
 }
+
+function __camGetExpRangeForDifficulty()
+{
+	var ranks = {
+		rookie: 0,
+		green: 4,
+		trained: 8,
+		regular: 16,
+		professional: 32,
+		veteran: 64,
+		elite: 128,
+		special: 256,
+		hero: 512,
+	}; //see brain.json
+	var exp = 0;
+
+	switch (difficulty)
+	{
+		case EASY:
+			exp = [ranks.rookie, ranks.green, ranks.trained];
+			break;
+		case MEDIUM:
+			exp = [ranks.trained, ranks.regular, ranks.professional];
+			break;
+		case HARD:
+			exp = [ranks.professional, ranks.veteran, ranks.elite];
+			break;
+		case INSANE:
+			exp = [ranks.elite, ranks.special, ranks.hero];
+			break;
+		default:
+			exp = [ranks.trained, ranks.regular, ranks.professional];
+	}
+
+	return exp;
+}
+
+function __camSetOnMapEnemyUnitExp()
+{
+	enumDroid(NEW_PARADIGM)
+	.concat(enumDroid(THE_COLLECTIVE))
+	.concat(enumDroid(NEXUS))
+	.concat(enumDroid(SCAV_6))
+	.concat(enumDroid(SCAV_7))
+	.forEach(function(obj) {
+		if (!allianceExistsBetween(CAM_HUMAN_PLAYER, obj.player) && //may have friendly units as other player
+			obj.droidType !== DROID_CONSTRUCT &&
+			obj.droidType !== DROID_REPAIR)
+		{
+			camSetDroidExperience(obj);
+		}
+	});
+}
+
+function camSetDroidExperience(droid)
+{
+	if (droid.player === CAM_HUMAN_PLAYER)
+	{
+		return;
+	}
+
+	var expRange = __camGetExpRangeForDifficulty();
+	var exp = expRange[camRand(expRange.length)];
+
+	if (droid.droidType === DROID_COMMAND || droid.droidType === DROID_SENSOR)
+	{
+		exp = exp * 2;
+	}
+
+	setDroidExperience(droid, exp);
+}
