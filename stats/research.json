@@ -2154,13 +2154,12 @@
     "R-Vehicle-Body08": {
         "iconID": "IMAGE_RES_DROIDTECH",
         "id": "R-Vehicle-Body08",
-        "keyTopic": 1,
         "msgName": "RES_V_B08",
         "name": "Medium Body - Scorpion",
         "requiredResearch": [
             "R-Vehicle-Body05",
 			"R-Vehicle-Body04",
-            "R-Vehicle-Metals02"
+            "R-Vehicle-Metals01"
         ],
         "researchPoints": 2400,
         "researchPower": 75,
