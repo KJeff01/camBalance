@@ -58,8 +58,8 @@ camAreaEvent("LandingZoneTrigger", function()
 	var lz = getObject("LandingZone2"); // will override later
 	setNoGoArea(lz.x, lz.y, lz.x2, lz.y2, CAM_HUMAN_PLAYER);
 
-	// Give extra 30 minutes.
-	setMissionTime(camChangeOnDiff(camMinutesToSeconds(30)) + getMissionTime());
+	// Give extra 40 minutes.
+	setMissionTime(camChangeOnDiff(camMinutesToSeconds(40)) + getMissionTime());
 	camSetStandardWinLossConditions(CAM_VICTORY_OFFWORLD, "SUB_1_5S", {
 		area: "RTLZ",
 		message: "C1-4_LZ",
@@ -193,15 +193,15 @@ function eventStartLevel()
 			order: CAM_ORDER_ATTACK,
 			groupSize: 4,
 			maxSize: 6,         // this one was exclusively producing trucks
-			throttle: camChangeOnDiff(camSecondsToMilliseconds(55)),    // but we simplify this out
-			templates: [ cTempl.npmmct, cTempl.npsmct, cTempl.npsmc ]
+			throttle: camChangeOnDiff(camSecondsToMilliseconds(60)),    // but we simplify this out
+			templates: [ cTempl.npsmc, cTempl.npmmct, cTempl.npsmc, cTempl.npsmct ]
 		},
 		"MediumNPFactory": {
 			assembly: "MediumNPFactoryAssembly",
 			order: CAM_ORDER_ATTACK,
 			groupSize: 4,
 			maxSize: 6,
-			throttle: camChangeOnDiff(camSecondsToMilliseconds(45)),
+			throttle: camChangeOnDiff(camSecondsToMilliseconds(50)),
 			templates: [ cTempl.npmrl, cTempl.nphmg, cTempl.npsbb, cTempl.npmor ]
 		},
 	});
