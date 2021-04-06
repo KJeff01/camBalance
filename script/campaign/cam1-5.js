@@ -213,9 +213,8 @@ function eventStartLevel()
 	});
 
 	camSetArtifacts({
-		"NPCyborgFactory": { tech: "R-Struc-Factory-Upgrade03" },
 		"NPRightFactory": { tech: "R-Vehicle-Engine02" },
-		"NPLeftFactory": { tech: "R-Vehicle-Body08" }, //scorpion body
+		"NPLeftFactory": { tech: "R-Struc-Factory-Upgrade03" },
 		"NPResearchFacility": { tech: "R-Comp-SynapticLink" },
 	});
 
