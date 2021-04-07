@@ -137,6 +137,7 @@ function cam_eventStartLevel()
 	setTimer("__camAiPowerReset", camMinutesToMilliseconds(3)); //reset AI power every so often
 	setTimer("__camShowVictoryConditions", camMinutesToMilliseconds(5));
 	setTimer("__camTacticsTick", camSecondsToMilliseconds(0.1));
+	queue("__camSetOnMapEnemyUnitExp", camSecondsToMilliseconds(0.5));
 	queue("__camGrantSpecialResearch", camSecondsToMilliseconds(6));
 }
 
@@ -158,6 +159,7 @@ function cam_eventDroidBuilt(droid, structure)
 	{
 		return;
 	}
+	camSetDroidExperience(droid);
 	__camAddDroidToFactoryGroup(droid, structure);
 }
 
