@@ -264,7 +264,7 @@ function eventStartLevel()
 				count: -1,
 			},
 			groupSize: 4,
-			throttle: camChangeOnDiff(camSecondsToMilliseconds(30)),
+			throttle: camChangeOnDiff(camSecondsToMilliseconds(35)),
 			group: camMakeGroup("cybAttackers"),
 			templates: [cTempl.nxcyrail, cTempl.nxcyscou]
 		},
@@ -313,7 +313,7 @@ function eventStartLevel()
 				count: -1,
 			},
 			groupSize: 4,
-			throttle: camChangeOnDiff(camSecondsToMilliseconds(50)),
+			throttle: camChangeOnDiff(camSecondsToMilliseconds(45)),
 			templates: [cTempl.nxcyrail, cTempl.nxcyscou]
 		},
 	});
