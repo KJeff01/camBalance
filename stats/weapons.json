@@ -1701,7 +1701,7 @@
     "Howitzer03-Rot": {
         "buildPoints": 1600,
         "buildPower": 400,
-        "damage": 60,
+        "damage": 80,
         "designable": 1,
         "effectSize": 200,
         "explosionWav": "lrgexpl.ogg",
@@ -1728,7 +1728,7 @@
         "numExplosions": 2,
         "numRounds": 3,
         "radius": 192,
-        "radiusDamage": 300,
+        "radiusDamage": 240,
         "radiusLife": 10,
         "recoilValue": 250,
         "reloadTime": 150,
@@ -1744,7 +1744,7 @@
     "Howitzer105Mk1": {
         "buildPoints": 1000,
         "buildPower": 250,
-        "damage": 72,
+        "damage": 120,
         "designable": 1,
         "effectSize": 250,
         "explosionWav": "lrgexpl.ogg",
@@ -1785,7 +1785,7 @@
     "Howitzer150Mk1": {
         "buildPoints": 1250,
         "buildPower": 350,
-        "damage": 96,
+        "damage": 120,
         "designable": 1,
         "effectSize": 200,
         "explosionWav": "lrgexpl.ogg",
