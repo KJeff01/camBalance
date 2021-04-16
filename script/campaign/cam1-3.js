@@ -87,8 +87,8 @@ function NPReinforce()
 	if (getObject("NPHQ") !== null)
 	{
 		var list = [];
-		var count = 7 + camRand(6);
-		var scouts = [cTempl.nppod, cTempl.nphmg];
+		var count = 5 + camRand(5);
+		var scouts = [cTempl.nphmg, [cTempl.npblc, cTempl.nppod, cTempl.nphmg, [cTempl.npblc];
 
 		for (var i = 0; i < count; ++i)
 		{
@@ -101,7 +101,7 @@ function NPReinforce()
 				count: -1,
 			},
 		});
-		queue("NPReinforce", camSecondsToMilliseconds(160));
+		queue("NPReinforce", camSecondsToMilliseconds(180));
 	}
 }
 
