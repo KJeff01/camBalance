@@ -88,7 +88,7 @@ function NPReinforce()
 	{
 		var list = [];
 		var count = 5 + camRand(5);
-		var scouts = [cTempl.nphmg, [cTempl.npblc, cTempl.nppod, cTempl.nphmg, [cTempl.npblc];
+		var scouts = [cTempl.nphmg, cTempl.npblc, cTempl.nppod, cTempl.nphmg, cTempl.npblc];
 
 		for (var i = 0; i < count; ++i)
 		{
