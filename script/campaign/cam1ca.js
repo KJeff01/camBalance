@@ -134,7 +134,7 @@ function startTransporterAttack()
 
 function eventStartLevel()
 {
-	camSetExtraObjectiveMessage(_("Build non-wall structures on the plateau and destroy all New Paradigm reinforcements"));
+	camSetExtraObjectiveMessage(_("Build at least 7 non-wall structures on the plateau and destroy all New Paradigm reinforcements"));
 
 	totalTransportLoads = 0;
 	blipActive = false;
