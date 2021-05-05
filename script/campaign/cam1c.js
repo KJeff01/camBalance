@@ -181,9 +181,13 @@ function eventStartLevel()
 		setNoGoArea(ph.x, ph.y, ph.x2, ph.y2, i + 1);
 	}
 
-	if (difficulty >= HARD && difficulty <= INSANE)
+	if (difficulty === HARD)
 	{
 		setMissionTime(camMinutesToSeconds(100));
+	}
+	else if (difficulty === INSANE)
+	{
+		setMissionTime(camMinutesToSeconds(90));
 	}
 	else
 	{
