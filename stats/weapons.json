@@ -3616,7 +3616,7 @@
 	"Rocket-Pod": {
 		"buildPoints": 375,
 		"buildPower": 75,
-		"damage": 22,
+		"damage": 25,
 		"designable": 1,
 		"effectSize": 25,
 		"explosionWav": "smlexpl.ogg",
@@ -3629,7 +3629,7 @@
 		"hitpoints": 5,
 		"id": "Rocket-Pod",
 		"lightWorld": 1,
-		"longHit": 45,
+		"longHit": 50,
 		"longRange": 1088,
 		"maxElevation": 90,
 		"minElevation": -60,
