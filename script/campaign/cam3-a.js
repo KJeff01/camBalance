@@ -160,7 +160,7 @@ function groupPatrolNoTrigger()
 function cam3Setup()
 {
 	const NEXUS_RES = [
-		"R-Sys-Engineering03", "R-Defense-WallUpgrade08", "R-Struc-Materials08",
+		"R-Sys-Engineering03", "R-Defense-WallUpgrade07", "R-Struc-Materials07",
 		"R-Struc-VTOLPad-Upgrade06", "R-Wpn-Bomb-Damage03", "R-Sys-NEXUSrepair",
 		"R-Vehicle-Prop-Hover02", "R-Vehicle-Prop-VTOL02", "R-Cyborg-Legs02",
 		"R-Wpn-Mortar-Acc03", "R-Wpn-MG-Damage08", "R-Wpn-Mortar-ROF04",
