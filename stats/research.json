@@ -6802,7 +6802,7 @@
                 "filterParameter": "Type",
                 "filterValue": "Wall",
                 "parameter": "HitPoints",
-                "value": 400
+                "value": 100
             }
         ],
         "subgroupIconID": "IMAGE_RES_GRPUPG",
@@ -6938,7 +6938,7 @@
                 "filterParameter": "Type",
                 "filterValue": "Structure",
                 "parameter": "HitPoints",
-                "value": 400
+                "value": 100
             }
         ],
         "subgroupIconID": "IMAGE_RES_GRPUPG",
