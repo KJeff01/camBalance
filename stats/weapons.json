@@ -3572,7 +3572,7 @@
 	"Rocket-MRL": {
 		"buildPoints": 500,
 		"buildPower": 100,
-		"damage": 35,
+		"damage": 45,
 		"designable": 1,
 		"effectSize": 25,
 		"explosionWav": "lrgexpl.ogg",
@@ -3616,7 +3616,7 @@
 	"Rocket-Pod": {
 		"buildPoints": 375,
 		"buildPower": 75,
-		"damage": 25,
+		"damage": 30,
 		"designable": 1,
 		"effectSize": 25,
 		"explosionWav": "smlexpl.ogg",
