@@ -6019,7 +6019,8 @@
         "msgName": "RES_W_M3",
         "name": "Rotary Mortar - Pepperpot",
         "redComponents": [
-            "Mortar2Mk1"
+            "Mortar2Mk1",
+			"Rocket-MRL"
         ],
         "requiredResearch": [
 			"R-Wpn-Mortar02Hvy"
