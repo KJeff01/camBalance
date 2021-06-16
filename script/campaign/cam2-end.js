@@ -155,7 +155,7 @@ function tankAttackWest()
 
 function transporterAttack()
 {
-	var droids = [cTempl.cohact, cTempl.comhltat, cTempl.cohbbt, cTempl.cohct, cTempl.cohhpv];
+	var droids = [cTempl.cohact, cTempl.comhltat, cTempl.cohbbt, cTempl.cohhpv];
 
 	camSendReinforcement(THE_COLLECTIVE, camMakePos(camGenerateRandomMapCoordinate(startpos, 10, 1)), randomTemplates(droids, true),
 		CAM_REINFORCE_TRANSPORT, {
