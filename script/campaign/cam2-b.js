@@ -175,7 +175,7 @@ function eventStartLevel()
 				repair: 30,
 				count: -1,
 			},
-			templates: [cTempl.comatt, cTempl.cohct, cTempl.comct]
+			templates: [cTempl.comatt, cTempl.cohct, cTempl.commrp]
 		},
 		"COHeavyFacR-b1": {
 			assembly: "COHeavyFacR-b1Assembly",
@@ -187,7 +187,7 @@ function eventStartLevel()
 				repair: 30,
 				count: -1,
 			},
-			templates: [cTempl.comatt, cTempl.cohct, cTempl.comct]
+			templates: [cTempl.comatt, cTempl.cohct, cTempl.commrp]
 		},
 		"COCybFacL-b2": {
 			assembly: "COCybFacL-b2Assembly",
