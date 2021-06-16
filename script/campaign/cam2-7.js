@@ -187,7 +187,7 @@ function eventStartLevel()
 				repair: 20,
 				count: -1,
 			},
-			templates: [cTempl.comrotmh, cTempl.comhltat, cTempl.cohct]
+			templates: [cTempl.comrotmh, cTempl.comhltat, cTempl.cohact, cTempl.cohhpv]
 		},
 		"COCyborgFac-b4": {
 			assembly: "base4CybAssembly",
