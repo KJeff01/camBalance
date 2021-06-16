@@ -143,13 +143,13 @@ function eventStartLevel()
 				repair: 20,
 				count: -1,
 			},
-			templates: [cTempl.comct, cTempl.comatt, cTempl.comhpv]
+			templates: [cTempl.commrp, cTempl.comatt, cTempl.comhpv]
 		},
 		"COCyborgFactoryL": {
 			assembly: "COCyborgFactoryLAssembly",
 			order: CAM_ORDER_ATTACK,
 			groupSize: 5,
-			throttle: camChangeOnDiff(camSecondsToMilliseconds(30)),
+			throttle: camChangeOnDiff(camSecondsToMilliseconds(35)),
 			data: {
 				regroup: false,
 				repair: 30,
@@ -161,7 +161,7 @@ function eventStartLevel()
 			assembly: "COCyborgFactoryRAssembly",
 			order: CAM_ORDER_ATTACK,
 			groupSize: 5,
-			throttle: camChangeOnDiff(camSecondsToMilliseconds(30)),
+			throttle: camChangeOnDiff(camSecondsToMilliseconds(25)),
 			data: {
 				regroup: false,
 				repair: 30,
