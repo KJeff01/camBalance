@@ -421,7 +421,7 @@
 	"BabaPitRocket": {
 		"buildPoints": 375,
 		"buildPower": 75,
-		"damage": 25,
+		"damage": 30,
 		"effectSize": 25,
 		"explosionWav": "lrgexpl.ogg",
 		"facePlayer": 1,
@@ -500,7 +500,7 @@
 	"BabaRocket": {
 		"buildPoints": 10,
 		"buildPower": 10,
-		"damage": 20,
+		"damage": 30,
 		"effectSize": 50,
 		"explosionWav": "smlexpl.ogg",
 		"facePlayer": 1,
@@ -541,7 +541,7 @@
 	"BabaRocket8": {
 		"buildPoints": 10,
 		"buildPower": 10,
-		"damage": 20,
+		"damage": 30,
 		"effectSize": 50,
 		"explosionWav": "smlexpl.ogg",
 		"facePlayer": 1,
@@ -3783,7 +3783,7 @@
 	"Rocket-VTOL-Pod": {
 		"buildPoints": 375,
 		"buildPower": 75,
-		"damage": 50,
+		"damage": 60,
 		"designable": 1,
 		"effectSize": 25,
 		"explosionWav": "smlexpl.ogg",
