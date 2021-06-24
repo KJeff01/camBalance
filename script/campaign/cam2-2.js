@@ -112,7 +112,7 @@ function truckDefense()
 		return;
 	}
 
-	const list = ["CO-Tower-LtATRkt", "PillBox1", "CO-Tower-MdCan"];
+	const list = ["CO-Tower-LtATRkt", "PillBox1", "CO-WallTower-HvCan"];
 	camQueueBuilding(THE_COLLECTIVE, list[camRand(list.length)]);
 }
 
