@@ -78,7 +78,7 @@ function truckDefense()
 		return;
 	}
 
-	var list = ["AASite-QuadBof", "CO-WallTower-HvCan", "CO-Tower-RotMG"];
+	var list = ["AASite-QuadBof", "CO-Tower-HVCan", "CO-Tower-HvATRkt", "CO-Tower-RotMG"];
 	camQueueBuilding(THE_COLLECTIVE, list[camRand(list.length)]);
 }
 
