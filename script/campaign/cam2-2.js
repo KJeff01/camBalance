@@ -228,6 +228,6 @@ function eventStartLevel()
 
 	hackAddMessage("C22_OBJ1", PROX_MSG, CAM_HUMAN_PLAYER, true);
 
-	queue("vtolAttack", camMinutesToMilliseconds(2));
+	queue("vtolAttack", camSecondsToMilliseconds(1));
 	setTimer("truckDefense", camSecondsToMilliseconds(160));
 }
