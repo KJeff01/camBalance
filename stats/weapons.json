@@ -1242,7 +1242,7 @@
 	"CommandTurret1": {
 		"buildPoints": 100,
 		"buildPower": 100,
-		"damage": 1,
+		"damage": 0,
 		"effectSize": 1,
 		"facePlayer": 1,
 		"firePause": 1,
