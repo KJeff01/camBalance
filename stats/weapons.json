@@ -3279,7 +3279,6 @@
 		"muzzleGfx": "FXLGauss.PIE",
 		"name": "Needle Gun",
 		"numExplosions": 1,
-		"numRounds": 3,
 		"rotate": 180,
 		"shortHit": 80,
 		"shortRange": 1024,
