@@ -1785,7 +1785,7 @@
 	"Howitzer150Mk1": {
 		"buildPoints": 1250,
 		"buildPower": 350,
-		"damage": 120,
+		"damage": 150,
 		"designable": 1,
 		"effectSize": 200,
 		"explosionWav": "lrgexpl.ogg",
