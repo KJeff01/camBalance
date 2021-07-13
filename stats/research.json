@@ -8241,6 +8241,99 @@
         "subgroupIconID": "IMAGE_RES_GRPDAM",
         "techCode": 1
     },
+    "R-Wpn-Howitzer-Damage07": {
+        "iconID": "IMAGE_RES_WEAPONTECH",
+        "id": "R-Wpn-Howitzer-Damage07",
+		"keyTopic": 1,
+        "results": [
+            {
+                "class": "Weapon",
+                "filterParameter": "ImpactClass",
+                "filterValue": "HOWITZERS",
+                "parameter": "Damage",
+                "value": 0
+            },
+            {
+                "class": "Weapon",
+                "filterParameter": "ImpactClass",
+                "filterValue": "HOWITZERS",
+                "parameter": "RepeatDamage",
+                "value": 0
+            },
+            {
+                "class": "Weapon",
+                "filterParameter": "ImpactClass",
+                "filterValue": "HOWITZERS",
+                "parameter": "RadiusDamage",
+                "value": 125
+            }
+        ],
+        "statID": "Howitzer105Mk1",
+        "subgroupIconID": "IMAGE_RES_GRPDAM",
+        "techCode": 1
+    },
+    "R-Wpn-Howitzer-Damage08": {
+        "iconID": "IMAGE_RES_WEAPONTECH",
+        "id": "R-Wpn-Howitzer-Damage08",
+		"keyTopic": 1,
+        "results": [
+            {
+                "class": "Weapon",
+                "filterParameter": "ImpactClass",
+                "filterValue": "HOWITZERS",
+                "parameter": "Damage",
+                "value": 0
+            },
+            {
+                "class": "Weapon",
+                "filterParameter": "ImpactClass",
+                "filterValue": "HOWITZERS",
+                "parameter": "RepeatDamage",
+                "value": 0
+            },
+            {
+                "class": "Weapon",
+                "filterParameter": "ImpactClass",
+                "filterValue": "HOWITZERS",
+                "parameter": "RadiusDamage",
+                "value": 60
+            }
+        ],
+        "statID": "Howitzer105Mk1",
+        "subgroupIconID": "IMAGE_RES_GRPDAM",
+        "techCode": 1
+    },
+    "R-Wpn-Howitzer-Damage09": {
+        "iconID": "IMAGE_RES_WEAPONTECH",
+        "id": "R-Wpn-Howitzer-Damage09",
+		"keyTopic": 1,
+        "results": [
+            {
+                "class": "Weapon",
+                "filterParameter": "ImpactClass",
+                "filterValue": "HOWITZERS",
+                "parameter": "Damage",
+                "value": 0
+            },
+            {
+                "class": "Weapon",
+                "filterParameter": "ImpactClass",
+                "filterValue": "HOWITZERS",
+                "parameter": "RepeatDamage",
+                "value": 0
+            },
+            {
+                "class": "Weapon",
+                "filterParameter": "ImpactClass",
+                "filterValue": "HOWITZERS",
+                "parameter": "RadiusDamage",
+                "value": 60
+            }
+        ],
+        "statID": "Howitzer105Mk1",
+        "subgroupIconID": "IMAGE_RES_GRPDAM",
+        "techCode": 1
+    },
     "R-Wpn-Howitzer-ROF04": {
         "iconID": "IMAGE_RES_WEAPONTECH",
         "id": "R-Wpn-Howitzer-ROF04",
