@@ -38,9 +38,19 @@ function camEnemyBaseDetected_COMainBase()
 	camEnableFactory("COCyborgFactory-b1");
 	camEnableFactory("COCyborgFactory-b2");
 	camEnableFactory("COHeavyFactory-b2R");
-	enableTimeBasedFactories(); //Might as well since the player is attacking.
 }
 
+camAreaEvent("factoryTriggerWest", function(droid)
+{
+	enableTimeBasedFactories();
+
+});
+
+camAreaEvent("factoryTriggerEast", function(droid)
+{
+	enableTimeBasedFactories();
+
+});
 function camEnemyBaseEliminated_COUplinkBase()
 {
 	hackRemoveMessage("C26_OBJ1", PROX_MSG, CAM_HUMAN_PLAYER);
@@ -56,6 +66,19 @@ function camEnemyBaseDetected_COMediumBase()
 	camManageGroup(camMakeGroup(droids), CAM_ORDER_ATTACK, {
 		regroup: false,
 	});
+}
+
+function truckDefense()
+{
+	if (enumDroid(THE_COLLECTIVE, DROID_CONSTRUCT).length === 0)
+	{
+		removeTimer("truckDefense");
+		return;
+	}
+
+	var list = ["Emplacement-Howitzer105", "Emplacement-Rocket06-IDF", "Sys-CB-Tower01", "Emplacement-Howitzer105", "Emplacement-Rocket06-IDF", "Sys-SensoTower02"];
+	camQueueBuilding(THE_COLLECTIVE, list[camRand(list.length)], camMakePos("buildPos1"));
+	camQueueBuilding(THE_COLLECTIVE, list[camRand(list.length)], camMakePos("buildPos2"));
 }
 
 function northWestAttack()
@@ -214,8 +237,18 @@ function eventStartLevel()
 	});
 
 	hackAddMessage("C26_OBJ1", PROX_MSG, CAM_HUMAN_PLAYER, true);
+	
+	if (difficulty >= HARD)
+	{
+		addDroid(THE_COLLECTIVE, 26, 27, "Truck Panther Tracks", "Body6SUPP", "tracked01", "", "", "Spade1Mk1");
+		addDroid(THE_COLLECTIVE, 42, 4, "Truck Panther Tracks", "Body6SUPP", "tracked01", "", "", "Spade1Mk1");
 
+		camManageTrucks(THE_COLLECTIVE);
+		queue("truckDefense", camSecondsToMilliseconds(10));
+
+		setTimer("truckDefense", camChangeOnDiff(camMinutesToMilliseconds(6)));
+	}
 	queue("northWestAttack", camMinutesToMilliseconds(2));
 	queue("mainBaseAttackGroup", camMinutesToMilliseconds(3));
-	queue("enableTimeBasedFactories", camChangeOnDiff(camMinutesToMilliseconds(10)));
+	queue("enableTimeBasedFactories", camChangeOnDiff(camMinutesToMilliseconds(7)));
 }
