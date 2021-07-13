@@ -127,14 +127,14 @@
 	"area_11": {
 		"label": "factoryTriggerWest",
 		"subscriber": 0,
-		"pos1": [0, 5184],
-		"pos2": [2624, 5568]
+		"pos1": [0, 5248],
+		"pos2": [2688, 5632]
 	},
 	"area_12": {
 		"label": "factoryTriggerEast",
 		"subscriber": 0,
-		"pos1": [2496, 5440],
-		"pos2": [8064, 6336]
+		"pos1": [2560, 5504],
+		"pos2": [8064, 6400]
 	},
 
 	"object_0": {
