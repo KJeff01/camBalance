@@ -362,6 +362,17 @@
             "Defensive Strength: Low"
         ]
     },
+    "RES_TOWER2": {
+        "id": "RES_TOWER2",
+        "imdName": "MICAPSUL.pie",
+        "sequenceName": "res_struttech.ogg",
+        "text": [
+            "New Defensive Structure Available",
+            "Steel tower with twin machinegun",
+            "Automatically targets enemies within sensor range",
+            "Defensive Strength: Low"
+        ]
+    },
     "RES_TOWER3": {
         "id": "RES_TOWER3",
         "imdName": "MICAPSUL.pie",

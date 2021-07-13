@@ -1524,11 +1524,11 @@
 	"GuardTower2": {
 		"armour": 8,
 		"breadth": 1,
-		"buildPoints": 320,
+		"buildPoints": 300,
 		"buildPower": 110,
 		"ecmID": "ZNULLECM",
 		"height": 2,
-		"hitpoints": 210,
+		"hitpoints": 230,
 		"id": "GuardTower2",
 		"name": "Twin Machinegun Guard Tower",
 		"resistance": 150,
@@ -1540,7 +1540,7 @@
 		"thermal": 8,
 		"type": "DEFENSE",
 		"weapons": [
-			"MG2Mk1"
+			"MG2-Tower"
 		],
 		"width": 1
 	},
