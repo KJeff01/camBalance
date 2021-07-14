@@ -8251,14 +8251,7 @@
                 "filterParameter": "ImpactClass",
                 "filterValue": "HOWITZERS",
                 "parameter": "Damage",
-                "value": 0
-            },
-            {
-                "class": "Weapon",
-                "filterParameter": "ImpactClass",
-                "filterValue": "HOWITZERS",
-                "parameter": "RepeatDamage",
-                "value": 0
+                "value": 20
             },
             {
                 "class": "Weapon",
@@ -8282,14 +8275,7 @@
                 "filterParameter": "ImpactClass",
                 "filterValue": "HOWITZERS",
                 "parameter": "Damage",
-                "value": 0
-            },
-            {
-                "class": "Weapon",
-                "filterParameter": "ImpactClass",
-                "filterValue": "HOWITZERS",
-                "parameter": "RepeatDamage",
-                "value": 0
+                "value": 20
             },
             {
                 "class": "Weapon",
@@ -8313,14 +8299,7 @@
                 "filterParameter": "ImpactClass",
                 "filterValue": "HOWITZERS",
                 "parameter": "Damage",
-                "value": 0
-            },
-            {
-                "class": "Weapon",
-                "filterParameter": "ImpactClass",
-                "filterValue": "HOWITZERS",
-                "parameter": "RepeatDamage",
-                "value": 0
+                "value": 20
             },
             {
                 "class": "Weapon",
