@@ -4986,14 +4986,14 @@
                 "filterParameter": "ImpactClass",
                 "filterValue": "CANNON",
                 "parameter": "Damage",
-                "value": 20
+                "value": 25
             },
             {
                 "class": "Weapon",
                 "filterParameter": "ImpactClass",
                 "filterValue": "CANNON",
                 "parameter": "RadiusDamage",
-                "value": 20
+                "value": 25
             }
         ],
         "statID": "Cannon1Mk1",
@@ -5015,14 +5015,14 @@
                 "filterParameter": "ImpactClass",
                 "filterValue": "CANNON",
                 "parameter": "Damage",
-                "value": 20
+                "value": 30
             },
             {
                 "class": "Weapon",
                 "filterParameter": "ImpactClass",
                 "filterValue": "CANNON",
                 "parameter": "RadiusDamage",
-                "value": 20
+                "value": 30
             }
         ],
         "statID": "Cannon1Mk1",
@@ -7670,14 +7670,14 @@
                 "filterParameter": "ImpactClass",
                 "filterValue": "CANNON",
                 "parameter": "Damage",
-                "value": 10
+                "value": 5
             },
             {
                 "class": "Weapon",
                 "filterParameter": "ImpactClass",
                 "filterValue": "CANNON",
                 "parameter": "RadiusDamage",
-                "value": 10
+                "value": 5
             }
         ],
         "statID": "Cannon1Mk1",
@@ -7700,14 +7700,14 @@
                 "filterParameter": "ImpactClass",
                 "filterValue": "CANNON",
                 "parameter": "Damage",
-                "value": 10
+                "value": 5
             },
             {
                 "class": "Weapon",
                 "filterParameter": "ImpactClass",
                 "filterValue": "CANNON",
                 "parameter": "RadiusDamage",
-                "value": 10
+                "value": 5
             }
         ],
         "statID": "Cannon1Mk1",
@@ -7731,14 +7731,14 @@
                 "filterParameter": "ImpactClass",
                 "filterValue": "CANNON",
                 "parameter": "FirePause",
-                "value": -5
+                "value": -10
             },
             {
                 "class": "Weapon",
                 "filterParameter": "ImpactClass",
                 "filterValue": "CANNON",
                 "parameter": "ReloadTime",
-                "value": -5
+                "value": -10
             }
         ],
         "statID": "Cannon1Mk1",
