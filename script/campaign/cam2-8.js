@@ -149,7 +149,7 @@ function eventStartLevel()
 			assembly: "COHeavyFacL-b2Assembly",
 			order: CAM_ORDER_ATTACK,
 			groupSize: 5,
-			throttle: camChangeOnDiff(camSecondsToMilliseconds(60)),
+			throttle: camChangeOnDiff(camSecondsToMilliseconds(70)),
 			data: {
 				regroup: false,
 				repair: 20,
@@ -161,7 +161,7 @@ function eventStartLevel()
 			assembly: "COHeavyFacR-b2Assembly",
 			order: CAM_ORDER_ATTACK,
 			groupSize: 5,
-			throttle: camChangeOnDiff(camSecondsToMilliseconds(60)),
+			throttle: camChangeOnDiff(camSecondsToMilliseconds(50)),
 			data: {
 				regroup: false,
 				repair: 20,
@@ -186,6 +186,6 @@ function eventStartLevel()
 
 	queue("setupLandGroups", camSecondsToMilliseconds(50));
 	queue("vtolAttack", camMinutesToMilliseconds(1));
-	queue("enableFactories", camChangeOnDiff(camMinutesToMilliseconds(1.5)));
+	queue("enableFactories", camChangeOnDiff(camMinutesToMilliseconds(2.5)));
 	setTimer("truckDefense", camChangeOnDiff(camMinutesToMilliseconds(3)));
 }
