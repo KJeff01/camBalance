@@ -78,8 +78,10 @@ function truckDefense()
 		return;
 	}
 
-	var list = ["AASite-QuadBof", "CO-Tower-HVCan", "CO-Tower-HvATRkt", "CO-Tower-RotMG"];
-	camQueueBuilding(THE_COLLECTIVE, list[camRand(list.length)]);
+	var list = ["Emplacement-Rocket06-IDF", "Emplacement-Howitzer150", "CO-Tower-HvATRkt", "CO-Tower-RotMG", "Sys-CB-Tower01"];
+	camQueueBuilding(THE_COLLECTIVE, list[camRand(list.length)], camMakePos("buildPos1"));
+	camQueueBuilding(THE_COLLECTIVE, list[camRand(list.length)], camMakePos("buildPos2"));
+	camQueueBuilding(THE_COLLECTIVE, list[camRand(list.length)], camMakePos("buildPos3"));
 }
 
 function eventStartLevel()
@@ -185,5 +187,5 @@ function eventStartLevel()
 	queue("setupLandGroups", camSecondsToMilliseconds(50));
 	queue("vtolAttack", camMinutesToMilliseconds(1));
 	queue("enableFactories", camChangeOnDiff(camMinutesToMilliseconds(1.5)));
-	setTimer("truckDefense", camMinutesToMilliseconds(2));
+	setTimer("truckDefense", camChangeOnDiff(camMinutesToMilliseconds(2)));
 }
