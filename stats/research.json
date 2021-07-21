@@ -3726,7 +3726,8 @@
         "msgName": "RES_DEF_RotMG",
         "name": "Assault Gun Guard Tower",
 		"redStructures": [
-            "GuardTower3"
+            "GuardTower3",
+			"GuardTower3H"
         ],
         "requiredResearch": [
             "R-Wpn-MG4"
@@ -3744,7 +3745,8 @@
         "msgName": "RES_EMP_RotMor",
         "name": "Pepperpot Pit",
         "redStructures": [
-            "Emplacement-MortarPit02"
+            "Emplacement-MortarPit02",
+			"Emplacement-MRL-pit"
         ],
         "requiredResearch": [
             "R-Wpn-Mortar3"
@@ -6472,9 +6474,6 @@
         "id": "R-Defense-MdArtMissile",
         "msgName": "RES_EMP_MdAM",
         "name": "Angel Missile Battery",
-        "redStructures": [
-            "Emplacement-MRL-pit"
-        ],
         "requiredResearch": [
             "R-Wpn-MdArtMissile"
         ],
@@ -6627,7 +6626,8 @@
         "msgName": "RES_WT12_HAT",
         "name": "Tank Killer Hardpoint",
 		"redStructures": [
-            "WallTower06"
+            "WallTower06",
+			"GuardTower6"
         ],
         "requiredResearch": [
             "R-Wpn-Rocket07-Tank-Killer"
