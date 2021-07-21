@@ -1162,7 +1162,7 @@
 		"height": 1,
 		"hitpoints": 200,
 		"id": "Emplacement-MRL-pit",
-		"name": "MRL Emplacement",
+		"name": "Mini-Rocket Battery",
 		"resistance": 150,
 		"sensorID": "DefaultSensor1Mk1",
 		"strength": "MEDIUM",
