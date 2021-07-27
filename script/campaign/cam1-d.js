@@ -77,7 +77,7 @@ function HoverGroupPatrol()
 		pos: camMakePos("attackPoint2"),
 		fallback: camMakePos("cybRetreatPoint"),
 		morale: 50,
-		regroup: true
+		regroup: false
 	});
 	camManageGroup(camMakeGroup("hoversDefense"), CAM_ORDER_PATROL, {
 		pos: [
