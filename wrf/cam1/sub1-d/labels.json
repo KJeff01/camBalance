@@ -45,19 +45,19 @@
 	},
 	"position_11": {
 		"label": "hoverDefense1",
-		"pos": [320, 8256]
+		"pos": [576, 2624]
 	},
 	"position_12": {
 		"label": "hoverDefense2",
-		"pos": [9664, 10560]
+		"pos": [1856, 2624]
 	},
 	"position_13": {
 		"label": "hoverDefense3",
-		"pos": [6080, 704]
+		"pos": [576, 3264]
 	},
 	"position_14": {
 		"label": "hoverDefense4",
-		"pos": [2752, 2368]
+		"pos": [1856, 3264]
 	},
 	"position_15": {
 		"label": "NPFactoryWAssembly",
