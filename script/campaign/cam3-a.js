@@ -80,6 +80,17 @@ function enableAllFactories()
 	}
 }
 
+function truckDefense()
+{
+	if (enumDroid(NEXUS, DROID_CONSTRUCT).length === 0)
+	{
+		return;
+	}
+
+	var list = ["Emplacement-Howitzer150", "Emplacement-MdART-pit"];
+	camQueueBuilding(NEXUS, list[camRand(list.length)], camMakePos("buildPos1"));
+	camQueueBuilding(NEXUS, list[camRand(list.length)], camMakePos("buildPos2"));
+}
 
 //Extra transport units are only awarded to those who start Gamma campaign
 //from the main menu.
@@ -318,7 +329,16 @@ function eventStartLevel()
 		},
 	});
 
-	camManageTrucks(NEXUS);
+	if (difficulty >= HARD)
+	{
+		addDroid(NEXUS, 8, 112, "Truck Retribution Hover", "Body7ABT", "hover02", "", "", "Spade1Mk1");
+
+		camManageTrucks(NEXUS);
+		queue("truckDefense", camSecondsToMilliseconds(10));
+
+		setTimer("truckDefense", camChangeOnDiff(camMinutesToMilliseconds(4.5)));
+	}
+
 	camPlayVideos(["CAM3_INT", "MB3A_MSG2"]);
 	startedFromMenu = false;
 
