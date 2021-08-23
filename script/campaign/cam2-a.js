@@ -354,7 +354,7 @@ function eventStartLevel()
 	queue("secondVideo", camSecondsToMilliseconds(12));
 	queue("groupPatrol", camChangeOnDiff(camMinutesToMilliseconds(1)));
 	queue("vtolAttack", camChangeOnDiff(camMinutesToMilliseconds(3)));
-	setTimer("truckDefense", camSecondsToMilliseconds(160));
+	setTimer("truckDefense", camChangeOnDiff(camMinutesToMilliseconds(3)));
 	setTimer("sendCOTransporter", camChangeOnDiff(camMinutesToMilliseconds(4)));
 	setTimer("mapEdgeDroids", camChangeOnDiff(camMinutesToMilliseconds(7)));
 }
