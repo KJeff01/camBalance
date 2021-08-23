@@ -408,5 +408,5 @@ function eventStartLevel()
 	hackAddMessage("C2C_OBJ1", PROX_MSG, CAM_HUMAN_PLAYER, true);
 
 	queue("activateGroups", camChangeOnDiff(camMinutesToMilliseconds(8)));
-	setTimer("truckDefense", camSecondsToMilliseconds(160));
+	setTimer("truckDefense", camChangeOnDiff(camMinutesToMilliseconds(3)));
 }
