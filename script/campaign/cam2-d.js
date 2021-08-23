@@ -150,6 +150,6 @@ function eventStartLevel()
 	camEnableFactory("COHeavyFactory");
 	camEnableFactory("COSouthCyborgFactory");
 
-	queue("vtolAttack", camMinutesToMilliseconds(2));
-	setTimer("truckDefense", camSecondsToMilliseconds(160));
+	queue("vtolAttack", camChangeOnDiff(camMinutesToMilliseconds(3)));
+	setTimer("truckDefense", camChangeOnDiff(camMinutesToMilliseconds(4)));
 }
