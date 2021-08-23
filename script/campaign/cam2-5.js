@@ -173,7 +173,7 @@ function eventStartLevel()
 
 	hackAddMessage("C25_OBJ1", PROX_MSG, CAM_HUMAN_PLAYER, true);
 
-	queue("setupDamHovers", camSecondsToMilliseconds(3));
+	queue("setupDamHovers", camChangeOnDiff(camMinutesToMilliseconds(4)));
 	queue("setupCyborgsEast", camChangeOnDiff(camMinutesToMilliseconds(3)));
 	queue("enableFactories", camChangeOnDiff(camMinutesToMilliseconds(8)));
 	queue("setupCyborgsNorth", camChangeOnDiff(camMinutesToMilliseconds(10)));
