@@ -245,7 +245,7 @@ function eventStartLevel()
 		setTimer("truckDefense", camChangeOnDiff(camMinutesToMilliseconds(4.5)));
 	}
 
-	queue("baseThreeVtolAttack", camSecondsToMilliseconds(30));
-	queue("baseFourVtolAttack", camMinutesToMilliseconds(1));
-	queue("enableFactoriesAndHovers", camChangeOnDiff(camMinutesToMilliseconds(1.5)));
+	queue("baseThreeVtolAttack", camChangeOnDiff(camSecondsToMilliseconds(90)));
+	queue("baseFourVtolAttack", camChangeOnDiff(camMinutesToMilliseconds(2)));
+	queue("enableFactoriesAndHovers", camChangeOnDiff(camMinutesToMilliseconds(2)));
 }
