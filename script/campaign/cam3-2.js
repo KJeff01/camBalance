@@ -294,7 +294,7 @@ function eventStartLevel()
 
 	hackAddMessage("C3-2_OBJ1", PROX_MSG, CAM_HUMAN_PLAYER);
 	queue("setAlphaExp", camSecondsToMilliseconds(2));
-	queue("setupPatrolGroups", camMinutesToMilliseconds(1.5));
+	queue("setupPatrolGroups", camChangeOnDiff(camMinutesToMilliseconds(2)));
 
 	setTimer("phantomFactoryNE", camChangeOnDiff(camMinutesToMilliseconds(3.5)));
 	setTimer("phantomFactorySW", camChangeOnDiff(camMinutesToMilliseconds(5.5)));
