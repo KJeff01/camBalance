@@ -244,7 +244,7 @@ function eventStartLevel()
 
 		setTimer("truckDefense", camChangeOnDiff(camMinutesToMilliseconds(6)));
 	}
-	queue("northWestAttack", camMinutesToMilliseconds(2));
-	queue("mainBaseAttackGroup", camMinutesToMilliseconds(3));
-	queue("enableTimeBasedFactories", camChangeOnDiff(camMinutesToMilliseconds(5)));
+	queue("northWestAttack", camChangeOnDiff(camMinutesToMilliseconds(3)));
+	queue("mainBaseAttackGroup", camChangeOnDiff(camMinutesToMilliseconds(4.5)));
+	queue("enableTimeBasedFactories", camChangeOnDiff(camMinutesToMilliseconds(6)));
 }
