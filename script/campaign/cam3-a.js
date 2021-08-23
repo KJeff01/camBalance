@@ -87,7 +87,7 @@ function truckDefense()
 		return;
 	}
 
-	var list = ["Emplacement-Howitzer150", "Emplacement-MdART-pit"];
+	var list = ["Emplacement-Howitzer150", "Emplacement-MdART-pit", "Emplacement-RotHow"];
 	camQueueBuilding(NEXUS, list[camRand(list.length)], camMakePos("buildPos1"));
 	camQueueBuilding(NEXUS, list[camRand(list.length)], camMakePos("buildPos2"));
 }
