@@ -240,7 +240,6 @@ function eventStartLevel()
 		addDroid(THE_COLLECTIVE, 42, 4, "Truck Panther Tracks", "Body6SUPP", "tracked01", "", "", "Spade1Mk1");
 
 		camManageTrucks(THE_COLLECTIVE);
-		queue("truckDefense", camSecondsToMilliseconds(10));
 
 		setTimer("truckDefense", camChangeOnDiff(camMinutesToMilliseconds(6)));
 	}
