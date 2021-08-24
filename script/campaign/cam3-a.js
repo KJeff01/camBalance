@@ -84,6 +84,7 @@ function truckDefense()
 {
 	if (enumDroid(NEXUS, DROID_CONSTRUCT).length === 0)
 	{
+		removeTimer("truckDefense");
 		return;
 	}
 
@@ -334,7 +335,6 @@ function eventStartLevel()
 		addDroid(NEXUS, 8, 112, "Truck Retribution Hover", "Body7ABT", "hover02", "", "", "Spade1Mk1");
 
 		camManageTrucks(NEXUS);
-		queue("truckDefense", camSecondsToMilliseconds(10));
 
 		setTimer("truckDefense", camChangeOnDiff(camMinutesToMilliseconds(4.5)));
 	}
