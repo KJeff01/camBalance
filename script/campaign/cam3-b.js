@@ -197,6 +197,19 @@ function activateNexusGroups()
 	});
 }
 
+function truckDefense()
+{
+	if (enumDroid(GAMMA, DROID_CONSTRUCT).length === 0)
+	{
+		removeTimer("truckDefense");
+		return;
+	}
+
+	var list = ["Emplacement-Howitzer105", "Emplacement-MdART-pit", "Emplacement-RotHow"];
+	camQueueBuilding(GAMMA, list[camRand(list.length)], camMakePos("buildPos1"));
+	camQueueBuilding(GAMMA, list[camRand(list.length)], camMakePos("buildPos2"));
+}
+
 //Take everything Gamma has and donate to Nexus.
 function trapSprung()
 {
@@ -215,6 +228,7 @@ function trapSprung()
 
 	setTimer("sendNXTransporter", camChangeOnDiff(camMinutesToMilliseconds(3)));
 	setTimer("sendNXlandReinforcements", camChangeOnDiff(camMinutesToMilliseconds(4)));
+	setTimer("truckDefense", camChangeOnDiff(camMinutesToMilliseconds(4.5)));
 }
 
 function setupCapture()
@@ -320,6 +334,13 @@ function eventStartLevel()
 			templates: [cTempl.nxcyrail, cTempl.nxcyscou, cTempl.nxcylas]
 		}
 	});
+
+	if (difficulty >= HARD)
+	{
+		addDroid(GAMMA, 28, 5, "Truck Python Tracks", "Body11ABT", "tracked01", "", "", "Spade1Mk1");
+
+		camManageTrucks(GAMMA);
+	}
 
 	setAlliance(GAMMA, CAM_HUMAN_PLAYER, true);
 	hackAddMessage("CM3B_GAMMABASE", PROX_MSG, CAM_HUMAN_PLAYER, true);
