@@ -1080,7 +1080,7 @@
 	"Cannon4AUTO-VTOL": {
 		"buildPoints": 700,
 		"buildPower": 175,
-		"damage": 180,
+		"damage": 195,
 		"designable": 1,
 		"effectSize": 50,
 		"explosionWav": "smlexpl.ogg",
@@ -1122,7 +1122,7 @@
 	"Cannon4AUTOMk1": {
 		"buildPoints": 700,
 		"buildPower": 175,
-		"damage": 60,
+		"damage": 65,
 		"designable": 1,
 		"effectSize": 50,
 		"explosionWav": "smlexpl.ogg",
@@ -1131,7 +1131,7 @@
 		"flightGfx": "FXTracer.PIE",
 		"flightSpeed": 1000,
 		"hitGfx": "FXGRDexl.PIE",
-		"hitpoints": 500,
+		"hitpoints": 600,
 		"id": "Cannon4AUTOMk1",
 		"lightWorld": 1,
 		"longHit": 50,
