@@ -138,8 +138,8 @@ function eventStartLevel()
 		},
 	});
 
-	camPlayVideos("FLIGHT");
-	hackAddMessage("C1-1_OBJ1", PROX_MSG, CAM_HUMAN_PLAYER, true);
+	camPlayVideos({video: "FLIGHT", type: CAMP_MSG});
+	hackAddMessage("C1-1_OBJ1", PROX_MSG, CAM_HUMAN_PLAYER, false);
 
 	queue("checkFrontBunkers", camSecondsToMilliseconds(5));
 }

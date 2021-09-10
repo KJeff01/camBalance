@@ -157,7 +157,7 @@ function eventStartLevel()
 	}
 
 	setMissionTime(camChangeOnDiff(camMinutesToSeconds(30)));
-	camPlayVideos("MB1CA_MSG");
+	camPlayVideos({video: "MB1CA_MSG", type: CAMP_MSG});
 
 	// first transport after 10 seconds
 	queue("startTransporterAttack", camSecondsToMilliseconds(10));

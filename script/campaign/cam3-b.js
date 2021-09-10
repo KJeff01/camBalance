@@ -228,7 +228,7 @@ function trapSprung()
 {
 	setAlliance(GAMMA, NEXUS, true);
 	setAlliance(GAMMA, CAM_HUMAN_PLAYER, false);
-	camPlayVideos("MB3_B_MSG3");
+	camPlayVideos({video: "MB3_B_MSG3", type: CAMP_MSG});
 	hackRemoveMessage("CM3B_GAMMABASE", PROX_MSG, CAM_HUMAN_PLAYER);
 
 	setMissionTime(camChangeOnDiff(camMinutesToSeconds(90)));
@@ -357,8 +357,8 @@ function eventStartLevel()
 	}
 
 	setAlliance(GAMMA, CAM_HUMAN_PLAYER, true);
-	hackAddMessage("CM3B_GAMMABASE", PROX_MSG, CAM_HUMAN_PLAYER, true);
-	camPlayVideos(["MB3_B_MSG", "MB3_B_MSG2"]);
+	hackAddMessage("CM3B_GAMMABASE", PROX_MSG, CAM_HUMAN_PLAYER, false);
+	camPlayVideos([{video: "MB3_B_MSG", type: CAMP_MSG}, {video: "MB3_B_MSG2", type: MISS_MSG}]);
 
 	changePlayerColour(GAMMA, 0);
 	setAlliance(GAMMA, CAM_HUMAN_PLAYER, true);

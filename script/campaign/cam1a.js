@@ -12,7 +12,7 @@ const SCAVENGER_RES = [
 // Player zero's droid enters area next to first oil patch.
 camAreaEvent("launchScavAttack", function(droid)
 {
-	camPlayVideos(["pcv456.ogg", "MB1A_MSG"]);
+	camPlayVideos(["pcv456.ogg", {video: "MB1A_MSG", type: MISS_MSG}]);
 	hackAddMessage("C1A_OBJ1", PROX_MSG, CAM_HUMAN_PLAYER, false);
 	// Send scavengers on war path if triggered above.
 	camManageGroup(camMakeGroup("scavAttack1", ENEMIES), CAM_ORDER_ATTACK, {
@@ -161,7 +161,7 @@ function eventStartLevel()
 	camCompleteRequiredResearch(SCAVENGER_RES, 7);
 
 	// Give player briefing.
-	hackAddMessage("CMB1_MSG", CAMP_MSG, CAM_HUMAN_PLAYER, false);
+	camPlayVideos({video: "CMB1_MSG", type: CAMP_MSG, immediate: false});
 	if (difficulty === HARD)
 	{
 		setMissionTime(camMinutesToSeconds(40));

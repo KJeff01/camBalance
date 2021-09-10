@@ -145,7 +145,7 @@ function eventStartLevel()
 
 	camManageTrucks(THE_COLLECTIVE);
 	truckDefense();
-	hackAddMessage("C2D_OBJ1", PROX_MSG, CAM_HUMAN_PLAYER, true);
+	hackAddMessage("C2D_OBJ1", PROX_MSG, CAM_HUMAN_PLAYER, false);
 
 	camEnableFactory("COHeavyFactory");
 	camEnableFactory("COSouthCyborgFactory");

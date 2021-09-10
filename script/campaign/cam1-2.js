@@ -11,7 +11,7 @@ const SCAVENGER_RES = [
 function exposeNorthBase()
 {
 	camDetectEnemyBase("NorthGroup"); // no problem if already detected
-	camPlayVideos("SB1_2_MSG2");
+	camPlayVideos({video: "SB1_2_MSG2", type: MISS_MSG});
 }
 
 function camArtifactPickup_ScavLab()

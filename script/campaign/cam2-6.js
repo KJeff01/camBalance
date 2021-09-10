@@ -232,8 +232,8 @@ function eventStartLevel()
 		},
 	});
 
-	hackAddMessage("C26_OBJ1", PROX_MSG, CAM_HUMAN_PLAYER, true);
-	
+	hackAddMessage("C26_OBJ1", PROX_MSG, CAM_HUMAN_PLAYER, false);
+
 	if (difficulty >= HARD)
 	{
 		addDroid(THE_COLLECTIVE, 26, 27, "Truck Panther Tracks", "Body6SUPP", "tracked01", "", "", "Spade1Mk1");
