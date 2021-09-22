@@ -81,6 +81,31 @@ function enableAllFactories()
 	camEnableFactory("NXcyborgFac2Arti");
 }
 
+function truckDefense()
+{
+	if (enumDroid(NEXUS, DROID_CONSTRUCT).length === 0)
+	{
+		removeTimer("truckDefense");
+		return;
+	}
+
+	var list = ["Emplacement-Howitzer150", "Emplacement-MdART-pit"];
+	var position;
+
+	if (truckLocCounter === 0)
+	{
+		position = camMakePos("buildPos1");
+		truckLocCounter += 1;
+	}
+	else
+	{
+		position = camMakePos("buildPos2");
+		truckLocCounter = 0;
+	}
+
+	camQueueBuilding(NEXUS, list[camRand(list.length)], position);
+}
+
 //Choose a target to fire the LasSat at. Automatically increases the limits
 //when no target is found in the area.
 function vaporizeTarget()
@@ -317,6 +342,15 @@ function eventStartLevel()
 			templates: [cTempl.nxcyrail, cTempl.nxcyscou, cTempl.nxcylas]
 		},
 	});
+
+	if (difficulty >= HARD)
+	{
+		addDroid(NEXUS, 15, 234, "Truck Retribution Hover", "Body7ABT", "hover02", "", "", "Spade1Mk1");
+
+		camManageTrucks(NEXUS);
+
+		setTimer("truckDefense", camChangeOnDiff(camMinutesToMilliseconds(4.5)));
+	}
 
 	camPlayVideos([{video: "MB3_AD1_MSG", type: CAMP_MSG}, {video: "MB3_AD1_MSG2", type: CAMP_MSG}, {video: "MB3_AD1_MSG3", type: MISS_MSG}]);
 	hackAddMessage("CM3D1_OBJ1", PROX_MSG, CAM_HUMAN_PLAYER);
