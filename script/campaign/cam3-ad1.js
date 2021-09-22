@@ -19,6 +19,7 @@ const NEXUS_RES = [
 ];
 var capturedSilos; // victory flag letting us know if we captured any silos.
 var mapLimit; //LasSat slowly creeps toward missile silos.
+var truckLocCounter;
 
 camAreaEvent("NEDefenseZone", function(droid) {
 	camEnableFactory("NXcyborgFac2Arti");
