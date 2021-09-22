@@ -356,6 +356,7 @@ function eventStartLevel()
 	hackAddMessage("CM3D1_OBJ1", PROX_MSG, CAM_HUMAN_PLAYER);
 	camEnableFactory("NXbase1VtolFacArti");
 	camEnableFactory("NXcyborgFac1");
+	truckLocCounter = 0;
 
 	queue("vaporizeTarget", camSecondsToMilliseconds(2));
 	queue("setupGroups", camSecondsToMilliseconds(5));
