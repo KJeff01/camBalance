@@ -101,7 +101,7 @@ function eventStructureBuilt(structure, droid)
 	}
 }
 
-camAreaEvent("scavBase3Cleanup", function(droid)
+camAreaEvent("factoryTrigger", function(droid)
 {
 	camEnableFactory("base4Factory");
 });
