@@ -133,8 +133,8 @@ function eventStartLevel()
 				count: -1,
 			},
 			groupSize: 4,
-			throttle: camChangeOnDiff(camSecondsToMilliseconds(30)),
-			templates: [ cTempl.trikeheavy, cTempl.blokeheavy, cTempl.buggyheavy, cTempl.bjeepheavy ]
+			throttle: camChangeOnDiff(camSecondsToMilliseconds((difficulty === EASY || difficulty === MEDIUM) ? 40 : 30)),
+			templates: [ cTempl.triketwin, cTempl.blokeheavy, cTempl.buggytwin, cTempl.bjeepheavy ]
 		},
 	});
 
