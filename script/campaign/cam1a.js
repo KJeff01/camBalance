@@ -6,7 +6,7 @@ const PLAYER_RES = [
 ];
 
 const SCAVENGER_RES = [
-	"R-Wpn-MG-Damage01", "R-Wpn-MG-ROF01",
+	"R-Wpn-MG-Damage01", "R-Wpn-MG-ROF01", "R-Wpn-Flamer-Range01-ScavReduce",
 ];
 
 // Player zero's droid enters area next to first oil patch.
@@ -172,6 +172,8 @@ function eventStartLevel()
 	}
 	else
 	{
+		completeResearch("R-Wpn-Flamer-Range01-ScavReduce", SCAV_6);
+		completeResearch("R-Wpn-Flamer-Range01-ScavReduce", SCAV_7);
 		setMissionTime(-1); // will start mission timer later
 	}
 
@@ -203,12 +205,24 @@ function eventStartLevel()
 		},
 	});
 
+if (difficulty <= HARD)
+    {
 	camSetArtifacts({
-		"base1ArtifactPos": { tech: "R-Sys-Engineering01" },
+		"base1ArtifactPos": { tech: ["R-Wpn-MG-Damage01", "R-Sys-Engineering01"] },
 		"base2Factory": { tech: ["R-Wpn-Flamer01Mk1", "R-Sys-MobileRepairTurret01"] },
-		"base3Factory": { tech: "R-Wpn-MG-Damage01" },
+		"base3Factory": { tech: "R-Wpn-MG-Damage02" },
+		"base4Factory": { tech: "R-Wpn-MG-ROF01" },
+        });
+    }
+else
+	{
+	camSetArtifacts({
+		"base1ArtifactPos": { tech: ["R-Wpn-MG-Damage01", "R-Sys-Engineering01"] },
+		"base2Factory": { tech: "R-Wpn-Flamer01Mk1" },
+		"base3Factory": { tech: ["R-Wpn-MG-Damage02", "R-Sys-MobileRepairTurret01"] },
 		"base4Factory": { tech: "R-Wpn-MG-ROF01" },
 	});
+	
 
 	camSetFactories({
 		"base2Factory": {

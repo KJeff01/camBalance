@@ -104,7 +104,7 @@ function eventStartLevel()
 	camDetectEnemyBase("ScavLabGroup");
 
 	camSetArtifacts({
-		"ScavLab": { tech: ["R-Wpn-Mortar01Lt", "R-Wpn-Flamer-Damage02"] },
+		"ScavLab": { tech: "R-Wpn-Mortar01Lt" },
 		"NorthFactory": { tech: ["R-Vehicle-Prop-Halftracks", "R-Wpn-Cannon1Mk1"] },
 	});
 
