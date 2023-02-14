@@ -91,7 +91,7 @@ function eventStartLevel()
 		completeResearch("R-Wpn-Flamer-Range01-ScavReduce-Undo", SCAV_7);
 	}
 	else (difficulty === INSANE)
-		{
+	{
 		completeResearch("R-Wpn-Flamer-Range01", SCAV_6);
 		completeResearch("R-Wpn-Flamer-Range01", SCAV_7);
 		completeResearch("R-Wpn-Flamer-Range01-ScavReduce-Undo", SCAV_6);

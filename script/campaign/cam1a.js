@@ -169,11 +169,11 @@ function eventStartLevel()
 	else if (difficulty === INSANE)
 	{
 		setMissionTime(camMinutesToSeconds(30));
+		completeResearch("R-Wpn-Flamer-Range01-ScavReduce-Undo", SCAV_6);
+		completeResearch("R-Wpn-Flamer-Range01-ScavReduce-Undo", SCAV_7);
 	}
 	else
 	{
-		completeResearch("R-Wpn-Flamer-Range01-ScavReduce", SCAV_6);
-		completeResearch("R-Wpn-Flamer-Range01-ScavReduce", SCAV_7);
 		setMissionTime(-1); // will start mission timer later
 	}
 
