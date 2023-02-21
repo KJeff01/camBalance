@@ -159,6 +159,11 @@ function eventStartLevel()
 	camCompleteRequiredResearch(PLAYER_RES, CAM_HUMAN_PLAYER);
 	camCompleteRequiredResearch(SCAVENGER_RES, 6);
 	camCompleteRequiredResearch(SCAVENGER_RES, 7);
+	if (difficulty === INSANE)
+	{
+		completeResearch("R-Wpn-Flamer-Range01-ScavReduce-Undo", SCAV_6);
+		completeResearch("R-Wpn-Flamer-Range01-ScavReduce-Undo", SCAV_7);
+	}
 
 	// Give player briefing.
 	camPlayVideos({video: "CMB1_MSG", type: CAMP_MSG, immediate: false});
@@ -169,8 +174,6 @@ function eventStartLevel()
 	else if (difficulty === INSANE)
 	{
 		setMissionTime(camMinutesToSeconds(30));
-		completeResearch("R-Wpn-Flamer-Range01-ScavReduce-Undo", SCAV_6);
-		completeResearch("R-Wpn-Flamer-Range01-ScavReduce-Undo", SCAV_7);
 	}
 	else
 	{
@@ -205,22 +208,22 @@ function eventStartLevel()
 		},
 	});
 
-if (difficulty >= HARD)
+	if (difficulty >= HARD)
     {
-	camSetArtifacts({
-		"base1ArtifactPos": { tech: ["R-Wpn-MG-Damage01", "R-Sys-Engineering01"] },
-		"base2Factory": { tech: ["R-Wpn-Flamer01Mk1", "R-Sys-MobileRepairTurret01"] },
-		"base3Factory": { tech: "R-Wpn-MG-Damage02" },
-		"base4Factory": { tech: "R-Wpn-MG-ROF01" },
-        });
+		camSetArtifacts({
+			"base1ArtifactPos": { tech: ["R-Wpn-MG-Damage01", "R-Sys-Engineering01"] },
+			"base2Factory": { tech: ["R-Wpn-Flamer01Mk1", "R-Sys-MobileRepairTurret01"] },
+			"base3Factory": { tech: "R-Wpn-MG-Damage02" },
+			"base4Factory": { tech: "R-Wpn-MG-ROF01" },
+		});
     }
-else
+	else
 	{
-	camSetArtifacts({
-		"base1ArtifactPos": { tech: ["R-Wpn-MG-Damage01", "R-Sys-Engineering01"] },
-		"base2Factory": { tech: "R-Wpn-Flamer01Mk1" },
-		"base3Factory": { tech: ["R-Wpn-MG-Damage02", "R-Sys-MobileRepairTurret01"] },
-		"base4Factory": { tech: "R-Wpn-MG-ROF01" },
+		camSetArtifacts({
+			"base1ArtifactPos": { tech: ["R-Wpn-MG-Damage01", "R-Sys-Engineering01"] },
+			"base2Factory": { tech: "R-Wpn-Flamer01Mk1" },
+			"base3Factory": { tech: ["R-Wpn-MG-Damage02", "R-Sys-MobileRepairTurret01"] },
+			"base4Factory": { tech: "R-Wpn-MG-ROF01" },
 		});
 	}
 
