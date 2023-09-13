@@ -1502,7 +1502,7 @@
 		"armour": 8,
 		"breadth": 1,
 		"buildPoints": 300,
-		"buildPower": 120,
+		"buildPower": 80,
 		"ecmID": "ZNULLECM",
 		"height": 2,
 		"hitpoints": 250,
@@ -1524,8 +1524,8 @@
 	"GuardTower1MG": {
 		"armour": 8,
 		"breadth": 1,
-		"buildPoints": 300,
-		"buildPower": 100,
+		"buildPoints": 200,
+		"buildPower": 60,
 		"ecmID": "ZNULLECM",
 		"height": 2,
 		"hitpoints": 210,
@@ -1547,8 +1547,8 @@
 	"GuardTower2": {
 		"armour": 8,
 		"breadth": 1,
-		"buildPoints": 300,
-		"buildPower": 110,
+		"buildPoints": 250,
+		"buildPower": 70,
 		"ecmID": "ZNULLECM",
 		"height": 2,
 		"hitpoints": 230,
@@ -1571,7 +1571,7 @@
 		"armour": 8,
 		"breadth": 1,
 		"buildPoints": 300,
-		"buildPower": 120,
+		"buildPower": 80,
 		"ecmID": "ZNULLECM",
 		"height": 2,
 		"hitpoints": 250,
@@ -1614,13 +1614,13 @@
 		"width": 1
 	},
 	"GuardTower4": {
-		"armour": 8,
+		"armour": 6,
 		"breadth": 1,
-		"buildPoints": 300,
-		"buildPower": 100,
+		"buildPoints": 250,
+		"buildPower": 70,
 		"ecmID": "ZNULLECM",
 		"height": 2,
-		"hitpoints": 250,
+		"hitpoints": 230,
 		"id": "GuardTower4",
 		"name": "Flamer Guard Tower",
 		"resistance": 150,
@@ -1629,7 +1629,7 @@
 		"structureModel": [
 			"BLGUARDM.PIE"
 		],
-		"thermal": 8,
+		"thermal": 6,
 		"type": "DEFENSE",
 		"weapons": [
 			"Flame1Mk1-Tower"
