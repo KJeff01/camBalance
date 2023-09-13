@@ -19,7 +19,7 @@
 		"width": 1
 	},
 	"A0BaBaBunker": {
-		"armour": 12,
+		"armour": 10,
 		"breadth": 1,
 		"buildPoints": 10,
 		"buildPower": 100,
@@ -34,7 +34,7 @@
 		"structureModel": [
 			"blbrbbnk.PIE"
 		],
-		"thermal": 12,
+		"thermal": 10,
 		"type": "DEFENSE",
 		"weapons": [
 			"MG3-Tower"
@@ -75,11 +75,11 @@
 		"name": "Scavenger Flame Tower",
 		"resistance": 150,
 		"sensorID": "DefaultSensor1Mk1",
-		"strength": "MEDIUM",
+		"strength": "SOFT",
 		"structureModel": [
 			"Blbrtowf.pie"
 		],
-		"thermal": 7,
+		"thermal": 5,
 		"type": "DEFENSE",
 		"weapons": [
 			"BabaFlame"
@@ -98,11 +98,11 @@
 		"name": "Scavenger Gun Tower",
 		"resistance": 150,
 		"sensorID": "DefaultSensor1Mk1",
-		"strength": "MEDIUM",
+		"strength": "SOFT",
 		"structureModel": [
 			"BLBRBTW1.PIE"
 		],
-		"thermal": 7,
+		"thermal": 5,
 		"type": "DEFENSE",
 		"weapons": [
 			"BabaTowerMG"
@@ -121,11 +121,11 @@
 		"name": "*Scavenger End Tower*",
 		"resistance": 150,
 		"sensorID": "DefaultSensor1Mk1",
-		"strength": "MEDIUM",
+		"strength": "SOFT",
 		"structureModel": [
 			"Blbrbtw2.PIE"
 		],
-		"thermal": 7,
+		"thermal": 5,
 		"type": "DEFENSE",
 		"weapons": [
 			"BabaTowerMG"
@@ -143,11 +143,11 @@
 		"id": "A0BaBaHorizontalWall",
 		"name": "Scavenger Horizontal Wall",
 		"sensorID": "BaBaSensor",
-		"strength": "MEDIUM",
+		"strength": "SOFT",
 		"structureModel": [
 			"BLBRBWLH.PIE"
 		],
-		"thermal": 7,
+		"thermal": 5,
 		"type": "WALL",
 		"width": 1
 	},
@@ -163,7 +163,7 @@
 		"name": "*BaBaMortarPit*",
 		"resistance": 150,
 		"sensorID": "DefaultSensor1Mk1",
-		"strength": "MEDIUM",
+		"strength": "SOFT",
 		"structureModel": [
 			"BLBRMRTP.PIE"
 		],
@@ -208,7 +208,7 @@
 		"name": "Scavenger Rocket Pit",
 		"resistance": 150,
 		"sensorID": "DefaultSensor1Mk1",
-		"strength": "MEDIUM",
+		"strength": "SOFT",
 		"structureModel": [
 			"EXROCKET.PIE"
 		],
@@ -231,7 +231,7 @@
 		"name": "Scavenger AT-Rocket Pit",
 		"resistance": 150,
 		"sensorID": "DefaultSensor1Mk1",
-		"strength": "MEDIUM",
+		"strength": "SOFT",
 		"structureModel": [
 			"EXROCKET.PIE"
 		],
@@ -253,7 +253,7 @@
 		"id": "A0BabaCornerWall",
 		"name": "Scavenger CornerWall",
 		"sensorID": "ZNULLSENSOR",
-		"strength": "MEDIUM",
+		"strength": "SOFT",
 		"structureModel": [
 			"BLBRBCR1.PIE"
 		],
@@ -273,7 +273,7 @@
 		"name": "Cannon Tower",
 		"resistance": 150,
 		"sensorID": "DefaultSensor1Mk1",
-		"strength": "MEDIUM",
+		"strength": "SOFT",
 		"structureModel": [
 			"BLBRTOWR.PIE"
 		],
@@ -613,12 +613,12 @@
 		"width": 2
 	},
 	"A0ResourceExtractor": {
-		"armour": 5,
+		"armour": 4,
 		"breadth": 1,
 		"buildPoints": 100,
 		"ecmID": "ZNULLECM",
 		"height": 1,
-		"hitpoints": 300,
+		"hitpoints": 200,
 		"id": "A0ResourceExtractor",
 		"name": "Oil Derrick",
 		"resistance": 150,
@@ -627,7 +627,7 @@
 		"structureModel": [
 			"BLDERIK.PIE"
 		],
-		"thermal": 5,
+		"thermal": 2,
 		"type": "RESOURCE EXTRACTOR",
 		"width": 1
 	},
@@ -635,14 +635,14 @@
 		"armour": 10,
 		"breadth": 1,
 		"buildPoints": 40,
-		"buildPower": 15,
+		"buildPower": 5,
 		"ecmID": "ZNULLECM",
 		"height": 1,
-		"hitpoints": 100,
+		"hitpoints": 150,
 		"id": "A0TankTrap",
 		"name": "Tank Traps",
 		"sensorID": "ZNULLSENSOR",
-		"strength": "HARD",
+		"strength": "MEDIUM",
 		"structureModel": [
 			"MITRAP2.PIE"
 		],
@@ -1257,7 +1257,7 @@
 		"name": "Flashlight Emplacement",
 		"resistance": 150,
 		"sensorID": "DefaultSensor1Mk1",
-		"strength": "HARD",
+		"strength": "MEDIUM",
 		"structureModel": [
 			"BLHARDPT.PIE"
 		],
@@ -1280,7 +1280,7 @@
 		"name": "Pulse Laser Emplacement",
 		"resistance": 150,
 		"sensorID": "DefaultSensor1Mk1",
-		"strength": "HARD",
+		"strength": "MEDIUM",
 		"structureModel": [
 			"BLHARDPT.PIE"
 		],
@@ -1303,7 +1303,7 @@
 		"name": "Railgun Emplacement",
 		"resistance": 150,
 		"sensorID": "DefaultSensor1Mk1",
-		"strength": "HARD",
+		"strength": "MEDIUM",
 		"structureModel": [
 			"BLHARDPT.PIE"
 		],
@@ -1326,7 +1326,7 @@
 		"name": "Gauss Cannon Emplacement",
 		"resistance": 150,
 		"sensorID": "DefaultSensor1Mk1",
-		"strength": "HARD",
+		"strength": "MEDIUM",
 		"structureModel": [
 			"BLHARDPT.PIE"
 		],
@@ -1812,7 +1812,7 @@
 		"name": "*NX-Emp-MedArtMiss-Pit*",
 		"resistance": 150,
 		"sensorID": "NavGunSensor",
-		"strength": "HARD",
+		"strength": "MEDIUM",
 		"structureModel": [
 			"BLHARDPT.PIE"
 		],
@@ -1835,7 +1835,7 @@
 		"name": "*NX-Emp-MultiArtMiss-Pit*",
 		"resistance": 150,
 		"sensorID": "NavGunSensor",
-		"strength": "HARD",
+		"strength": "MEDIUM",
 		"structureModel": [
 			"BLHARDPT.PIE"
 		],
@@ -2441,15 +2441,15 @@
 	"TankTrapC": {
 		"armour": 10,
 		"breadth": 1,
-		"buildPoints": 200,
-		"buildPower": 15,
+		"buildPoints": 40,
+		"buildPower": 5,
 		"ecmID": "ZNULLECM",
 		"height": 1,
-		"hitpoints": 100,
+		"hitpoints": 150,
 		"id": "TankTrapC",
 		"name": "Tank Traps",
 		"sensorID": "ZNULLSENSOR",
-		"strength": "HARD",
+		"strength": "MEDIUM",
 		"structureModel": [
 			"MITRAP2.PIE"
 		],
