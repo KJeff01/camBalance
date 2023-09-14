@@ -852,7 +852,7 @@
 		"name": "*CO-Tower-LtATRkt*",
 		"resistance": 150,
 		"sensorID": "DefaultSensor1Mk1",
-		"strength": "MEDIUM",
+		"strength": "HARD",
 		"structureModel": [
 			"blguardn.pie"
 		],
@@ -875,7 +875,7 @@
 		"name": "*CO-Tower-MG3*",
 		"resistance": 150,
 		"sensorID": "DefaultSensor1Mk1",
-		"strength": "MEDIUM",
+		"strength": "HARD",
 		"structureModel": [
 			"blguardn.PIE"
 		],
@@ -922,7 +922,7 @@
 		"name": "*CO-Tower-RotMG*",
 		"resistance": 150,
 		"sensorID": "DefaultSensor1Mk1",
-		"strength": "MEDIUM",
+		"strength": "HARD",
 		"structureModel": [
 			"blguardn.PIE"
 		],
@@ -1418,7 +1418,7 @@
 		"name": "Scourge Missile Tower",
 		"resistance": 150,
 		"sensorID": "DefaultSensor1Mk1",
-		"strength": "MEDIUM",
+		"strength": "HARD",
 		"structureModel": [
 			"BLGUARDR.pie"
 		],
@@ -1441,7 +1441,7 @@
 		"name": "*GuardTower-BeamLas*",
 		"resistance": 150,
 		"sensorID": "DefaultSensor1Mk1",
-		"strength": "MEDIUM",
+		"strength": "HARD",
 		"structureModel": [
 			"BLGUARDR.pie"
 		],
@@ -1464,7 +1464,7 @@
 		"name": "Needle Gun Tower",
 		"resistance": 150,
 		"sensorID": "DefaultSensor1Mk1",
-		"strength": "MEDIUM",
+		"strength": "HARD",
 		"structureModel": [
 			"BLGUARDR.pie"
 		],
@@ -1487,7 +1487,7 @@
 		"name": "Assault Gun Guard Tower",
 		"resistance": 150,
 		"sensorID": "DefaultSensor1Mk1",
-		"strength": "MEDIUM",
+		"strength": "HARD",
 		"structureModel": [
 			"blguardr.pie"
 		],
@@ -1602,7 +1602,7 @@
 		"name": "Hardened Heavy Machinegun Guard Tower",
 		"resistance": 150,
 		"sensorID": "DefaultSensor1Mk1",
-		"strength": "MEDIUM",
+		"strength": "HARD",
 		"structureModel": [
 			"BLGUARDR.PIE"
 		],
@@ -1648,7 +1648,7 @@
 		"name": "Hardened Flamer Guard Tower",
 		"resistance": 150,
 		"sensorID": "DefaultSensor1Mk1",
-		"strength": "MEDIUM",
+		"strength": "HARD",
 		"structureModel": [
 			"BLGUARDR.PIE"
 		],
@@ -1671,7 +1671,7 @@
 		"name": "Lancer Tower",
 		"resistance": 150,
 		"sensorID": "DefaultSensor1Mk1",
-		"strength": "MEDIUM",
+		"strength": "HARD",
 		"structureModel": [
 			"BLGUARDR.pie"
 		],
@@ -1694,7 +1694,7 @@
 		"name": "Mini-Rocket Guard Tower",
 		"resistance": 150,
 		"sensorID": "DefaultSensor1Mk1",
-		"strength": "MEDIUM",
+		"strength": "HARD",
 		"structureModel": [
 			"BLGUARDR.pie"
 		],
@@ -1881,7 +1881,7 @@
 		"name": "*NX-Tower-ATMiss*",
 		"resistance": 150,
 		"sensorID": "NavGunSensor",
-		"strength": "MEDIUM",
+		"strength": "HARD",
 		"structureModel": [
 			"Blgrdnex.PIE"
 		],
@@ -1904,7 +1904,7 @@
 		"name": "*NX-Tower-PulseLas*",
 		"resistance": 150,
 		"sensorID": "NavGunSensor",
-		"strength": "MEDIUM",
+		"strength": "HARD",
 		"structureModel": [
 			"Blgrdnex.PIE"
 		],
@@ -1927,7 +1927,7 @@
 		"name": "*NX-Tower-Rail1*",
 		"resistance": 150,
 		"sensorID": "NavGunSensor",
-		"strength": "MEDIUM",
+		"strength": "HARD",
 		"structureModel": [
 			"Blgrdnex.PIE"
 		],
@@ -2492,7 +2492,7 @@
 		"name": "Assault Gun Guard Tower 2",
 		"resistance": 150,
 		"sensorID": "DefaultSensor1Mk1",
-		"strength": "MEDIUM",
+		"strength": "HARD",
 		"structureModel": [
 			"BLGUARDR.PIE"
 		],
@@ -2515,7 +2515,7 @@
 		"name": "Assault Cannon Guard Tower",
 		"resistance": 150,
 		"sensorID": "DefaultSensor1Mk1",
-		"strength": "MEDIUM",
+		"strength": "HARD",
 		"structureModel": [
 			"BLGUARDR.PIE"
 		],
