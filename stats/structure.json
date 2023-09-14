@@ -701,13 +701,13 @@
 		"width": 1
 	},
 	"AASite-QuadBof": {
-		"armour": 12,
+		"armour": 14,
 		"breadth": 1,
 		"buildPoints": 300,
 		"buildPower": 150,
 		"ecmID": "ZNULLECM",
 		"height": 1,
-		"hitpoints": 200,
+		"hitpoints": 250,
 		"id": "AASite-QuadBof",
 		"name": "Cyclone AA Flak Site",
 		"resistance": 150,
@@ -716,7 +716,7 @@
 		"structureModel": [
 			"Blaamnt1.PIE"
 		],
-		"thermal": 12,
+		"thermal": 14,
 		"type": "DEFENSE",
 		"weapons": [
 			"AAGun2Mk1"
@@ -726,8 +726,8 @@
 	"AASite-QuadMg1": {
 		"armour": 12,
 		"breadth": 1,
-		"buildPoints": 250,
-		"buildPower": 125,
+		"buildPoints": 200,
+		"buildPower": 100,
 		"ecmID": "ZNULLECM",
 		"height": 1,
 		"hitpoints": 200,
@@ -747,13 +747,13 @@
 		"width": 1
 	},
 	"AASite-QuadRotMg": {
-		"armour": 12,
+		"armour": 16,
 		"breadth": 1,
-		"buildPoints": 275,
-		"buildPower": 175,
+		"buildPoints": 400,
+		"buildPower": 200,
 		"ecmID": "ZNULLECM",
 		"height": 1,
-		"hitpoints": 200,
+		"hitpoints": 300,
 		"id": "AASite-QuadRotMg",
 		"name": "Whirlwind AA Site",
 		"resistance": 150,
@@ -762,7 +762,7 @@
 		"structureModel": [
 			"Blaamnt1.PIE"
 		],
-		"thermal": 12,
+		"thermal": 16,
 		"type": "DEFENSE",
 		"weapons": [
 			"QuadRotAAGun"
@@ -2030,22 +2030,22 @@
 		"width": 2
 	},
 	"P0-AASite-SAM1": {
-		"armour": 10,
+		"armour": 18,
 		"breadth": 1,
-		"buildPoints": 450,
+		"buildPoints": 500,
 		"buildPower": 250,
 		"ecmID": "ZNULLECM",
 		"height": 1,
-		"hitpoints": 200,
+		"hitpoints": 350,
 		"id": "P0-AASite-SAM1",
 		"name": "Avenger SAM Site",
 		"resistance": 150,
 		"sensorID": "NavGunSensor",
-		"strength": "HARD",
+		"strength": "MEDIUM",
 		"structureModel": [
 			"Blaamnt1.PIE"
 		],
-		"thermal": 10,
+		"thermal": 18,
 		"type": "DEFENSE",
 		"weapons": [
 			"Missile-LtSAM"
@@ -2053,22 +2053,22 @@
 		"width": 1
 	},
 	"P0-AASite-SAM2": {
-		"armour": 10,
+		"armour": 20,
 		"breadth": 1,
-		"buildPoints": 550,
-		"buildPower": 350,
+		"buildPoints": 600,
+		"buildPower": 300,
 		"ecmID": "ZNULLECM",
 		"height": 1,
-		"hitpoints": 300,
+		"hitpoints": 400,
 		"id": "P0-AASite-SAM2",
 		"name": "Vindicator SAM Site",
 		"resistance": 150,
 		"sensorID": "NavGunSensor",
-		"strength": "HARD",
+		"strength": "MEDIUM",
 		"structureModel": [
 			"Blaamnt2.PIE"
 		],
-		"thermal": 10,
+		"thermal": 20,
 		"type": "DEFENSE",
 		"weapons": [
 			"Missile-HvySAM"
