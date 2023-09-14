@@ -6,7 +6,7 @@ const mis_newParadigmRes = [
 	"R-Wpn-MG1Mk1", "R-Vehicle-Body01", "R-Sys-Spade1Mk1", "R-Vehicle-Prop-Wheels",
 	"R-Sys-Engineering01", "R-Wpn-MG-Damage04", "R-Wpn-MG-ROF01", "R-Wpn-Cannon-Damage03",
 	"R-Wpn-Flamer-Damage03", "R-Wpn-Flamer-Range01", "R-Wpn-Flamer-ROF01",
-	"R-Defense-WallUpgrade03", "R-Struc-Materials03", "R-Vehicle-Engine02",
+	"R-Defense-WallUpgrade02", "R-Struc-Materials02", "R-Vehicle-Engine02",
 	"R-Struc-RprFac-Upgrade03", "R-Wpn-Rocket-Damage02", "R-Wpn-Rocket-ROF03",
 	"R-Vehicle-Metals02", "R-Wpn-Mortar-Damage03", "R-Wpn-Rocket-Accuracy01",
 	"R-Wpn-RocketSlow-Damage02", "R-Wpn-Mortar-ROF01",
@@ -16,7 +16,7 @@ const mis_scavengerRes = [
 	"R-Wpn-MG-Damage04", "R-Wpn-MG-ROF01", "R-Wpn-Rocket-Damage02",
 	"R-Wpn-Cannon-Damage02", "R-Wpn-Mortar-Damage03", "R-Wpn-Mortar-ROF01",
 	"R-Wpn-Rocket-ROF03", "R-Vehicle-Metals02",
-	"R-Defense-WallUpgrade03", "R-Struc-Materials03",
+	"R-Defense-WallUpgrade02", "R-Struc-Materials02",
 ];
 
 //Pursue player when nearby but do not go too far away from defense zone.

@@ -3,7 +3,7 @@ include("script/campaign/libcampaign.js");
 include("script/campaign/templates.js");
 
 const mis_collectiveRes = [
-	"R-Defense-WallUpgrade06", "R-Struc-Materials06", "R-Sys-Engineering02",
+	"R-Defense-WallUpgrade05", "R-Struc-Materials05", "R-Sys-Engineering02",
 	"R-Vehicle-Engine04", "R-Vehicle-Metals04", "R-Cyborg-Metals04",
 	"R-Wpn-Cannon-Accuracy02", "R-Wpn-Cannon-Damage05",
 	"R-Wpn-Cannon-ROF01", "R-Wpn-Flamer-Damage06", "R-Wpn-Flamer-ROF01",

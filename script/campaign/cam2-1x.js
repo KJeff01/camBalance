@@ -10,7 +10,7 @@ var victoryFlag;
 
 const MIS_TRANSPORT_TEAM_PLAYER = 1;
 const mis_collectiveRes = [
-	"R-Defense-WallUpgrade06", "R-Struc-Materials06", "R-Sys-Engineering02",
+	"R-Defense-WallUpgrade04", "R-Struc-Materials04", "R-Sys-Engineering02",
 	"R-Vehicle-Engine03", "R-Vehicle-Metals03", "R-Cyborg-Metals03",
 	"R-Wpn-Cannon-Accuracy02", "R-Wpn-Cannon-Damage04",
 	"R-Wpn-Cannon-ROF01", "R-Wpn-Flamer-Damage03", "R-Wpn-Flamer-ROF01",

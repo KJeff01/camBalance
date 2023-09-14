@@ -1594,7 +1594,8 @@
 		"imdName": "BLWALLH.PIE",
 		"name": "Improved Hardcrete Mk2",
 		"requiredResearch": [
-			"R-Defense-WallUpgrade01"
+			"R-Defense-WallUpgrade01",
+			"R-Struc-Research-Module"
 		],
 		"researchPoints": 2400,
 		"researchPower": 75,
@@ -1623,7 +1624,8 @@
 		"imdName": "BLWALLH.PIE",
 		"name": "Improved Hardcrete Mk3",
 		"requiredResearch": [
-			"R-Defense-WallUpgrade02"
+			"R-Defense-WallUpgrade02",
+			"R-Struc-Research-Upgrade01"
 		],
 		"researchPoints": 3600,
 		"researchPower": 112,
@@ -3913,6 +3915,7 @@
 		"iconID": "IMAGE_RES_DEFENCE",
 		"id": "R-Defense-WallUpgrade05",
 		"imdName": "BLWALLH.PIE",
+		"keyTopic": 1,
 		"name": "Supercrete Mk2",
 		"requiredResearch": [
 			"R-Defense-WallUpgrade04"
@@ -3944,7 +3947,8 @@
 		"imdName": "BLWALLH.PIE",
 		"name": "Supercrete Mk3",
 		"requiredResearch": [
-			"R-Defense-WallUpgrade05"
+			"R-Defense-WallUpgrade05",
+			"R-Struc-Research-Upgrade04"
 		],
 		"researchPoints": 10000,
 		"researchPower": 312,
@@ -6831,7 +6835,8 @@
 		"imdName": "BLWALLH.PIE",
 		"name": "Plascrete Mk2",
 		"requiredResearch": [
-			"R-Defense-WallUpgrade07"
+			"R-Defense-WallUpgrade07",
+			"R-Struc-Research-Upgrade07"
 		],
 		"researchPoints": 14000,
 		"researchPower": 437,
@@ -6858,6 +6863,7 @@
 		"iconID": "IMAGE_RES_DEFENCE",
 		"id": "R-Defense-WallUpgrade09",
 		"imdName": "BLWALLH.PIE",
+		"keyTopic": 1,
 		"name": "Plascrete Mk3",
 		"requiredResearch": [
 			"R-Defense-WallUpgrade08"
