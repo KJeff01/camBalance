@@ -818,9 +818,9 @@
 		"width": 1
 	},
 	"CO-Tower-HvFlame": {
-		"armour": 12,
+		"armour": 15,
 		"breadth": 1,
-		"buildPoints": 500,
+		"buildPoints": 300,
 		"buildPower": 100,
 		"ecmID": "ZNULLECM",
 		"height": 1,
@@ -833,7 +833,7 @@
 		"structureModel": [
 			"BLHARDPT.pie"
 		],
-		"thermal": 12,
+		"thermal": 15,
 		"type": "DEFENSE",
 		"weapons": [
 			"Flame2"
@@ -1039,10 +1039,10 @@
 		"width": 1
 	},
 	"Emplacement-HPVcannon": {
-		"armour": 10,
+		"armour": 15,
 		"breadth": 1,
-		"buildPoints": 400,
-		"buildPower": 200,
+		"buildPoints": 300,
+		"buildPower": 125,
 		"ecmID": "ZNULLECM",
 		"height": 1,
 		"hitpoints": 200,
@@ -1054,7 +1054,7 @@
 		"structureModel": [
 			"Blhowmnt.PIE"
 		],
-		"thermal": 10,
+		"thermal": 15,
 		"type": "DEFENSE",
 		"weapons": [
 			"Cannon4AUTOMk1"
@@ -1246,10 +1246,10 @@
 		"width": 1
 	},
 	"Emplacement-PrisLas": {
-		"armour": 10,
+		"armour": 15,
 		"breadth": 1,
-		"buildPoints": 450,
-		"buildPower": 275,
+		"buildPoints": 250,
+		"buildPower": 125,
 		"ecmID": "ZNULLECM",
 		"height": 1,
 		"hitpoints": 200,
@@ -1261,7 +1261,7 @@
 		"structureModel": [
 			"BLHARDPT.PIE"
 		],
-		"thermal": 10,
+		"thermal": 15,
 		"type": "DEFENSE",
 		"weapons": [
 			"Laser3BEAMMk1"
@@ -1269,10 +1269,10 @@
 		"width": 1
 	},
 	"Emplacement-PulseLaser": {
-		"armour": 10,
+		"armour": 15,
 		"breadth": 1,
-		"buildPoints": 400,
-		"buildPower": 225,
+		"buildPoints": 300,
+		"buildPower": 150,
 		"ecmID": "ZNULLECM",
 		"height": 1,
 		"hitpoints": 200,
@@ -1284,7 +1284,7 @@
 		"structureModel": [
 			"BLHARDPT.PIE"
 		],
-		"thermal": 10,
+		"thermal": 15,
 		"type": "DEFENSE",
 		"weapons": [
 			"Laser2PULSEMk1"
@@ -1292,10 +1292,10 @@
 		"width": 1
 	},
 	"Emplacement-Rail2": {
-		"armour": 10,
+		"armour": 15,
 		"breadth": 1,
-		"buildPoints": 500,
-		"buildPower": 350,
+		"buildPoints": 350,
+		"buildPower": 200,
 		"ecmID": "ZNULLECM",
 		"height": 1,
 		"hitpoints": 200,
@@ -1307,7 +1307,7 @@
 		"structureModel": [
 			"BLHARDPT.PIE"
 		],
-		"thermal": 10,
+		"thermal": 15,
 		"type": "DEFENSE",
 		"weapons": [
 			"RailGun2Mk1"
@@ -1315,10 +1315,10 @@
 		"width": 1
 	},
 	"Emplacement-Rail3": {
-		"armour": 10,
+		"armour": 15,
 		"breadth": 1,
-		"buildPoints": 600,
-		"buildPower": 450,
+		"buildPoints": 500,
+		"buildPower": 300,
 		"ecmID": "ZNULLECM",
 		"height": 1,
 		"hitpoints": 200,
@@ -1330,7 +1330,7 @@
 		"structureModel": [
 			"BLHARDPT.PIE"
 		],
-		"thermal": 10,
+		"thermal": 15,
 		"type": "DEFENSE",
 		"weapons": [
 			"RailGun3Mk1"
