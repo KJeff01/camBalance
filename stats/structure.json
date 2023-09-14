@@ -2082,7 +2082,7 @@
 		"buildPower": 400,
 		"ecmID": "ZNULLECM",
 		"height": 1,
-		"hitpoints": 300,
+		"hitpoints": 500,
 		"id": "PillBox1",
 		"name": "Heavy Machinegun Bunker",
 		"resistance": 150,
