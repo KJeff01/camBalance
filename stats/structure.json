@@ -1062,10 +1062,10 @@
 		"width": 1
 	},
 	"Emplacement-Howitzer105": {
-		"armour": 10,
+		"armour": 12,
 		"breadth": 1,
-		"buildPoints": 500,
-		"buildPower": 275,
+		"buildPoints": 600,
+		"buildPower": 300,
 		"ecmID": "ZNULLECM",
 		"height": 1,
 		"hitpoints": 200,
@@ -1077,7 +1077,7 @@
 		"structureModel": [
 			"Blhowmnt.PIE"
 		],
-		"thermal": 10,
+		"thermal": 12,
 		"type": "DEFENSE",
 		"weapons": [
 			"Howitzer105Mk1"
@@ -1085,10 +1085,10 @@
 		"width": 1
 	},
 	"Emplacement-Howitzer150": {
-		"armour": 10,
+		"armour": 12,
 		"breadth": 1,
-		"buildPoints": 550,
-		"buildPower": 375,
+		"buildPoints": 700,
+		"buildPower": 350,
 		"ecmID": "ZNULLECM",
 		"height": 1,
 		"hitpoints": 200,
@@ -1100,7 +1100,7 @@
 		"structureModel": [
 			"Blhowmnt.PIE"
 		],
-		"thermal": 10,
+		"thermal": 12,
 		"type": "DEFENSE",
 		"weapons": [
 			"Howitzer150Mk1"
@@ -1110,11 +1110,11 @@
 	"Emplacement-HvART-pit": {
 		"armour": 10,
 		"breadth": 1,
-		"buildPoints": 675,
+		"buildPoints": 1000,
 		"buildPower": 525,
 		"ecmID": "ZNULLECM",
 		"height": 1,
-		"hitpoints": 200,
+		"hitpoints": 150,
 		"id": "Emplacement-HvART-pit",
 		"name": "Archangel Missile Emplacement",
 		"resistance": 150,
@@ -1157,10 +1157,10 @@
 		"armour": 10,
 		"breadth": 1,
 		"buildPoints": 400,
-		"buildPower": 125,
+		"buildPower": 200,
 		"ecmID": "ZNULLECM",
 		"height": 1,
-		"hitpoints": 200,
+		"hitpoints": 150,
 		"id": "Emplacement-MRL-pit",
 		"name": "Mini-Rocket Battery",
 		"resistance": 150,
@@ -1179,11 +1179,11 @@
 	"Emplacement-MdART-pit": {
 		"armour": 10,
 		"breadth": 1,
-		"buildPoints": 600,
+		"buildPoints": 800,
 		"buildPower": 450,
 		"ecmID": "ZNULLECM",
 		"height": 1,
-		"hitpoints": 200,
+		"hitpoints": 150,
 		"id": "Emplacement-MdART-pit",
 		"name": "Angel Missile Emplacement",
 		"resistance": 150,
@@ -1200,13 +1200,13 @@
 		"width": 1
 	},
 	"Emplacement-MortarPit01": {
-		"armour": 10,
+		"armour": 8,
 		"breadth": 1,
-		"buildPoints": 400,
-		"buildPower": 125,
+		"buildPoints": 300,
+		"buildPower": 150,
 		"ecmID": "ZNULLECM",
 		"height": 1,
-		"hitpoints": 200,
+		"hitpoints": 100,
 		"id": "Emplacement-MortarPit01",
 		"name": "Mortar Pit",
 		"resistance": 150,
@@ -1215,7 +1215,7 @@
 		"structureModel": [
 			"BLMRTPIT.PIE"
 		],
-		"thermal": 10,
+		"thermal": 8,
 		"type": "DEFENSE",
 		"weapons": [
 			"Mortar1Mk1"
@@ -1223,13 +1223,13 @@
 		"width": 1
 	},
 	"Emplacement-MortarPit02": {
-		"armour": 10,
+		"armour": 8,
 		"breadth": 1,
-		"buildPoints": 450,
-		"buildPower": 150,
+		"buildPoints": 400,
+		"buildPower": 200,
 		"ecmID": "ZNULLECM",
 		"height": 1,
-		"hitpoints": 200,
+		"hitpoints": 100,
 		"id": "Emplacement-MortarPit02",
 		"name": "Bombard Pit",
 		"resistance": 150,
@@ -1238,7 +1238,7 @@
 		"structureModel": [
 			"BLMRTPIT.PIE"
 		],
-		"thermal": 10,
+		"thermal": 8,
 		"type": "DEFENSE",
 		"weapons": [
 			"Mortar2Mk1"
@@ -1361,10 +1361,10 @@
 		"width": 1
 	},
 	"Emplacement-RotHow": {
-		"armour": 10,
+		"armour": 12,
 		"breadth": 1,
-		"buildPoints": 600,
-		"buildPower": 425,
+		"buildPoints": 800,
+		"buildPower": 400,
 		"ecmID": "ZNULLECM",
 		"height": 1,
 		"hitpoints": 200,
@@ -1376,7 +1376,7 @@
 		"structureModel": [
 			"BLHOWMNT.PIE"
 		],
-		"thermal": 10,
+		"thermal": 12,
 		"type": "DEFENSE",
 		"weapons": [
 			"Howitzer03-Rot"
@@ -1384,13 +1384,13 @@
 		"width": 1
 	},
 	"Emplacement-RotMor": {
-		"armour": 10,
+		"armour": 8,
 		"breadth": 1,
 		"buildPoints": 500,
-		"buildPower": 325,
+		"buildPower": 250,
 		"ecmID": "ZNULLECM",
 		"height": 1,
-		"hitpoints": 200,
+		"hitpoints": 100,
 		"id": "Emplacement-RotMor",
 		"name": "Pepperpot Pit",
 		"resistance": 150,
@@ -1399,7 +1399,7 @@
 		"structureModel": [
 			"BLMRTPIT.PIE"
 		],
-		"thermal": 10,
+		"thermal": 8,
 		"type": "DEFENSE",
 		"weapons": [
 			"Mortar3ROTARYMk1"
@@ -1803,11 +1803,11 @@
 	"NX-Emp-MedArtMiss-Pit": {
 		"armour": 15,
 		"breadth": 1,
-		"buildPoints": 400,
-		"buildPower": 100,
+		"buildPoints": 800,
+		"buildPower": 450,
 		"ecmID": "ZNULLECM",
 		"height": 1,
-		"hitpoints": 200,
+		"hitpoints": 150,
 		"id": "NX-Emp-MedArtMiss-Pit",
 		"name": "*NX-Emp-MedArtMiss-Pit*",
 		"resistance": 150,
@@ -1826,11 +1826,11 @@
 	"NX-Emp-MultiArtMiss-Pit": {
 		"armour": 15,
 		"breadth": 1,
-		"buildPoints": 400,
-		"buildPower": 100,
+		"buildPoints": 1000,
+		"buildPower": 525,
 		"ecmID": "ZNULLECM",
 		"height": 1,
-		"hitpoints": 200,
+		"hitpoints": 150,
 		"id": "NX-Emp-MultiArtMiss-Pit",
 		"name": "*NX-Emp-MultiArtMiss-Pit*",
 		"resistance": 150,
@@ -1847,13 +1847,13 @@
 		"width": 1
 	},
 	"NX-Emp-Plasma-Pit": {
-		"armour": 15,
+		"armour": 20,
 		"breadth": 1,
-		"buildPoints": 400,
-		"buildPower": 100,
+		"buildPoints": 900,
+		"buildPower": 600,
 		"ecmID": "ZNULLECM",
 		"height": 1,
-		"hitpoints": 200,
+		"hitpoints": 400,
 		"id": "NX-Emp-Plasma-Pit",
 		"name": "*NX-Emp-Plasma-Pit*",
 		"resistance": 150,
@@ -1862,7 +1862,7 @@
 		"structureModel": [
 			"Blaamnt2.PIE"
 		],
-		"thermal": 15,
+		"thermal": 20,
 		"type": "DEFENSE",
 		"weapons": [
 			"PlasmaHeavy"
