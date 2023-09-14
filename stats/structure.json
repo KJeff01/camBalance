@@ -434,13 +434,13 @@
 		"width": 3
 	},
 	"A0HardcreteMk1CWall": {
-		"armour": 15,
+		"armour": 17,
 		"breadth": 1,
 		"buildPoints": 125,
-		"buildPower": 25,
+		"buildPower": 15,
 		"ecmID": "ZNULLECM",
 		"height": 2,
-		"hitpoints": 250,
+		"hitpoints": 400,
 		"id": "A0HardcreteMk1CWall",
 		"name": "Hardcrete Corner Wall",
 		"sensorID": "ZNULLSENSOR",
@@ -448,18 +448,18 @@
 		"structureModel": [
 			"BLWALLC1.pie"
 		],
-		"thermal": 15,
+		"thermal": 17,
 		"type": "CORNER WALL",
 		"width": 1
 	},
 	"A0HardcreteMk1Wall": {
-		"armour": 15,
+		"armour": 17,
 		"breadth": 1,
 		"buildPoints": 125,
-		"buildPower": 25,
+		"buildPower": 15,
 		"ecmID": "ZNULLECM",
 		"height": 2,
-		"hitpoints": 250,
+		"hitpoints": 400,
 		"id": "A0HardcreteMk1Wall",
 		"name": "Hardcrete Wall",
 		"sensorID": "ZNULLSENSOR",
@@ -470,7 +470,7 @@
 			"blwallh_t.pie",
 			"blwallh_l.pie"
 		],
-		"thermal": 15,
+		"thermal": 17,
 		"type": "WALL",
 		"width": 1
 	},
@@ -982,13 +982,13 @@
 		"width": 1
 	},
 	"CollectiveCWall": {
-		"armour": 12,
+		"armour": 19,
 		"breadth": 1,
 		"buildPoints": 125,
-		"buildPower": 25,
+		"buildPower": 15,
 		"ecmID": "ZNULLECM",
 		"height": 2,
-		"hitpoints": 250,
+		"hitpoints": 450,
 		"id": "CollectiveCWall",
 		"name": "Collective CWall",
 		"sensorID": "ZNULLSENSOR",
@@ -996,18 +996,18 @@
 		"structureModel": [
 			"BLWALLC2.pie"
 		],
-		"thermal": 12,
+		"thermal": 19,
 		"type": "CORNER WALL",
 		"width": 1
 	},
 	"CollectiveWall": {
-		"armour": 12,
+		"armour": 19,
 		"breadth": 1,
 		"buildPoints": 125,
-		"buildPower": 25,
+		"buildPower": 15,
 		"ecmID": "ZNULLECM",
 		"height": 2,
-		"hitpoints": 250,
+		"hitpoints": 450,
 		"id": "CollectiveWall",
 		"name": "Collective Wall",
 		"sensorID": "ZNULLSENSOR",
@@ -1015,7 +1015,7 @@
 		"structureModel": [
 			"BLWALL2.pie"
 		],
-		"thermal": 12,
+		"thermal": 19,
 		"type": "WALL",
 		"width": 1
 	},
@@ -1407,13 +1407,13 @@
 		"width": 1
 	},
 	"GuardTower-ATMiss": {
-		"armour": 10,
+		"armour": 15,
 		"breadth": 1,
-		"buildPoints": 450,
-		"buildPower": 325,
+		"buildPoints": 600,
+		"buildPower": 200,
 		"ecmID": "ZNULLECM",
 		"height": 2,
-		"hitpoints": 250,
+		"hitpoints": 400,
 		"id": "GuardTower-ATMiss",
 		"name": "Scourge Missile Tower",
 		"resistance": 150,
@@ -1422,7 +1422,7 @@
 		"structureModel": [
 			"BLGUARDR.pie"
 		],
-		"thermal": 10,
+		"thermal": 15,
 		"type": "DEFENSE",
 		"weapons": [
 			"Missile-A-T"
@@ -1430,13 +1430,13 @@
 		"width": 1
 	},
 	"GuardTower-BeamLas": {
-		"armour": 10,
+		"armour": 15,
 		"breadth": 1,
-		"buildPoints": 400,
-		"buildPower": 175,
+		"buildPoints": 450,
+		"buildPower": 160,
 		"ecmID": "ZNULLECM",
 		"height": 2,
-		"hitpoints": 250,
+		"hitpoints": 400,
 		"id": "GuardTower-BeamLas",
 		"name": "*GuardTower-BeamLas*",
 		"resistance": 150,
@@ -1445,7 +1445,7 @@
 		"structureModel": [
 			"BLGUARDR.pie"
 		],
-		"thermal": 10,
+		"thermal": 15,
 		"type": "DEFENSE",
 		"weapons": [
 			"Laser3BEAMMk1"
@@ -1453,13 +1453,13 @@
 		"width": 1
 	},
 	"GuardTower-Rail1": {
-		"armour": 10,
+		"armour": 15,
 		"breadth": 1,
-		"buildPoints": 400,
-		"buildPower": 275,
+		"buildPoints": 550,
+		"buildPower": 180,
 		"ecmID": "ZNULLECM",
 		"height": 2,
-		"hitpoints": 250,
+		"hitpoints": 400,
 		"id": "GuardTower-Rail1",
 		"name": "Needle Gun Tower",
 		"resistance": 150,
@@ -1468,7 +1468,7 @@
 		"structureModel": [
 			"BLGUARDR.pie"
 		],
-		"thermal": 10,
+		"thermal": 15,
 		"type": "DEFENSE",
 		"weapons": [
 			"RailGun1Mk1"
@@ -1476,13 +1476,13 @@
 		"width": 1
 	},
 	"GuardTower-RotMg": {
-		"armour": 20,
+		"armour": 15,
 		"breadth": 1,
 		"buildPoints": 400,
 		"buildPower": 150,
 		"ecmID": "ZNULLECM",
 		"height": 2,
-		"hitpoints": 500,
+		"hitpoints": 400,
 		"id": "GuardTower-RotMg",
 		"name": "Assault Gun Guard Tower",
 		"resistance": 150,
@@ -1491,7 +1491,7 @@
 		"structureModel": [
 			"blguardr.pie"
 		],
-		"thermal": 20,
+		"thermal": 15,
 		"type": "DEFENSE",
 		"weapons": [
 			"MG4ROTARYMk1"
@@ -1662,7 +1662,7 @@
 	"GuardTower5": {
 		"armour": 15,
 		"breadth": 1,
-		"buildPoints": 350,
+		"buildPoints": 400,
 		"buildPower": 150,
 		"ecmID": "ZNULLECM",
 		"height": 2,
@@ -1685,8 +1685,8 @@
 	"GuardTower6": {
 		"armour": 15,
 		"breadth": 1,
-		"buildPoints": 400,
-		"buildPower": 100,
+		"buildPoints": 350,
+		"buildPower": 130,
 		"ecmID": "ZNULLECM",
 		"height": 2,
 		"hitpoints": 400,
@@ -1725,13 +1725,13 @@
 		"width": 1
 	},
 	"NEXUSCWall": {
-		"armour": 15,
+		"armour": 21,
 		"breadth": 1,
 		"buildPoints": 125,
-		"buildPower": 25,
+		"buildPower": 15,
 		"ecmID": "ZNULLECM",
 		"height": 2,
-		"hitpoints": 250,
+		"hitpoints": 500,
 		"id": "NEXUSCWall",
 		"name": "NEXUS CWall",
 		"sensorID": "ZNULLSENSOR",
@@ -1739,18 +1739,18 @@
 		"structureModel": [
 			"BLWALLC3.pie"
 		],
-		"thermal": 15,
+		"thermal": 21,
 		"type": "CORNER WALL",
 		"width": 1
 	},
 	"NEXUSWall": {
-		"armour": 15,
+		"armour": 21,
 		"breadth": 1,
 		"buildPoints": 125,
-		"buildPower": 25,
+		"buildPower": 15,
 		"ecmID": "ZNULLECM",
 		"height": 2,
-		"hitpoints": 250,
+		"hitpoints": 500,
 		"id": "NEXUSWall",
 		"name": "NEXUS Wall",
 		"sensorID": "ZNULLSENSOR",
@@ -1758,7 +1758,7 @@
 		"structureModel": [
 			"BLWALL3.pie"
 		],
-		"thermal": 15,
+		"thermal": 21,
 		"type": "WALL",
 		"width": 1
 	},
@@ -2483,8 +2483,8 @@
 	"Tower-RotMg": {
 		"armour": 15,
 		"breadth": 1,
-		"buildPoints": 100,
-		"buildPower": 125,
+		"buildPoints": 400,
+		"buildPower": 150,
 		"ecmID": "ZNULLECM",
 		"height": 2,
 		"hitpoints": 400,
@@ -2506,8 +2506,8 @@
 	"Tower-VulcanCan": {
 		"armour": 15,
 		"breadth": 1,
-		"buildPoints": 100,
-		"buildPower": 225,
+		"buildPoints": 450,
+		"buildPower": 175,
 		"ecmID": "ZNULLECM",
 		"height": 2,
 		"hitpoints": 400,
