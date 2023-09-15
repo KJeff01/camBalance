@@ -4440,7 +4440,7 @@
 		],
 		"requiredResearch": [
 			"R-Sys-Sensor-Tower01",
-			"R-Defense-WallUpgrade02"
+			"R-Defense-WallUpgrade01"
 		],
 		"researchPoints": 1200,
 		"researchPower": 37,
