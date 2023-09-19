@@ -843,7 +843,7 @@
 	"CO-Tower-LtATRkt": {
 		"armour": 12,
 		"breadth": 1,
-		"buildPoints": 500,
+		"buildPoints": 400,
 		"buildPower": 100,
 		"ecmID": "ZNULLECM",
 		"height": 2,
@@ -866,7 +866,7 @@
 	"CO-Tower-MG3": {
 		"armour": 12,
 		"breadth": 1,
-		"buildPoints": 500,
+		"buildPoints": 350,
 		"buildPower": 100,
 		"ecmID": "ZNULLECM",
 		"height": 2,
@@ -913,7 +913,7 @@
 	"CO-Tower-RotMG": {
 		"armour": 12,
 		"breadth": 1,
-		"buildPoints": 500,
+		"buildPoints": 350,
 		"buildPower": 100,
 		"ecmID": "ZNULLECM",
 		"height": 2,
@@ -1409,7 +1409,7 @@
 	"GuardTower-ATMiss": {
 		"armour": 12,
 		"breadth": 1,
-		"buildPoints": 600,
+		"buildPoints": 400,
 		"buildPower": 200,
 		"ecmID": "ZNULLECM",
 		"height": 2,
@@ -1432,7 +1432,7 @@
 	"GuardTower-BeamLas": {
 		"armour": 12,
 		"breadth": 1,
-		"buildPoints": 500,
+		"buildPoints": 360,
 		"buildPower": 175,
 		"ecmID": "ZNULLECM",
 		"height": 2,
@@ -1455,7 +1455,7 @@
 	"GuardTower-Rail1": {
 		"armour": 12,
 		"breadth": 1,
-		"buildPoints": 550,
+		"buildPoints": 380,
 		"buildPower": 175,
 		"ecmID": "ZNULLECM",
 		"height": 2,
@@ -1478,7 +1478,7 @@
 	"GuardTower-RotMg": {
 		"armour": 12,
 		"breadth": 1,
-		"buildPoints": 500,
+		"buildPoints": 350,
 		"buildPower": 150,
 		"ecmID": "ZNULLECM",
 		"height": 2,
@@ -1593,7 +1593,7 @@
 	"GuardTower3H": {
 		"armour": 12,
 		"breadth": 1,
-		"buildPoints": 450,
+		"buildPoints": 350,
 		"buildPower": 150,
 		"ecmID": "ZNULLECM",
 		"height": 2,
@@ -1639,7 +1639,7 @@
 	"GuardTower4H": {
 		"armour": 12,
 		"breadth": 1,
-		"buildPoints": 400,
+		"buildPoints": 375,
 		"buildPower": 150,
 		"ecmID": "ZNULLECM",
 		"height": 2,
@@ -1662,7 +1662,7 @@
 	"GuardTower5": {
 		"armour": 12,
 		"breadth": 1,
-		"buildPoints": 600,
+		"buildPoints": 400,
 		"buildPower": 200,
 		"ecmID": "ZNULLECM",
 		"height": 2,
@@ -1685,7 +1685,7 @@
 	"GuardTower6": {
 		"armour": 12,
 		"breadth": 1,
-		"buildPoints": 550,
+		"buildPoints": 375,
 		"buildPower": 175,
 		"ecmID": "ZNULLECM",
 		"height": 2,
@@ -1872,7 +1872,7 @@
 	"NX-Tower-ATMiss": {
 		"armour": 15,
 		"breadth": 1,
-		"buildPoints": 600,
+		"buildPoints": 400,
 		"buildPower": 200,
 		"ecmID": "ZNULLECM",
 		"height": 2,
@@ -1895,7 +1895,7 @@
 	"NX-Tower-PulseLas": {
 		"armour": 15,
 		"breadth": 1,
-		"buildPoints": 550,
+		"buildPoints": 350,
 		"buildPower": 200,
 		"ecmID": "ZNULLECM",
 		"height": 2,
@@ -1918,7 +1918,7 @@
 	"NX-Tower-Rail1": {
 		"armour": 15,
 		"breadth": 1,
-		"buildPoints": 550,
+		"buildPoints": 380,
 		"buildPower": 175,
 		"ecmID": "ZNULLECM",
 		"height": 2,
@@ -2483,7 +2483,7 @@
 	"Tower-RotMg": {
 		"armour": 12,
 		"breadth": 1,
-		"buildPoints": 500,
+		"buildPoints": 350,
 		"buildPower": 150,
 		"ecmID": "ZNULLECM",
 		"height": 2,
@@ -2506,7 +2506,7 @@
 	"Tower-VulcanCan": {
 		"armour": 12,
 		"breadth": 1,
-		"buildPoints": 550,
+		"buildPoints": 375,
 		"buildPower": 175,
 		"ecmID": "ZNULLECM",
 		"height": 2,
