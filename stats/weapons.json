@@ -1034,7 +1034,7 @@
 		"weaponWav": "medcan.ogg",
 		"weight": 5000
 	},
-		"Cannon375mm-VTOL": {
+	"Cannon375mm-VTOL": {
 		"buildPoints": 800,
 		"buildPower": 200,
 		"damage": 80,
@@ -1048,8 +1048,6 @@
 		"flightSpeed": 1000,
 		"hitGfx": "FXGRDexl.PIE",
 		"hitpoints": 500,
-		"id": "Cannon375mmMk1",
-		"lightWorld": 1,
 		"longHit": 50,
 		"longRange": 1024,
 		"maxElevation": 90,
@@ -1060,7 +1058,7 @@
 		"mountModel": "TRHCAN.PIE",
 		"movement": "DIRECT",
 		"muzzleGfx": "FxCan75m.PIE",
-		"name": "VTOL Cannon375mm",
+		"name": "VTOL Heavy Cannon",
 		"numAttackRuns": 4,
 		"numExplosions": 2,
 		"radius": 192,

@@ -125,7 +125,7 @@ function vtolAttack()
 		alternate: true,
 		altIdx: 0
 	};
-	camSetVtolData(CAM_THE_COLLECTIVE, "vtolAppearPoint", "vtolRemovePoint", list, camChangeOnDiff(camMinutesToMilliseconds(5)), "COCommandCenter", ext);
+	camSetVtolData(CAM_THE_COLLECTIVE, "vtolAppearPoint", "vtolRemovePoint", list, camChangeOnDiff(camMinutesToMilliseconds(6)), "COCommandCenter", ext);
 	queue("wave2", camChangeOnDiff(camSecondsToMilliseconds(30)));
 	queue("wave3", camChangeOnDiff(camSecondsToMilliseconds(60)));
 }
