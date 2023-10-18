@@ -2491,7 +2491,6 @@
 		"researchPoints": 2400,
 		"researchPower": 75,
 		"resultComponents": [
-			"Cannon1-VTOL",
 			"Cannon1Mk1"
 		],
 		"statID": "Cannon1Mk1"
@@ -2533,7 +2532,8 @@
 		"researchPoints": 7200,
 		"researchPower": 225,
 		"resultComponents": [
-			"Cannon375mmMk1"
+			"Cannon375mmMk1",
+			"Cannon375mm-VTOL"
 		],
 		"statID": "Cannon375mmMk1"
 	},
@@ -3410,8 +3410,7 @@
 		"researchPoints": 1200,
 		"researchPower": 37,
 		"resultComponents": [
-			"Rocket-Pod",
-			"Rocket-VTOL-Pod"
+			"Rocket-Pod"
 		],
 		"statID": "Rocket-Pod"
 	},
@@ -5260,7 +5259,7 @@
 		"name": "Hyper Velocity Cannon",
 		"redComponents": [
 			"Cannon375mmMk1",
-			"Cannon1-VTOL"
+			"Cannon375mm-VTOL"
 		],
 		"requiredResearch": [
 			"R-Wpn-Cannon3Mk1"
@@ -6252,7 +6251,6 @@
 		"name": "Tank Killer Rocket",
 		"redComponents": [
 			"Rocket-Pod",
-			"Rocket-VTOL-Pod",
 			"Rocket-LtA-T",
 			"Rocket-VTOL-LtA-T"
 		],

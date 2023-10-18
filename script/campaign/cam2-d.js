@@ -39,11 +39,40 @@ function truckDefense()
 	camQueueBuilding(CAM_THE_COLLECTIVE, list[camRand(list.length)], camMakePos("uplinkPos"));
 }
 
-//Attacks every 2 minutes until HQ is destroyed.
+//Attacks every 3 minutes until HQ is destroyed.
+function wave2()
+{
+	var list = [cTempl.colatv, cTempl.colatv];
+	var ext = {
+		limit: [4, 4], //paired with list array
+		alternate: true,
+		altIdx: 0
+	};
+	camSetVtolData(CAM_THE_COLLECTIVE, "vtolAppearPos", "vtolRemoveZone", list, camChangeOnDiff(camMinutesToMilliseconds(3)), "COCommandCenter", ext);
+}
+
+function wave3()
+{
+	var list = [cTempl.commorv, cTempl.commorv];
+	var ext = {
+		limit: [4, 4], //paired with list array
+		alternate: true,
+		altIdx: 0
+	};
+	camSetVtolData(CAM_THE_COLLECTIVE, "vtolAppearPos", "vtolRemoveZone", list, camChangeOnDiff(camMinutesToMilliseconds(3)), "COCommandCenter", ext);
+}
+
 function vtolAttack()
 {
-	const list = [cTempl.colatv, cTempl.commorvt];
-	camSetVtolData(CAM_THE_COLLECTIVE, "vtolAppearPos", "vtolRemovePos", list, camChangeOnDiff(camMinutesToMilliseconds(2)), "COCommandCenter");
+	var list = [cTempl.commorvt, cTempl.commorvt];
+	var ext = {
+		limit: [4, 4], //paired with list array
+		alternate: true,
+		altIdx: 0
+	};
+	camSetVtolData(CAM_THE_COLLECTIVE, "vtolAppearPos", "vtolRemoveP0se", list, camChangeOnDiff(camMinutesToMilliseconds(3)), "COCommandCenter", ext);
+	queue("wave2", camChangeOnDiff(camSecondsToMilliseconds(30)));
+	queue("wave3", camChangeOnDiff(camSecondsToMilliseconds(60)));
 }
 
 //The project captured the uplink.
