@@ -96,10 +96,39 @@ camAreaEvent("failZone", function(droid)
 	}
 });
 
+function wave2()
+{
+	var list = [cTempl.colatv, cTempl.colatv];
+	var ext = {
+		limit: [4, 4], //paired with list array
+		alternate: true,
+		altIdx: 0
+	};
+	camSetVtolData(CAM_THE_COLLECTIVE, "vtolAppearPos", "vtolRemoveZone", list, camChangeOnDiff(camMinutesToMilliseconds(5)), "COCommandCenter", ext);
+}
+
+function wave3()
+{
+	var list = [cTempl.colcbv, cTempl.colcbv];
+	var ext = {
+		limit: [4, 4], //paired with list array
+		alternate: true,
+		altIdx: 0
+	};
+	camSetVtolData(CAM_THE_COLLECTIVE, "vtolAppearPos", "vtolRemoveZone", list, camChangeOnDiff(camMinutesToMilliseconds(5)), "COCommandCenter", ext);
+}
+
 function vtolAttack()
 {
-	const list = [cTempl.colatv, cTempl.colatv];
-	camSetVtolData(CAM_THE_COLLECTIVE, "vtolAppearPoint", "vtolRemovePoint", list, camChangeOnDiff(camMinutesToMilliseconds(5)), "COCommandCenter");
+	var list = [cTempl.colpbv, cTempl.colpbv];
+	var ext = {
+		limit: [4, 4], //paired with list array
+		alternate: true,
+		altIdx: 0
+	};
+	camSetVtolData(CAM_THE_COLLECTIVE, "vtolAppearPoint", "vtolRemovePoint", list, camChangeOnDiff(camMinutesToMilliseconds(5)), "COCommandCenter", ext);
+	queue("wave2", camChangeOnDiff(camSecondsToMilliseconds(30)));
+	queue("wave3", camChangeOnDiff(camSecondsToMilliseconds(60)));
 }
 
 //Order the truck to build some defenses.
