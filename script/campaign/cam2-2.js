@@ -79,6 +79,7 @@ camAreaEvent("wayPoint2Rad", function(droid)
 		repair: 67,
 	});
 
+	const WARN_MESSAGE = "pcv632.ogg"; // Collective commander escaping
 	playSound(WARN_MESSAGE);
 });
 

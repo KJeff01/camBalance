@@ -23,7 +23,6 @@ function preDamageStuff()
 {
 	const droids = enumDroid(CAM_HUMAN_PLAYER);
 	const structures = enumStruct(CAM_HUMAN_PLAYER);
-	var x = 0;
 
 	for (let x = 0; x < droids.length; ++x)
 	{
@@ -44,6 +43,7 @@ function preDamageStuff()
 function getDroidsForCOLZ()
 {
 	const droids = [];
+	const sensors = [cTempl.comsens, cTempl.comsens];
 	const COUNT = 6 + camRand(5);
 	let templates;
 	let usingHeavy = false;
@@ -111,11 +111,17 @@ function sendPlayerTransporter()
 	}
 
 	const droids = [];
-	var list = [cTempl.prhct, cTempl.prhct, cTempl.prhct, cTempl.prltat, cTempl.prltat, cTempl.npcybr, cTempl.prrept];
+	const bodyList = ["Body11ABT", "Body11ABT", "Body12SUP"];
+	const propulsionList = ["tracked01", "tracked01", "tracked01", "hover01", "HalfTrack"];
+	const weaponList = ["Cannon375mmMk1", "Cannon375mmMk1", "Cannon375mmMk1", "Rocket-LtA-T", "Rocket-LtA-T", "Mortar2Mk1", "Rocket-MRL"];
+	const specialList = ["SensorTurret1Mk1", "CommandBrain01"];
 
 	for (let i = 0; i < 10; ++i)
 	{
+		const BODY = bodyList[camRand(bodyList.length)];
 		const WEAP = (!transporterIndex && (i < specialList.length)) ? specialList[i] : weaponList[camRand(weaponList.length)];
+		const PROP = propulsionList[camRand(propulsionList.length - ((WEAP === "Cannon375mmMk1") ? 1 : 0))]; //Ignore halftracks for Heavy Cannon.
+		droids.push({ body: BODY, prop: PROP, weap: WEAP });
 	}
 
 	camSendReinforcement(CAM_HUMAN_PLAYER, camMakePos("landingZone"), droids,
@@ -268,7 +274,9 @@ function setUnitRank(transport)
 	for (let i = 0, len = droids.length; i < len; ++i)
 	{
 		const droid = droids[i];
+		if (droid.droidType !== DROID_CONSTRUCT && droid.droidType !== DROID_REPAIR)
 		{
+			const MOD = (droid.droidType === DROID_COMMAND || droid.droidType === DROID_SENSOR) ? 2 : 1;
 			setDroidExperience(droid, MOD * droidExp[mapRun ? 0 : (transporterIndex - 1)]);
 		}
 	}
