@@ -48,7 +48,7 @@ function wave2()
 		alternate: true,
 		altIdx: 0
 	};
-	camSetVtolData(CAM_THE_COLLECTIVE, "vtolAppearPos", "vtolRemoveZone", list, camChangeOnDiff(camMinutesToMilliseconds(3)), "COCommandCenter", ext);
+	camSetVtolData(CAM_THE_COLLECTIVE, "vtolAppearPos", "vtolRemovePos", list, camChangeOnDiff(camMinutesToMilliseconds(3)), "COCommandCenter", ext);
 }
 
 function wave3()
@@ -59,7 +59,7 @@ function wave3()
 		alternate: true,
 		altIdx: 0
 	};
-	camSetVtolData(CAM_THE_COLLECTIVE, "vtolAppearPos", "vtolRemoveZone", list, camChangeOnDiff(camMinutesToMilliseconds(3)), "COCommandCenter", ext);
+	camSetVtolData(CAM_THE_COLLECTIVE, "vtolAppearPos", "vtolRemovePos", list, camChangeOnDiff(camMinutesToMilliseconds(3)), "COCommandCenter", ext);
 }
 
 function vtolAttack()
@@ -70,7 +70,7 @@ function vtolAttack()
 		alternate: true,
 		altIdx: 0
 	};
-	camSetVtolData(CAM_THE_COLLECTIVE, "vtolAppearPos", "vtolRemoveP0se", list, camChangeOnDiff(camMinutesToMilliseconds(3)), "COCommandCenter", ext);
+	camSetVtolData(CAM_THE_COLLECTIVE, "vtolAppearPos", "vtolRemovePos", list, camChangeOnDiff(camMinutesToMilliseconds(3)), "COCommandCenter", ext);
 	queue("wave2", camChangeOnDiff(camSecondsToMilliseconds(30)));
 	queue("wave3", camChangeOnDiff(camSecondsToMilliseconds(60)));
 }
