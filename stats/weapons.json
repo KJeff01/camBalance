@@ -1132,7 +1132,7 @@
 		"flightGfx": "FXTracer.PIE",
 		"flightSpeed": 1000,
 		"hitGfx": "FXMExp.PIE",
-		"hitpoints": 10,
+		"hitpoints": 50,
 		"id": "Cannon4AUTO-VTOL",
 		"lightWorld": 1,
 		"longHit": 50,
