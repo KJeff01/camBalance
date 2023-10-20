@@ -1205,7 +1205,7 @@
 	"Cannon5Vulcan-VTOL": {
 		"buildPoints": 800,
 		"buildPower": 200,
-		"damage": 160,
+		"damage": 175,
 		"designable": 1,
 		"effectSize": 50,
 		"explosionWav": "smlexpl.ogg",
