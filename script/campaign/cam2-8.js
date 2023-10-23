@@ -152,7 +152,7 @@ function eventStartLevel()
 			assembly: "COCyborgFac-b1Assembly",
 			order: CAM_ORDER_ATTACK,
 			groupSize: 4,
-			throttle: camChangeOnDiff(camSecondsToMilliseconds((difficulty <= MEDIUM) ? 27 : 30)),
+			throttle: camChangeOnDiff(camSecondsToMilliseconds((difficulty <= MEDIUM) ? 30 : 35)),
 			data: {
 				regroup: false,
 				repair: 40,
@@ -164,7 +164,7 @@ function eventStartLevel()
 			assembly: "COHeavyFacL-b2Assembly",
 			order: CAM_ORDER_ATTACK,
 			groupSize: 4,
-			throttle: camChangeOnDiff(camSecondsToMilliseconds((difficulty <= MEDIUM) ? 50 : 55)),
+			throttle: camChangeOnDiff(camSecondsToMilliseconds((difficulty <= MEDIUM) ? 70 : 75)),
 			data: {
 				regroup: false,
 				repair: 20,
@@ -176,7 +176,7 @@ function eventStartLevel()
 			assembly: "COHeavyFacR-b2Assembly",
 			order: CAM_ORDER_ATTACK,
 			groupSize: 6,
-			throttle: camChangeOnDiff(camSecondsToMilliseconds((difficulty <= MEDIUM) ? 45 : 50)),
+			throttle: camChangeOnDiff(camSecondsToMilliseconds((difficulty <= MEDIUM) ? 55 : 60)),
 			data: {
 				regroup: false,
 				repair: 20,
@@ -198,8 +198,8 @@ function eventStartLevel()
 
 	camManageTrucks(CAM_THE_COLLECTIVE);
 
-	queue("setupLandGroups", camSecondsToMilliseconds(60));
-	queue("vtolAttack", camChangeOnDiff(camSecondsToMilliseconds((difficulty <= MEDIUM) ? 80 : 90)));
+	queue("setupLandGroups", camSecondsToMilliseconds(90));
+	queue("vtolAttack", camChangeOnDiff(camSecondsToMilliseconds((difficulty <= MEDIUM) ? 100 : 110)));
 	queue("enableFactories", camChangeOnDiff(camSecondsToMilliseconds((difficulty <= MEDIUM) ? 135 : 150)));
 	setTimer("truckDefense", camChangeOnDiff(camMinutesToMilliseconds(3)));
 	truckDefense();
