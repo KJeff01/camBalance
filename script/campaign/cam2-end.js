@@ -112,11 +112,11 @@ function vtolAttack()
 		cTempl.commorv, cTempl.commorv, cTempl.comhvat, cTempl.commorvt
 	];
 	const extras = {
-		minVTOLs: (difficulty >= HARD) ? 5 : 4,
+		minVTOLs: 4,
 		maxRandomVTOLs: (difficulty >= HARD) ? 2 : 1
 	};
 
-	camSetVtolData(CAM_THE_COLLECTIVE, vtolPositions, vtolRemovePos, list, camChangeOnDiff(camSecondsToMilliseconds(30)), undefined, extras);
+	camSetVtolData(CAM_THE_COLLECTIVE, vtolPositions, vtolRemovePos, list, camSecondsToMilliseconds(30), undefined, extras);
 }
 
 //SouthEast attackers which are mostly cyborgs.
@@ -143,7 +143,11 @@ function cyborgAttackRandom()
 function tankAttack()
 {
 	const northTankAssembly = {x: 95, y: 3};
-	const list = [cTempl.comhltat, cTempl.cohact, cTempl.cohhpv, cTempl.comagt, cTempl.cohbbt];
+	const list = [cTempl.comhltat, cTempl.cohact, cTempl.cohhpv, cTempl.comagt];
+	if (getMissionTime() < (60 * 15))
+	{
+		list.push(cTempl.cohbbt);
+	}
 
 	camSendReinforcement(CAM_THE_COLLECTIVE, camMakePos(northTankAssembly), randomTemplates(list, false, true), CAM_REINFORCE_GROUND, {
 		data: { regroup: false, count: -1, },
@@ -153,7 +157,11 @@ function tankAttack()
 function tankAttackWest()
 {
 	const westTankAssembly = {x: 3, y: 112}; //This was unused. Now part of Hard/Insane playthroughs.
-	const list = [cTempl.comhltat, cTempl.cohact, cTempl.cohhpv, cTempl.comagt, cTempl.cohbbt];
+	const list = [cTempl.comhltat, cTempl.cohact, cTempl.cohhpv, cTempl.comagt];
+	if (getMissionTime() < (60 * 15))
+	{
+		list.push(cTempl.cohbbt);
+	}
 
 	camSendReinforcement(CAM_THE_COLLECTIVE, camMakePos(westTankAssembly), randomTemplates(list, true, true), CAM_REINFORCE_GROUND, {
 		data: { regroup: false, count: -1, },
@@ -162,7 +170,11 @@ function tankAttackWest()
 
 function transporterAttack()
 {
-	const droids = [cTempl.cohact, cTempl.comhltat, cTempl.cohbbt, cTempl.cohhpv];
+	const droids = [cTempl.cohact, cTempl.comhltat, cTempl.cohhpv];
+	if (getMissionTime() < (60 * 15))
+	{
+		droids.push(cTempl.cohbbt);
+	}
 
 	camSendReinforcement(CAM_THE_COLLECTIVE, camMakePos(camGenerateRandomMapCoordinate(mis_startPos, 10, 1)), randomTemplates(droids, true, false),
 		CAM_REINFORCE_TRANSPORT, {
@@ -223,16 +235,16 @@ function eventStartLevel()
 	allowWin = false;
 	camPlayVideos([{video: "MB2_DII_MSG", type: CAMP_MSG}, {video: "MB2_DII_MSG2", type: MISS_MSG}]);
 
-	queue("vtolAttack", camChangeOnDiff(camSecondsToMilliseconds(30)));
+	queue("vtolAttack", camSecondsToMilliseconds(30));
 	if (difficulty === INSANE)
 	{
 		setPower(playerPower(CAM_HUMAN_PLAYER) + 12000);
-		setTimer("transporterAttack", camMinutesToMilliseconds(4));
+		setTimer("transporterAttack", camMinutesToMilliseconds(5));
 	}
 	if (difficulty >= HARD)
 	{
-		setTimer("tankAttackWest", camChangeOnDiff(camMinutesToMilliseconds(6)));
-		setTimer("cyborgAttackRandom", camChangeOnDiff(camMinutesToMilliseconds(5)));
+		setTimer("tankAttackWest", camChangeOnDiff(camMinutesToMilliseconds(7)));
+		setTimer("cyborgAttackRandom", camChangeOnDiff(camMinutesToMilliseconds(6)));
 	}
 	setTimer("cyborgAttack", camChangeOnDiff(camMinutesToMilliseconds(4)));
 	setTimer("tankAttack", camChangeOnDiff(camMinutesToMilliseconds(3)));
