@@ -275,6 +275,7 @@ function cam3Setup()
 
 	enableResearch("R-Wpn-Howitzer03-Rot", CAM_HUMAN_PLAYER);
 	enableResearch("R-Wpn-MG-Damage08", CAM_HUMAN_PLAYER);
+	enableResearch("R-Defense-WallUpgrade07", CAM_HUMAN_PLAYER);
 }
 
 //Normal and lower difficulties has Nexus start off a little bit weaker

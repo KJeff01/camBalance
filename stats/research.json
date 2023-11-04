@@ -6803,6 +6803,7 @@
 		"iconID": "IMAGE_RES_DEFENCE",
 		"id": "R-Defense-WallUpgrade07",
 		"imdName": "BLWALLH.PIE",
+		"keyTopic": 1,
 		"msgName": "RES_DF_WU7",
 		"name": "Plascrete",
 		"requiredResearch": [
@@ -6817,7 +6818,7 @@
 				"filterParameter": "Type",
 				"filterValue": "Wall",
 				"parameter": "Armour",
-				"value": 40
+				"value": 60
 			},
 			{
 				"class": "Building",
@@ -6833,10 +6834,10 @@
 		"iconID": "IMAGE_RES_DEFENCE",
 		"id": "R-Defense-WallUpgrade08",
 		"imdName": "BLWALLH.PIE",
+		"keyTopic": 1,
 		"name": "Plascrete Mk2",
 		"requiredResearch": [
-			"R-Defense-WallUpgrade07",
-			"R-Struc-Research-Upgrade07"
+			"R-Defense-WallUpgrade07"
 		],
 		"researchPoints": 14000,
 		"researchPower": 437,
@@ -6846,14 +6847,14 @@
 				"filterParameter": "Type",
 				"filterValue": "Wall",
 				"parameter": "Armour",
-				"value": 20
+				"value": 40
 			},
 			{
 				"class": "Building",
 				"filterParameter": "Type",
 				"filterValue": "Wall",
 				"parameter": "HitPoints",
-				"value": 20
+				"value": 40
 			}
 		],
 		"subgroupIconID": "IMAGE_RES_GRPUPG",
@@ -6863,10 +6864,10 @@
 		"iconID": "IMAGE_RES_DEFENCE",
 		"id": "R-Defense-WallUpgrade09",
 		"imdName": "BLWALLH.PIE",
-		"keyTopic": 1,
 		"name": "Plascrete Mk3",
 		"requiredResearch": [
-			"R-Defense-WallUpgrade08"
+			"R-Defense-WallUpgrade08",
+			"R-Struc-Research-Upgrade07"
 		],
 		"researchPoints": 16000,
 		"researchPower": 450,
@@ -6892,6 +6893,96 @@
 	"R-Defense-WallUpgrade10": {
 		"iconID": "IMAGE_RES_DEFENCE",
 		"id": "R-Defense-WallUpgrade10",
+		"imdName": "BLWALLH.PIE",
+		"keyTopic": 1,
+		"msgName": "RES_DF_WU10",
+		"name": "Plasteel",
+		"requiredResearch": [
+			"R-Defense-WallUpgrade09"
+		],
+		"researchPoints": 18000,
+		"researchPower": 450,
+		"results": [
+			{
+				"class": "Building",
+				"filterParameter": "Type",
+				"filterValue": "Wall",
+				"parameter": "Armour",
+				"value": 60
+			},
+			{
+				"class": "Building",
+				"filterParameter": "Type",
+				"filterValue": "Wall",
+				"parameter": "HitPoints",
+				"value": 40
+			}
+		],
+		"subgroupIconID": "IMAGE_RES_GRPUPG"
+	},
+	"R-Defense-WallUpgrade11": {
+		"iconID": "IMAGE_RES_DEFENCE",
+		"id": "R-Defense-WallUpgrade11",
+		"imdName": "BLWALLH.PIE",
+		"keyTopic": 1,
+		"name": "Plasteel Mk2",
+		"requiredResearch": [
+			"R-Defense-WallUpgrade10"
+		],
+		"researchPoints": 20000,
+		"researchPower": 450,
+		"results": [
+			{
+				"class": "Building",
+				"filterParameter": "Type",
+				"filterValue": "Wall",
+				"parameter": "Armour",
+				"value": 60
+			},
+			{
+				"class": "Building",
+				"filterParameter": "Type",
+				"filterValue": "Wall",
+				"parameter": "HitPoints",
+				"value": 40
+			}
+		],
+		"subgroupIconID": "IMAGE_RES_GRPUPG",
+		"techCode": 1
+	},
+	"R-Defense-WallUpgrade12": {
+		"iconID": "IMAGE_RES_DEFENCE",
+		"id": "R-Defense-WallUpgrade12",
+		"imdName": "BLWALLH.PIE",
+		"keyTopic": 1,
+		"name": "Plasteel Mk3",
+		"requiredResearch": [
+			"R-Defense-WallUpgrade11"
+		],
+		"researchPoints": 22000,
+		"researchPower": 450,
+		"results": [
+			{
+				"class": "Building",
+				"filterParameter": "Type",
+				"filterValue": "Wall",
+				"parameter": "Armour",
+				"value": 60
+			},
+			{
+				"class": "Building",
+				"filterParameter": "Type",
+				"filterValue": "Wall",
+				"parameter": "HitPoints",
+				"value": 40
+			}
+		],
+		"subgroupIconID": "IMAGE_RES_GRPUPG",
+		"techCode": 1
+	},
+	"R-Defense-WallUpgrade13": {
+		"iconID": "IMAGE_RES_DEFENCE",
+		"id": "R-Defense-WallUpgrade13",
 		"keyTopic": 1,
 		"imdName": "BLWALLH.PIE",
 		"results": [
@@ -6913,9 +7004,9 @@
 		"subgroupIconID": "IMAGE_RES_GRPUPG",
 		"techCode": 1
 	},
-	"R-Defense-WallUpgrade11": {
+	"R-Defense-WallUpgrade14": {
 		"iconID": "IMAGE_RES_DEFENCE",
-		"id": "R-Defense-WallUpgrade11",
+		"id": "R-Defense-WallUpgrade14",
 		"keyTopic": 1,
 		"imdName": "BLWALLH.PIE",
 		"results": [

@@ -3,7 +3,7 @@ include("script/campaign/templates.js");
 
 const MIS_Y_SCROLL_LIMIT = 137;
 const mis_nexusRes = [
-	"R-Sys-Engineering03", "R-Defense-WallUpgrade10", "R-Struc-Materials10",
+	"R-Sys-Engineering03", "R-Defense-WallUpgrade12", "R-Struc-Materials10",
 	"R-Struc-VTOLPad-Upgrade06", "R-Wpn-Bomb-Damage03", "R-Sys-NEXUSrepair",
 	"R-Vehicle-Prop-Hover02", "R-Vehicle-Prop-VTOL02", "R-Cyborg-Legs02",
 	"R-Wpn-Mortar-Acc03", "R-Wpn-MG-Damage09", "R-Wpn-Mortar-ROF04",

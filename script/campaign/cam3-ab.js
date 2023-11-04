@@ -284,6 +284,7 @@ function eventStartLevel()
 	camCompleteRequiredResearch(mis_nexusRes, CAM_NEXUS);
 
 	enableResearch("R-Sys-Resistance-Upgrade01", CAM_HUMAN_PLAYER);
+	enableResearch("R-Defense-WallUpgrade10", CAM_HUMAN_PLAYER);
 	winFlag = false;
 	hackFailChance = (difficulty <= EASY) ? 40 : 30;
 
