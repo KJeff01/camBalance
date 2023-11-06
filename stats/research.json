@@ -4425,7 +4425,7 @@
 			{
 				"class": "Construct",
 				"parameter": "ConstructorPoints",
-				"value": 20
+				"value": 30
 			}
 		],
 		"subgroupIconID": "IMAGE_RES_GRPUPG"
@@ -7323,7 +7323,7 @@
 			{
 				"class": "Construct",
 				"parameter": "ConstructorPoints",
-				"value": 20
+				"value": 30
 			}
 		],
 		"subgroupIconID": "IMAGE_RES_GRPUPG"
@@ -7653,14 +7653,14 @@
 				"filterParameter": "ImpactClass",
 				"filterValue": "A-A GUN",
 				"parameter": "Damage",
-				"value": 30
+				"value": 40
 			},
 			{
 				"class": "Weapon",
 				"filterParameter": "ImpactClass",
 				"filterValue": "A-A GUN",
 				"parameter": "RadiusDamage",
-				"value": 30
+				"value": 40
 			}
 		],
 		"statID": "QuadMg1AAGun",
@@ -7682,14 +7682,14 @@
 				"filterParameter": "ImpactClass",
 				"filterValue": "A-A GUN",
 				"parameter": "Damage",
-				"value": 30
+				"value": 40
 			},
 			{
 				"class": "Weapon",
 				"filterParameter": "ImpactClass",
 				"filterValue": "A-A GUN",
 				"parameter": "RadiusDamage",
-				"value": 30
+				"value": 40
 			}
 		],
 		"statID": "QuadMg1AAGun",
@@ -7712,14 +7712,14 @@
 				"filterParameter": "ImpactClass",
 				"filterValue": "A-A GUN",
 				"parameter": "Damage",
-				"value": 30
+				"value": 40
 			},
 			{
 				"class": "Weapon",
 				"filterParameter": "ImpactClass",
 				"filterValue": "A-A GUN",
 				"parameter": "RadiusDamage",
-				"value": 30
+				"value": 40
 			}
 		],
 		"statID": "QuadMg1AAGun",
