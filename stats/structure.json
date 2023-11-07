@@ -1087,7 +1087,7 @@
 	"Emplacement-Howitzer150": {
 		"armour": 12,
 		"breadth": 1,
-		"buildPoints": 700,
+		"buildPoints": 600,
 		"buildPower": 350,
 		"ecmID": "ZNULLECM",
 		"height": 1,
@@ -1110,7 +1110,7 @@
 	"Emplacement-HvART-pit": {
 		"armour": 10,
 		"breadth": 1,
-		"buildPoints": 1000,
+		"buildPoints": 700,
 		"buildPower": 525,
 		"ecmID": "ZNULLECM",
 		"height": 1,
@@ -1179,7 +1179,7 @@
 	"Emplacement-MdART-pit": {
 		"armour": 10,
 		"breadth": 1,
-		"buildPoints": 800,
+		"buildPoints": 700,
 		"buildPower": 450,
 		"ecmID": "ZNULLECM",
 		"height": 1,
@@ -1363,7 +1363,7 @@
 	"Emplacement-RotHow": {
 		"armour": 12,
 		"breadth": 1,
-		"buildPoints": 800,
+		"buildPoints": 600,
 		"buildPower": 400,
 		"ecmID": "ZNULLECM",
 		"height": 1,
@@ -1803,7 +1803,7 @@
 	"NX-Emp-MedArtMiss-Pit": {
 		"armour": 15,
 		"breadth": 1,
-		"buildPoints": 800,
+		"buildPoints": 700,
 		"buildPower": 450,
 		"ecmID": "ZNULLECM",
 		"height": 1,
@@ -1826,7 +1826,7 @@
 	"NX-Emp-MultiArtMiss-Pit": {
 		"armour": 15,
 		"breadth": 1,
-		"buildPoints": 1000,
+		"buildPoints": 700,
 		"buildPower": 525,
 		"ecmID": "ZNULLECM",
 		"height": 1,
@@ -1849,7 +1849,7 @@
 	"NX-Emp-Plasma-Pit": {
 		"armour": 15,
 		"breadth": 1,
-		"buildPoints": 900,
+		"buildPoints": 800,
 		"buildPower": 600,
 		"ecmID": "ZNULLECM",
 		"height": 1,
