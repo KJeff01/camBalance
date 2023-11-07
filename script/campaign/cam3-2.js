@@ -51,7 +51,7 @@ camAreaEvent("rescueTrigger", function(droid)
 	camAbsorbPlayer(MIS_ALPHA_PLAYER, CAM_HUMAN_PLAYER);
 
 	queue("getAlphaUnitIDs", camSecondsToMilliseconds(0.5));
-	setTimer("phantomFactorySE", camChangeOnDiff(camMinutesToMilliseconds(4)));
+	setTimer("phantomFactorySE", camChangeOnDiff(camMinutesToMilliseconds(5)));
 
 	camPlayVideos({video: "MB3_2_MSG4", type: MISS_MSG});
 });
@@ -319,6 +319,6 @@ function eventStartLevel()
 	queue("setAlphaExp", camSecondsToMilliseconds(2));
 	queue("setupPatrolGroups", camChangeOnDiff(camMinutesToMilliseconds(2)));
 
-	setTimer("phantomFactoryNE", camChangeOnDiff(camMinutesToMilliseconds(3.5)));
-	setTimer("phantomFactorySW", camChangeOnDiff(camMinutesToMilliseconds(5.5)));
+	setTimer("phantomFactoryNE", camChangeOnDiff(camMinutesToMilliseconds(4.5)));
+	setTimer("phantomFactorySW", camChangeOnDiff(camMinutesToMilliseconds(6.5)));
 }
