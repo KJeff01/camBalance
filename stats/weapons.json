@@ -1868,7 +1868,7 @@
 	"LasSat": {
 		"buildPoints": 500,
 		"buildPower": 100,
-		"damage": 4000,
+		"damage": 5000,
 		"effectSize": 100,
 		"explosionWav": "lsrexpl.ogg",
 		"facePlayer": 1,
@@ -1895,7 +1895,7 @@
 		"periodicalDamageRadius": 425,
 		"periodicalDamageTime": 50,
 		"radius": 256,
-		"radiusDamage": 3000,
+		"radiusDamage": 4000,
 		"rotate": 180,
 		"shortHit": 70,
 		"shortRange": 640,
