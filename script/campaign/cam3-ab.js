@@ -296,5 +296,5 @@ function eventStartLevel()
 	setTimer("truckDefense", camSecondsToMilliseconds(2));
 	setTimer("hackPlayer", camChangeOnDiff(camSecondsToMilliseconds(8)));
 	setTimer("nexusManufacture", camSecondsToMilliseconds(10));
-	setTimer("sendEdgeMapDroids", camChangeOnDiff(camMinutesToMilliseconds(3)));
+	setTimer("sendEdgeMapDroids", camChangeOnDiff(camMinutesToMilliseconds(4)));
 }
