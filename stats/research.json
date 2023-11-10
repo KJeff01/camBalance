@@ -6990,38 +6990,14 @@
 				"filterParameter": "Type",
 				"filterValue": "Wall",
 				"parameter": "Armour",
-				"value": 100
+				"value": 200
 			},
 			{
 				"class": "Building",
 				"filterParameter": "Type",
 				"filterValue": "Wall",
 				"parameter": "HitPoints",
-				"value": 100
-			}
-		],
-		"subgroupIconID": "IMAGE_RES_GRPUPG",
-		"techCode": 1
-	},
-	"R-Defense-WallUpgrade14": {
-		"iconID": "IMAGE_RES_DEFENCE",
-		"id": "R-Defense-WallUpgrade14",
-		"keyTopic": 1,
-		"imdName": "BLWALLH.PIE",
-		"results": [
-			{
-				"class": "Building",
-				"filterParameter": "Type",
-				"filterValue": "Wall",
-				"parameter": "Armour",
-				"value": 400
-			},
-			{
-				"class": "Building",
-				"filterParameter": "Type",
-				"filterValue": "Wall",
-				"parameter": "HitPoints",
-				"value": 100
+				"value": 50
 			}
 		],
 		"subgroupIconID": "IMAGE_RES_GRPUPG",

@@ -246,6 +246,10 @@ function eventStartLevel()
 	setNoGoArea(enemyLz.x, enemyLz.y, enemyLz.x2, enemyLz.y2, CAM_NEXUS);
 
 	camCompleteRequiredResearch(mis_nexusRes, CAM_NEXUS);
+	if (difficulty === INSANE)
+	{
+		completeResearch("R-Defense-WallUpgrade13", CAM_NEXUS);
+	}
 	setupNexusPatrols();
 	camManageTrucks(CAM_NEXUS);
 
