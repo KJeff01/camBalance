@@ -81,7 +81,7 @@ function wave2()
 		alternate: true,
 		altIdx: 0
 	};
-	camSetVtolData(CAM_NEXUS, (difficulty === INSANE) ? undefined : "vtolAppearPos", "vtolRemovePos", list, camChangeOnDiff(camMinutesToMilliseconds(2)), undefined, ext);
+	camSetVtolData(CAM_NEXUS, (difficulty === INSANE) ? undefined : "vtolAppearPos", "vtolRemovePos", list, camChangeOnDiff(camMinutesToMilliseconds(3.5)), undefined, ext);
 }
 
 function wave3()
@@ -92,7 +92,7 @@ function wave3()
 		alternate: true,
 		altIdx: 0
 	};
-	camSetVtolData(CAM_NEXUS, (difficulty === INSANE) ? undefined : "vtolAppearPos", "vtolRemovePos", list, camChangeOnDiff(camMinutesToMilliseconds(2)), undefined, ext);
+	camSetVtolData(CAM_NEXUS, (difficulty === INSANE) ? undefined : "vtolAppearPos", "vtolRemovePos", list, camChangeOnDiff(camMinutesToMilliseconds(3.5)), undefined, ext);
 }
 
 //Setup Nexus VTOL hit and runners. NOTE: These do not go away in this mission.
@@ -104,7 +104,7 @@ function vtolAttack()
 		alternate: true,
 		altIdx: 0
 	};
-	camSetVtolData(CAM_NEXUS, (difficulty === INSANE) ? undefined : "vtolAppearPos", "vtolRemovePos", list, camChangeOnDiff(camMinutesToMilliseconds(2)), undefined, ext);
+	camSetVtolData(CAM_NEXUS, (difficulty === INSANE) ? undefined : "vtolAppearPos", "vtolRemovePos", list, camChangeOnDiff(camMinutesToMilliseconds(3.5)), undefined, ext);
 	queue("wave2", camChangeOnDiff(camSecondsToMilliseconds(30)));
 	queue("wave3", camChangeOnDiff(camSecondsToMilliseconds(60)));
 }
@@ -211,15 +211,15 @@ function eventResearched(research, structure, player)
 {
 	if (research.name === "R-Sys-Resistance-Upgrade01")
 	{
-		hackFailChance = 55;
+		hackFailChance = 60;
 	}
 	else if (research.name === "R-Sys-Resistance-Upgrade02")
 	{
-		hackFailChance = 70;
+		hackFailChance = 75;
 	}
 	else if (research.name === "R-Sys-Resistance-Upgrade03")
 	{
-		hackFailChance = 85;
+		hackFailChance = 90;
 	}
 	else if (research.name === "R-Sys-Resistance-Upgrade04")
 	{
@@ -285,7 +285,7 @@ function eventStartLevel()
 
 	enableResearch("R-Sys-Resistance-Upgrade01", CAM_HUMAN_PLAYER);
 	winFlag = false;
-	hackFailChance = (difficulty <= EASY) ? 40 : 30;
+	hackFailChance = (difficulty <= EASY) ? 45 : 33;
 
 	queue("vtolAttack", camChangeOnDiff(camMinutesToMilliseconds(2)));
 
