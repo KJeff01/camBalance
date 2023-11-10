@@ -209,8 +209,8 @@ function truckDefense()
 	{
 		const list = [
 			"Sys-NEXUSLinkTOW", "P0-AASite-SAM2", "Emplacement-PrisLas",
-			"NX-Tower-ATMiss", "Sys-NX-CBTower", "Emplacement-HvART-pit",
-			"Sys-SensoTower02"
+			"NX-Tower-ATMiss", "Sys-NX-CBTower", "NX-Emp-MultiArtMiss-Pit",
+			"Sys-NX-SensorTower"
 		];
 
 		for (let i = 0; i < TRUCK_NUM; ++i)

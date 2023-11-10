@@ -229,7 +229,7 @@ function truckDefense()
 		return;
 	}
 
-	const list = ["Emplacement-Howitzer105", "Emplacement-MdART-pit", "Emplacement-RotHow"];
+	const list = ["Emplacement-Howitzer105", "NX-Emp-MedArtMiss-Pit", "Emplacement-RotHow"];
 	let position;
 
 	if (truckLocCounter === 0)
