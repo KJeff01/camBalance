@@ -352,7 +352,7 @@ function eventStartLevel()
 				count: -1,
 			},
 			groupSize: 4,
-			throttle: camChangeOnDiff(camSecondsToMilliseconds(40)),
+			throttle: camChangeOnDiff(camSecondsToMilliseconds(50)),
 			group: camMakeGroup("NEAttackerGroup"),
 			templates: [cTempl.nxcyrail, cTempl.nxcyscou]
 		},
@@ -365,7 +365,7 @@ function eventStartLevel()
 				count: -1,
 			},
 			groupSize: 4,
-			throttle: camChangeOnDiff(camSecondsToMilliseconds(30)),
+			throttle: camChangeOnDiff(camSecondsToMilliseconds(40)),
 			group: camMakeGroup("cybAttackers"),
 			templates: [cTempl.nxcyrail, cTempl.nxcyscou]
 		},
@@ -383,7 +383,7 @@ function eventStartLevel()
 				count: -1,
 			},
 			groupSize: 4,
-			throttle: camChangeOnDiff(camSecondsToMilliseconds(35)),
+			throttle: camChangeOnDiff(camSecondsToMilliseconds(60)),
 			group: camMakeGroup("cybValleyPatrol"),
 			templates: [cTempl.nxcyrail, cTempl.nxcyscou]
 		},
@@ -401,7 +401,7 @@ function eventStartLevel()
 				count: -1,
 			},
 			groupSize: 4,
-			throttle: camChangeOnDiff(camSecondsToMilliseconds(60)),
+			throttle: camChangeOnDiff(camSecondsToMilliseconds(70)),
 			group: camMakeGroup("hoverPatrolGrp"),
 			templates: [cTempl.nxmscouh]
 		},
@@ -414,7 +414,7 @@ function eventStartLevel()
 				count: -1,
 			},
 			groupSize: 4,
-			throttle: camChangeOnDiff(camSecondsToMilliseconds(45)),
+			throttle: camChangeOnDiff(camSecondsToMilliseconds(55)),
 			templates: [cTempl.nxcyrail, cTempl.nxcyscou]
 		},
 	});
