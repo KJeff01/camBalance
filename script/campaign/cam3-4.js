@@ -437,5 +437,5 @@ function eventStartLevel()
 	hackAddMessage("CM34_OBJ1", PROX_MSG, CAM_HUMAN_PLAYER);
 
 	queue("enableAllFactories", camChangeOnDiff(camMinutesToMilliseconds(5)));
-	setTimer("truckDefense", camChangeOnDiff(camMinutesToMilliseconds(15)));
+	setTimer("truckDefense", camMinutesToMilliseconds(20));
 }
