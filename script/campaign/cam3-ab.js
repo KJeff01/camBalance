@@ -15,7 +15,6 @@ const mis_nexusRes = [
 	"R-Wpn-Energy-Damage03", "R-Wpn-Energy-ROF03", "R-Wpn-Energy-Accuracy01",
 	"R-Wpn-AAGun-Accuracy03", "R-Wpn-Howitzer-Accuracy03",
 ];
-var edgeMapCounter; //how many Nexus reinforcement runs have happened.
 var hackFailChance; //chance the Nexus Intruder Program will fail
 var winFlag;
 
@@ -52,11 +51,6 @@ function sendEdgeMapDroids()
 	}
 	let droids = [];
 
-	if (!camDef(edgeMapCounter))
-	{
-		edgeMapCounter = 0;
-	}
-
 	for (let i = 0; i < unitCount; ++i)
 	{
 		droids.push(list[camRand(list.length)]);
@@ -69,8 +63,6 @@ function sendEdgeMapDroids()
 			data: {regroup: false, count: -1}
 		}
 	);
-
-	edgeMapCounter += 1;
 }
 
 function wave2()
@@ -253,8 +245,7 @@ function synapticsSound()
 //winFlag is set in eventResearched.
 function resistanceResearched()
 {
-	const MAP_EDGE_COUNT = (difficulty >= MEDIUM) ? 15 : 8;
-	if (winFlag && edgeMapCounter >= MAP_EDGE_COUNT)
+	if (winFlag)
 	{
 		return true;
 	}
