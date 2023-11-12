@@ -3525,7 +3525,7 @@
 	"Rocket-HvyA-T": {
 		"buildPoints": 1250,
 		"buildPower": 250,
-		"damage": 180,
+		"damage": 185,
 		"designable": 1,
 		"effectSize": 75,
 		"explosionWav": "lrgexpl.ogg",
@@ -3774,7 +3774,7 @@
 	"Rocket-VTOL-HvyA-T": {
 		"buildPoints": 1250,
 		"buildPower": 250,
-		"damage": 270,
+		"damage": 277,
 		"designable": 1,
 		"effectSize": 75,
 		"explosionWav": "lrgexpl.ogg",
