@@ -1909,7 +1909,7 @@
 	"Laser2PULSE-VTOL": {
 		"buildPoints": 800,
 		"buildPower": 200,
-		"damage": 240,
+		"damage": 312,
 		"designable": 1,
 		"effectSize": 100,
 		"explosionWav": "lsrexpl.ogg",
@@ -1948,7 +1948,7 @@
 	"Laser2PULSEMk1": {
 		"buildPoints": 800,
 		"buildPower": 200,
-		"damage": 240,
+		"damage": 312,
 		"designable": 1,
 		"effectSize": 100,
 		"explosionWav": "lsrexpl.ogg",
@@ -1986,7 +1986,7 @@
 	"Laser3BEAM-VTOL": {
 		"buildPoints": 600,
 		"buildPower": 150,
-		"damage": 120,
+		"damage": 156,
 		"designable": 1,
 		"effectSize": 100,
 		"explosionWav": "lsrexpl.ogg",
@@ -2025,7 +2025,7 @@
 	"Laser3BEAMMk1": {
 		"buildPoints": 600,
 		"buildPower": 150,
-		"damage": 120,
+		"damage": 156,
 		"designable": 1,
 		"effectSize": 100,
 		"explosionWav": "lsrexpl.ogg",
