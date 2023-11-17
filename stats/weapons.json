@@ -2950,7 +2950,7 @@
 	"Mortar3ROTARYMk1": {
 		"buildPoints": 900,
 		"buildPower": 300,
-		"damage": 50,
+		"damage": 55,
 		"designable": 1,
 		"effectSize": 100,
 		"explosionWav": "lrgexpl.ogg",
