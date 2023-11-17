@@ -1358,7 +1358,7 @@
 	"Cyb-Wpn-Laser": {
 		"buildPoints": 600,
 		"buildPower": 150,
-		"damage": 120,
+		"damage": 156,
 		"effectSize": 100,
 		"explosionWav": "lsrexpl.ogg",
 		"facePlayer": 1,
@@ -3132,7 +3132,7 @@
 	"NX-CyborgPulseLas": {
 		"buildPoints": 375,
 		"buildPower": 125,
-		"damage": 240,
+		"damage": 312,
 		"effectSize": 100,
 		"explosionWav": "lsrexpl.ogg",
 		"facePlayer": 1,
