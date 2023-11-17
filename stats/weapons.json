@@ -1768,6 +1768,7 @@
 		"muzzleGfx": "FXHHowt2.PIE",
 		"name": "Hellstorm",
 		"numExplosions": 2,
+		"numRounds": 3,
 		"periodicalDamage": 60,
 		"periodicalDamageRadius": 192,
 		"periodicalDamageTime": 60,
