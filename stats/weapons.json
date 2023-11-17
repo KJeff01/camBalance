@@ -1245,7 +1245,7 @@
 	"Cannon5VulcanMk1": {
 		"buildPoints": 800,
 		"buildPower": 200,
-		"damage": 53,
+		"damage": 52,
 		"designable": 1,
 		"effectSize": 50,
 		"explosionWav": "smlexpl.ogg",

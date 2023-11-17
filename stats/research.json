@@ -3202,14 +3202,14 @@
 				"filterParameter": "ImpactClass",
 				"filterValue": "ROCKET",
 				"parameter": "Damage",
-				"value": 35
+				"value": 30
 			},
 			{
 				"class": "Weapon",
 				"filterParameter": "ImpactClass",
 				"filterValue": "ROCKET",
 				"parameter": "RadiusDamage",
-				"value": 35
+				"value": 30
 			}
 		],
 		"statID": "Rocket-Pod",
@@ -3231,14 +3231,14 @@
 				"filterParameter": "ImpactClass",
 				"filterValue": "ROCKET",
 				"parameter": "Damage",
-				"value": 15
+				"value": 20
 			},
 			{
 				"class": "Weapon",
 				"filterParameter": "ImpactClass",
 				"filterValue": "ROCKET",
 				"parameter": "RadiusDamage",
-				"value": 15
+				"value": 20
 			}
 		],
 		"statID": "Rocket-Pod",
