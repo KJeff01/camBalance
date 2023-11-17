@@ -8160,14 +8160,14 @@
 				"filterParameter": "ImpactClass",
 				"filterValue": "ENERGY",
 				"parameter": "Damage",
-				"value": 30
+				"value": 12
 			},
 			{
 				"class": "Weapon",
 				"filterParameter": "ImpactClass",
 				"filterValue": "ENERGY",
 				"parameter": "RadiusDamage",
-				"value": 30
+				"value": 12
 			}
 		],
 		"statID": "Laser2PULSEMk1",
@@ -8189,14 +8189,14 @@
 				"filterParameter": "ImpactClass",
 				"filterValue": "ENERGY",
 				"parameter": "Damage",
-				"value": 30
+				"value": 12
 			},
 			{
 				"class": "Weapon",
 				"filterParameter": "ImpactClass",
 				"filterValue": "ENERGY",
 				"parameter": "RadiusDamage",
-				"value": 30
+				"value": 12
 			}
 		],
 		"statID": "Laser2PULSEMk1",
@@ -8220,14 +8220,14 @@
 				"filterParameter": "ImpactClass",
 				"filterValue": "ENERGY",
 				"parameter": "Damage",
-				"value": 30
+				"value": 20
 			},
 			{
 				"class": "Weapon",
 				"filterParameter": "ImpactClass",
 				"filterValue": "ENERGY",
 				"parameter": "RadiusDamage",
-				"value": 30
+				"value": 20
 			}
 		],
 		"statID": "Laser2PULSEMk1",
