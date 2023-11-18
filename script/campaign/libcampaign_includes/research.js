@@ -41,8 +41,11 @@ function camCompleteRequiredResearch(researchIds, playerId)
 
 		if (reqRes.length === 0)
 		{
+			const specialHackResearch = [
+				"R-Sys-NEXUSrepair", "R-Sys-NEXUSsensor",
+			];
 			//HACK: autorepair like upgrades don't work after mission transition.
-			if (__RESEARCH_ID === "R-Sys-NEXUSrepair")
+			if (specialHackResearch.indexOf(__RESEARCH_ID) !== -1)
 			{
 				completeResearch(__RESEARCH_ID, playerId, true);
 			}

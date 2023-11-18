@@ -257,6 +257,7 @@ function cam3Setup()
 		"R-Wpn-Missile-Damage01", "R-Wpn-Missile-ROF01", "R-Wpn-Missile-Accuracy01",
 		"R-Wpn-Rail-Damage01", "R-Wpn-Rail-ROF01", "R-Wpn-Rail-Accuracy01",
 		"R-Wpn-Energy-Damage02", "R-Wpn-Energy-ROF01", "R-Wpn-Energy-Accuracy01",
+		"R-Sys-NEXUSsensor",
 	];
 
 	for (let x = 0, l = mis_structsAlpha.length; x < l; ++x)
