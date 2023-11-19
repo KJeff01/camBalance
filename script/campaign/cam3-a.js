@@ -249,7 +249,7 @@ function cam3Setup()
 		"R-Sys-Engineering03", "R-Defense-WallUpgrade07", "R-Struc-Materials07",
 		"R-Struc-VTOLPad-Upgrade06", "R-Wpn-Bomb-Damage03", "R-Sys-NEXUSrepair",
 		"R-Vehicle-Prop-Hover02", "R-Vehicle-Prop-VTOL02", "R-Cyborg-Legs02",
-		"R-Wpn-Mortar-Acc03", "R-Wpn-MG-Damage08", "R-Wpn-Mortar-ROF04",
+		"R-Wpn-Mortar-Acc03", "R-Wpn-MG-Damage09", "R-Wpn-Mortar-ROF04",
 		"R-Vehicle-Engine07", "R-Vehicle-Metals06", "R-Vehicle-Armor-Heat03",
 		"R-Cyborg-Metals06", "R-Cyborg-Armor-Heat03", "R-Wpn-RocketSlow-ROF04",
 		"R-Wpn-AAGun-Damage05", "R-Wpn-AAGun-ROF04", "R-Wpn-Howitzer-Damage09",
@@ -274,7 +274,8 @@ function cam3Setup()
 	}
 
 	enableResearch("R-Wpn-Howitzer03-Rot", CAM_HUMAN_PLAYER);
-	enableResearch("R-Wpn-MG-Damage08", CAM_HUMAN_PLAYER);
+	enableResearch("R-Wpn-MG-Damage09", CAM_HUMAN_PLAYER);
+	enableResearch("R-Wpn-Flamer-ROF04", CAM_HUMAN_PLAYER);
 	enableResearch("R-Defense-WallUpgrade07", CAM_HUMAN_PLAYER);
 }
 

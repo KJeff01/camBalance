@@ -334,7 +334,7 @@ function eventStartLevel()
 	camCompleteRequiredResearch(mis_nexusRes, CAM_NEXUS);
 
 	camSetArtifacts({
-		"NXMediumFac": { tech: "R-Wpn-MG-Damage09" },
+		"NXMediumFac": { tech: "R-Wpn-Cannon-Damage08" },
 		"NXCommandCenter": { tech: "R-Defense-WallUpgrade08" },
 	});
 

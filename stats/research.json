@@ -5471,6 +5471,36 @@
 		"subgroupIconID": "IMAGE_RES_GRPROF",
 		"techCode": 1
 	},
+	"R-Wpn-Flamer-ROF04": {
+		"iconID": "IMAGE_RES_WEAPONTECH",
+		"id": "R-Wpn-Flamer-ROF04",
+		"keyTopic": 1,
+		"name": "Flamer Fast Loader",
+		"requiredResearch": [
+			"R-Wpn-Flamer-ROF03"
+		],
+		"researchPoints": 8000,
+		"researchPower": 250,
+		"results": [
+			{
+				"class": "Weapon",
+				"filterParameter": "ImpactClass",
+				"filterValue": "FLAME",
+				"parameter": "FirePause",
+				"value": -10
+			},
+			{
+				"class": "Weapon",
+				"filterParameter": "ImpactClass",
+				"filterValue": "FLAME",
+				"parameter": "ReloadTime",
+				"value": -10
+			}
+		],
+		"statID": "Flame1Mk1",
+		"subgroupIconID": "IMAGE_RES_GRPROF",
+		"techCode": 1
+	},
 	"R-Wpn-Howitzer-Accuracy01": {
 		"iconID": "IMAGE_RES_WEAPONTECH",
 		"id": "R-Wpn-Howitzer-Accuracy01",
@@ -7859,7 +7889,7 @@
 		"msgName": "RES_W_CN_D7",
 		"name": "HVAPFSDS Cannon Rounds",
 		"requiredResearch": [
-			"R-Wpn-MG-Damage08",
+			"R-Wpn-MG-Damage09",
 			"R-Wpn-Cannon-Damage06"
 		],
 		"researchPoints": 9600,
@@ -7886,10 +7916,10 @@
 	"R-Wpn-Cannon-Damage08": {
 		"iconID": "IMAGE_RES_WEAPONTECH",
 		"id": "R-Wpn-Cannon-Damage08",
+		"keyTopic": 1,
 		"name": "HVAPFSDS Cannon Rounds Mk2",
 		"requiredResearch": [
-			"R-Wpn-Cannon-Damage07",
-			"R-Wpn-MG-Damage09"
+			"R-Wpn-Cannon-Damage07"
 		],
 		"researchPoints": 10800,
 		"researchPower": 337,
@@ -8648,7 +8678,7 @@
 				"filterParameter": "ImpactClass",
 				"filterValue": "MACHINE GUN",
 				"parameter": "Damage",
-				"value": 20
+				"value": 5
 			}
 		],
 		"statID": "MG1Mk1",
@@ -8670,7 +8700,7 @@
 				"filterParameter": "ImpactClass",
 				"filterValue": "MACHINE GUN",
 				"parameter": "Damage",
-				"value": 20
+				"value": 35
 			}
 		],
 		"statID": "MG1Mk1",

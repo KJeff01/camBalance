@@ -128,6 +128,7 @@ const mis_betaResearchNew = [
 	// 9
 	"R-Wpn-Cannon5", "R-Wpn-RocketSlow-Damage06", "R-Defense-Wall-VulcanCan",
 	"R-Wpn-Cannon-Damage06", "R-Wpn-RocketSlow-ROF03", "R-Wpn-Cannon-ROF03",
+	"R-Wpn-MG-Damage08",
 
 	// 10
 	"R-Vehicle-Body09", "R-Wpn-HvyHowitzer", "R-Defense-HvyHowitzer", "R-Vehicle-Metals06",
@@ -142,12 +143,12 @@ const mis_gammaAllyRes = mis_alphaResearchNew.concat(mis_playerResBeta).concat(m
 
 const mis_gammaResearchNew = [
 	// 1
-	"R-Wpn-Howitzer03-Rot", "R-Wpn-MG-Damage08", "R-Struc-Power-Upgrade02", "R-Sys-Engineering03",
+	"R-Wpn-Howitzer03-Rot", "R-Wpn-MG-Damage09", "R-Struc-Power-Upgrade02", "R-Sys-Engineering03",
 	"R-Wpn-Cannon-Damage07", "R-Wpn-AAGun-Damage04", "R-Defense-WallUpgrade07", "R-Struc-Materials09",
-	"R-Defense-RotHow", "R-Wpn-Howitzer-Damage04",
+	"R-Defense-RotHow", "R-Wpn-Howitzer-Damage04", "R-Wpn-Flamer-ROF04",
 
 	// 2
-	"R-Wpn-MG-Damage09", "R-Wpn-Cannon-Damage08", "R-Wpn-AAGun-Damage05", "R-Wpn-Howitzer-Damage05",
+	"R-Wpn-Cannon-Damage08", "R-Wpn-AAGun-Damage05", "R-Wpn-Howitzer-Damage05",
 	"R-Defense-WallUpgrade08",
 
 	// 3
