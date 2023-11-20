@@ -31,7 +31,7 @@ camAreaEvent("crashSite", function(droid)
 		return;
 	}
 
-	playSound(cam_sounds.rescueLike.unitsRescued);
+	playSound(cam_sounds.rescue.unitsRescued);
 
 	hackRemoveMessage("C21_OBJECTIVE", PROX_MSG, CAM_HUMAN_PLAYER);
 

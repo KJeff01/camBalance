@@ -206,7 +206,7 @@ function civilianOrders()
 	if (rescued && ((lastSoundTime + camSecondsToMilliseconds(30)) < gameTime))
 	{
 		lastSoundTime = gameTime;
-		playSound(cam_sounds.rescueLike.civilianRescued);
+		playSound(cam_sounds.rescue.civilianRescued);
 	}
 }
 

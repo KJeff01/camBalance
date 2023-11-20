@@ -107,7 +107,7 @@ function discoverGammaBase()
 	setPower(playerPower(CAM_HUMAN_PLAYER) + camChangeOnDiff(10000));
 
 	playSound(cam_sounds.powerTransferred);
-	playSound(cam_sounds.rescueLike.groupRescued);
+	playSound(cam_sounds.rescue.groupRescued);
 
 	camAbsorbPlayer(MIS_GAMMA_PLAYER, CAM_HUMAN_PLAYER); //Take everything they got!
 	setAlliance(CAM_NEXUS, MIS_GAMMA_PLAYER, false);
