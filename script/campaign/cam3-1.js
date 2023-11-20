@@ -298,7 +298,7 @@ function eventStartLevel()
 		{sound: cam_sounds.missile.launch.missileLaunchIn1Minute, time: camMinutesToSeconds(1)},
 		{sound: cam_sounds.missile.launch.finalMissileLaunchSequenceInitiated, time: 25},
 		{sound: cam_sounds.missile.countdown, time: 11},
-		{sound: cam_sounds.missile.missileLaunched, time: 2},
+		{sound: cam_sounds.missile.launch.missileLaunched, time: 2},
 	];
 	detonateInfo = [
 		{sound: cam_sounds.missile.detonate.warheadActivatedCountdownBegins, time: camMinutesToSeconds(60) - 9},
