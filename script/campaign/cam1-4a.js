@@ -48,7 +48,7 @@ camAreaEvent("removeRedObjectiveBlip", function()
 
 camAreaEvent("LandingZoneTrigger", function()
 {
-	camPlayVideos(["pcv456.ogg", {video: "SB1_4_B", type: MISS_MSG}]);
+	camPlayVideos([cam_sounds.incoming.incomingIntelReport, {video: "SB1_4_B", type: MISS_MSG}]);
 	hackRemoveMessage("C1-4_LZ", PROX_MSG, CAM_HUMAN_PLAYER); //Remove LZ 2 blip.
 
 	const lz = getObject("LandingZone2"); // will override later
@@ -137,20 +137,20 @@ function eventStartLevel()
 		"SouthScavBaseGroup": {
 			cleanup: "SouthScavBase",
 			detectMsg: "C1-4_BASE1",
-			detectSnd: "pcv374.ogg",
-			eliminateSnd: "pcv392.ogg"
+			detectSnd: cam_sounds.baseDetection.scavengerBaseDetected,
+			eliminateSnd: cam_sounds.baseElimination.scavengerBaseEradicated
 		},
 		"NorthScavBaseGroup": {
 			cleanup: "NorthScavBase",
 			detectMsg: "C1-4_BASE3",
-			detectSnd: "pcv374.ogg",
-			eliminateSnd: "pcv392.ogg"
+			detectSnd: cam_sounds.baseDetection.scavengerBaseDetected,
+			eliminateSnd: cam_sounds.baseElimination.scavengerBaseEradicated
 		},
 		"NPBaseGroup": {
 			cleanup: "NPBase",
 			detectMsg: "C1-4_BASE2",
-			detectSnd: "pcv379.ogg",
-			eliminateSnd: "pcv394.ogg"
+			detectSnd: cam_sounds.baseDetection.enemyBaseDetected,
+			eliminateSnd: cam_sounds.baseElimination.enemyBaseEradicated
 		},
 	});
 

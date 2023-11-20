@@ -79,8 +79,7 @@ camAreaEvent("wayPoint2Rad", function(droid)
 		repair: 67,
 	});
 
-	const WARN_MESSAGE = "pcv632.ogg"; // Collective commander escaping
-	playSound(WARN_MESSAGE);
+	playSound(cam_sounds.enemyEscaping);
 });
 
 camAreaEvent("failZone", function(droid)
@@ -214,14 +213,14 @@ function eventStartLevel()
 		"COEastBase": {
 			cleanup: "eastBaseCleanup",
 			detectMsg: "C22_BASE1",
-			detectSnd: "pcv379.ogg",
-			eliminateSnd: "pcv394.ogg",
+			detectSnd: cam_sounds.baseDetection.enemyBaseDetected,
+			eliminateSnd: cam_sounds.baseElimination.enemyBaseEradicated,
 		},
 		"COWestBase": {
 			cleanup: "westBaseCleanup",
 			detectMsg: "C22_BASE2",
-			detectSnd: "pcv379.ogg",
-			eliminateSnd: "pcv394.ogg",
+			detectSnd: cam_sounds.baseDetection.enemyBaseDetected,
+			eliminateSnd: cam_sounds.baseElimination.enemyBaseEradicated,
 		},
 	});
 

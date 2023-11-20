@@ -233,8 +233,7 @@ function laserSatFuzzyStrike(obj)
 	{
 		if (camRand(101) < 40)
 		{
-			const LASSAT_FIRING = "pcv650.ogg"; // LASER SATELLITE FIRING!!!
-			playSound(LASSAT_FIRING, xCoord, yCoord);
+			playSound(cam_sounds.laserSatelliteFiring, xCoord, yCoord);
 		}
 
 		//Missed it so hit close to target

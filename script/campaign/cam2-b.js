@@ -133,7 +133,7 @@ function transferPower()
 {
 	//increase player power level and play sound
 	setPower(playerPower(CAM_HUMAN_PLAYER) + 4000);
-	playSound("power-transferred.ogg");
+	playSound(cam_sounds.powerTransferred);
 }
 
 function eventStartLevel()
@@ -176,20 +176,20 @@ function eventStartLevel()
 		"CONorthBase": {
 			cleanup: "base1Cleanup",
 			detectMsg: "C2B_BASE1",
-			detectSnd: "pcv379.ogg",
-			eliminateSnd: "pcv394.ogg",
+			detectSnd: cam_sounds.baseDetection.enemyBaseDetected,
+			eliminateSnd: cam_sounds.baseElimination.enemyBaseEradicated,
 		},
 		"COCentralBase": {
 			cleanup: "base2Cleanup",
 			detectMsg: "C2B_BASE2",
-			detectSnd: "pcv379.ogg",
-			eliminateSnd: "pcv394.ogg",
+			detectSnd: cam_sounds.baseDetection.enemyBaseDetected,
+			eliminateSnd: cam_sounds.baseElimination.enemyBaseEradicated,
 		},
 		"COMiddleBase": {
 			cleanup: "base4Cleanup",
 			detectMsg: "C2B_BASE4",
-			detectSnd: "pcv379.ogg",
-			eliminateSnd: "pcv394.ogg",
+			detectSnd: cam_sounds.baseDetection.enemyBaseDetected,
+			eliminateSnd: cam_sounds.baseElimination.enemyBaseEradicated,
 		},
 	});
 

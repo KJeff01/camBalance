@@ -78,8 +78,7 @@ function vtolAttack()
 //The project captured the uplink.
 function captureUplink()
 {
-	const GOODSND = "pcv621.ogg";	//"Objective captured"
-	playSound(GOODSND);
+	playSound(cam_sounds.objectiveCaptured);
 	hackRemoveMessage("C2D_OBJ1", PROX_MSG, CAM_HUMAN_PLAYER);
 }
 
@@ -140,8 +139,8 @@ function eventStartLevel()
 		"COSouthEastBase": {
 			cleanup: "baseCleanup",
 			detectMsg: "C2D_BASE1",
-			detectSnd: "pcv379.ogg",
-			eliminateSnd: "pcv394.ogg",
+			detectSnd: cam_sounds.baseDetection.enemyBaseDetected,
+			eliminateSnd: cam_sounds.baseElimination.enemyBaseEradicated,
 		},
 	});
 

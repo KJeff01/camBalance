@@ -314,7 +314,7 @@ function reallyDownTransporter()
 		removeTimer("sendPlayerTransporter");
 	}
 	setReinforcementTime(LZ_COMPROMISED_TIME);
-	playSound("pcv443.ogg");
+	playSound(cam_sounds.transport.transportUnderAttack);
 }
 
 function downTransporter()
@@ -371,14 +371,14 @@ function eventStartLevel()
 		"CONorthBase": {
 			cleanup: "CONorth",
 			detectMsg: "C2A_BASE1",
-			detectSnd: "pcv379.ogg",
-			eliminateSnd: "pcv394.ogg",
+			detectSnd: cam_sounds.baseDetection.enemyBaseDetected,
+			eliminateSnd: cam_sounds.baseElimination.enemyBaseEradicated,
 		},
 		"CONorthWestBase": {
 			cleanup: "CONorthWest",
 			detectMsg: "C2A_BASE2",
-			detectSnd: "pcv379.ogg",
-			eliminateSnd: "pcv394.ogg",
+			detectSnd: cam_sounds.baseDetection.enemyBaseDetected,
+			eliminateSnd: cam_sounds.baseElimination.enemyBaseEradicated,
 		},
 	});
 

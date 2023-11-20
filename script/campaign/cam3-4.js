@@ -114,7 +114,7 @@ function destroyPlayerVtols()
 function activateNexus()
 {
 	camSetExtraObjectiveMessage(_("Destroy the Nexus HQ to disable the Nexus Intruder Program"));
-	playSound(CAM_SYNAPTICS_ACTIVATED_SND);
+	playSound(cam_sounds.nexus.synapticLinksActivated);
 	camSetNexusState(true);
 	setTimer("nexusHackFeature", camSecondsToMilliseconds((difficulty <= MEDIUM) ? 20 : 10));
 }
@@ -263,38 +263,38 @@ function eventStartLevel()
 		"NX_SWBase": {
 			cleanup: "SWBaseCleanup",
 			detectMsg: "CM34_OBJ2",
-			detectSnd: "pcv379.ogg",
-			eliminateSnd: "pcv394.ogg",
+			detectSnd: cam_sounds.baseDetection.enemyBaseDetected,
+			eliminateSnd: cam_sounds.baseElimination.enemyBaseEradicated,
 		},
 		"NX_NWBase": {
 			cleanup: "NWBaseCleanup",
 			detectMsg: "CM34_BASEA",
-			detectSnd: "pcv379.ogg",
-			eliminateSnd: "pcv394.ogg",
+			detectSnd: cam_sounds.baseDetection.enemyBaseDetected,
+			eliminateSnd: cam_sounds.baseElimination.enemyBaseEradicated,
 		},
 		"NX_NEBase": {
 			cleanup: "NEBaseCleanup",
 			detectMsg: "CM34_BASEB",
-			detectSnd: "pcv379.ogg",
-			eliminateSnd: "pcv394.ogg",
+			detectSnd: cam_sounds.baseDetection.enemyBaseDetected,
+			eliminateSnd: cam_sounds.baseElimination.enemyBaseEradicated,
 		},
 		"NX_WBase": {
 			cleanup: "WBaseCleanup",
 			detectMsg: "CM34_BASEC",
-			detectSnd: "pcv379.ogg",
-			eliminateSnd: "pcv394.ogg",
+			detectSnd: cam_sounds.baseDetection.enemyBaseDetected,
+			eliminateSnd: cam_sounds.baseElimination.enemyBaseEradicated,
 		},
 		"NX_SEBase": {
 			cleanup: "SEBaseCleanup",
 			detectMsg: "CM34_BASED",
-			detectSnd: "pcv379.ogg",
-			eliminateSnd: "pcv394.ogg",
+			detectSnd: cam_sounds.baseDetection.enemyBaseDetected,
+			eliminateSnd: cam_sounds.baseElimination.enemyBaseEradicated,
 		},
 		"NX_VtolBase": {
 			cleanup: "vtolBaseCleanup",
 			detectMsg: "CM34_BASEE",
-			detectSnd: "pcv379.ogg",
-			eliminateSnd: "pcv394.ogg",
+			detectSnd: cam_sounds.baseDetection.enemyBaseDetected,
+			eliminateSnd: cam_sounds.baseElimination.enemyBaseEradicated,
 		},
 	});
 

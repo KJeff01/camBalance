@@ -106,8 +106,8 @@ function discoverGammaBase()
 	setMissionTime(camChangeOnDiff(camMinutesToSeconds(90)));
 	setPower(playerPower(CAM_HUMAN_PLAYER) + camChangeOnDiff(10000));
 
-	playSound("power-transferred.ogg");
-	playSound("pcv616.ogg"); //Group rescued.
+	playSound(cam_sounds.powerTransferred);
+	playSound(cam_sounds.rescueLike.groupRescued);
 
 	camAbsorbPlayer(MIS_GAMMA_PLAYER, CAM_HUMAN_PLAYER); //Take everything they got!
 	setAlliance(CAM_NEXUS, MIS_GAMMA_PLAYER, false);
@@ -207,20 +207,20 @@ function eventStartLevel()
 		"NXNorthBase": {
 			cleanup: "northBaseCleanup",
 			detectMsg: "CM3C_BASE1",
-			detectSnd: "pcv379.ogg",
-			eliminateSnd: "pcv394.ogg",
+			detectSnd: cam_sounds.baseDetection.enemyBaseDetected,
+			eliminateSnd: cam_sounds.baseElimination.enemyBaseEradicated,
 		},
 		"NXVtolBase": {
 			cleanup: "vtolBaseCleanup",
 			detectMsg: "CM3C_BASE2",
-			detectSnd: "pcv379.ogg",
-			eliminateSnd: "pcv394.ogg",
+			detectSnd: cam_sounds.baseDetection.enemyBaseDetected,
+			eliminateSnd: cam_sounds.baseElimination.enemyBaseEradicated,
 		},
 		"NXSouthBase": {
 			cleanup: "southBaseCleanup",
 			detectMsg: "CM3C_BASE3",
-			detectSnd: "pcv379.ogg",
-			eliminateSnd: "pcv394.ogg",
+			detectSnd: cam_sounds.baseDetection.enemyBaseDetected,
+			eliminateSnd: cam_sounds.baseElimination.enemyBaseEradicated,
 		},
 	});
 

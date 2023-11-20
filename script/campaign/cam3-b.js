@@ -177,9 +177,8 @@ function sendNXlandReinforcements()
 function transferPower()
 {
 	const AWARD = 5000;
-	const POWER_TRANSFER_SND = "power-transferred.ogg";
 	setPower(playerPower(CAM_HUMAN_PLAYER) + AWARD, CAM_HUMAN_PLAYER);
-	playSound(POWER_TRANSFER_SND);
+	playSound(cam_sounds.powerTransferred);
 }
 
 function activateNexusGroups()
@@ -261,7 +260,7 @@ function trapSprung()
 
 	sendNXTransporter();
 	changePlayerColour(MIS_GAMMA_PLAYER, CAM_NEXUS); // Black painting.
-	playSound(CAM_SYNAPTICS_ACTIVATED_SND);
+	playSound(cam_sounds.nexus.synapticLinksActivated);
 
 	setTimer("sendNXTransporter", camChangeOnDiff(camMinutesToMilliseconds(3)));
 	setTimer("sendNXlandReinforcements", camChangeOnDiff(camMinutesToMilliseconds(4)));
@@ -271,7 +270,7 @@ function trapSprung()
 function setupCapture()
 {
 	trapActive = true;
-	playSound("pcv455.ogg"); //Incoming message.
+	playSound(cam_sounds.incoming.incomingTransmission);
 	setAlliance(MIS_GAMMA_PLAYER, CAM_NEXUS, false);
 
 	queue("trapSprung", camSecondsToMilliseconds(2)); //call this a few seconds later
@@ -328,20 +327,20 @@ function eventStartLevel()
 		"GammaBase": {
 			cleanup: "gammaBaseCleanup",
 			detectMsg: "CM3B_GAMMABASE",
-			detectSnd: "pcv379.ogg",
-			eliminateSnd: "pcv394.ogg",
+			detectSnd: cam_sounds.baseDetection.enemyBaseDetected,
+			eliminateSnd: cam_sounds.baseElimination.enemyBaseEradicated,
 		},
 		"NXEastBase": {
 			cleanup: "NXEastBaseCleanup",
 			detectMsg: "CM3B_BASE4",
-			detectSnd: "pcv379.ogg",
-			eliminateSnd: "pcv394.ogg",
+			detectSnd: cam_sounds.baseDetection.enemyBaseDetected,
+			eliminateSnd: cam_sounds.baseElimination.enemyBaseEradicated,
 		},
 		"NXWestBase": {
 			cleanup: "NXWestBaseCleanup",
 			detectMsg: "CM3B_BASE6",
-			detectSnd: "pcv379.ogg",
-			eliminateSnd: "pcv394.ogg",
+			detectSnd: cam_sounds.baseDetection.enemyBaseDetected,
+			eliminateSnd: cam_sounds.baseElimination.enemyBaseEradicated,
 		}
 	});
 

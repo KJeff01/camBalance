@@ -196,8 +196,7 @@ function laserSatFuzzyStrike(obj)
 
 	if (camRand(101) < 40)
 	{
-		const LASSAT_FIRING = "pcv650.ogg"; // LASER SATELLITE FIRING!!!
-		playSound(LASSAT_FIRING, xCoord, yCoord);
+		playSound(cam_sounds.laserSatelliteFiring, xCoord, yCoord);
 	}
 
 	//Missed it so hit close to target.
@@ -215,7 +214,7 @@ function laserSatFuzzyStrike(obj)
 //Donate the silos to the player. Allow capturedSilos victory flag to be true.
 function allySiloWithPlayer()
 {
-	playSound("pcv621.ogg"); //Objective captured
+	playSound(cam_sounds.objectiveCaptured);
 	hackRemoveMessage("CM3D1_OBJ1", PROX_MSG, CAM_HUMAN_PLAYER);
 	camAbsorbPlayer(MIS_SILO_PLAYER, CAM_HUMAN_PLAYER);
 	capturedSilos = true;
@@ -288,14 +287,14 @@ function eventStartLevel()
 		"NXMainBase": {
 			cleanup: "mainBaseCleanup",
 			detectMsg: "CM3D1_BASE1",
-			detectSnd: "pcv379.ogg",
-			eliminateSnd: "pcv394.ogg",
+			detectSnd: cam_sounds.baseDetection.enemyBaseDetected,
+			eliminateSnd: cam_sounds.baseElimination.enemyBaseEradicated,
 		},
 		"NXVtolBase": {
 			cleanup: "NXVtolBaseCleanup",
 			detectMsg: "CM3D1_BASE2",
-			detectSnd: "pcv379.ogg",
-			eliminateSnd: "pcv394.ogg",
+			detectSnd: cam_sounds.baseDetection.enemyBaseDetected,
+			eliminateSnd: cam_sounds.baseElimination.enemyBaseEradicated,
 		},
 	});
 

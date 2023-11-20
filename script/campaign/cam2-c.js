@@ -205,9 +205,8 @@ function civilianOrders()
 	//Play the "Civilian rescued" sound and throttle it.
 	if (rescued && ((lastSoundTime + camSecondsToMilliseconds(30)) < gameTime))
 	{
-		const RESCUE_SND = "pcv612.ogg";	//"Civilian Rescued".
 		lastSoundTime = gameTime;
-		playSound(RESCUE_SND);
+		playSound(cam_sounds.rescueLike.civilianRescued);
 	}
 }
 
@@ -219,8 +218,7 @@ function eventTransporterLanded(transport)
 
 	if (civs.length)
 	{
-		const ESCAPE_SND = "pcv632.ogg"; //"Enemy escaping".
-		playSound(ESCAPE_SND);
+		playSound(cam_sounds.enemyEscaping);
 		capturedCivCount += civs.length - 1;
 		for (let i = 0; i < civs.length; ++i)
 		{
@@ -311,20 +309,20 @@ function eventStartLevel()
 		"COAirBase": {
 			cleanup: "airBaseCleanup",
 			detectMsg: "C2C_BASE1",
-			detectSnd: "pcv379.ogg",
-			eliminateSnd: "pcv394.ogg",
+			detectSnd: cam_sounds.baseDetection.enemyBaseDetected,
+			eliminateSnd: cam_sounds.baseElimination.enemyBaseEradicated,
 		},
 		"COCyborgBase": {
 			cleanup: "cyborgBaseCleanup",
 			detectMsg: "C2C_BASE2",
-			detectSnd: "pcv379.ogg",
-			eliminateSnd: "pcv394.ogg",
+			detectSnd: cam_sounds.baseDetection.enemyBaseDetected,
+			eliminateSnd: cam_sounds.baseElimination.enemyBaseEradicated,
 		},
 		"COtransportBase": {
 			cleanup: "transportBaseCleanup",
 			detectMsg: "C2C_BASE3",
-			detectSnd: "pcv379.ogg",
-			eliminateSnd: "pcv394.ogg",
+			detectSnd: cam_sounds.baseDetection.enemyBaseDetected,
+			eliminateSnd: cam_sounds.baseElimination.enemyBaseEradicated,
 		},
 	});
 

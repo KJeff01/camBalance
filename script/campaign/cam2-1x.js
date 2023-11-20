@@ -31,8 +31,7 @@ camAreaEvent("crashSite", function(droid)
 		return;
 	}
 
-	const GOODSND = "pcv615.ogg";
-	playSound(GOODSND);
+	playSound(cam_sounds.rescueLike.unitsRescued);
 
 	hackRemoveMessage("C21_OBJECTIVE", PROX_MSG, CAM_HUMAN_PLAYER);
 
@@ -150,20 +149,20 @@ function eventStartLevel()
 		"COHardpointBase": {
 			cleanup: "hardpointBaseCleanup",
 			detectMsg: "C21_BASE1",
-			detectSnd: "pcv379.ogg",
-			eliminateSnd: "pcv394.ogg",
+			detectSnd: cam_sounds.baseDetection.enemyBaseDetected,
+			eliminateSnd: cam_sounds.baseElimination.enemyBaseEradicated,
 		},
 		"COBombardBase": {
 			cleanup: "bombardBaseCleanup",
 			detectMsg: "C21_BASE2",
-			detectSnd: "pcv379.ogg",
-			eliminateSnd: "pcv394.ogg",
+			detectSnd: cam_sounds.baseDetection.enemyBaseDetected,
+			eliminateSnd: cam_sounds.baseElimination.enemyBaseEradicated,
 		},
 		"COBunkerBase": {
 			cleanup: "bunkerBaseCleanup",
 			detectMsg: "C21_BASE3",
-			detectSnd: "pcv379.ogg",
-			eliminateSnd: "pcv394.ogg",
+			detectSnd: cam_sounds.baseDetection.enemyBaseDetected,
+			eliminateSnd: cam_sounds.baseElimination.enemyBaseEradicated,
 		},
 	});
 

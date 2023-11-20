@@ -121,7 +121,7 @@ function __camDispatchTransporterUnsafe()
 
 	if (__PLAYER !== CAM_HUMAN_PLAYER)
 	{
-		playSound("pcv381.ogg"); //Enemy transport detected.
+		playSound(cam_sounds.transport.enemyTransportDetected);
 	}
 
 	setTransporterExit(data.exit.x, data.exit.y, __PLAYER);
@@ -156,7 +156,7 @@ function __camLandTransporter(player, pos)
 		__camTransporterMessage = undefined;
 	}
 	camTrace("Landing transport for player", player);
-	playSound("pcv395.ogg", pos.x, pos.y, 0); //Incoming enemy transport.
+	playSound(cam_sounds.transport.incomingEnemyTransport, pos.x, pos.y, 0);
 	camManageGroup(camMakeGroup(ti.droids), ti.order, ti.data);
 	if (player !== CAM_HUMAN_PLAYER)
 	{

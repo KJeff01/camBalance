@@ -125,6 +125,95 @@ const __cam_gammaLevels = [
 	"CAM3C", "CAM3A-D1", "CAM3A-D2", "CAM_3_4S", "CAM_3_4"
 ];
 
+// Holds all the sounds the campaign uses. Try to name things as they are said.
+const cam_sounds = {
+	baseDetection: {
+		scavengerOutpostDetected: "pcv375.ogg",
+		scavengerBaseDetected: "pcv374.ogg",
+		enemyBaseDetected: "pcv379.ogg",
+	},
+	baseElimination: {
+		scavengerOutpostEradicated: "pcv391.ogg",
+		scavengerBaseEradicated: "pcv392.ogg",
+		enemyBaseEradicated: "pcv394.ogg",
+	},
+	lz: {
+		returnToLZ: "pcv427.ogg",
+		LZCompromised: "pcv445.ogg",
+		LZClear: "lz-clear.ogg",
+	},
+	transport: {
+		transportUnderAttack: "pcv443.ogg",
+		enemyTransportDetected: "pcv381.ogg",
+		incomingEnemyTransport: "pcv395.ogg",
+	},
+	incoming: {
+		incomingIntelReport: "pcv456.ogg",
+		incomingTransmission: "pcv455.ogg",
+	},
+	rescueLike: {
+		unitsRescued: "pcv615.ogg",
+		groupRescued: "pcv616.ogg",
+		civilianRescued: "pcv612.ogg",
+	},
+	nexus: {
+		defensesAbsorbed: "defabsrd.ogg",
+		defensesNeutralized: "defnut.ogg",
+		laugh1: "laugh1.ogg",
+		laugh2: "laugh2.ogg",
+		laugh3: "laugh3.ogg",
+		productionCompleted: "pordcomp.ogg",
+		researchAbsorbed: "resabsrd.ogg",
+		structureAbsorbed: "strutabs.ogg",
+		structureNeutralized: "strutnut.ogg",
+		synapticLinksActivated: "synplnk.ogg",
+		unitAbsorbed: "untabsrd.ogg",
+		unitNeutralized: "untnut.ogg",
+	},
+	missile: {
+		launch: {
+			missileLaunchAborted: "labort.ogg",
+			missileLaunched: "mlaunch.ogg",
+			finalMissileLaunchSequenceInitiated: "flseq.ogg",
+			missileEnteringFinalLaunchPeriod: "meflp.ogg",
+			missileLaunchInSixtyMinutes: "60min.ogg",
+			missileLaunchInFiftyMinutes: "50min.ogg",
+			missileLaunchInFortyMinutes: "40min.ogg",
+			missileLaunchInThirtyMinutes: "30min.ogg",
+			missileLaunchInTwentyMinutes: "20min.ogg",
+			missileLaunchInTenMinutes: "10min.ogg",
+			missileLaunchInFiveMinutes: "5min.ogg",
+			missileLaunchInFourMinutes: "4min.ogg",
+			missileLaunchInThreeMinutes: "3min.ogg",
+			missileLaunchInTwoMinutes: "2min.ogg",
+			missileLaunchInOneMinute: "1min.ogg",
+		},
+		detonate: {
+			warheadActivatedCountdownBegins: "wactivat.ogg",
+			finalDetonationSequenceInitiated: "fdetseq.ogg",
+			detonationInSixtyMinutes: "det60min.ogg",
+			detonationInFiftyMinutes: "det50min.ogg",
+			detonationInFortyMinutes: "det40min.ogg",
+			detonationInThirtyMinutes: "det30min.ogg",
+			detonationInTwentyMinutes: "det20min.ogg",
+			detonationInTenMinutes: "det10min.ogg",
+			detonationInFiveMinutes: "det5min.ogg",
+			detonationInFourMinutes: "det4min.ogg",
+			detonationInThreeMinutes: "det3min.ogg",
+			detonationInTwoMinutes: "det2min.ogg",
+			detonationInOneMinute: "det1min.ogg",
+		},
+		countdown: "10to1.ogg",
+	},
+	reinforcementsAreAvailable: "pcv440.ogg",
+	objectiveCaptured: "pcv621.ogg",
+	enemyEscaping: "pcv632.ogg",
+	powerTransferred: "power-transferred.ogg",
+	laserSatelliteFiring: "pcv650.ogg",
+	artifactRecovered: "pcv352.ogg",
+	soundIdentifier: ".ogg", //Used by video.js to check for sound before a video.
+};
+
 //artifact
 var __camArtifacts;
 var __camNumArtifacts;
@@ -159,18 +248,6 @@ var __camCalledOnce = {};
 var __camExpLevel;
 
 //nexus
-const CAM_DEFENSE_ABSORBED_SND = "defabsrd.ogg";
-const CAM_DEFENSE_NEUTRALIZE_SND = "defnut.ogg";
-const CAM_LAUGH1_SND = "laugh1.ogg";
-const CAM_LAUGH2_SND = "laugh2.ogg";
-const CAM_LAUGH3_SND = "laugh3.ogg";
-const CAM_PRODUCTION_COMPLETE_SND = "pordcomp.ogg";
-const CAM_RES_ABSORBED_SND = "resabsrd.ogg";
-const CAM_STRUCTURE_ABSORBED_SND = "strutabs.ogg";
-const CAM_STRUCTURE_NEUTRALIZE_SND = "strutnut.ogg";
-const CAM_SYNAPTICS_ACTIVATED_SND = "synplnk.ogg";
-const CAM_UNIT_ABSORBED_SND = "untabsrd.ogg";
-const CAM_UNIT_NEUTRALIZE_SND = "untnut.ogg";
 var __camLastNexusAttack;
 var __camNexusActivated;
 

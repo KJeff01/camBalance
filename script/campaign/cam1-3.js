@@ -79,7 +79,7 @@ function enableNP(args)
 		repair: 66,
 	});
 
-	camPlayVideos(["pcv455.ogg", {video: "SB1_3_MSG4", type: MISS_MSG}]);
+	camPlayVideos([cam_sounds.incoming.incomingTransmission, {video: "SB1_3_MSG4", type: MISS_MSG}]);
 }
 
 function NPReinforce()
@@ -141,7 +141,7 @@ function eventAttacked(victim, attacker) {
 
 function enableReinforcements()
 {
-	playSound("pcv440.ogg"); // Reinforcements are available.
+	playSound(cam_sounds.reinforcementsAreAvailable);
 	camSetStandardWinLossConditions(CAM_VICTORY_OFFWORLD, "CAM_1C", {
 		area: "RTLZ",
 		message: "C1-3_LZ",
@@ -177,7 +177,7 @@ function camEnemyBaseEliminated_ScavBaseGroup()
 
 function playNPWarningMessage()
 {
-	camPlayVideos(["pcv455.ogg", {video: "SB1_3_MSG3", type: CAMP_MSG}]);
+	camPlayVideos([cam_sounds.incoming.incomingTransmission, {video: "SB1_3_MSG3", type: CAMP_MSG}]);
 }
 
 function eventDroidBuilt(droid, structure)
@@ -233,20 +233,20 @@ function eventStartLevel()
 		"ScavBaseGroup": {
 			cleanup: "ScavBase",
 			detectMsg: "C1-3_BASE1",
-			detectSnd: "pcv374.ogg",
-			eliminateSnd: "pcv392.ogg"
+			detectSnd: cam_sounds.baseDetection.scavengerBaseDetected,
+			eliminateSnd: cam_sounds.baseElimination.scavengerBaseEradicated
 		},
 		"NPBaseGroup": {
 			cleanup: "NPBase",
 			detectMsg: "C1-3_BASE2",
-			detectSnd: "pcv379.ogg",
-			eliminateSnd: "pcv394.ogg"
+			detectSnd: cam_sounds.baseDetection.enemyBaseDetected,
+			eliminateSnd: cam_sounds.baseElimination.enemyBaseEradicated
 		},
 		"ScavBaseGroupSouth": {
 			cleanup: "SouthScavBase",
 			detectMsg: "C1-3_OBJ2",
-			detectSnd: "pcv374.ogg",
-			eliminateSnd: "pcv392.ogg"
+			detectSnd: cam_sounds.baseDetection.scavengerBaseDetected,
+			eliminateSnd: cam_sounds.baseElimination.scavengerBaseEradicated
 		},
 	});
 

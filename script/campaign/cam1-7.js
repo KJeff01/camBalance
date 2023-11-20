@@ -59,7 +59,7 @@ camAreaEvent("NPTransportTrigger", function(droid)
 			entry: { x: 39, y: 2 },
 			exit: { x: 32, y: 60 }
 		});
-		playSound("pcv632.ogg"); //enemy transport escaping warning sound
+		playSound(cam_sounds.enemyEscaping);
 	}
 	else
 	{
@@ -288,20 +288,20 @@ function eventStartLevel()
 		"ScavMiddleGroup": {
 			cleanup: "scavMiddle",
 			detectMsg: "C1-7_BASE1",
-			detectSnd: "pcv374.ogg",
-			eliminateSnd: "pcv392.ogg"
+			detectSnd: cam_sounds.baseDetection.scavengerBaseDetected,
+			eliminateSnd: cam_sounds.baseElimination.scavengerBaseEradicated
 		},
 		"ScavSouthEastGroup": {
 			cleanup: "scavSouthEast",
 			detectMsg: "C1-7_BASE2",
-			detectSnd: "pcv374.ogg",
-			eliminateSnd: "pcv392.ogg"
+			detectSnd: cam_sounds.baseDetection.scavengerBaseDetected,
+			eliminateSnd: cam_sounds.baseElimination.scavengerBaseEradicated
 		},
 		"ScavNorthEastGroup": {
 			cleanup: "scavNorth",
 			detectMsg: "C1-7_BASE3",
-			detectSnd: "pcv374.ogg",
-			eliminateSnd: "pcv392.ogg"
+			detectSnd: cam_sounds.baseDetection.scavengerBaseDetected,
+			eliminateSnd: cam_sounds.baseElimination.scavengerBaseEradicated
 		},
 	});
 

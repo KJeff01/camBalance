@@ -59,7 +59,7 @@ camAreaEvent("rescueTrigger", function(droid)
 //Play videos, donate alpha to the player and setup reinforcements.
 camAreaEvent("phantomFacTrigger", function(droid)
 {
-	camPlayVideos(["pcv456.ogg", {video: "MB3_2_MSG3", type: CAMP_MSG}]); //Warn about VTOLs.
+	camPlayVideos([cam_sounds.incoming.incomingIntelReport, {video: "MB3_2_MSG3", type: CAMP_MSG}]); //Warn about VTOLs.
 	queue("enableReinforcements", camSecondsToMilliseconds(5));
 	queue("vtolAttack", camChangeOnDiff(camMinutesToMilliseconds(2)));
 });
@@ -236,7 +236,7 @@ function vtolAttack()
 //Reinforcements not available until team Alpha brief about VTOLS.
 function enableReinforcements()
 {
-	playSound("pcv440.ogg"); // Reinforcements are available.
+	playSound(cam_sounds.reinforcementsAreAvailable);
 	camSetStandardWinLossConditions(CAM_VICTORY_OFFWORLD, "CAM3A-B", {
 		area: "RTLZ",
 		message: "C32_LZ",

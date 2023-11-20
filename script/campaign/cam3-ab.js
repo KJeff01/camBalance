@@ -196,7 +196,7 @@ function eventObjectTransfer(obj, from)
 function powerTransfer()
 {
 	setPower(playerPower(CAM_HUMAN_PLAYER) + 5000);
-	playSound("power-transferred.ogg");
+	playSound(cam_sounds.powerTransferred);
 }
 
 function eventResearched(research, structure, player)
@@ -238,7 +238,7 @@ function hackPlayer()
 
 function synapticsSound()
 {
-	playSound(CAM_SYNAPTICS_ACTIVATED_SND);
+	playSound(cam_sounds.nexus.synapticLinksActivated);
 	camHackIntoPlayer(CAM_HUMAN_PLAYER, CAM_NEXUS);
 }
 
