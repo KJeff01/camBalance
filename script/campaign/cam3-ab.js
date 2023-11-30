@@ -201,19 +201,19 @@ function powerTransfer()
 
 function eventResearched(research, structure, player)
 {
-	if (research.name === "R-Sys-Resistance-Upgrade01")
+	if (research.name === cam_resistance_circuits.first)
 	{
 		hackFailChance = 60;
 	}
-	else if (research.name === "R-Sys-Resistance-Upgrade02")
+	else if (research.name === cam_resistance_circuits.second)
 	{
 		hackFailChance = 75;
 	}
-	else if (research.name === "R-Sys-Resistance-Upgrade03")
+	else if (research.name === cam_resistance_circuits.third)
 	{
 		hackFailChance = 90;
 	}
-	else if (research.name === "R-Sys-Resistance-Upgrade04")
+	else if (research.name === cam_resistance_circuits.fourth)
 	{
 		winFlag = true;
 		hackFailChance = 100;
@@ -274,7 +274,7 @@ function eventStartLevel()
 
 	camCompleteRequiredResearch(mis_nexusRes, CAM_NEXUS);
 
-	enableResearch("R-Sys-Resistance-Upgrade01", CAM_HUMAN_PLAYER);
+	enableResearch(cam_resistance_circuits.first, CAM_HUMAN_PLAYER);
 	winFlag = false;
 	hackFailChance = (difficulty <= EASY) ? 45 : 33;
 

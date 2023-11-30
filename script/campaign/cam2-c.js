@@ -147,7 +147,7 @@ function captureCivilians()
 		for (let i = 0; i < NUM; ++i)
 		{
 			addDroid(CAM_SCAV_7, currPos.x, currPos.y, "Civilian",
-					"B1BaBaPerson01", "BaBaLegs", "", "", "BabaMG");
+					tBody.scav.human, tProp.scav.legs, "", "", tWeap.scav.machinegun);
 		}
 
 		//Only count civilians that are not in the the transporter base.

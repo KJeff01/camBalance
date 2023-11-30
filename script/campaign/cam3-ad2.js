@@ -19,6 +19,12 @@ const mis_nexusRes = [
 const mis_vtolPositions = [
 	"vtolAppearPosW", "vtolAppearPosE",
 ];
+const mis_researchTargets = {
+	missileCode1: "R-Comp-MissileCodes01",
+	missileCode2: "R-Comp-MissileCodes02",
+	missileCode3: "R-Comp-MissileCodes03",
+	resistance: "R-Sys-Resistance"
+};
 var winFlag;
 var mapLimit;
 var videoInfo; //holds some info about when to play a video.
@@ -258,11 +264,11 @@ function eventResearched(research, structure, player)
 		{
 			videoInfo[i].played = true;
 			camPlayVideos({video: videoInfo[i].video, type: videoInfo[i].type});
-			if (videoInfo[i].res === "R-Sys-Resistance")
+			if (videoInfo[i].res === mis_researchTargets.resistance)
 			{
-				enableResearch("R-Comp-MissileCodes01", CAM_HUMAN_PLAYER);
+				enableResearch(mis_researchTargets.missileCode1, CAM_HUMAN_PLAYER);
 			}
-			else if (videoInfo[i].res === "R-Comp-MissileCodes03")
+			else if (videoInfo[i].res === mis_researchTargets.missileCode3)
 			{
 				winFlag = true;
 			}
@@ -310,10 +316,10 @@ function eventStartLevel()
 	mapLimit = 137.0;
 	winFlag = false;
 	videoInfo = [
-		{played: false, video: "MB3_AD2_MSG3", type: MISS_MSG, res: "R-Sys-Resistance"},
-		{played: false, video: "MB3_AD2_MSG4", type: CAMP_MSG, res: "R-Comp-MissileCodes01"},
-		{played: false, video: "MB3_AD2_MSG5", type: CAMP_MSG, res: "R-Comp-MissileCodes02"},
-		{played: false, video: "MB3_AD2_MSG6", type: CAMP_MSG, res: "R-Comp-MissileCodes03"},
+		{played: false, video: "MB3_AD2_MSG3", type: MISS_MSG, res: mis_researchTargets.resistance},
+		{played: false, video: "MB3_AD2_MSG4", type: CAMP_MSG, res: mis_researchTargets.missileCode1},
+		{played: false, video: "MB3_AD2_MSG5", type: CAMP_MSG, res: mis_researchTargets.missileCode2},
+		{played: false, video: "MB3_AD2_MSG6", type: CAMP_MSG, res: mis_researchTargets.missileCode3},
 	];
 
 	camSetStandardWinLossConditions(CAM_VICTORY_STANDARD, "CAM_3_4S", {
@@ -332,7 +338,7 @@ function eventStartLevel()
 	centreView(startPos.x, startPos.y);
 	setNoGoArea(lz.x, lz.y, lz.x2, lz.y2, CAM_HUMAN_PLAYER);
 	setMissionTime(camMinutesToSeconds(5));
-	enableResearch("R-Sys-Resistance", CAM_HUMAN_PLAYER);
+	enableResearch(mis_researchTargets.resistance, CAM_HUMAN_PLAYER);
 
 	camCompleteRequiredResearch(mis_nexusRes, CAM_NEXUS);
 	camPlayVideos({video: "MB3_AD2_MSG", type: MISS_MSG});

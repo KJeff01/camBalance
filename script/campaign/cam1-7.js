@@ -97,7 +97,7 @@ function eventGroupLoss(obj, group, newsize)
 	{
 		if (obj.id === droidWithArtiID)
 		{
-			const acrate = addFeature("Crate", obj.x, obj.y);
+			const acrate = addFeature(CAM_ARTIFACT_STAT, obj.x, obj.y);
 			addLabel(acrate, "newArtiLabel");
 
 			camSetArtifacts({
@@ -279,9 +279,9 @@ function eventStartLevel()
 	camUpgradeOnMapTemplates(cTempl.rbjeep, cTempl.rbjeep8, CAM_SCAV_7);
 
 	// New MRA Mantis Tracks units on the hill
-	addDroid(CAM_NEW_PARADIGM, 29, 16, "MRA Mantis Tracks", "Body12SUP", "tracked01", "", "", "Rocket-MRL");
-	addDroid(CAM_NEW_PARADIGM, 29, 17, "MRA Mantis Tracks", "Body12SUP", "tracked01", "", "", "Rocket-MRL");
-	addDroid(CAM_NEW_PARADIGM, 29, 18, "MRA Mantis Tracks", "Body12SUP", "tracked01", "", "", "Rocket-MRL");
+	addDroid(CAM_NEW_PARADIGM, 29, 16, "MRA Mantis Tracks", tBody.tank.mantis, tProp.tank.tracks, "", "", tWeap.tank.miniRocketArray);
+	addDroid(CAM_NEW_PARADIGM, 29, 17, "MRA Mantis Tracks", tBody.tank.mantis, tProp.tank.tracks, "", "", tWeap.tank.miniRocketArray);
+	addDroid(CAM_NEW_PARADIGM, 29, 18, "MRA Mantis Tracks", tBody.tank.mantis, tProp.tank.tracks, "", "", tWeap.tank.miniRocketArray);
 
 	camSetEnemyBases({
 		"ScavMiddleGroup": {

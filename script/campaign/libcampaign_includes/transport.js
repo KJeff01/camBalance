@@ -39,7 +39,7 @@ function camIsTransporter(gameObject)
 //;;
 function camSetupTransporter(placeX, placeY, exitX, exitY)
 {
-	addDroid(CAM_HUMAN_PLAYER, placeX, placeY, "Transport", "TransporterBody", "V-Tol", "", "", "MG3-VTOL");
+	addDroid(CAM_HUMAN_PLAYER, placeX, placeY, cam_trComps.name, cam_trComps.body, cam_trComps.propulsion, "", "", cam_trComps.weapon);
 	setTransporterExit(exitX, exitY, CAM_HUMAN_PLAYER);
 }
 
@@ -86,10 +86,10 @@ function __camDispatchTransporterUnsafe()
 	{
 		camTrace("Creating a transporter for player", __PLAYER);
 		__camPlayerTransports[__PLAYER] = addDroid(__PLAYER, -1, -1,
-		                                         "Transporter",
-		                                         "TransporterBody",
-		                                         "V-Tol", "", "",
-		                                         "MG3-VTOL");
+		                                         cam_trComps.name,
+		                                         cam_trComps.body,
+		                                         cam_trComps.propulsion, "", "",
+												 cam_trComps.weapon);
 	}
 	const transporter = __camPlayerTransports[__PLAYER];
 	const droids = [];

@@ -277,7 +277,7 @@ function eventStartLevel()
 
 	if (difficulty >= HARD)
 	{
-		addDroid(CAM_NEXUS, 31, 185, "Truck Retribution Hover", "Body7ABT", "hover02", "", "", "Spade1Mk1");
+		addDroid(CAM_NEXUS, 31, 185, "Truck Retribution Hover", tBody.tank.retribution, tProp.tank.hover2, "", "", tConstruct.truck);
 		camManageTrucks(CAM_NEXUS);
 	}
 

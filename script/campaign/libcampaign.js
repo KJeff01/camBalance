@@ -104,6 +104,26 @@ const __CAM_TICKS_PER_FRAME = 100;
 const __CAM_AI_POWER = 999999;
 const __CAM_INCLUDE_PATH = "script/campaign/libcampaign_includes/";
 
+//Anything stats related
+const CAM_ARTIFACT_STAT = "Crate";
+const CAM_GENERIC_TRUCK_STAT = "Spade1Mk1";
+const CAM_GENERIC_LAND_STAT = "wheeled01"; //For propulsionCanReach().
+const cam_base_structures = {
+	commandRelay: "A0ComDroidControl",
+	commandCenter: "A0CommandCentre",
+	powerGenerator: "A0PowerGenerator",
+	researchLab: "A0ResearchFacility",
+	factory: "A0LightFactory",
+	oil: "A0ResourceExtractor",
+	derrick: "A0ResourceExtractor"
+};
+const cam_resistance_circuits = {
+	first: "R-Sys-Resistance-Upgrade01",
+	second: "R-Sys-Resistance-Upgrade02",
+	third: "R-Sys-Resistance-Upgrade03",
+	fourth: "R-Sys-Resistance-Upgrade04"
+};
+
 //level load codes here for reference. Might be useful for later code.
 const CAM_GAMMA_OUT = "GAMMA_OUT"; //Fake next level for the final Gamma mission.
 const __CAM_ALPHA_CAMPAIGN_NUMBER = 1;
@@ -256,6 +276,12 @@ var __camFactoryInfo;
 var __camFactoryQueue;
 var __camPropulsionTypeLimit;
 
+//research
+const __CAM_AI_INSTANT_PRODUCTION_RESEARCH = "R-Struc-Factory-Upgrade-AI";
+const __cam_nexusTech = [
+	"R-Sys-NEXUSrepair"
+];
+
 //tactics
 const CAM_ORDER_ATTACK = 0;
 const CAM_ORDER_DEFEND = 1;
@@ -277,6 +303,12 @@ const CAM_SECONDS_IN_MINUTE = 60;
 const CAM_MINUTES_IN_HOUR = 60;
 
 //transport
+const cam_trComps = {
+	name: "Transport",
+	body: "TransporterBody",
+	propulsion: "V-Tol",
+	weapon: "MG3-VTOL"
+};
 var __camNumTransporterExits;
 var __camPlayerTransports;
 var __camIncomingTransports;
