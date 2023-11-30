@@ -279,9 +279,12 @@ function eventStartLevel()
 	camUpgradeOnMapTemplates(cTempl.rbjeep, cTempl.rbjeep8, CAM_SCAV_7);
 
 	// New MRA Mantis Tracks units on the hill
-	addDroid(CAM_NEW_PARADIGM, 29, 16, "MRA Mantis Tracks", tBody.tank.mantis, tProp.tank.tracks, "", "", tWeap.tank.miniRocketArray);
-	addDroid(CAM_NEW_PARADIGM, 29, 17, "MRA Mantis Tracks", tBody.tank.mantis, tProp.tank.tracks, "", "", tWeap.tank.miniRocketArray);
-	addDroid(CAM_NEW_PARADIGM, 29, 18, "MRA Mantis Tracks", tBody.tank.mantis, tProp.tank.tracks, "", "", tWeap.tank.miniRocketArray);
+	if (difficulty >= HARD)
+	{
+		addDroid(CAM_NEW_PARADIGM, 29, 16, "MRA Mantis Tracks", tBody.tank.mantis, tProp.tank.tracks, "", "", tWeap.tank.miniRocketArray);
+		addDroid(CAM_NEW_PARADIGM, 29, 17, "MRA Mantis Tracks", tBody.tank.mantis, tProp.tank.tracks, "", "", tWeap.tank.miniRocketArray);
+		addDroid(CAM_NEW_PARADIGM, 29, 18, "MRA Mantis Tracks", tBody.tank.mantis, tProp.tank.tracks, "", "", tWeap.tank.miniRocketArray);
+	}
 
 	camSetEnemyBases({
 		"ScavMiddleGroup": {
