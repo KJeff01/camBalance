@@ -1,7 +1,3 @@
-/*
-SUB_2_1 Script
-Authors: Cristian Odorico (Alpha93) / KJeff01
- */
 include("script/campaign/libcampaign.js");
 include("script/campaign/templates.js");
 include("script/campaign/transitionTech.js");
