@@ -9,7 +9,7 @@ const mis_Labels = {
 
 function eventStartLevel()
 {
-	camSetupTransporter(mis_Labels.trPlace.x, mis_Labels.trPlace.x, mis_Labels.trExit.x, mis_Labels.trExit.y);
+	camSetupTransporter(mis_Labels.trPlace.x, mis_Labels.trPlace.y, mis_Labels.trExit.x, mis_Labels.trExit.y);
 	centreView(mis_Labels.startPos.x, mis_Labels.startPos.y);
 	setNoGoArea(mis_Labels.lz.x, mis_Labels.lz.y, mis_Labels.lz.x2, mis_Labels.lz.y2, CAM_HUMAN_PLAYER);
 	setMissionTime(camChangeOnDiff(camHoursToSeconds(2)));
