@@ -89,7 +89,7 @@ function __camDispatchTransporterUnsafe()
 		                                         cam_trComps.name,
 		                                         cam_trComps.body,
 		                                         cam_trComps.propulsion, "", "",
-												 cam_trComps.weapon);
+		                                         cam_trComps.weapon);
 	}
 	const transporter = __camPlayerTransports[__PLAYER];
 	const droids = [];
