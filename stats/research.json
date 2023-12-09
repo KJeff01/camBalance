@@ -7351,6 +7351,27 @@
 		],
 		"techCode": 1
 	},
+	"R-Sys-NEXUSsensor": {
+		"id": "R-Sys-NEXUSsensor",
+		"keyTopic": 1,
+		"name": "*R-Sys-NEXUSsensor*",
+		"replacedComponents": [
+			"ZNULLSENSOR:NavGunSensor"
+		],
+		"resultComponents": [
+			"NavGunSensor"
+		],
+		"techCode": 1
+	},
+	"R-Sys-NEXUSsensorUndo": {
+		"id": "R-Sys-NEXUSsensorUndo",
+		"keyTopic": 1,
+		"name": "*R-Sys-NEXUSsensorUndo*",
+		"replacedComponents": [
+			"NavGunSensor:ZNULLSENSOR"
+		],
+		"techCode": 1
+	},
 	"R-Sys-Resistance": {
 		"iconID": "IMAGE_RES_SYSTEMTECH",
 		"id": "R-Sys-Resistance",
