@@ -720,7 +720,7 @@ function __camRemoveNavGunSensorResearch()
 	{
 		return;
 	}
-	for (let i = 1; i < __CAM_MAX_PLAYERS; ++i)
+	for (let i = 0; i < __CAM_MAX_PLAYERS; ++i)
 	{
 		if (i !== CAM_NEXUS && getResearch("R-Sys-NEXUSsensor", i).done)
 		{

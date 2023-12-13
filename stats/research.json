@@ -1146,6 +1146,24 @@
 		],
 		"statID": "Cannon1Mk1"
 	},
+	"R-Cyborg-Wpn-Cannon02": {
+		"iconID": "IMAGE_RES_CYBORGTECH",
+		"id": "R-Cyborg-Wpn-Cannon02",
+		"msgName": "RES_CYW_CN2",
+		"name": "Sniper Cyborg",
+		"replacedComponents": [
+			"CyborgCannon:CyborgCannon02"
+		],
+		"requiredResearch": [
+			"R-Wpn-Cannon4AMk1"
+		],
+		"researchPoints": 4000,
+		"researchPower": 125,
+		"resultComponents": [
+			"CyborgCannon02"
+		],
+		"statID": "Cannon4AUTOMk1"
+	},
 	"R-Cyborg-Wpn-Flamer": {
 		"iconID": "IMAGE_RES_CYBORGTECH",
 		"id": "R-Cyborg-Wpn-Flamer",
@@ -1161,6 +1179,24 @@
 			"CyborgFlamer01"
 		],
 		"statID": "Flame1Mk1"
+	},
+	"R-Cyborg-Wpn-Flamer02": {
+		"iconID": "IMAGE_RES_CYBORGTECH",
+		"id": "R-Cyborg-Wpn-Flamer02",
+		"msgName": "RES_CYW_FL2",
+		"name": "Thermite Cyborg",
+		"replacedComponents": [
+			"CyborgFlamer01:CyborgFlamer02"
+		],
+		"requiredResearch": [
+			"R-Wpn-Flame2"
+		],
+		"researchPoints": 3600,
+		"researchPower": 112,
+		"resultComponents": [
+			"CyborgFlamer02"
+		],
+		"statID": "Flame2"
 	},
 	"R-Cyborg-Wpn-MG": {
 		"iconID": "IMAGE_RES_CYBORGTECH",
@@ -1195,6 +1231,24 @@
 		],
 		"statID": "Rocket-LtA-T"
 	},
+	"R-Cyborg-Wpn-Rocket02": {
+		"iconID": "IMAGE_RES_CYBORGTECH",
+		"id": "R-Cyborg-Wpn-Rocket02",
+		"msgName": "RES_CYW_RK2",
+		"name": "Tank Killer Cyborg",
+		"replacedComponents": [
+			"CyborgRocket:CyborgRocket02"
+		],
+		"requiredResearch": [
+			"R-Wpn-Rocket07-Tank-Killer"
+		],
+		"researchPoints": 5000,
+		"researchPower": 156,
+		"resultComponents": [
+			"CyborgRocket02"
+		],
+		"statID": "Rocket-HvyA-T"
+	},
 	"R-Cyborg-Wpn-RotMG": {
 		"iconID": "IMAGE_RES_CYBORGTECH",
 		"id": "R-Cyborg-Wpn-RotMG",
@@ -1219,7 +1273,7 @@
 		"msgName": "RES_CYW_ATM",
 		"name": "Scourge Cyborg",
 		"replacedComponents": [
-			"CyborgRocket:Cyb-Wpn-Atmiss"
+			"CyborgRocket02:Cyb-Wpn-Atmiss"
 		],
 		"requiredResearch": [
 			"R-Wpn-Missile2A-T"
@@ -1237,8 +1291,7 @@
 		"msgName": "RES_CYW_LS1",
 		"name": "Flashlight Gunner Cyborg",
 		"replacedComponents": [
-			"CyborgRotMG:Cyb-Wpn-Laser",
-			"CyborgFlamer01:Cyb-Wpn-Laser"
+			"CyborgRotMG:Cyb-Wpn-Laser"
 		],
 		"requiredResearch": [
 			"R-Wpn-Laser01"
@@ -1256,7 +1309,7 @@
 		"msgName": "RES_CYW_RL1",
 		"name": "Needle Gunner Cyborg",
 		"replacedComponents": [
-			"CyborgCannon:Cyb-Wpn-Rail1"
+			"CyborgCannon02:Cyb-Wpn-Rail1"
 		],
 		"requiredResearch": [
 			"R-Wpn-RailGun01"
@@ -6639,7 +6692,8 @@
 		"msgName": "RES_EMP_PulseLas",
 		"name": "Pulse Laser Emplacement",
 		"redStructures": [
-			"Emplacement-PrisLas"
+			"Emplacement-PrisLas",
+			"Tower-Projector"
 		],
 		"requiredResearch": [
 			"R-Wpn-Laser02",
@@ -8669,7 +8723,11 @@
 		"name": "Pulse Laser",
 		"redComponents": [
 			"Laser3BEAM-VTOL",
-			"Laser3BEAMMk1"
+			"Laser3BEAMMk1",
+			"Flame2"
+		],
+		"replacedComponents": [
+			"CyborgFlamer02:Cyb-Wpn-Laser"
 		],
 		"requiredResearch": [
 			"R-Wpn-Laser01"

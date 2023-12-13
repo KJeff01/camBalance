@@ -207,6 +207,7 @@ function eventStartLevel()
 	{
 		camUpgradeOnMapTemplates(cTempl.commc, cTempl.commrp, CAM_THE_COLLECTIVE);
 	}
+	camUpgradeOnMapTemplates(cTempl.npcybf, cTempl.cocybth, CAM_THE_COLLECTIVE);
 
 	camSetEnemyBases({
 		"COEastBase": {
