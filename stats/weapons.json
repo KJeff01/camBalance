@@ -2037,7 +2037,7 @@
 	"Laser2PULSE-VTOL": {
 		"buildPoints": 800,
 		"buildPower": 200,
-		"damage": 312,
+		"damage": 436,
 		"designable": 1,
 		"effectSize": 100,
 		"explosionWav": "lsrexpl.ogg",
@@ -2114,7 +2114,7 @@
 	"Laser3BEAM-VTOL": {
 		"buildPoints": 600,
 		"buildPower": 150,
-		"damage": 156,
+		"damage": 218,
 		"designable": 1,
 		"effectSize": 100,
 		"explosionWav": "lsrexpl.ogg",
@@ -2946,7 +2946,7 @@
 	"Missile-VTOL-AT": {
 		"buildPoints": 1200,
 		"buildPower": 300,
-		"damage": 430,
+		"damage": 571,
 		"designable": 1,
 		"effectSize": 50,
 		"explosionWav": "smlexpl.ogg",
@@ -3427,7 +3427,7 @@
 	"RailGun1-VTOL": {
 		"buildPoints": 1000,
 		"buildPower": 250,
-		"damage": 200,
+		"damage": 300,
 		"designable": 1,
 		"effectSize": 75,
 		"explosionWav": "smlexpl.ogg",
@@ -3449,7 +3449,7 @@
 		"movement": "DIRECT",
 		"muzzleGfx": "FXLGauss.PIE",
 		"name": "VTOL Needle Gun",
-		"numAttackRuns": 12,
+		"numAttackRuns": 8,
 		"numExplosions": 1,
 		"rotate": 180,
 		"shortHit": 80,
@@ -3500,7 +3500,7 @@
 	"RailGun2-VTOL": {
 		"buildPoints": 1200,
 		"buildPower": 300,
-		"damage": 300,
+		"damage": 400,
 		"designable": 1,
 		"effectSize": 100,
 		"explosionWav": "lrgexpl.ogg",
@@ -3522,7 +3522,7 @@
 		"movement": "DIRECT",
 		"muzzleGfx": "FXMGauss.PIE",
 		"name": "VTOL Rail Gun",
-		"numAttackRuns": 12,
+		"numAttackRuns": 6,
 		"numExplosions": 1,
 		"rotate": 180,
 		"shortHit": 80,
@@ -3862,7 +3862,7 @@
 	"Rocket-VTOL-BB": {
 		"buildPoints": 1400,
 		"buildPower": 375,
-		"damage": 125,
+		"damage": 166,
 		"designable": 1,
 		"effectSize": 25,
 		"explosionWav": "smlexpl.ogg",
