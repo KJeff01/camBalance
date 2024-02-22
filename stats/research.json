@@ -9024,7 +9024,7 @@
 				"value": -25
 			}
 		],
-		"statID": "Missile-A-T",
+		"statID": "Missile-LtSAM",
 		"subgroupIconID": "IMAGE_RES_GRPROF"
 	},
 	"R-Wpn-Missile-ROF02": {
@@ -9091,6 +9091,7 @@
 	"R-Wpn-Missile2A-T": {
 		"iconID": "IMAGE_RES_WEAPONTECH",
 		"id": "R-Wpn-Missile2A-T",
+		"keyTopic": 1,
 		"name": "Scourge Missile",
 		"redComponents": [
 			"Rocket-HvyA-T",

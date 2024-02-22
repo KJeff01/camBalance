@@ -225,6 +225,12 @@
 		"player": 3,
 		"type": 1
 	},
+	"object_8": {
+		"label": "NXAvengerSite",
+		"id": 804,
+		"player": 3,
+		"type": 1
+	},
 
 	"radius_0": {
 		"label": "vtolRemoveZone",

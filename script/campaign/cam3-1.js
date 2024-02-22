@@ -334,6 +334,7 @@ function eventStartLevel()
 	camSetArtifacts({
 		"NXMediumFac": { tech: "R-Wpn-Cannon-Damage08" },
 		"NXCommandCenter": { tech: "R-Defense-WallUpgrade08" },
+		"NXAvengerSite": { tech: "R-Wpn-Missile-LtSAM" },
 	});
 
 	camSetEnemyBases({

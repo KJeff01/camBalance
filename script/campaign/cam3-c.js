@@ -197,7 +197,7 @@ function eventStartLevel()
 		"NXbase1HeavyFacArti": { tech: "R-Vehicle-Body07" }, //retribution
 		"NXcybFacArti": { tech: "R-Wpn-RailGun01" },
 		"NXvtolFacArti": { tech: "R-Struc-VTOLPad-Upgrade04" },
-		"NXcommandCenter": { tech: ["R-Wpn-Missile-LtSAM", "R-Defense-WallUpgrade10"] },
+		"NXcommandCenter": { tech: ["R-Wpn-Missile2A-T", "R-Defense-WallUpgrade10"] },
 	});
 
 	camSetEnemyBases({

@@ -150,7 +150,8 @@ const mis_gammaResearchNew = [
 
 	// 2
 	"R-Wpn-Cannon-Damage08", "R-Wpn-AAGun-Damage05", "R-Wpn-Howitzer-Damage05",
-	"R-Defense-WallUpgrade08",
+	"R-Defense-WallUpgrade08", "R-Wpn-Missile-LtSAM", "R-Defense-SamSite1",
+	"R-Wpn-Missile-Damage01", "R-Wpn-Missile-Accuracy01", "R-Wpn-Missile-ROF01",
 
 	// 3
 	"R-Struc-Research-Upgrade07", "R-Wpn-Laser01", "R-Wpn-Mortar-Acc03", "R-Vehicle-Body03",
@@ -172,16 +173,16 @@ const mis_gammaResearchNew = [
 	"R-Sys-Resistance-Upgrade04",
 
 	// 6
-	"R-Vehicle-Body07", "R-Wpn-RailGun01", "R-Struc-VTOLPad-Upgrade04", "R-Wpn-Missile-LtSAM",
+	"R-Vehicle-Body07", "R-Wpn-RailGun01", "R-Struc-VTOLPad-Upgrade04",
 	"R-Vehicle-Metals08", "R-Vehicle-Engine08", "R-Cyborg-Wpn-Rail1", "R-Defense-GuardTower-Rail1",
-	"R-Wpn-Rail-Damage01", "R-Struc-VTOLPad-Upgrade05", "R-Struc-VTOLPad-Upgrade06", "R-Defense-SamSite1",
-	"R-Wpn-Missile-Damage01", "R-Vehicle-Armor-Heat05", "R-Wpn-Rail-Accuracy01", "R-Wpn-Missile-Accuracy01",
-	"R-Wpn-AAGun-Accuracy03", "R-Wpn-Howitzer-Accuracy03", "R-Wpn-Rail-ROF01", "R-Wpn-Missile2A-T",
-	"R-Cyborg-Wpn-ATMiss", "R-Defense-GuardTower-ATMiss", "R-Defense-WallTower-A-Tmiss", "R-Wpn-Missile-Damage02",
-	"R-Wpn-Missile-ROF01", "R-Cyborg-Metals08", "R-Cyborg-Armor-Heat05", "R-Defense-WallUpgrade10",
+	"R-Wpn-Rail-Damage01", "R-Struc-VTOLPad-Upgrade05", "R-Struc-VTOLPad-Upgrade06",
+	"R-Vehicle-Armor-Heat05", "R-Wpn-Rail-Accuracy01", "R-Wpn-Missile2A-T",
+	"R-Wpn-AAGun-Accuracy03", "R-Wpn-Howitzer-Accuracy03", "R-Wpn-Rail-ROF01",
+	"R-Cyborg-Wpn-ATMiss", "R-Defense-GuardTower-ATMiss", "R-Defense-WallTower-A-Tmiss",
+	"R-Cyborg-Metals08", "R-Cyborg-Armor-Heat05", "R-Defense-WallUpgrade10",
 
 	// 7
-	"R-Wpn-MdArtMissile", "R-Wpn-Laser02", "R-Wpn-RailGun02",
+	"R-Wpn-MdArtMissile", "R-Wpn-Laser02", "R-Wpn-RailGun02", "R-Wpn-Missile-Damage02",
 	"R-Wpn-Missile-HvSAM", "R-Defense-SamSite2", "R-Wpn-Missile-Accuracy02",
 	"R-Defense-PulseLas", "R-Wpn-Energy-ROF02", "R-Wpn-Energy-Damage03", "R-Wpn-Energy-ROF03",
 	"R-Defense-MdArtMissile", "R-Wpn-Missile-ROF02", "R-Defense-Rail2", "R-Defense-WallTower-Rail2",
