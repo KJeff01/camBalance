@@ -9,6 +9,7 @@
 //;; The argument is a JavaScript map from object labels to artifact description.
 //;; If the label points to a game object, artifact will be placed when this object
 //;; is destroyed; if the label is a position, the artifact will be placed instantly.
+//;; The label can point to a pre-existing feature artifact on the map too.
 //;; Artifact description is a JavaScript object with the following fields:
 //;; * `tech` The technology to grant when the artifact is recovered.
 //;;   Note that this can be made into an array to make artifacts give out
@@ -31,9 +32,18 @@ function camSetArtifacts(artifacts)
 		const pos = camMakePos(alabel);
 		if (camDef(pos.id))
 		{
-			// will place when object with this id is destroyed
-			ai.id = "" + pos.id;
-			ai.placed = false;
+			const obj = getObject(alabel);
+			if (obj && obj.type === FEATURE && obj.stattype === ARTIFACT)
+			{
+				addLabel(obj, __camGetArtifactLabel(alabel));
+				ai.placed = true; // this is an artifact feature on the map itself.
+			}
+			else
+			{
+				// will place when object with this id is destroyed
+				ai.id = "" + pos.id;
+				ai.placed = false;
+			}
 		}
 		else
 		{
