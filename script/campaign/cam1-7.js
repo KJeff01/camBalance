@@ -284,16 +284,13 @@ function eventStartLevel()
 	//Make sure the New Paradigm and Scavs are allies
 	setAlliance(CAM_NEW_PARADIGM, CAM_SCAV_7, true);
 
-	//Get rid of the already existing crate and replace with another
-	camSafeRemoveObject("artifact1", false);
-
 	if (camClassicMode())
 	{
 		camClassicResearch(mis_newParadigmResClassic, CAM_NEW_PARADIGM);
 		camClassicResearch(mis_scavengerResClassic, CAM_SCAV_7);
 
 		camSetArtifacts({
-			"artifactLocation": { tech: "R-Wpn-Cannon3Mk1" },
+			"artifact1": { tech: "R-Wpn-Cannon3Mk1" },
 		});
 	}
 	else
@@ -316,7 +313,7 @@ function eventStartLevel()
 		}
 
 		camSetArtifacts({
-			"artifactLocation": { tech: ["R-Wpn-Cannon3Mk1", "R-Wpn-RocketSlow-Damage03"] },
+			"artifact1": { tech: ["R-Wpn-Cannon3Mk1", "R-Wpn-RocketSlow-Damage03"] },
 		});
 	}
 
