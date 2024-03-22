@@ -744,7 +744,7 @@
 		"weight": 1
 	},
 	"Bomb1-VTOL-LtHE": {
-		"buildPoints": 600,
+		"buildPoints": 800,
 		"buildPower": 150,
 		"damage": 250,
 		"designable": 1,
@@ -786,8 +786,8 @@
 		"weight": 500
 	},
 	"Bomb2-VTOL-HvHE": {
-		"buildPoints": 800,
-		"buildPower": 200,
+		"buildPoints": 1300,
+		"buildPower": 400,
 		"damage": 500,
 		"designable": 1,
 		"effectSize": 200,
@@ -828,8 +828,8 @@
 		"weight": 5000
 	},
 	"Bomb3-VTOL-LtINC": {
-		"buildPoints": 700,
-		"buildPower": 175,
+		"buildPoints": 600,
+		"buildPower": 125,
 		"damage": 180,
 		"designable": 1,
 		"effectSize": 50,
@@ -870,7 +870,7 @@
 		"weight": 500
 	},
 	"Bomb4-VTOL-HvyINC": {
-		"buildPoints": 1200,
+		"buildPoints": 1100,
 		"buildPower": 350,
 		"damage": 300,
 		"designable": 1,
@@ -1120,8 +1120,8 @@
 		"weight": 10000
 	},
 	"Cannon4AUTO-VTOL": {
-		"buildPoints": 700,
-		"buildPower": 175,
+		"buildPoints": 900,
+		"buildPower": 250,
 		"damage": 195,
 		"designable": 1,
 		"effectSize": 50,
@@ -1162,8 +1162,8 @@
 		"weight": 1000
 	},
 	"Cannon4AUTOMk1": {
-		"buildPoints": 700,
-		"buildPower": 175,
+		"buildPoints": 900,
+		"buildPower": 250,
 		"damage": 65,
 		"designable": 1,
 		"effectSize": 50,
@@ -1203,8 +1203,8 @@
 		"weight": 5000
 	},
 	"Cannon5Vulcan-VTOL": {
-		"buildPoints": 800,
-		"buildPower": 200,
+		"buildPoints": 900,
+		"buildPower": 300,
 		"damage": 175,
 		"designable": 1,
 		"effectSize": 50,
@@ -1243,8 +1243,8 @@
 		"weight": 1500
 	},
 	"Cannon5VulcanMk1": {
-		"buildPoints": 800,
-		"buildPower": 200,
+		"buildPoints": 900,
+		"buildPower": 300,
 		"damage": 52,
 		"designable": 1,
 		"effectSize": 50,
@@ -2035,7 +2035,7 @@
 		"weight": 600
 	},
 	"Laser2PULSE-VTOL": {
-		"buildPoints": 800,
+		"buildPoints": 1000,
 		"buildPower": 200,
 		"damage": 436,
 		"designable": 1,
@@ -2074,7 +2074,7 @@
 		"weight": 500
 	},
 	"Laser2PULSEMk1": {
-		"buildPoints": 800,
+		"buildPoints": 1000,
 		"buildPower": 200,
 		"damage": 312,
 		"designable": 1,
@@ -2112,7 +2112,7 @@
 		"weight": 500
 	},
 	"Laser3BEAM-VTOL": {
-		"buildPoints": 600,
+		"buildPoints": 750,
 		"buildPower": 150,
 		"damage": 218,
 		"designable": 1,
@@ -2151,7 +2151,7 @@
 		"weight": 300
 	},
 	"Laser3BEAMMk1": {
-		"buildPoints": 600,
+		"buildPoints": 750,
 		"buildPower": 150,
 		"damage": 156,
 		"designable": 1,
@@ -2726,8 +2726,8 @@
 		"weight": 600
 	},
 	"Missile-A-T": {
-		"buildPoints": 1200,
-		"buildPower": 300,
+		"buildPoints": 1300,
+		"buildPower": 400,
 		"damage": 430,
 		"designable": 1,
 		"effectSize": 50,
@@ -2944,8 +2944,8 @@
 		"weight": 1000
 	},
 	"Missile-VTOL-AT": {
-		"buildPoints": 1200,
-		"buildPower": 300,
+		"buildPoints": 1300,
+		"buildPower": 400,
 		"damage": 571,
 		"designable": 1,
 		"effectSize": 50,
@@ -3425,8 +3425,8 @@
 		"weight": 10000
 	},
 	"RailGun1-VTOL": {
-		"buildPoints": 1000,
-		"buildPower": 250,
+		"buildPoints": 1100,
+		"buildPower": 350,
 		"damage": 300,
 		"designable": 1,
 		"effectSize": 75,
@@ -3462,8 +3462,8 @@
 		"weight": 600
 	},
 	"RailGun1Mk1": {
-		"buildPoints": 1000,
-		"buildPower": 250,
+		"buildPoints": 1100,
+		"buildPower": 350,
 		"damage": 200,
 		"designable": 1,
 		"effectSize": 100,
@@ -3498,8 +3498,8 @@
 		"weight": 400
 	},
 	"RailGun2-VTOL": {
-		"buildPoints": 1200,
-		"buildPower": 300,
+		"buildPoints": 1300,
+		"buildPower": 400,
 		"damage": 400,
 		"designable": 1,
 		"effectSize": 100,
@@ -3535,8 +3535,8 @@
 		"weight": 1000
 	},
 	"RailGun2Mk1": {
-		"buildPoints": 1200,
-		"buildPower": 300,
+		"buildPoints": 1300,
+		"buildPower": 400,
 		"damage": 300,
 		"designable": 1,
 		"effectSize": 100,
@@ -3572,8 +3572,8 @@
 		"weight": 2000
 	},
 	"RailGun3Mk1": {
-		"buildPoints": 1600,
-		"buildPower": 400,
+		"buildPoints": 1500,
+		"buildPower": 450,
 		"damage": 400,
 		"designable": 1,
 		"effectSize": 150,
@@ -3651,7 +3651,7 @@
 		"weight": 250
 	},
 	"Rocket-HvyA-T": {
-		"buildPoints": 1250,
+		"buildPoints": 900,
 		"buildPower": 250,
 		"damage": 185,
 		"designable": 1,
@@ -3860,8 +3860,8 @@
 		"weight": 200
 	},
 	"Rocket-VTOL-BB": {
-		"buildPoints": 1400,
-		"buildPower": 375,
+		"buildPoints": 1500,
+		"buildPower": 500,
 		"damage": 166,
 		"designable": 1,
 		"effectSize": 25,
@@ -3900,7 +3900,7 @@
 		"weight": 750
 	},
 	"Rocket-VTOL-HvyA-T": {
-		"buildPoints": 1250,
+		"buildPoints": 900,
 		"buildPower": 250,
 		"damage": 277,
 		"designable": 1,
