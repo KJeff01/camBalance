@@ -3469,7 +3469,8 @@
 		"researchPoints": 1200,
 		"researchPower": 37,
 		"resultComponents": [
-			"Rocket-Pod"
+			"Rocket-Pod",
+			"Rocket-VTOL-Pod"
 		],
 		"statID": "Rocket-Pod"
 	},
