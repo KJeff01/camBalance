@@ -2,7 +2,7 @@
 	"AAGun2Mk1": {
 		"buildPoints": 450,
 		"buildPower": 150,
-		"damage": 55,
+		"damage": 50,
 		"designable": 1,
 		"effectSize": 100,
 		"explosionWav": "lrgexpl.ogg",
