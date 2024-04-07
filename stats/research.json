@@ -4943,7 +4943,7 @@
 		],
 		"requiredResearch": [
 			"R-Wpn-AAGun03",
-			"R-Wpn-AAGun-Damage02"
+			"R-Wpn-AAGun-Damage01"
 		],
 		"researchPoints": 4800,
 		"researchPower": 150,
