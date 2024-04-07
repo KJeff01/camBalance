@@ -81,7 +81,7 @@ const mis_playerResBeta = [
 //This array should give a player all the research from Beta.
 const mis_betaResearchNew = [
 	// 1
-	"R-Sys-Engineering02", "R-Sys-Sensor-Upgrade01", "R-Wpn-AAGun-Damage03",
+	"R-Sys-Engineering02", "R-Sys-Sensor-Upgrade01", "R-Wpn-AAGun-Damage01",
 	"R-Wpn-Cannon-Damage04", "R-Wpn-MG-ROF02", "R-Wpn-Rocket-Damage04",
 	"R-Defense-WallUpgrade04", "R-Sys-CBSensor-Tower01", "R-Wpn-AAGun-ROF02",
 	"R-Wpn-Cannon-Accuracy02", "R-Wpn-MG-Damage05", "R-Wpn-RocketSlow-Damage04",
@@ -100,7 +100,7 @@ const mis_betaResearchNew = [
 	"R-Wpn-RocketSlow-Accuracy03", "R-Wpn-AAGun-Accuracy01", "R-Wpn-Mortar-Acc02",
 
 	// 5
-	"R-Vehicle-Body06", "R-Vehicle-Prop-VTOL", "R-Wpn-AAGun02", "R-Wpn-HowitzerMk1",
+	"R-Vehicle-Body06", "R-Vehicle-Prop-VTOL", "R-Wpn-AAGun02", "R-Wpn-AAGun-Damage02", "R-Wpn-HowitzerMk1",
 	"R-Wpn-Rocket06-IDF", "R-Defense-AASite-QuadBof", "R-Defense-Howitzer", "R-Defense-IDFRocket",
 	"R-Struc-VTOLFactory", "R-Vehicle-Engine04", "R-Vehicle-Metals05", "R-Wpn-Bomb01",
 	"R-Wpn-Flamer-ROF03", "R-Wpn-Howitzer-Damage01", "R-Wpn-Howitzer-ROF01", "R-Wpn-Mortar-ROF02",
@@ -123,7 +123,7 @@ const mis_betaResearchNew = [
 	"R-Sys-VTOLCBS-Tower01", "R-Wpn-Cannon4AMk1", "R-Wpn-Mortar3", "R-Wpn-Rocket07-Tank-Killer",
 	"R-Defense-Emplacement-HPVcannon", "R-Defense-HvyA-Trocket", "R-Defense-RotMor",
 	"R-Defense-WallTower-HPVcannon", "R-Defense-WallTower-HvyA-Trocket", "R-Sys-VTOLCBS-Turret01",
-	"R-Wpn-Mortar-ROF03", "R-Wpn-Mortar-Damage06", "R-Wpn-AAGun04", "R-Defense-AASite-QuadRotMg",
+	"R-Wpn-Mortar-ROF03", "R-Wpn-Mortar-Damage06", "R-Wpn-AAGun04", "R-Wpn-AAGun-Damage03", "R-Defense-AASite-QuadRotMg",
 	"R-Cyborg-Wpn-Cannon02", "R-Cyborg-Wpn-Rocket02",
 
 	// 9
