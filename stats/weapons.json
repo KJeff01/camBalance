@@ -2,7 +2,7 @@
 	"AAGun2Mk1": {
 		"buildPoints": 450,
 		"buildPower": 150,
-		"damage": 45,
+		"damage": 55,
 		"designable": 1,
 		"effectSize": 100,
 		"explosionWav": "lrgexpl.ogg",
@@ -3384,7 +3384,7 @@
 	"QuadMg1AAGun": {
 		"buildPoints": 400,
 		"buildPower": 100,
-		"damage": 40,
+		"damage": 55,
 		"designable": 1,
 		"effectSize": 20,
 		"explosionWav": "smlexpl.ogg",
@@ -3426,12 +3426,12 @@
 	"QuadRotAAGun": {
 		"buildPoints": 1200,
 		"buildPower": 150,
-		"damage": 45,
+		"damage": 50,
 		"designable": 1,
 		"effectSize": 20,
 		"explosionWav": "smlexpl.ogg",
 		"facePlayer": 1,
-		"firePause": 3,
+		"firePause": 4,
 		"flags": "AirOnly",
 		"flightGfx": "FXAALSH2.PIE",
 		"flightSpeed": 1500,
