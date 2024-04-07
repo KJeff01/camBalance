@@ -4770,14 +4770,14 @@
 				"filterParameter": "ImpactClass",
 				"filterValue": "A-A GUN",
 				"parameter": "Damage",
-				"value": 30
+				"value": 40
 			},
 			{
 				"class": "Weapon",
 				"filterParameter": "ImpactClass",
 				"filterValue": "A-A GUN",
 				"parameter": "RadiusDamage",
-				"value": 30
+				"value": 40
 			}
 		],
 		"statID": "QuadMg1AAGun",
@@ -4788,7 +4788,8 @@
 		"id": "R-Wpn-AAGun-Damage02",
 		"name": "AA HE Flak Mk2",
 		"requiredResearch": [
-			"R-Wpn-AAGun-Damage01"
+			"R-Wpn-AAGun-Damage01",
+			"R-Wpn-AAGun02"
 		],
 		"researchPoints": 7200,
 		"researchPower": 225,
@@ -4817,7 +4818,8 @@
 		"id": "R-Wpn-AAGun-Damage03",
 		"name": "AA HE Flak Mk3",
 		"requiredResearch": [
-			"R-Wpn-AAGun-Damage02"
+			"R-Wpn-AAGun-Damage02",
+			"R-Wpn-AAGun04"
 		],
 		"researchPoints": 8400,
 		"researchPower": 262,
@@ -4827,14 +4829,14 @@
 				"filterParameter": "ImpactClass",
 				"filterValue": "A-A GUN",
 				"parameter": "Damage",
-				"value": 30
+				"value": 20
 			},
 			{
 				"class": "Weapon",
 				"filterParameter": "ImpactClass",
 				"filterValue": "A-A GUN",
 				"parameter": "RadiusDamage",
-				"value": 30
+				"value": 20
 			}
 		],
 		"statID": "QuadMg1AAGun",
