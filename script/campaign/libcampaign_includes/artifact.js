@@ -28,31 +28,57 @@ function camSetArtifacts(artifacts)
 	__camArtifacts = artifacts;
 	for (const alabel in __camArtifacts)
 	{
-		const ai = __camArtifacts[alabel];
-		const pos = camMakePos(alabel);
-		if (camDef(pos.id))
+		__camSetupArtifactData(alabel);
+	}
+}
+
+//;; ## camAddArtifact(artiLabel, artiTech)
+//;;
+//;; Adds another artifact to be managed. Will override existing ones if the names match.
+//;;
+//;; @param {String} artiLabel
+//;; @param {String|Array} artiTech
+//;; @returns {void}
+//;;
+function camAddArtifact(artiLabel, artiTech)
+{
+	if (!camDef(artiLabel) || !camDef(artiTech))
+	{
+		camTrace("Attempt to add new artifact failed due to undefined name or tech parameter");
+		return;
+	}
+	__camArtifacts[artiLabel] = { tech: artiTech };
+	__camSetupArtifactData(artiLabel);
+}
+
+//;; ## camDeleteArtifact(artiLabel)
+//;;
+//;; Deletes the artifact from the list of managed artifacts.
+//;;
+//;; @param {String} artiLabel
+//;; @returns {void}
+//;;
+function camDeleteArtifact(artiLabel)
+{
+	if (!camDef(artiLabel))
+	{
+		camTrace("Tried to delete undefined artifact label");
+		return;
+	}
+	if (!(artiLabel in __camArtifacts))
+	{
+		camTrace("Artifact label doesn't exist in list of artifacts");
+		return;
+	}
+	if (__camArtifacts[artiLabel].placed)
+	{
+		const obj = getObject(__camGetArtifactLabel(artiLabel));
+		if (camDef(obj) && obj !== null)
 		{
-			const obj = getObject(alabel);
-			if (obj && obj.type === FEATURE && obj.stattype === ARTIFACT)
-			{
-				addLabel(obj, __camGetArtifactLabel(alabel));
-				ai.placed = true; // this is an artifact feature on the map itself.
-			}
-			else
-			{
-				// will place when object with this id is destroyed
-				ai.id = "" + pos.id;
-				ai.placed = false;
-			}
-		}
-		else
-		{
-			// received position or area, place immediately
-			const acrate = addFeature(CAM_ARTIFACT_STAT, pos.x, pos.y);
-			addLabel(acrate, __camGetArtifactLabel(alabel));
-			ai.placed = true;
+			camSafeRemoveObject(obj, false);
 		}
 	}
+	delete __camArtifacts[artiLabel];
 }
 
 //;; ## camAllArtifactsPickedUp()
@@ -97,6 +123,34 @@ function camGetArtifacts()
 }
 
 //////////// privates
+
+function __camSetupArtifactData(alabel)
+{
+	const ai = __camArtifacts[alabel];
+	const pos = camMakePos(alabel);
+	if (camDef(pos.id))
+	{
+		const obj = getObject(alabel);
+		if (obj && obj.type === FEATURE && obj.stattype === ARTIFACT)
+		{
+			addLabel(obj, __camGetArtifactLabel(alabel));
+			ai.placed = true; // this is an artifact feature on the map itself.
+		}
+		else
+		{
+			// will place when object with this id is destroyed
+			ai.id = "" + pos.id;
+			ai.placed = false;
+		}
+	}
+	else
+	{
+		// received position or area, place immediately
+		const acrate = addFeature(CAM_ARTIFACT_STAT, pos.x, pos.y);
+		addLabel(acrate, __camGetArtifactLabel(alabel));
+		ai.placed = true;
+	}
+}
 
 function __camGetArtifactLabel(alabel)
 {
