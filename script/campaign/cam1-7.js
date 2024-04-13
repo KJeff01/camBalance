@@ -31,6 +31,7 @@ const mis_newParadigmResClassic = [
 const mis_scavengerResClassic = [
 	"R-Wpn-MG-Damage03", "R-Wpn-Rocket-Damage02"
 ];
+const MIS_NEW_ARTI_LABEL = "newArtiLabel"; //Label for the picked-up artifact once dropped.
 var artiGroup; //Droids that take the artifact
 var enemyHasArtifact; //Do they have the artifact
 var enemyStoleArtifact; //Reached the LZ with the artifact
@@ -109,20 +110,18 @@ function eventGroupLoss(obj, group, newsize)
 	{
 		if (obj.id === droidWithArtiID)
 		{
+			camDeleteArtifact("artifact1", false); //Clear original map-placed artifact if found.
+			//Setup the new artifact.
 			const acrate = addFeature(CAM_ARTIFACT_STAT, obj.x, obj.y);
-			addLabel(acrate, "newArtiLabel");
+			addLabel(acrate, MIS_NEW_ARTI_LABEL);
 
 			if (camClassicMode())
 			{
-				camSetArtifacts({
-					"newArtiLabel": { tech: "R-Wpn-Cannon3Mk1" }
-				});
+				camAddArtifact(MIS_NEW_ARTI_LABEL, "R-Wpn-Cannon3Mk1");
 			}
 			else
 			{
-				camSetArtifacts({
-					"newArtiLabel": { tech: ["R-Wpn-Cannon3Mk1", "R-Wpn-RocketSlow-Damage03"] }
-				});
+				camAddArtifact(MIS_NEW_ARTI_LABEL, ["R-Wpn-Cannon3Mk1", "R-Wpn-RocketSlow-Damage03"]);
 			}
 
 			droidWithArtiID = undefined;
@@ -134,7 +133,7 @@ function eventGroupLoss(obj, group, newsize)
 
 function enemyCanTakeArtifact(label)
 {
-	return label.indexOf("newArtiLabel") !== -1 || label.indexOf("artifactLocation") !== -1;
+	return label.indexOf(MIS_NEW_ARTI_LABEL) !== -1 || label.indexOf("artifact1") !== -1;
 }
 
 //Moves some New Paradigm forces to the artifact

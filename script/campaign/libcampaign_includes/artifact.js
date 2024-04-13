@@ -44,7 +44,7 @@ function camAddArtifact(artiLabel, artiTech)
 {
 	if (!camDef(artiLabel) || !camDef(artiTech))
 	{
-		camTrace("Attempt to add new artifact failed due to undefined name or tech parameter");
+		camDebug("Attempt to add new artifact failed due to undefined name or tech parameter");
 		return;
 	}
 	__camArtifacts[artiLabel] = { tech: artiTech };
@@ -58,16 +58,23 @@ function camAddArtifact(artiLabel, artiTech)
 //;; @param {String} artiLabel
 //;; @returns {void}
 //;;
-function camDeleteArtifact(artiLabel)
+function camDeleteArtifact(artiLabel, warnIfNotFound)
 {
+	if (!camDef(warnIfNotFound))
+	{
+		warnIfNotFound = true;
+	}
 	if (!camDef(artiLabel))
 	{
-		camTrace("Tried to delete undefined artifact label");
+		camDebug("Tried to delete undefined artifact label");
 		return;
 	}
 	if (!(artiLabel in __camArtifacts))
 	{
-		camTrace("Artifact label doesn't exist in list of artifacts");
+		if (warnIfNotFound)
+		{
+			camDebug("Artifact label doesn't exist in list of artifacts");
+		}
 		return;
 	}
 	if (__camArtifacts[artiLabel].placed)
