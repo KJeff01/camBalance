@@ -3384,7 +3384,7 @@
 	"QuadMg1AAGun": {
 		"buildPoints": 400,
 		"buildPower": 100,
-		"damage": 55,
+		"damage": 50,
 		"designable": 1,
 		"effectSize": 20,
 		"explosionWav": "smlexpl.ogg",
