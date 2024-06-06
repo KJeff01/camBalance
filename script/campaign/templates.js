@@ -156,7 +156,7 @@ const tWeap = {
         flamer: "CyborgFlamer01",
         thermite: "CyborgFlamer02",
         //Cannon
-        lightCannon: "CyborgCannon",
+        heavyCannon: "CyborgCannon",
         sniperCannon: "CyborgCannon02",
         //Rocket
         lancer: "CyborgRocket",
@@ -268,7 +268,7 @@ npltat: { body: tBody.tank.bug, prop: tProp.tank.halfTracks, weap: tWeap.tank.la
 
 // CAM_1_5
 nphmgt: { body: tBody.tank.scorpion, prop: tProp.tank.tracks, weap: tWeap.tank.heavyMachinegun },
-npcybc: { body: tBody.cyborg.lightBody, prop: tProp.cyborg.legs, weap: tWeap.cyborg.lightCannon },
+npcybc: { body: tBody.cyborg.lightBody, prop: tProp.cyborg.legs, weap: tWeap.cyborg.heavyCannon },
 npcybf: { body: tBody.cyborg.lightBody, prop: tProp.cyborg.legs, weap: tWeap.cyborg.flamer },
 npcybm: { body: tBody.cyborg.lightBody, prop: tProp.cyborg.legs, weap: tWeap.cyborg.heavyMachinegun },
 

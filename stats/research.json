@@ -1136,7 +1136,7 @@
 		"msgName": "RES_CYW_CN1",
 		"name": "Heavy Gunner Cyborg",
 		"requiredResearch": [
-			"R-Wpn-Cannon1Mk1",
+			"R-Wpn-Cannon3Mk1",
 			"R-Cyborg-Wpn-MG"
 		],
 		"researchPoints": 1500,

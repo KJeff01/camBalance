@@ -51,13 +51,14 @@ const mis_alphaResearchNew = [
 	"R-Wpn-RocketSlow-Accuracy01", "R-Wpn-Cannon-Accuracy01", "R-Struc-RprFac-Upgrade03",
 	"R-Comp-SynapticLink", "R-Vehicle-Body08", "R-Vehicle-Engine02", "R-Struc-Factory-Upgrade03",
 	"R-Struc-Factory-Cyborg", "R-Cyborg-Wpn-MG", "R-Cyborg-Metals01", "R-Cyborg-Metals02",
-	"R-Cyborg-Metals03", "R-Cyborg-Wpn-Cannon", "R-Cyborg-Wpn-Flamer", "R-Cyborg-Wpn-Rocket",
+	"R-Cyborg-Metals03", "R-Cyborg-Wpn-Flamer", "R-Cyborg-Wpn-Rocket",
 	"R-Cyborg-Legs01", "R-Defense-WallUpgrade03",
 
 	// 10
 
 	// 11
 	"R-Wpn-Cannon3Mk1", "R-Defense-WallTower04", "R-Wpn-RocketSlow-Damage03",
+	"R-Cyborg-Wpn-Cannon",
 
 	//12
 	"R-Vehicle-Prop-Hover", "R-Vehicle-Metals03", "R-Vehicle-Body12", "R-Vehicle-Engine03",
