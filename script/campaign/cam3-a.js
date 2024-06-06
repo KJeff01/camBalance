@@ -58,7 +58,7 @@ camAreaEvent ("middleTrigger", function(droid)
 
 function setUnitRank(transport)
 {
-	const droidExp = [1024, 256, 128, 64]; //Can make Hero Commanders if recycled.
+	const droidExp = [2048, 256, 128, 64]; //Can make Hero Commanders if recycled.
 	const droids = enumCargo(transport);
 
 	for (let i = 0, len = droids.length; i < len; ++i)
