@@ -3874,7 +3874,7 @@
 		"flightGfx": "FXMflare.PIE",
 		"flightSpeed": 1500,
 		"hitGfx": "FXMPExp.PIE",
-		"hitpoints": 5,
+		"hitpoints": 150,
 		"id": "Rocket-Pod",
 		"lightWorld": 1,
 		"longHit": 50,
