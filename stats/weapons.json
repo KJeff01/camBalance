@@ -1512,7 +1512,7 @@
 	"CyborgChaingun": {
 		"buildPoints": 160,
 		"buildPower": 40,
-		"damage": 20,
+		"damage": 21,
 		"effectSize": 100,
 		"facePlayer": 1,
 		"firePause": 7,
@@ -1707,7 +1707,7 @@
 	"CyborgRotMG": {
 		"buildPoints": 270,
 		"buildPower": 90,
-		"damage": 22,
+		"damage": 23,
 		"effectSize": 100,
 		"facePlayer": 1,
 		"firePause": 5,
@@ -2588,7 +2588,7 @@
 	"MG3-VTOL": {
 		"buildPoints": 250,
 		"buildPower": 50,
-		"damage": 54,
+		"damage": 57,
 		"designable": 1,
 		"effectSize": 150,
 		"facePlayer": 1,
@@ -2625,7 +2625,7 @@
 	"MG3Mk1": {
 		"buildPoints": 250,
 		"buildPower": 50,
-		"damage": 18,
+		"damage": 19,
 		"designable": 1,
 		"effectSize": 150,
 		"facePlayer": 1,
@@ -2695,7 +2695,7 @@
 	"MG4ROTARY-VTOL": {
 		"buildPoints": 500,
 		"buildPower": 100,
-		"damage": 60,
+		"damage": 63,
 		"designable": 1,
 		"effectSize": 100,
 		"facePlayer": 1,
@@ -2732,7 +2732,7 @@
 	"MG4ROTARYMk1": {
 		"buildPoints": 500,
 		"buildPower": 100,
-		"damage": 20,
+		"damage": 21,
 		"designable": 1,
 		"effectSize": 100,
 		"facePlayer": 1,
@@ -3224,7 +3224,7 @@
 	"NX-CyborgChaingun": {
 		"buildPoints": 50,
 		"buildPower": 10,
-		"damage": 22,
+		"damage": 23,
 		"effectSize": 100,
 		"facePlayer": 1,
 		"firePause": 5,
