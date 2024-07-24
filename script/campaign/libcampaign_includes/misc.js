@@ -445,15 +445,21 @@ function camBreakAlliances()
 	}
 }
 
-//;; ## camGenerateRandomMapEdgeCoordinate(reachPosition)
+//;; ## camGenerateRandomMapEdgeCoordinate(reachPosition [, propulsion])
 //;;
 //;; Returns a random coordinate anywhere on the edge of the map that reachs a position.
 //;;
 //;; @param {Object} reachPosition
+//;; @param {String} propulsion
 //;; @returns {Object}
 //;;
-function camGenerateRandomMapEdgeCoordinate(reachPosition)
+function camGenerateRandomMapEdgeCoordinate(reachPosition, propulsion)
 {
+	if (!camDef(propulsion))
+	{
+		propulsion = CAM_GENERIC_LAND_STAT;
+	}
+
 	const limits = getScrollLimits();
 	let loc;
 
@@ -498,19 +504,22 @@ function camGenerateRandomMapEdgeCoordinate(reachPosition)
 		}
 
 		loc = location;
-	} while (camDef(reachPosition) && reachPosition && !propulsionCanReach(CAM_GENERIC_LAND_STAT, reachPosition.x, reachPosition.y, loc.x, loc.y));
+	} while (camDef(reachPosition) && reachPosition && !propulsionCanReach(propulsion, reachPosition.x, reachPosition.y, loc.x, loc.y));
 
 	return loc;
 }
 
-//;; ## camGenerateRandomMapCoordinate(reachPosition)
+//;; ## camGenerateRandomMapCoordinate(reachPosition [, propulsion [, distFromReach [, scanObjectRadius]]])
 //;;
 //;; Returns a random coordinate anywhere on the map
 //;;
 //;; @param {Object} reachPosition
+//;; @param {String} propulsion
+//;; @param {Number} distFromReach
+//;; @param {Number} scanObjectRadius
 //;; @returns {Object}
 //;;
-function camGenerateRandomMapCoordinate(reachPosition, distFromReach, scanObjectRadius)
+function camGenerateRandomMapCoordinate(reachPosition, propulsion, distFromReach, scanObjectRadius)
 {
 	if (!camDef(distFromReach))
 	{
@@ -519,6 +528,10 @@ function camGenerateRandomMapCoordinate(reachPosition, distFromReach, scanObject
 	if (!camDef(scanObjectRadius))
 	{
 		scanObjectRadius = 2;
+	}
+	if (!camDef(propulsion))
+	{
+		propulsion = CAM_GENERIC_LAND_STAT;
 	}
 
 	const limits = getScrollLimits();
@@ -549,7 +562,7 @@ function camGenerateRandomMapCoordinate(reachPosition, distFromReach, scanObject
 		pos = randomPos;
 	} while (camDef(reachPosition) &&
 		reachPosition &&
-		!propulsionCanReach(CAM_GENERIC_LAND_STAT, reachPosition.x, reachPosition.y, pos.x, pos.y) &&
+		!propulsionCanReach(propulsion, reachPosition.x, reachPosition.y, pos.x, pos.y) &&
 		(camDist(pos, reachPosition) < distFromReach) &&
 		(enumRange(pos.x, pos.y, scanObjectRadius, ALL_PLAYERS, false).length > 0));
 

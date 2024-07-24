@@ -55,6 +55,14 @@
 		"label": "buildPos2",
 		"pos": [5120, 22912]
 	},
+	"position_14": {
+		"label": "southSpawnPos",
+		"pos": [3328, 24320]
+	},
+	"position_15": {
+		"label": "eastSpawnPos",
+		"pos": [8000, 21440]
+	},
 
 	"area_0": {
 		"label": "landingZone",

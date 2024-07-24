@@ -26,7 +26,7 @@ const mis_collectiveResClassic = [
 
 camAreaEvent("vtolRemoveZone", function(droid)
 {
-	if (isVTOL(droid))
+	if ((droid.player === CAM_THE_COLLECTIVE) && isVTOL(droid) && (droid.weapons[0].armed < 100) || (droid.health < 100))
 	{
 		camSafeRemoveObject(droid, false);
 	}
@@ -139,6 +139,52 @@ function vtolAttack()
 		queue("wave2", camChangeOnDiff(camSecondsToMilliseconds(30)));
 		queue("wave3", camChangeOnDiff(camSecondsToMilliseconds(60)));
 	}
+}
+
+function sendInsaneReinforcementSpawn()
+{
+	if (!countDroid(DROID_ANY, CAM_THE_COLLECTIVE))
+	{
+		return;
+	}
+
+	const MAX_SPAWNS = 16 + camRand(5);
+	const list = [ cTempl.comatt, cTempl.comit, cTempl.cohct ];
+	const positions = ["insaneSpawnPos1", "insaneSpawnPos2", "insaneSpawnPos3", "insaneSpawnPos4"];
+	const droids = [];
+
+	for (let i = 0; i < MAX_SPAWNS; ++i)
+	{
+		droids.push(list[camRand(list.length)]);
+	}
+
+	camSendReinforcement(CAM_THE_COLLECTIVE, positions[camRand(positions.length)], droids, CAM_REINFORCE_GROUND);
+}
+
+function transporterAttack()
+{
+	if (!countDroid(DROID_ANY, CAM_THE_COLLECTIVE))
+	{
+		return;
+	}
+
+	const MAX_CARGO_UNITS = 9;
+	const list = [cTempl.cohct, cTempl.commrl, cTempl.comorb];
+	const location = camMakePos(camGenerateRandomMapCoordinate(getObject("startPosition"), CAM_GENERIC_LAND_STAT, 10, 1));
+	const droids = [];
+
+	for (let i = 0; i < MAX_CARGO_UNITS; ++i)
+	{
+		droids.push(list[camRand(list.length)]);
+	}
+	droids.push(cTempl.comsens);
+
+	camSendReinforcement(CAM_THE_COLLECTIVE, location, droids
+		CAM_REINFORCE_TRANSPORT, {
+			entry: camGenerateRandomMapEdgeCoordinate(),
+			exit: camGenerateRandomMapEdgeCoordinate()
+		}
+	);
 }
 
 function truckDefense()
@@ -318,6 +364,11 @@ function eventStartLevel()
 	queue("activateBase1Defenders2", camChangeOnDiff(camMinutesToMilliseconds(20)));
 	queue("activateBase1Defenders", camChangeOnDiff(camMinutesToMilliseconds(30)));
 	setTimer("truckDefense", camChangeOnDiff(camMinutesToMilliseconds(3)));
+	if (difficulty >= INSANE)
+	{
+		setTimer("sendInsaneReinforcementSpawn", camMinutesToMilliseconds(3));
+		setTimer("transporterAttack", camMinutesToMilliseconds(4));
+	}
 
 	truckDefense();
 }

@@ -45,12 +45,11 @@ camAreaEvent("vtolRemoveZone", function(droid)
 {
 	if (droid.player !== CAM_HUMAN_PLAYER)
 	{
-		if (isVTOL(droid))
+		if (isVTOL(droid) && (droid.weapons[0].armed < 100) || (droid.health < 100))
 		{
 			camSafeRemoveObject(droid, false);
 		}
 	}
-
 	resetLabel("vtolRemoveZone", CAM_NEXUS);
 });
 
@@ -127,6 +126,11 @@ function vtolAttack()
 //Chose a random spawn point to send ground reinforcements.
 function phantomFactorySpawn()
 {
+	if (winFlag)
+	{
+		return;
+	}
+
 	let list;
 	let chosenFactory;
 
@@ -148,6 +152,11 @@ function phantomFactorySpawn()
 			list = [cTempl.nxhgauss, cTempl.nxmpulseh, cTempl.nxmlinkh];
 			chosenFactory = "phantomFacWest";
 	}
+	if (difficulty >= INSANE && camRand(100) < 25)
+	{
+		list = [cTempl.nxhgauss, cTempl.nxmpulseh, cTempl.nxmscouh];
+		chosenFactory = "phantomFacSouth";
+	}
 
 	if (countDroid(DROID_ANY, CAM_NEXUS) < 80)
 	{
@@ -155,6 +164,31 @@ function phantomFactorySpawn()
 			data: { regroup: false, count: -1, },
 		});
 	}
+}
+
+function transporterAttack()
+{
+	if (winFlag)
+	{
+		return;
+	}
+
+	const MAX_CARGO_UNITS = 10;
+	const list = [cTempl.nxhgauss, cTempl.nxmpulseh, cTempl.nxmscouh];
+	const location = camMakePos(camGenerateRandomMapCoordinate(getObject("startPosition"), CAM_GENERIC_WATER_STAT, 3, 1);
+	const droids = [];
+
+	for (let i = 0; i < MAX_CARGO_UNITS; ++i)
+	{
+		droids.push(list[camRand(list.length)]);
+	}
+
+	camSendReinforcement(CAM_NEXUS, location, droids
+		CAM_REINFORCE_TRANSPORT, {
+			entry: camGenerateRandomMapEdgeCoordinate(),
+			exit: camGenerateRandomMapEdgeCoordinate()
+		}
+	)
 }
 
 //Choose a target to fire the LasSat at. Automatically increases the limits
@@ -330,6 +364,10 @@ function checkTime()
 		queue("vaporizeTarget", camSecondsToMilliseconds(2));
 		setTimer("vaporizeTarget", camSecondsToMilliseconds(10));
 		setTimer("phantomFactorySpawn", camChangeOnDiff(camMinutesToMilliseconds(5)));
+		if (difficulty >= INSANE)
+		{
+			setTimer("transporterAttack", camMinutesToMilliseconds(3));
+		}
 		removeTimer("checkTime");
 	}
 }

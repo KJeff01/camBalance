@@ -66,6 +66,21 @@ function sendTankForce()
 	*/
 }
 
+function sendInsaneReinforcementSpawn()
+{
+	const MAX_SPAWNS = 8 + camRand(6);
+	const list = [cTempl.npsmct, cTempl.nppod];
+	const locations = ["reinforceNorth", "reinforceSouthEast"];
+	const droids = [];
+
+	for (let i = 0; i < MAX_SPAWNS; ++i)
+	{
+		droids.push(list[camRand(list.length)]);
+	}
+
+	camSendReinforcement(CAM_NEW_PARADIGM, camMakePos(locations[camRand(locations.length])), droids, CAM_REINFORCE_GROUND);
+}
+
 function enableNPFactory()
 {
 	camEnableFactory("NPCentralFactory");
@@ -182,6 +197,11 @@ camAreaEvent("NPLZ2Trigger", function()
 			exit: { x: 126, y: 36 }
 		}
 	);
+
+	if (difficulty >= INSANE)
+	{
+		removeTimer("sendInsaneReinforcementSpawn");
+	}
 });
 
 function eventStartLevel()
@@ -360,4 +380,8 @@ function eventStartLevel()
 	queue("sendTankScoutForce", camSecondsToMilliseconds(30));
 	queue("sendTankForce", camSecondsToMilliseconds(100)); // in wzcam it moves back and then forward
 	queue("enableNPFactory", camMinutesToMilliseconds(5));
+	if (difficulty >= INSANE)
+	{
+		setTimer("sendInsaneReinforcementSpawn", camMinutesToMilliseconds(5));
+	}
 }

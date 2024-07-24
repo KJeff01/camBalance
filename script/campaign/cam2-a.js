@@ -8,7 +8,10 @@ var startedFromMenu;
 
 camAreaEvent("vtolRemoveZone", function(droid)
 {
-	camSafeRemoveObject(droid, false);
+	if ((droid.player === CAM_THE_COLLECTIVE) && isVTOL(droid) && (droid.weapons[0].armed < 100) || (droid.health < 100))
+	{
+		camSafeRemoveObject(droid, false);
+	}
 	resetLabel("vtolRemoveZone", CAM_THE_COLLECTIVE);
 });
 
@@ -136,10 +139,20 @@ function sendPlayerTransporter()
 }
 
 //Continuously spawns heavy units on the north part of the map every 7 minutes
-function mapEdgeDroids()
+function mapEdgeDroids(useInsaneLocations)
 {
+	if (!camDef(useInsaneLocations))
+	{
+		useInsaneLocations = false;
+	}
+
 	const TANK_NUM = 8 + camRand(6);
 	const list = (!camClassicMode()) ? [cTempl.npcybm, cTempl.npcybr, cTempl.commrp, cTempl.cohct] : [cTempl.npcybm, cTempl.npcybr, cTempl.commc, cTempl.cohct];
+	let positions = ["groundUnitPos", "groundUnitPos"];
+	if (useInsaneLocations)
+	{
+		positions = ["groundUnitPos", "insaneSpawnPos1", "insaneSpawnPos2", "insaneSpawnPos3", "insaneSpawnPos4"];
+	}
 
 	const droids = [];
 	for (let i = 0; i < TANK_NUM; ++i)
@@ -147,7 +160,12 @@ function mapEdgeDroids()
 		droids.push(list[camRand(list.length)]);
 	}
 
-	camSendReinforcement(CAM_THE_COLLECTIVE, camMakePos("groundUnitPos"), droids, CAM_REINFORCE_GROUND);
+	camSendReinforcement(CAM_THE_COLLECTIVE, camMakePos(positions[camRand(positions.length)]), droids, CAM_REINFORCE_GROUND);
+}
+
+function sendInsaneReinforcementSpawn()
+{
+	mapEdgeDroids(true);
 }
 
 function wave2()
@@ -158,7 +176,7 @@ function wave2()
 		alternate: true,
 		altIdx: 0
 	};
-	camSetVtolData(CAM_THE_COLLECTIVE, "vtolAppearPos", "vtolRemoveZone", list, camChangeOnDiff(camMinutesToMilliseconds(4)), "COCommandCenter", ext);
+	camSetVtolData(CAM_THE_COLLECTIVE, (difficulty >= INSANE) ? undefined : "vtolAppearPos", "vtolRemoveZone", list, camChangeOnDiff(camMinutesToMilliseconds(4)), "COCommandCenter", ext);
 }
 
 function wave3()
@@ -169,7 +187,7 @@ function wave3()
 		alternate: true,
 		altIdx: 0
 	};
-	camSetVtolData(CAM_THE_COLLECTIVE, "vtolAppearPos", "vtolRemoveZone", list, camChangeOnDiff(camMinutesToMilliseconds(4)), "COCommandCenter", ext);
+	camSetVtolData(CAM_THE_COLLECTIVE, (difficulty >= INSANE) ? undefined : "vtolAppearPos", "vtolRemoveZone", list, camChangeOnDiff(camMinutesToMilliseconds(4)), "COCommandCenter", ext);
 }
 
 function vtolAttack()
@@ -177,7 +195,7 @@ function vtolAttack()
 	if (camClassicMode())
 	{
 		const list = [cTempl.colcbv, cTempl.colcbv];
-		camSetVtolData(CAM_THE_COLLECTIVE, "vtolAppearPos", "vtolRemoveZone", list, camChangeOnDiff(camMinutesToMilliseconds(3)), "COCommandCenter");
+		camSetVtolData(CAM_THE_COLLECTIVE, (difficulty >= INSANE) ? undefined : "vtolAppearPos", "vtolRemoveZone", list, camChangeOnDiff(camMinutesToMilliseconds(3)), "COCommandCenter");
 	}
 	else
 	{
@@ -187,7 +205,7 @@ function vtolAttack()
 			alternate: true,
 			altIdx: 0
 		};
-		camSetVtolData(CAM_THE_COLLECTIVE, "vtolAppearPos", "vtolRemoveZone", list, camChangeOnDiff(camMinutesToMilliseconds(4)), "COCommandCenter", ext);
+		camSetVtolData(CAM_THE_COLLECTIVE, (difficulty >= INSANE) ? undefined : "vtolAppearPos", "vtolRemoveZone", list, camChangeOnDiff(camMinutesToMilliseconds(4)), "COCommandCenter", ext);
 		queue("wave2", camChangeOnDiff(camSecondsToMilliseconds(30)));
 		queue("wave3", camChangeOnDiff(camSecondsToMilliseconds(60)));
 	}
@@ -460,6 +478,10 @@ function eventStartLevel()
 	setTimer("truckDefense", camChangeOnDiff(camMinutesToMilliseconds(3)));
 	setTimer("sendCOTransporter", camChangeOnDiff(camMinutesToMilliseconds(4)));
 	setTimer("mapEdgeDroids", camChangeOnDiff(camMinutesToMilliseconds(7)));
+	if (difficulty >= INSANE)
+	{
+		setTimer("sendInsaneReinforcementSpawn", camMinutesToMilliseconds(2.5));
+	}
 
 	truckDefense();
 }

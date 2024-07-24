@@ -110,7 +110,8 @@ const __CAM_INCLUDE_PATH = "script/campaign/libcampaign_includes/";
 //Anything stats related
 const CAM_ARTIFACT_STAT = "Crate";
 const CAM_GENERIC_TRUCK_STAT = "Spade1Mk1";
-const CAM_GENERIC_LAND_STAT = "wheeled01"; //For propulsionCanReach().
+const CAM_GENERIC_LAND_STAT = "wheeled01";
+const CAM_GENERIC_WATER_STAT = "hover01";
 const CAM_OIL_RESOURCE_STAT = "OilResource";
 const cam_base_structures = {
 	commandRelay: "A0ComDroidControl",

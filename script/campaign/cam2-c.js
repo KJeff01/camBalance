@@ -78,6 +78,51 @@ function camEnemyBaseEliminated_COAirBase()
 	camCallOnce("videoTrigger");
 }
 
+function sendInsaneReinforcementSpawn()
+{
+	if (!countDroid(DROID_ANY, CAM_THE_COLLECTIVE))
+	{
+		return;
+	}
+
+	const MAX_SPAWNS = 14 + camRand(7);
+	const list = [cTempl.comatt, cTempl.comit, cTempl.cohct, cTempl.cohct, cTempl.npcybc];
+	const location = camMakePos(getObject("southWestSpawnPos"));
+	const droids = [];
+
+	for (let i = 0; i < MAX_SPAWNS; ++i)
+	{
+		droids.push(list[camRand(list.length)]);
+	}
+
+	camSendReinforcement(CAM_THE_COLLECTIVE, location, droids, CAM_REINFORCE_GROUND);
+}
+
+function transporterAttack()
+{
+	if (!countDroid(DROID_ANY, CAM_THE_COLLECTIVE))
+	{
+		return;
+	}
+
+	const MAX_CARGO_UNITS = 10;
+	const list = [cTempl.cohct, cTempl.commrl, cTempl.comhpv, cTempl.comtathh];
+	const location = camMakePos(camGenerateRandomMapCoordinate(getObject("startPosition"), CAM_GENERIC_LAND_STAT, 10, 1));
+	const droids = [];
+
+	for (let i = 0; i < MAX_CARGO_UNITS; ++i)
+	{
+		droids.push(list[camRand(list.length)]);
+	}
+
+	camSendReinforcement(CAM_THE_COLLECTIVE, location, droids
+		CAM_REINFORCE_TRANSPORT, {
+			entry: camGenerateRandomMapEdgeCoordinate(),
+			exit: camGenerateRandomMapEdgeCoordinate()
+		}
+	);
+}
+
 function enableFactories()
 {
 	camEnableFactory("COHeavyFac-Leopard");
@@ -224,10 +269,11 @@ function civilianOrders()
 //Capture civilans.
 function eventTransporterLanded(transport)
 {
+	const SCAN_RADIUS = 4;
 	const position = getObject("COTransportPos");
-	const civs = enumRange(position.x, position.y, 15, CAM_SCAV_7, false);
+	const civs = enumRange(position.x, position.y, SCAN_RADIUS, CAM_SCAV_7, false);
 
-	if (civs.length)
+	if ((civs.length > 0) && (camDist(transport, position) <= SCAN_RADIUS))
 	{
 		playSound(cam_sounds.enemyEscaping);
 		capturedCivCount += civs.length - 1;
@@ -435,6 +481,11 @@ function eventStartLevel()
 
 	queue("activateGroups", camChangeOnDiff(camMinutesToMilliseconds(8)));
 	setTimer("truckDefense", camChangeOnDiff(camMinutesToMilliseconds(3)));
+	if (difficulty >= INSANE)
+	{
+		setTimer("transporterAttack", camMinutesToMilliseconds(4));
+		setTimer("sendInsaneReinforcementSpawn", camMinutesToMilliseconds(5));
+	}
 
 	truckDefense();
 }

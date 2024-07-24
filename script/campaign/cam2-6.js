@@ -40,6 +40,15 @@ function camEnemyBaseDetected_COMainBase()
 	camEnableFactory("COHeavyFactory-b2R");
 }
 
+camAreaEvent("vtolRemoveZone", function(droid)
+{
+	if ((droid.player === CAM_THE_COLLECTIVE) && isVTOL(droid) && (droid.weapons[0].armed < 100) || (droid.health < 100))
+	{
+		camSafeRemoveObject(droid, false);
+	}
+	resetLabel("vtolRemoveZone", CAM_THE_COLLECTIVE);
+});
+
 camAreaEvent("factoryTriggerWest", function(droid)
 {
 	enableTimeBasedFactories();
@@ -119,6 +128,65 @@ function enableTimeBasedFactories()
 	camEnableFactory("COMediumFactory");
 	camEnableFactory("COCyborgFactory-Arti");
 	camEnableFactory("COHeavyFactory-b2L");
+}
+
+function wave2()
+{
+	const list = [cTempl.colhvat, cTempl.colhvat];
+	const ext = {
+		limit: [3, 3], //paired with list array
+		alternate: true,
+		altIdx: 0,
+		useRearmPads: false
+	};
+	camSetVtolData(CAM_THE_COLLECTIVE, "vtolAppearPos", "vtolRemovePos", list, camMinutesToMilliseconds(3), undefined, ext);
+}
+
+function wave3()
+{
+	const list = [cTempl.commorv, cTempl.commorv];
+	const ext = {
+		limit: [4, 4], //paired with list array
+		alternate: true,
+		altIdx: 0,
+		useRearmPads: false
+	};
+	camSetVtolData(CAM_THE_COLLECTIVE, "vtolAppearPos", "vtolRemovePos", list, camMinutesToMilliseconds(3), undefined, ext);
+}
+
+function vtolAttack()
+{
+	const list = [cTempl.commorvt, cTempl.commorvt];
+	const ext = {
+		limit: [4, 4], //paired with list array
+		alternate: true,
+		altIdx: 0,
+		useRearmPads: false
+	};
+	camSetVtolData(CAM_THE_COLLECTIVE, undefined, "vtolRemovePos", list, camMinutesToMilliseconds(3), undefined, ext);
+	queue("wave2", camChangeOnDiff(camSecondsToMilliseconds(30)));
+	queue("wave3", camChangeOnDiff(camSecondsToMilliseconds(60)));
+}
+
+function sendInsaneReinforcementSpawn()
+{
+	if (camAllEnemyBasesEliminated())
+	{
+		return;
+	}
+
+	const MAX_SPAWNS = 12 + camRand(5);
+	const list = [ cTempl.comltath, cTempl.cohact, cTempl.comrotm, cTempl.comit ];
+	const location = camMakePos(getObject("southEastSpawn"));
+	const droids = [];
+
+	for (let i = 0; i < MAX_SPAWNS; ++i)
+	{
+		droids.push(list[camRand(list.length)]);
+	}
+	droids.push(cTempl.comsensh);
+
+	camSendReinforcement(CAM_THE_COLLECTIVE, location, droids, CAM_REINFORCE_GROUND);
 }
 
 function eventStartLevel()
@@ -270,6 +338,11 @@ function eventStartLevel()
 		addDroid(CAM_THE_COLLECTIVE, 42, 4, "Truck Panther Tracks", tBody.tank.panther, tProp.tank.tracks, "", "", tConstruct.truck);
 		camManageTrucks(CAM_THE_COLLECTIVE);
 		setTimer("truckDefense", camChangeOnDiff(camMinutesToMilliseconds(6)));
+	}
+	if (difficulty >= INSANE)
+	{
+		queue("vtolAttack", camMinutesToMilliseconds(5));
+		setTimer("sendInsaneReinforcementSpawn", camMinutesToMilliseconds(4));
 	}
 
 	queue("northWestAttack", camChangeOnDiff(camMinutesToMilliseconds(3)));

@@ -55,6 +55,10 @@
 		"label": "buildPos2",
 		"pos": [2688, 512]
 	},
+	"position_14": {
+		"label": "vtolRemoveZone",
+		"pos": [256, 256]
+	},
 
 	"area_0": {
 		"label": "landingZone",

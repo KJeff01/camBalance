@@ -15,7 +15,7 @@ const mis_scavengerRes = [
 	"R-Wpn-Flamer-Damage03", "R-Wpn-Flamer-Range01", "R-Wpn-Flamer-ROF01",
 	"R-Wpn-MG-Damage04", "R-Wpn-MG-ROF01", "R-Wpn-Rocket-Damage03",
 	"R-Wpn-Cannon-Damage03", "R-Wpn-Mortar-Damage03", "R-Wpn-Mortar-ROF01",
-	"R-Wpn-Rocket-Accuracy02", "R-Wpn-Rocket-ROF03", "R-Vehicle-Metals02",
+	"R-Wpn-Rocket-Accuracy02", "R-Wpn-Rocket-ROF03", "R-Vehicle-Metals03",
 	"R-Defense-WallUpgrade03", "R-Struc-Materials03", "R-Wpn-Cannon-Accuracy01",
 	"R-Wpn-Mortar-Acc01",
 ];
@@ -78,6 +78,26 @@ camAreaEvent("NPTransportTrigger", function(droid)
 		resetLabel("NPTransportTrigger", CAM_NEW_PARADIGM);
 	}
 });
+
+function sendInsaneReinforcementSpawn()
+{
+	if (!countDroid(DROID_ANY, CAM_NEW_PARADIGM))
+	{
+		return;
+	}
+
+	const MAX_SPAWNS = 5 + camRand(3);
+	const list = [ cTempl.nphct, cTempl.npcybr, cTempl.npmrl, cTempl.npcybc ];
+	const location = camMakePos(camGenerateRandomMapEdgeCoordinate(getObject("startPosition")));
+	const droids = [];
+
+	for (let i = 0; i < MAX_SPAWNS; ++i)
+	{
+		droids.push(list[camRand(list.length)]);
+	}
+
+	camSendReinforcement(CAM_NEW_PARADIGM, location, droids, CAM_REINFORCE_GROUND);
+}
 
 //Only called once when the New Paradigm takes the artifact for the first time.
 function artifactVideoSetup()
@@ -380,4 +400,8 @@ function eventStartLevel()
 
 	hackAddMessage("C1-7_OBJ1", PROX_MSG, CAM_HUMAN_PLAYER, false); //Canyon
 	queue("startArtifactCollection", camChangeOnDiff(camMinutesToMilliseconds(1.5)));
+	if (difficulty >= INSANE)
+	{
+		setTimer("sendInsaneReinforcementSpawn", camMinutesToMilliseconds(2.5));
+	}
 }

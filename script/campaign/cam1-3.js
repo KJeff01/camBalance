@@ -68,6 +68,7 @@ function enableNP(args)
 	if (difficulty === INSANE)
 	{
 		queue("NPReinforce", camSecondsToMilliseconds(10));
+		setTimer("NPReinforce", camSecondsToMilliseconds(180));
 	}
 
 	camManageGroup(NPScoutGroup, CAM_ORDER_COMPROMISE, {
@@ -109,7 +110,6 @@ function NPReinforce()
 				count: -1,
 			},
 		});
-		queue("NPReinforce", camSecondsToMilliseconds(180));
 	}
 }
 

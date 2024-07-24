@@ -38,6 +38,15 @@ camAreaEvent("factoryTrigger", function(droid)
 	});
 });
 
+camAreaEvent("vtolRemoveZone", function(droid)
+{
+	if ((droid.player === CAM_THE_COLLECTIVE) && isVTOL(droid) && (droid.weapons[0].armed < 100) || (droid.health < 100))
+	{
+		camSafeRemoveObject(droid, false);
+	}
+	resetLabel("vtolRemoveZone", CAM_THE_COLLECTIVE);
+});
+
 function camEnemyBaseEliminated_COEastBase()
 {
 	hackRemoveMessage("C25_OBJ1", PROX_MSG, CAM_HUMAN_PLAYER);
@@ -98,6 +107,86 @@ function enableFactories()
 	camEnableFactory("COMediumFactory");
 	camEnableFactory("COCyborgFactoryL");
 	camEnableFactory("COCyborgFactoryR");
+}
+
+function wave2()
+{
+	const list = [cTempl.colhvat, cTempl.colhvat];
+	const ext = {
+		limit: [4, 4], //paired with list array
+		alternate: true,
+		altIdx: 0
+	};
+	camSetVtolData(CAM_THE_COLLECTIVE, undefined, "vtolRemove", list, camMinutesToMilliseconds(3.5), undefined, ext);
+}
+
+function wave3()
+{
+	const list = [cTempl.commorv, cTempl.commorv];
+	const ext = {
+		limit: [4, 4], //paired with list array
+		alternate: true,
+		altIdx: 0
+	};
+	camSetVtolData(CAM_THE_COLLECTIVE, undefined, "vtolRemove", list, camMinutesToMilliseconds(3.5), undefined, ext);
+}
+
+function vtolAttack()
+{
+	const list = [cTempl.commorvt, cTempl.commorvt];
+	const ext = {
+		limit: [4, 4], //paired with list array
+		alternate: true,
+		altIdx: 0
+	};
+	camSetVtolData(CAM_THE_COLLECTIVE, undefined, "vtolRemove", list, camMinutesToMilliseconds(3.5), undefined, ext);
+	queue("wave2", camChangeOnDiff(camSecondsToMilliseconds(30)));
+	queue("wave3", camChangeOnDiff(camSecondsToMilliseconds(60)));
+}
+
+function sendInsaneReinforcementSpawn()
+{
+	if (!countDroid(DROID_ANY, CAM_THE_COLLECTIVE))
+	{
+		return;
+	}
+
+	const MAX_SPAWNS = 10 + camRand(9);
+	const list = [ cTempl.comltath, cTempl.cohhvch, cTempl.comagh ];
+	const location = camMakePos(camGenerateRandomMapEdgeCoordinate(getObject("startPosition"), CAM_GENERIC_WATER_STAT));
+	const droids = [];
+
+	for (let i = 0; i < MAX_SPAWNS; ++i)
+	{
+		droids.push(list[camRand(list.length)]);
+	}
+
+	camSendReinforcement(CAM_THE_COLLECTIVE, location, droids, CAM_REINFORCE_GROUND);
+}
+
+function transporterAttack()
+{
+	if (!countDroid(DROID_ANY, CAM_THE_COLLECTIVE))
+	{
+		return;
+	}
+
+	const MAX_CARGO_UNITS = 10;
+	const list = [cTempl.comhltat, cTempl.comhpv, cTempl.comagt, ];
+	const location = camMakePos(camGenerateRandomMapCoordinate(getObject("startPosition"), CAM_GENERIC_LAND_STAT, 10, 1));
+	const droids = [];
+
+	for (let i = 0; i < MAX_CARGO_UNITS; ++i)
+	{
+		droids.push(list[camRand(list.length)]);
+	}
+
+	camSendReinforcement(CAM_THE_COLLECTIVE, location, droids
+		CAM_REINFORCE_TRANSPORT, {
+			entry: camGenerateRandomMapEdgeCoordinate(),
+			exit: camGenerateRandomMapEdgeCoordinate()
+		}
+	);
 }
 
 function eventStartLevel()
@@ -208,4 +297,10 @@ function eventStartLevel()
 	queue("setupCyborgsEast", camChangeOnDiff(camMinutesToMilliseconds(3)));
 	queue("enableFactories", camChangeOnDiff(camMinutesToMilliseconds(8)));
 	queue("setupCyborgsNorth", camChangeOnDiff(camMinutesToMilliseconds(10)));
+	if (difficulty >= INSANE)
+	{
+		queue("vtolAttack", camMinutesToMilliseconds(4.5));
+		setTimer("sendInsaneReinforcementSpawn", camMinutesToMilliseconds(3.5));
+		setTimer("transporterAttack", camMinutesToMilliseconds(4));
+	}
 }

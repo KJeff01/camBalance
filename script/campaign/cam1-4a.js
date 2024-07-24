@@ -77,7 +77,32 @@ camAreaEvent("LandingZoneTrigger", function()
 	camEnableFactory("HeavyNPFactory");
 	camEnableFactory("MediumNPFactory");
 	buildDefenses();
+
+	if (difficulty >= INSANE)
+	{
+		setTimer("sendInsaneReinforcementSpawn", camMinutesToSeconds(4));
+	}
 });
+
+function sendInsaneReinforcementSpawn()
+{
+	if (camAllEnemyBasesEliminated())
+	{
+		return;
+	}
+
+	const MAX_SPAWNS = 8 + camRand(6);
+	const list = [cTempl.npltat, cTempl.npmrl, cTempl.npmmct];
+	const location = camMakePos(camGenerateRandomMapEdgeCoordinate(getObject("startPosition")));
+	const droids = [];
+
+	for (let i = 0; i < MAX_SPAWNS; ++i)
+	{
+		droids.push(list[camRand(list.length)]);
+	}
+
+	camSendReinforcement(CAM_NEW_PARADIGM, location, droids, CAM_REINFORCE_GROUND);
+}
 
 function NPBaseDetect()
 {

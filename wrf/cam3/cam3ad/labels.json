@@ -35,6 +35,10 @@
 		"label": "phantomFacMiddle",
 		"pos": [8000, 18880]
 	},
+	"position_9": {
+		"label": "phantomFacSouth",
+		"pos": [3328, 32384]
+	},
 
 	"area_0": {
 		"label": "landingZone",

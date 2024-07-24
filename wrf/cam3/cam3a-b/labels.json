@@ -23,6 +23,10 @@
 		"label": "NWPhantomFactory",
 		"pos": [128, 3456]
 	},
+	"position_6": {
+		"label": "nexusEastTransportPos",
+		"pos": [6144, 6528]
+	},
 
 	"area_0": {
 		"label": "landingZone",

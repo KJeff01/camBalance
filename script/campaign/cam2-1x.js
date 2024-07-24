@@ -26,6 +26,15 @@ const mis_collectiveResClassic = [
 	"R-Wpn-RocketSlow-Damage03", "R-Wpn-RocketSlow-ROF03"
 ];
 
+camAreaEvent("vtolRemoveZone", function(droid)
+{
+	if ((droid.player === CAM_THE_COLLECTIVE) && isVTOL(droid) && (droid.weapons[0].armed < 100) || (droid.health < 100))
+	{
+		camSafeRemoveObject(droid, false);
+	}
+	resetLabel("vtolRemoveZone", CAM_THE_COLLECTIVE);
+});
+
 //trigger event when droid reaches the downed transport.
 camAreaEvent("crashSite", function(droid)
 {
@@ -50,6 +59,61 @@ camAreaEvent("crashSite", function(droid)
 	//the level will end too fast and will trigger asserts in the next level.
 	queue("triggerWin", camSecondsToMilliseconds(2));
 });
+
+function wave2()
+{
+	const list = [cTempl.colatv, cTempl.colatv];
+	const ext = {
+		limit: [3, 3], //paired with list array
+		alternate: true,
+		altIdx: 0
+	};
+	camSetVtolData(CAM_THE_COLLECTIVE, undefined, "vtolRemove", list, camMinutesToMilliseconds(2.5), undefined, ext);
+}
+
+function wave3()
+{
+	const list = [cTempl.colcbv, cTempl.colcbv];
+	const ext = {
+		limit: [2, 2], //paired with list array
+		alternate: true,
+		altIdx: 0
+	};
+	camSetVtolData(CAM_THE_COLLECTIVE, undefined, "vtolRemove", list, camMinutesToMilliseconds(2.5), undefined, ext);
+}
+
+function vtolAttack()
+{
+	const list = [cTempl.colpbv, cTempl.colpbv];
+	const ext = {
+		limit: [2, 2], //paired with list array
+		alternate: true,
+		altIdx: 0
+	};
+	camSetVtolData(CAM_THE_COLLECTIVE, undefined, "vtolRemove", list, camMinutesToMilliseconds(2.5), undefined, ext);
+	queue("wave2", camChangeOnDiff(camSecondsToMilliseconds(30)));
+	queue("wave3", camChangeOnDiff(camSecondsToMilliseconds(60)));
+}
+
+function sendInsaneReinforcementSpawn()
+{
+	if (camAllEnemyBasesEliminated())
+	{
+		return;
+	}
+
+	const MAX_SPAWNS = 8 + camRand(3);
+	const list = [ cTempl.commc, cTempl.commrl, cTempl.commrp, cTempl.npcybc ];
+	const location = camMakePos(camGenerateRandomMapEdgeCoordinate(getObject("startPosition")));
+	const droids = [];
+
+	for (let i = 0; i < MAX_SPAWNS; ++i)
+	{
+		droids.push(list[camRand(list.length)]);
+	}
+
+	camSendReinforcement(CAM_THE_COLLECTIVE, location, droids, CAM_REINFORCE_GROUND);
+}
 
 //function that applies damage to units in the downed transport transport team.
 function preDamageUnits()
@@ -180,4 +244,9 @@ function eventStartLevel()
 	setCrashedTeamExp();
 	victoryFlag = false;
 	queue("setupCyborgGroups", camSecondsToMilliseconds(5));
+	if (difficulty >= INSANE)
+	{
+		queue("vtolAttack", camMinutesToMilliseconds(1.5));
+		setTimer("sendInsaneReinforcementSpawn", camMinutesToMilliseconds(2));
+	}
 }

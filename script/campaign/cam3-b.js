@@ -36,12 +36,11 @@ camAreaEvent("vtolRemoveZone", function(droid)
 {
 	if (droid.player !== CAM_HUMAN_PLAYER)
 	{
-		if (isVTOL(droid))
+		if (isVTOL(droid) && (droid.weapons[0].armed < 100) || (droid.health < 100))
 		{
 			camSafeRemoveObject(droid, false);
 		}
 	}
-
 	resetLabel("vtolRemoveZone", CAM_NEXUS);
 });
 
@@ -113,6 +112,26 @@ function vtolAttack()
 		queue("wave2", camChangeOnDiff(camSecondsToMilliseconds(30)));
 		queue("wave3", camChangeOnDiff(camSecondsToMilliseconds(60)));
 	}
+}
+
+function sendInsaneReinforcementSpawn()
+{
+	if (!countDroid(DROID_ANY, CAM_NEXUS))
+	{
+		return;
+	}
+
+	const MAX_SPAWNS = 12 + camRand(6);
+	const list = [cTempl.nxcyrail, cTempl.nxcyscou, cTempl.nxcylas, cTempl.nxmscouh, cTempl.nxmrailh];
+	let positions = ["northWestSpawnPos", "northEastSpawnPos"];
+
+	const droids = [];
+	for (let i = 0; i < TANK_NUM; ++i)
+	{
+		droids.push(list[camRand(list.length)]);
+	}
+
+	camSendReinforcement(CAM_NEXUS, camMakePos(positions[camRand(positions.length)]), droids, CAM_REINFORCE_GROUND);
 }
 
 function enableAllFactories()
@@ -421,4 +440,8 @@ function eventStartLevel()
 
 	queue("transferPower", camSecondsToMilliseconds(3));
 	queue("vtolAttack", camChangeOnDiff(camMinutesToMilliseconds(5)));
+	if (difficulty >= INSANE)
+	{
+		setTimer("sendInsaneReinforcementSpawn", camMinutesToMilliseconds(6));
+	}
 }

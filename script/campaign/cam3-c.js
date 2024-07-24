@@ -106,6 +106,27 @@ function truckDefense()
 	camQueueBuilding(CAM_NEXUS, list[camRand(list.length)], position);
 }
 
+function sendInsaneReinforcementSpawn()
+{
+	if (!countDroid(DROID_ANY, CAM_NEXUS))
+	{
+		return;
+	}
+
+	const MAX_SPAWNS = 12 + camRand(6);
+	const list = [cTempl.nxcyrail, cTempl.nxcyscou, cTempl.nxcylas, cTempl.nxmscouh, cTempl.nxmrailh, cTempl.nxmangel];
+	let positions = ["southSpawnPos", "eastSpawnPos"];
+
+	const droids = [];
+	for (let i = 0; i < TANK_NUM; ++i)
+	{
+		droids.push(list[camRand(list.length)]);
+	}
+	droids.push(cTempl.nxmsens);
+
+	camSendReinforcement(CAM_NEXUS, camMakePos(positions[camRand(positions.length)]), droids, CAM_REINFORCE_GROUND);
+}
+
 function discoverGammaBase()
 {
 	reunited = true;
@@ -128,6 +149,10 @@ function discoverGammaBase()
 	setTimer("truckDefense", camChangeOnDiff(camMinutesToMilliseconds(4.5)));
 	truckDefense();
 	enableAllFactories();
+	if (difficulty >= INSANE)
+	{
+		setTimer("sendInsaneReinforcementSpawn", camMinutesToMilliseconds(6));
+	}
 }
 
 function findBetaUnitIds()

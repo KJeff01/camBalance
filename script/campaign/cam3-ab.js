@@ -33,12 +33,11 @@ camAreaEvent("vtolRemoveZone", function(droid)
 {
 	if (droid.player !== CAM_HUMAN_PLAYER)
 	{
-		if (isVTOL(droid))
+		if (isVTOL(droid) && (droid.weapons[0].armed < 100) || (droid.health < 100))
 		{
 			camSafeRemoveObject(droid, false);
 		}
 	}
-
 	resetLabel("vtolRemoveZone", CAM_NEXUS);
 });
 
@@ -122,6 +121,32 @@ function vtolAttack()
 		queue("wave2", camChangeOnDiff(camSecondsToMilliseconds(30)));
 		queue("wave3", camChangeOnDiff(camSecondsToMilliseconds(60)));
 	}
+}
+
+function transporterAttack()
+{
+	if (getResearch(cam_resistance_circuits.fourth).done)
+	{
+		return;
+	}
+
+	const MAX_CARGO_UNITS = 9;
+	const list = [cTempl.nxmangel];
+	const location = camMakePos("nexusEastTransportPos");
+	const droids = [];
+
+	for (let i = 0; i < MAX_CARGO_UNITS; ++i)
+	{
+		droids.push(list[camRand(list.length)]);
+	}
+	droids.push(cTempl.nxmsens);
+
+	camSendReinforcement(CAM_NEXUS, location, droids
+		CAM_REINFORCE_TRANSPORT, {
+			entry: camGenerateRandomMapEdgeCoordinate(),
+			exit: camGenerateRandomMapEdgeCoordinate()
+		}
+	)
 }
 
 // Order any absorbed trucks to start building defenses near themselves.
@@ -323,4 +348,8 @@ function eventStartLevel()
 	setTimer("hackPlayer", camChangeOnDiff(camSecondsToMilliseconds(8)));
 	setTimer("nexusManufacture", camSecondsToMilliseconds(10));
 	setTimer("sendEdgeMapDroids", camChangeOnDiff(camMinutesToMilliseconds(4)));
+	if (difficulty >= INSANE)
+	{
+		setTimer("transporterAttack", camMinutesToMilliseconds(3));
+	}
 }

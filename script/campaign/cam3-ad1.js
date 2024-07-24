@@ -117,6 +117,52 @@ function truckDefense()
 	camQueueBuilding(CAM_NEXUS, list[camRand(list.length)], position);
 }
 
+function sendInsaneReinforcementSpawn()
+{
+	if (!countDroid(DROID_ANY, CAM_NEXUS))
+	{
+		return;
+	}
+
+	const MAX_SPAWNS = 12 + camRand(6);
+	const list = [cTempl.nxmpulseh, cTempl.nxmscouh, cTempl.nxmrailh, cTempl.nxmangel];
+	let position = camMakePos("southSpawnPos");
+
+	const droids = [];
+	for (let i = 0; i < TANK_NUM; ++i)
+	{
+		droids.push(list[camRand(list.length)]);
+	}
+	droids.push(cTempl.nxmsens);
+
+	camSendReinforcement(CAM_NEXUS, position, droids, CAM_REINFORCE_GROUND);
+}
+
+function transporterAttack()
+{
+	if (!countDroid(DROID_ANY, CAM_NEXUS))
+	{
+		return;
+	}
+
+	const MAX_CARGO_UNITS = 10;
+	const list = [cTempl.nxcyscou, cTempl.nxcyscou, cTempl.nxcyscou, cTempl.nxcylas];
+	const location = camMakePos(camGenerateRandomMapCoordinate(getObject("startPosition"), CAM_GENERIC_LAND_STAT, 10, 1);
+	const droids = [];
+
+	for (let i = 0; i < MAX_CARGO_UNITS; ++i)
+	{
+		droids.push(list[camRand(list.length)]);
+	}
+
+	camSendReinforcement(CAM_NEXUS, location, droids
+		CAM_REINFORCE_TRANSPORT, {
+			entry: camGenerateRandomMapEdgeCoordinate(),
+			exit: camGenerateRandomMapEdgeCoordinate()
+		}
+	)
+}
+
 //Choose a target to fire the LasSat at. Automatically increases the limits
 //when no target is found in the area.
 function vaporizeTarget()
@@ -388,4 +434,9 @@ function eventStartLevel()
 	queue("enableAllFactories", camChangeOnDiff(camMinutesToMilliseconds(5)));
 
 	setTimer("vaporizeTarget", camSecondsToMilliseconds(10));
+	if (difficulty >= INSANE)
+	{
+		setTimer("sendInsaneReinforcementSpawn", camMinutesToMilliseconds(4));
+		setTimer("transporterAttack", camMinutesToMilliseconds(2.5));
+	}
 }

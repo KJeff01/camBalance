@@ -11,12 +11,11 @@ camAreaEvent("vtolRemoveZone", function(droid)
 {
 	if (droid.player !== CAM_HUMAN_PLAYER)
 	{
-		if (isVTOL(droid))
+		if (isVTOL(droid) && (droid.weapons[0].armed < 100) || (droid.health < 100))
 		{
 			camSafeRemoveObject(droid, false);
 		}
 	}
-
 	resetLabel("vtolRemoveZone", CAM_NEXUS);
 });
 
@@ -270,6 +269,26 @@ function groupPatrolNoTrigger()
 	camManageGroup(camMakeGroup("NAmbushCyborgs"), CAM_ORDER_ATTACK);
 }
 
+function sendInsaneReinforcementSpawn()
+{
+	if (!countDroid(DROID_ANY, CAM_NEXUS))
+	{
+		return;
+	}
+
+	const MAX_SPAWNS = 8 + camRand(6);
+	const list = [cTempl.nxcyrail, cTempl.nxcyscou, cTempl.nxmscouh, cTempl.nxmrailh];
+	let positions = ["northSpawnPos", "southSpawnPos"];
+
+	const droids = [];
+	for (let i = 0; i < TANK_NUM; ++i)
+	{
+		droids.push(list[camRand(list.length)]);
+	}
+
+	camSendReinforcement(CAM_NEXUS, camMakePos(positions[camRand(positions.length)]), droids, CAM_REINFORCE_GROUND);
+}
+
 //Gives starting tech and research.
 function cam3Setup()
 {
@@ -516,4 +535,8 @@ function eventStartLevel()
 	queue("vtolAttack", camChangeOnDiff(camMinutesToMilliseconds(8)));
 	queue("enableAllFactories", camChangeOnDiff(camMinutesToMilliseconds(20)));
 	queue("improveNexusAlloys", camChangeOnDiff(camMinutesToMilliseconds(25)));
+	if (difficulty >= INSANE)
+	{
+		setTimer("sendInsaneReinforcementSpawn", camMinutesToMilliseconds(5));
+	}
 }

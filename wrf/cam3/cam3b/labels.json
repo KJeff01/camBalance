@@ -91,6 +91,10 @@
 		"label": "buildPos2",
 		"pos": [4864, 640]
 	},
+	"position_23": {
+		"label": "southSpawnPos",
+		"pos": [3584, 8192]
+	},
 
 	"area_0": {
 		"label": "landingZone",
