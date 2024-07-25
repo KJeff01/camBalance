@@ -93,6 +93,26 @@ function camSetVtolSpawnStateAll(state)
 	}
 }
 
+function camVtolCanDisappear(droid)
+{
+	if (!camDef(droid))
+	{
+		return false;
+	}
+	if (!isVTOL(droid))
+	{
+		return false;
+	}
+	const __ARMED_THRESHOLD = 1;
+	const __HEALTH_THRESHOLD = 40;
+	let emptyAmount = 0;
+	for (let i = 0, len = droid.weapons.length; i < len; ++i)
+	{
+		emptyAmount += (droid.weapons[i].armed < __ARMED_THRESHOLD) ? 1 : 0;
+	}
+	return ((emptyAmount >= 1) || (droid.health < __HEALTH_THRESHOLD));
+}
+
 //////////// privates
 
 function __checkVtolSpawnObject()
@@ -245,20 +265,13 @@ function __camRetreatVtols()
 			(camDef(__camVtolDataSystem[idx].extras) && camDef(__camVtolDataSystem[idx].extras.useRearmPads) &&
 			!__camVtolDataSystem[idx].extras.useRearmPads)))
 		{
-			const __VTOL_RETURN_HEALTH = 40; // run-away if health is less than...
-			const __VTOL_RETURN_ARMED = 1; // run-away if weapon ammo is less than...
 			const vtols = enumDroid(__camVtolDataSystem[idx].player).filter((obj) => (isVTOL(obj)));
-
 			for (let i = 0, len = vtols.length; i < len; ++i)
 			{
 				const vt = vtols[i];
-				for (let c = 0, len2 = vt.weapons.length; c < len2; ++c)
+				if ((vt.order === DORDER_RTB) || camVtolCanDisappear(vt))
 				{
-					if ((vt.order === DORDER_RTB) || (vt.weapons[c].armed < __VTOL_RETURN_ARMED) || (vt.health < __VTOL_RETURN_HEALTH))
-					{
-						orderDroidLoc(vt, DORDER_MOVE, __camVtolDataSystem[idx].exitPosition.x, __camVtolDataSystem[idx].exitPosition.y);
-						break;
-					}
+					orderDroidLoc(vt, DORDER_MOVE, __camVtolDataSystem[idx].exitPosition.x, __camVtolDataSystem[idx].exitPosition.y);
 				}
 			}
 		}

@@ -51,7 +51,7 @@ function checkEnemyVtolArea()
 
 	for (let i = 0, l = vtols.length; i < l; ++i)
 	{
-		if ((vtols[i].weapons[0].armed < 100) || (vtols[i].health < 100))
+		if (camVtolCanDisappear(vtols[i]))
 		{
 			camSafeRemoveObject(vtols[i], false);
 		}

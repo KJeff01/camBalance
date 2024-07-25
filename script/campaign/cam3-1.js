@@ -31,12 +31,9 @@ var allInValley;
 //Remove Nexus VTOL droids.
 camAreaEvent("vtolRemoveZone", function(droid)
 {
-	if (droid.player !== CAM_HUMAN_PLAYER)
+	if (droid.player !== CAM_HUMAN_PLAYER && camVtolCanDisappear(droid))
 	{
-		if (isVTOL(droid) && (droid.weapons[0].armed < 100) || (droid.health < 100))
-		{
-			camSafeRemoveObject(droid, false);
-		}
+		camSafeRemoveObject(droid, false);
 	}
 	resetLabel("vtolRemoveZone", CAM_NEXUS);
 });

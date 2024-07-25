@@ -40,7 +40,7 @@ camAreaEvent("factoryTrigger", function(droid)
 
 camAreaEvent("vtolRemoveZone", function(droid)
 {
-	if ((droid.player === CAM_THE_COLLECTIVE) && isVTOL(droid) && (droid.weapons[0].armed < 100) || (droid.health < 100))
+	if ((droid.player !== CAM_HUMAN_PLAYER) && camVtolCanDisappear(droid))
 	{
 		camSafeRemoveObject(droid, false);
 	}
