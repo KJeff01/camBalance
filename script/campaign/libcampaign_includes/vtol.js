@@ -5,7 +5,7 @@
 // Vtol rearming is handled in group management.
 ////////////////////////////////////////////////////////////////////////////////
 
-//;; ## camSetVtolData(player, startPos, exitPos, templates, timer, [obj[, extras]])
+//;; ## camSetVtolData(player, startPos, exitPos, templates, timer, [condition[, extras]])
 //;;
 //;; Setup hit and runner VTOLs. NOTE: Will almost immediately spawn VTOLs upon calling this function.
 //;; `Player`: What player number the VTOLs will belong to.
@@ -13,31 +13,32 @@
 //;; `ExitPos`: Exit position object where VTOLs will despawn at.
 //;; `Templates`: An array of templates that the spawn uses.
 //;; `Timer`: How much time in milliseconds the VTOLs will wait to spawn again.
-//;; `Obj`: A game object that will stop the spawn when it no longer exists. May be undefined for no explicit end condition.
+//;; `Condition`: A game object label that will stop the spawn when it no longer exists. Can use `camReinforcementConditionPasses()` conditions too.
 //;; `Extras`: An object with possible members:
 //;;		`limit`: Numeric limit of a VTOL design in regards to the parameter Templates. May be an array paired to Templates.
 //;;		`alternate`: A boolean to force the spawn to use one of the designs at a time in parameter Templates.
 //;;		`altIdx`: Which design index the spawn will first cycle through the list of templates from.
 //;;		`minVTOLs`: Minimum amount of VTOLs that will spawn.
 //;;		`maxRandomVTOLs`: Random amount of VTOLs that will spawn in addition to minVTOLs.
+//;;		`useRearmPads`: Boolean that tells VTOLs to use VTOL Rearming Pads or not.
 //;;
 //;; @param {number} player
 //;; @param {Object|Object[]|undefined} startPos
 //;; @param {Object} exitPos
 //;; @param {Object[]} templates
 //;; @param {number} timer
-//;; @param {Object} obj
+//;; @param {Object|Number} Condition
 //;; @param {Object} extras
 //;; @returns {void}
 //;;
-function camSetVtolData(player, startPos, exitPos, templates, timer, obj, extras)
+function camSetVtolData(player, startPos, exitPos, templates, timer, condition, extras)
 {
 	__camVtolDataSystem.push({
 		player: player,
 		startPosition: startPos,
 		exitPosition: camMakePos(exitPos),
 		templates: templates,
-		spawnStopObject: obj,
+		spawnStopCondition: condition,
 		extras: extras,
 		timer: timer,
 		nextSpawnTime: timer + gameTime,
@@ -65,7 +66,7 @@ function camSetVtolSpawnState(state, identifier)
 	{
 		for (let idx = 0, len = __camVtolDataSystem.length; idx < len; ++idx)
 		{
-			if (__camVtolDataSystem[idx].spawnStopObject === identifier)
+			if (__camVtolDataSystem[idx].spawnStopCondition === identifier)
 			{
 				__camVtolDataSystem[idx].active = state;
 			}
@@ -92,15 +93,42 @@ function camSetVtolSpawnStateAll(state)
 	}
 }
 
+//;; ## camVtolCanDisappear(droid)
+//;;
+//;; Checks if the given VTOL can fly off map if damage or ammo amount allows.
+//;;
+//;; @param {Object} droid
+//;; @returns {Boolean}
+//;;
+function camVtolCanDisappear(droid)
+{
+	if (!camDef(droid))
+	{
+		return false;
+	}
+	if (!isVTOL(droid))
+	{
+		return false;
+	}
+	const __ARMED_THRESHOLD = 1;
+	const __HEALTH_THRESHOLD = 40;
+	let emptyAmount = 0;
+	for (let i = 0, len = droid.weapons.length; i < len; ++i)
+	{
+		emptyAmount += (droid.weapons[i].armed < __ARMED_THRESHOLD) ? 1 : 0;
+	}
+	return ((emptyAmount >= 1) || (droid.health < __HEALTH_THRESHOLD));
+}
+
 //////////// privates
 
 function __checkVtolSpawnObject()
 {
 	for (let idx = 0, len = __camVtolDataSystem.length; idx < len; ++idx)
 	{
-		if (__camVtolDataSystem[idx].active && camDef(__camVtolDataSystem[idx].spawnStopObject))
+		if (__camVtolDataSystem[idx].active && camDef(__camVtolDataSystem[idx].spawnStopCondition))
 		{
-			if (getObject(__camVtolDataSystem[idx].spawnStopObject) === null)
+			if (!camReinforcementConditionPasses(__camVtolDataSystem[idx].spawnStopCondition, __camVtolDataSystem[idx].player))
 			{
 				camSetVtolSpawnState(false, idx); //Deactivate hit and runner VTOLs.
 			}
@@ -135,6 +163,7 @@ function __camSpawnVtols()
 		// Default VTOL amounts
 		let minVtolAmount = 5;
 		let maxRandomAdditions = 2;
+		let allowRearm = true;
 
 		if (camDef(__camVtolDataSystem[idx].extras))
 		{
@@ -145,6 +174,10 @@ function __camSpawnVtols()
 			if (camDef(__camVtolDataSystem[idx].extras.maxRandomVTOLs))
 			{
 				maxRandomAdditions = __camVtolDataSystem[idx].extras.maxRandomVTOLs;
+			}
+			if (camDef(__camVtolDataSystem[idx].extras.useRearmPads))
+			{
+				allowRearm = __camVtolDataSystem[idx].extras.useRearmPads;
 			}
 		}
 
@@ -224,7 +257,7 @@ function __camSpawnVtols()
 		//...And send them.
 		camSendReinforcement(__camVtolDataSystem[idx].player, camMakePos(pos), droids, CAM_REINFORCE_GROUND, {
 			order: CAM_ORDER_ATTACK,
-			data: { regroup: false, count: -1 }
+			data: { regroup: false, count: -1, useRearmPads: allowRearm }
 		});
 	}
 }
@@ -235,22 +268,17 @@ function __camRetreatVtols()
 	{
 		if (camDef(__camVtolDataSystem[idx].exitPosition.x) &&
 			camDef(__camVtolDataSystem[idx].exitPosition.y) &&
-			enumStruct(__camVtolDataSystem[idx].player, REARM_PAD).length === 0)
+			((enumStruct(__camVtolDataSystem[idx].player, REARM_PAD).length === 0) ||
+			(camDef(__camVtolDataSystem[idx].extras) && camDef(__camVtolDataSystem[idx].extras.useRearmPads) &&
+			!__camVtolDataSystem[idx].extras.useRearmPads)))
 		{
-			const __VTOL_RETURN_HEALTH = 40; // run-away if health is less than...
-			const __VTOL_RETURN_ARMED = 1; // run-away if weapon ammo is less than...
 			const vtols = enumDroid(__camVtolDataSystem[idx].player).filter((obj) => (isVTOL(obj)));
-
 			for (let i = 0, len = vtols.length; i < len; ++i)
 			{
 				const vt = vtols[i];
-				for (let c = 0, len2 = vt.weapons.length; c < len2; ++c)
+				if ((vt.order === DORDER_RTB) || camVtolCanDisappear(vt))
 				{
-					if ((vt.order === DORDER_RTB) || (vt.weapons[c].armed < __VTOL_RETURN_ARMED) || (vt.health < __VTOL_RETURN_HEALTH))
-					{
-						orderDroidLoc(vt, DORDER_MOVE, __camVtolDataSystem[idx].exitPosition.x, __camVtolDataSystem[idx].exitPosition.y);
-						break;
-					}
+					orderDroidLoc(vt, DORDER_MOVE, __camVtolDataSystem[idx].exitPosition.x, __camVtolDataSystem[idx].exitPosition.y);
 				}
 			}
 		}

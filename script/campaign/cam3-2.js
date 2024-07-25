@@ -33,14 +33,10 @@ var startExtraLoss;
 //Remove Nexus VTOL droids.
 camAreaEvent("vtolRemoveZone", function(droid)
 {
-	if (droid.player !== CAM_HUMAN_PLAYER)
+	if (droid.player !== CAM_HUMAN_PLAYER && camVtolCanDisappear(droid))
 	{
-		if (isVTOL(droid))
-		{
-			camSafeRemoveObject(droid, false);
-		}
+		camSafeRemoveObject(droid, false);
 	}
-
 	resetLabel("vtolRemoveZone", CAM_NEXUS);
 });
 
@@ -127,15 +123,7 @@ function phantomFactorySE()
 
 function sendEdgeMapDroids(droidCount, location, list)
 {
-	const droids = [];
-	for (let i = 0; i < droidCount; ++i)
-	{
-		droids.push(list[camRand(list.length)]);
-	}
-
-	camSendReinforcement(CAM_NEXUS, camMakePos(location), droids, CAM_REINFORCE_GROUND, {
-		data: {regroup: true, count: -1}
-	});
+	camSendGenericSpawn(CAM_REINFORCE_GROUND, CAM_NEXUS, CAM_REINFORCE_CONDITION_NONE, location, list, droidCount);
 }
 
 function setupPatrolGroups()
@@ -215,7 +203,7 @@ function wave2()
 		alternate: true,
 		altIdx: 0
 	};
-	camSetVtolData(CAM_NEXUS, "vtolAppearPos", "vtolRemovePos", list, camChangeOnDiff(camMinutesToMilliseconds(2)), "NXvtolStrikeTower", ext);
+	camSetVtolData(CAM_NEXUS, "vtolAppearPos", "vtolRemoveZone", list, camChangeOnDiff(camMinutesToMilliseconds(2)), (difficulty >= INSANE) ? undefined : "NXvtolStrikeTower", ext);
 }
 
 function wave3()
@@ -226,7 +214,7 @@ function wave3()
 		alternate: true,
 		altIdx: 0
 	};
-	camSetVtolData(CAM_NEXUS, "vtolAppearPos", "vtolRemovePos", list, camChangeOnDiff(camMinutesToMilliseconds(2)), "NXvtolStrikeTower", ext);
+	camSetVtolData(CAM_NEXUS, "vtolAppearPos", "vtolRemoveZone", list, camChangeOnDiff(camMinutesToMilliseconds(2)), (difficulty >= INSANE) ? undefined : "NXvtolStrikeTower", ext);
 }
 
 //Setup Nexus VTOL hit and runners.
@@ -240,7 +228,7 @@ function vtolAttack()
 			alternate: true,
 			altIdx: 0
 		};
-		camSetVtolData(CAM_NEXUS, "vtolAppearPos", "vtolRemovePos", list, camChangeOnDiff(camMinutesToMilliseconds(2)), "NXvtolStrikeTower", ext);
+		camSetVtolData(CAM_NEXUS, "vtolAppearPos", "vtolRemoveZone", list, camChangeOnDiff(camMinutesToMilliseconds(2)), (difficulty >= INSANE) ? undefined : "NXvtolStrikeTower", ext);
 	}
 	else
 	{
@@ -250,7 +238,7 @@ function vtolAttack()
 			alternate: true,
 			altIdx: 0
 		};
-		camSetVtolData(CAM_NEXUS, "vtolAppearPos", "vtolRemovePos", list, camChangeOnDiff(camMinutesToMilliseconds(2)), "NXvtolStrikeTower", ext);
+		camSetVtolData(CAM_NEXUS, "vtolAppearPos", "vtolRemoveZone", list, camChangeOnDiff(camMinutesToMilliseconds(2)), (difficulty >= INSANE) ? undefined : "NXvtolStrikeTower", ext);
 		queue("wave2", camChangeOnDiff(camSecondsToMilliseconds(30)));
 		queue("wave3", camChangeOnDiff(camSecondsToMilliseconds(60)));
 	}

@@ -61,6 +61,49 @@ camAreaEvent("NWDefenseZone", function(droid) {
 	});
 });
 
+//Remove Nexus VTOL droids.
+camAreaEvent("vtolRemoveZone", function(droid)
+{
+	if (droid.player !== CAM_HUMAN_PLAYER && camVtolCanDisappear(droid))
+	{
+		camSafeRemoveObject(droid, false);
+	}
+	resetLabel("vtolRemoveZone", CAM_NEXUS);
+});
+
+function wave2()
+{
+	const list = [cTempl.nxlpulsev, cTempl.nxlpulsev];
+	const ext = {limit: [4, 4], alternate: true, altIdx: 0, useRearmPads: false};
+	camSetVtolData(CAM_NEXUS, undefined, "vtolRemoveZone", list, camMinutesToMilliseconds(2.5), CAM_REINFORCE_CONDITION_ARTIFACTS, ext);
+}
+
+function wave3()
+{
+	const list = [cTempl.nxlpulsev, cTempl.nxmheapv];
+	const ext = {limit: [4, 4], alternate: true, altIdx: 0, useRearmPads: false};
+	camSetVtolData(CAM_NEXUS, undefined, "vtolRemoveZone", list, camMinutesToMilliseconds(2.5), CAM_REINFORCE_CONDITION_ARTIFACTS, ext);
+}
+
+//Setup Nexus VTOL hit and runners. Choose a random spawn point for the VTOLs.
+function insaneVtolAttack()
+{
+	if (camClassicMode())
+	{
+		const list = [cTempl.nxmtherv, cTempl.nxmheapv];
+		const ext = {limit: [5, 5], alternate: true, altIdx: 0, useRearmPads: false};
+		camSetVtolData(CAM_NEXUS, undefined, "vtolRemoveZone", list, camMinutesToMilliseconds(2.5), CAM_REINFORCE_CONDITION_ARTIFACTS, ext);
+	}
+	else
+	{
+		const list = [cTempl.nxmheapv, cTempl.nxmtherv];
+		const ext = {limit: [4, 4], alternate: true, altIdx: 0, useRearmPads: false};
+		camSetVtolData(CAM_NEXUS, undefined, "vtolRemoveZone", list, camMinutesToMilliseconds(2.5), CAM_REINFORCE_CONDITION_ARTIFACTS, ext);
+		queue("wave2", camChangeOnDiff(camSecondsToMilliseconds(30)));
+		queue("wave3", camChangeOnDiff(camSecondsToMilliseconds(60)));
+	}
+}
+
 function setupGroups()
 {
 	camManageGroup(camMakeGroup("NXVtolBaseCleanup"), CAM_ORDER_ATTACK, {
@@ -115,6 +158,22 @@ function truckDefense()
 	}
 
 	camQueueBuilding(CAM_NEXUS, list[camRand(list.length)], position);
+}
+
+function insaneReinforcementSpawn()
+{
+	const units = {units: [cTempl.nxmpulseh, cTempl.nxmscouh, cTempl.nxmrailh, cTempl.nxmangel], appended: cTempl.nxmsens};
+	const limits = {minimum: 12, maxRandom: 6};
+	const location = camMakePos("southSpawnPos");
+	camSendGenericSpawn(CAM_REINFORCE_GROUND, CAM_NEXUS, CAM_REINFORCE_CONDITION_ARTIFACTS, location, units, limits.minimum, limits.maxRandom);
+}
+
+function insaneTransporterAttack()
+{
+	const units = [cTempl.nxcyscou, cTempl.nxcyscou, cTempl.nxcyscou, cTempl.nxcylas];
+	const limits = {minimum: 10, maxRandom: 0};
+	const location = camGenerateRandomMapCoordinate(getObject("startPosition"), CAM_GENERIC_LAND_STAT, 4, 1);
+	camSendGenericSpawn(CAM_REINFORCE_TRANSPORT, CAM_NEXUS, CAM_REINFORCE_CONDITION_ARTIFACTS, location, units, limits.minimum, limits.maxRandom);
 }
 
 //Choose a target to fire the LasSat at. Automatically increases the limits
@@ -388,4 +447,9 @@ function eventStartLevel()
 	queue("enableAllFactories", camChangeOnDiff(camMinutesToMilliseconds(5)));
 
 	setTimer("vaporizeTarget", camSecondsToMilliseconds(10));
+	if (difficulty >= INSANE)
+	{
+		setTimer("insaneTransporterAttack", camMinutesToMilliseconds(2.5));
+		setTimer("insaneReinforcementSpawn", camMinutesToMilliseconds(3.5));
+	}
 }

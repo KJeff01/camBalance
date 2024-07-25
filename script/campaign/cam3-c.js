@@ -35,6 +35,49 @@ camAreaEvent("gammaBaseTrigger", function(droid) {
 	discoverGammaBase();
 });
 
+//Remove Nexus VTOL droids.
+camAreaEvent("vtolRemoveZone", function(droid)
+{
+	if (droid.player !== CAM_HUMAN_PLAYER && camVtolCanDisappear(droid))
+	{
+		camSafeRemoveObject(droid, false);
+	}
+	resetLabel("vtolRemoveZone", CAM_NEXUS);
+});
+
+function wave2()
+{
+	const list = [cTempl.nxlpulsev, cTempl.nxlpulsev];
+	const ext = {limit: [4, 4], alternate: true, altIdx: 0, useRearmPads: false};
+	camSetVtolData(CAM_NEXUS, undefined, "vtolRemoveZone", list, camMinutesToMilliseconds(3), CAM_REINFORCE_CONDITION_ARTIFACTS, ext);
+}
+
+function wave3()
+{
+	const list = [cTempl.nxlpulsev, cTempl.nxmheapv];
+	const ext = {limit: [4, 4], alternate: true, altIdx: 0, useRearmPads: false};
+	camSetVtolData(CAM_NEXUS, undefined, "vtolRemoveZone", list, camMinutesToMilliseconds(3), CAM_REINFORCE_CONDITION_ARTIFACTS, ext);
+}
+
+//Setup Nexus VTOL hit and runners. Choose a random spawn point for the VTOLs.
+function insaneVtolAttack()
+{
+	if (camClassicMode())
+	{
+		const list = [cTempl.nxlpulsev, cTempl.nxmheapv];
+		const ext = {limit: [5, 5], alternate: true, altIdx: 0, useRearmPads: false};
+		camSetVtolData(CAM_NEXUS, undefined, "vtolRemoveZone", list, camMinutesToMilliseconds(3), CAM_REINFORCE_CONDITION_ARTIFACTS, ext);
+	}
+	else
+	{
+		const list = [cTempl.nxmheapv, cTempl.nxmtherv];
+		const ext = {limit: [4, 4], alternate: true, altIdx: 0, useRearmPads: false};
+		camSetVtolData(CAM_NEXUS, undefined, "vtolRemoveZone", list, camMinutesToMilliseconds(3), CAM_REINFORCE_CONDITION_ARTIFACTS, ext);
+		queue("wave2", camChangeOnDiff(camSecondsToMilliseconds(30)));
+		queue("wave3", camChangeOnDiff(camSecondsToMilliseconds(60)));
+	}
+}
+
 function setupPatrolGroups()
 {
 	camManageGroup(camMakeGroup("NEgroup"), CAM_ORDER_PATROL, {
@@ -106,6 +149,14 @@ function truckDefense()
 	camQueueBuilding(CAM_NEXUS, list[camRand(list.length)], position);
 }
 
+function insaneReinforcementSpawn()
+{
+	const units = {units: [cTempl.nxcyrail, cTempl.nxcyscou, cTempl.nxcylas, cTempl.nxmscouh, cTempl.nxmrailh, cTempl.nxmangel], appended: cTempl.nxmsens};
+	const limits = {minimum: 12, maxRandom: 6};
+	const location = ["southSpawnPos", "eastSpawnPos"];
+	camSendGenericSpawn(CAM_REINFORCE_GROUND, CAM_NEXUS, CAM_REINFORCE_CONDITION_ARTIFACTS, location, units, limits.minimum, limits.maxRandom);
+}
+
 function discoverGammaBase()
 {
 	reunited = true;
@@ -128,6 +179,11 @@ function discoverGammaBase()
 	setTimer("truckDefense", camChangeOnDiff(camMinutesToMilliseconds(4.5)));
 	truckDefense();
 	enableAllFactories();
+	if (difficulty >= INSANE)
+	{
+		setTimer("insaneReinforcementSpawn", camMinutesToMilliseconds(2.5));
+		queue("insaneVtolAttack", camMinutesToMilliseconds(1));
+	}
 }
 
 function findBetaUnitIds()

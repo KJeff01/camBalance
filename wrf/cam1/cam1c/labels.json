@@ -27,6 +27,14 @@
 		"label": "AmbushTarget",
 		"pos": [8352, 13880]
 	},
+	"position_7": {
+		"label": "reinforceSouthEast",
+		"pos": [15424, 16064]
+	},
+	"position_8": {
+		"label": "reinforceNorth",
+		"pos": [12736, 128]
+	},
 
 	"area_0": {
 		"label": "landingZone",

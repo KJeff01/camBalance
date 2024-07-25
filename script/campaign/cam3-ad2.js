@@ -43,14 +43,10 @@ var videoInfo; //holds some info about when to play a video.
 //Remove Nexus VTOL droids.
 camAreaEvent("vtolRemoveZone", function(droid)
 {
-	if (droid.player !== CAM_HUMAN_PLAYER)
+	if (droid.player !== CAM_HUMAN_PLAYER && camVtolCanDisappear(droid))
 	{
-		if (isVTOL(droid))
-		{
-			camSafeRemoveObject(droid, false);
-		}
+		camSafeRemoveObject(droid, false);
 	}
-
 	resetLabel("vtolRemoveZone", CAM_NEXUS);
 });
 
@@ -78,23 +74,15 @@ function randomTemplates(list)
 function wave2()
 {
 	const list = [cTempl.nxlpulsev, cTempl.nxlpulsev];
-	const ext = {
-		limit: [4, 4], //paired with list array
-		alternate: true,
-		altIdx: 0
-	};
-	camSetVtolData(CAM_NEXUS, mis_vtolPositions, "vtolRemovePos", list, camChangeOnDiff(camMinutesToMilliseconds(3)), undefined, ext);
+	const ext = {limit: [4, 4], alternate: true, altIdx: 0};
+	camSetVtolData(CAM_NEXUS, mis_vtolPositions, "vtolRemoveZone", list, camChangeOnDiff(camMinutesToMilliseconds(3)), undefined, ext);
 }
 
 function wave3()
 {
 	const list = [cTempl.nxlpulsev, cTempl.nxmheapv];
-	const ext = {
-		limit: [4, 4], //paired with list array
-		alternate: true,
-		altIdx: 0
-	};
-	camSetVtolData(CAM_NEXUS, mis_vtolPositions, "vtolRemovePos", list, camChangeOnDiff(camMinutesToMilliseconds(3)), undefined, ext);
+	const ext = {limit: [4, 4], alternate: true, altIdx: 0};
+	camSetVtolData(CAM_NEXUS, mis_vtolPositions, "vtolRemoveZone", list, camChangeOnDiff(camMinutesToMilliseconds(3)), undefined, ext);
 }
 
 //Setup Nexus VTOL hit and runners. Choose a random spawn point for the VTOLs.
@@ -103,22 +91,14 @@ function vtolAttack()
 	if (camClassicMode())
 	{
 		const list = [cTempl.nxlpulsev, cTempl.nxmheapv, cTempl.nxmheapv, cTempl.nxlpulsev];
-		const ext = {
-			limit: [2, 5, 5, 2], //paired with list array
-			alternate: true,
-			altIdx: 0
-		};
-		camSetVtolData(CAM_NEXUS, mis_vtolPositions, "vtolRemovePos", list, camChangeOnDiff(camMinutesToMilliseconds(3)), undefined, ext);
+		const ext = {limit: [2, 5, 5, 2], alternate: true, altIdx: 0};
+		camSetVtolData(CAM_NEXUS, mis_vtolPositions, "vtolRemoveZone", list, camChangeOnDiff(camMinutesToMilliseconds(3)), undefined, ext);
 	}
 	else
 	{
 		const list = [cTempl.nxmheapv, cTempl.nxmtherv];
-		const ext = {
-			limit: [4, 4], //paired with list array
-			alternate: true,
-			altIdx: 0
-		};
-		camSetVtolData(CAM_NEXUS, mis_vtolPositions, "vtolRemovePos", list, camChangeOnDiff(camMinutesToMilliseconds(3)), undefined, ext);
+		const ext = {limit: [4, 4], alternate: true, altIdx: 0};
+		camSetVtolData(CAM_NEXUS, mis_vtolPositions, "vtolRemoveZone", list, camChangeOnDiff(camMinutesToMilliseconds(3)), undefined, ext);
 		queue("wave2", camChangeOnDiff(camSecondsToMilliseconds(30)));
 		queue("wave3", camChangeOnDiff(camSecondsToMilliseconds(60)));
 	}
@@ -127,6 +107,11 @@ function vtolAttack()
 //Chose a random spawn point to send ground reinforcements.
 function phantomFactorySpawn()
 {
+	if (winFlag)
+	{
+		return;
+	}
+
 	let list;
 	let chosenFactory;
 
@@ -148,6 +133,11 @@ function phantomFactorySpawn()
 			list = [cTempl.nxhgauss, cTempl.nxmpulseh, cTempl.nxmlinkh];
 			chosenFactory = "phantomFacWest";
 	}
+	if (difficulty >= INSANE && camRand(100) < 25)
+	{
+		list = [cTempl.nxhgauss, cTempl.nxmpulseh, cTempl.nxmscouh];
+		chosenFactory = "phantomFacSouth";
+	}
 
 	if (countDroid(DROID_ANY, CAM_NEXUS) < 80)
 	{
@@ -155,6 +145,18 @@ function phantomFactorySpawn()
 			data: { regroup: false, count: -1, },
 		});
 	}
+}
+
+function insaneTransporterAttack()
+{
+	if (winFlag)
+	{
+		return;
+	}
+	const units = [cTempl.nxhgauss, cTempl.nxmpulseh, cTempl.nxmscouh];
+	const limits = {minimum: 10, maxRandom: 0};
+	const location = camGenerateRandomMapCoordinate(getObject("startPosition"), CAM_GENERIC_WATER_STAT, 4, 1);
+	camSendGenericSpawn(CAM_REINFORCE_TRANSPORT, CAM_NEXUS, CAM_REINFORCE_CONDITION_NONE, location, units, limits.minimum, limits.maxRandom);
 }
 
 //Choose a target to fire the LasSat at. Automatically increases the limits
@@ -330,6 +332,10 @@ function checkTime()
 		queue("vaporizeTarget", camSecondsToMilliseconds(2));
 		setTimer("vaporizeTarget", camSecondsToMilliseconds(10));
 		setTimer("phantomFactorySpawn", camChangeOnDiff(camMinutesToMilliseconds(5)));
+		if (difficulty >= INSANE)
+		{
+			setTimer("insaneTransporterAttack", camMinutesToMilliseconds(3));
+		}
 		removeTimer("checkTime");
 	}
 }

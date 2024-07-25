@@ -27,6 +27,15 @@ const mis_collectiveResClassic = [
 	"R-Wpn-RocketSlow-ROF03"
 ];
 
+camAreaEvent("vtolRemoveZone", function(droid)
+{
+	if ((droid.player !== CAM_HUMAN_PLAYER) && camVtolCanDisappear(droid))
+	{
+		camSafeRemoveObject(droid, false);
+	}
+	resetLabel("vtolRemoveZone", CAM_THE_COLLECTIVE);
+});
+
 function camEnemyBaseDetected_COBase1()
 {
 	hackRemoveMessage("C27_OBJECTIVE1", PROX_MSG, CAM_HUMAN_PLAYER);
@@ -107,6 +116,54 @@ function truckDefense()
 	const list = ["Emplacement-Howitzer105", "Emplacement-Rocket06-IDF", "Sys-CB-Tower01", "Emplacement-Howitzer105", "Emplacement-Rocket06-IDF", "Sys-SensoTower02"];
 	camQueueBuilding(CAM_THE_COLLECTIVE, list[camRand(list.length)], camMakePos("buildPos1"));
 	camQueueBuilding(CAM_THE_COLLECTIVE, list[camRand(list.length)], camMakePos("buildPos2"));
+}
+
+function wave2()
+{
+	const list = [cTempl.colhvat, cTempl.colhvat];
+	const ext = {limit: [4, 4], alternate: true, altIdx: 0};
+	camSetVtolData(CAM_THE_COLLECTIVE, undefined, "vtolRemoveZone", list, camMinutesToMilliseconds(3), CAM_REINFORCE_CONDITION_ARTIFACTS, ext);
+}
+
+function wave3()
+{
+	const list = [cTempl.commorv, cTempl.commorv];
+	const ext = {limit: [4, 4], alternate: true, altIdx: 0};
+	camSetVtolData(CAM_THE_COLLECTIVE, undefined, "vtolRemoveZone", list, camMinutesToMilliseconds(3), CAM_REINFORCE_CONDITION_ARTIFACTS, ext);
+}
+
+function insaneVtolAttack()
+{
+	if (camClassicMode())
+	{
+		const list = [cTempl.colhvat, cTempl.commorvt];
+		const ext = {limit: [4, 5], alternate: true, altIdx: 0};
+		camSetVtolData(CAM_THE_COLLECTIVE, undefined, "vtolRemoveZone", list, camMinutesToMilliseconds(3), CAM_REINFORCE_CONDITION_ARTIFACTS, ext);
+	}
+	else
+	{
+		const list = [cTempl.commorvt, cTempl.commorvt];
+		const ext = {limit: [4, 4], alternate: true, altIdx: 0};
+		camSetVtolData(CAM_THE_COLLECTIVE, undefined, "vtolRemoveZone", list, camMinutesToMilliseconds(3), CAM_REINFORCE_CONDITION_ARTIFACTS, ext);
+		queue("wave2", camChangeOnDiff(camSecondsToMilliseconds(30)));
+		queue("wave3", camChangeOnDiff(camSecondsToMilliseconds(60)));
+	}
+}
+
+function insaneReinforcementSpawn()
+{
+	const units = [cTempl.cohhvch, cTempl.comagh, cTempl.cohach, cTempl.comltath];
+	const limits = {minimum: 14, maxRandom: 4};
+	const location = camGenerateRandomMapEdgeCoordinate(getObject("startPosition"), CAM_GENERIC_WATER_STAT);
+	camSendGenericSpawn(CAM_REINFORCE_GROUND, CAM_THE_COLLECTIVE, CAM_REINFORCE_CONDITION_ARTIFACTS, location, units, limits.minimum, limits.maxRandom);
+}
+
+function insaneTransporterAttack()
+{
+	const units = [cTempl.cohact, cTempl.comrotmh, cTempl.cohhpv, cTempl.comhltat];
+	const limits = {minimum: 10, maxRandom: 0};
+	const location = camGenerateRandomMapCoordinate(getObject("startPosition"), CAM_GENERIC_LAND_STAT, 4, 1);
+	camSendGenericSpawn(CAM_REINFORCE_TRANSPORT, CAM_THE_COLLECTIVE, CAM_REINFORCE_CONDITION_ARTIFACTS, location, units, limits.minimum, limits.maxRandom);
 }
 
 function eventStartLevel()
@@ -266,6 +323,12 @@ function eventStartLevel()
 		addDroid(CAM_THE_COLLECTIVE, 55, 25, "Truck Panther Tracks", tBody.tank.panther, tProp.tank.tracks, "", "", tConstruct.truck);
 		camManageTrucks(CAM_THE_COLLECTIVE);
 		setTimer("truckDefense", camChangeOnDiff(camMinutesToMilliseconds(4.5)));
+	}
+	if (difficulty >= INSANE)
+	{
+		queue("insaneVtolAttack", camMinutesToMilliseconds(8));
+		setTimer("insaneReinforcementSpawn", camMinutesToMilliseconds(2.5));
+		setTimer("insaneTransporterAttack", camMinutesToMilliseconds(3));
 	}
 
 	queue("baseThreeVtolAttack", camChangeOnDiff(camSecondsToMilliseconds(90)));

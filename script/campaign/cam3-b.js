@@ -34,14 +34,10 @@ const mis_nexusResClassic = [
 //Remove Nexus VTOL droids.
 camAreaEvent("vtolRemoveZone", function(droid)
 {
-	if (droid.player !== CAM_HUMAN_PLAYER)
+	if (droid.player !== CAM_HUMAN_PLAYER && camVtolCanDisappear(droid))
 	{
-		if (isVTOL(droid))
-		{
-			camSafeRemoveObject(droid, false);
-		}
+		camSafeRemoveObject(droid, false);
 	}
-
 	resetLabel("vtolRemoveZone", CAM_NEXUS);
 });
 
@@ -69,23 +65,15 @@ function camEnemyBaseEliminated_NXWestBase()
 function wave2()
 {
 	const list = [cTempl.nxlscouv, cTempl.nxlscouv];
-	const ext = {
-		limit: [4, 4], //paired with list array
-		alternate: true,
-		altIdx: 0
-	};
-	camSetVtolData(CAM_NEXUS, "vtolAppearPos", "vtolRemovePos", list, camChangeOnDiff(camMinutesToMilliseconds(2)), "NXCommandCenter", ext);
+	const ext = {limit: [4, 4], alternate: true, altIdx: 0};
+	camSetVtolData(CAM_NEXUS, "vtolAppearPos", "vtolRemoveZone", list, camChangeOnDiff(camMinutesToMilliseconds(2)), (difficulty >= INSANE) ? CAM_REINFORCE_CONDITION_ARTIFACTS : "NXCommandCenter", ext);
 }
 
 function wave3()
 {
 	const list = [cTempl.nxlneedv, cTempl.nxlneedv];
-	const ext = {
-		limit: [4, 4], //paired with list array
-		alternate: true,
-		altIdx: 0
-	};
-	camSetVtolData(CAM_NEXUS, "vtolAppearPos", "vtolRemovePos", list, camChangeOnDiff(camMinutesToMilliseconds(2)), "NXCommandCenter", ext);
+	const ext = {limit: [4, 4], alternate: true, altIdx: 0};
+	camSetVtolData(CAM_NEXUS, "vtolAppearPos", "vtolRemoveZone", list, camChangeOnDiff(camMinutesToMilliseconds(2)), (difficulty >= INSANE) ? CAM_REINFORCE_CONDITION_ARTIFACTS : "NXCommandCenter", ext);
 }
 
 //Setup Nexus VTOL hit and runners.
@@ -94,25 +82,33 @@ function vtolAttack()
 	if (camClassicMode())
 	{
 		const list = [cTempl.nxlscouv, cTempl.nxmheapv, cTempl.nxmtherv, cTempl.nxlscouv];
-		const ext = {
-			limit: [2, 5, 5, 2], //paired with list array
-			alternate: true,
-			altIdx: 0
-		};
-		camSetVtolData(CAM_NEXUS, "vtolAppearPos", "vtolRemovePos", list, camChangeOnDiff(camMinutesToMilliseconds(2)), "NXCommandCenter", ext);
+		const ext = {limit: [2, 5, 5, 2], alternate: true, altIdx: 0};
+		camSetVtolData(CAM_NEXUS, "vtolAppearPos", "vtolRemoveZone", list, camChangeOnDiff(camMinutesToMilliseconds(2)), (difficulty >= INSANE) ? CAM_REINFORCE_CONDITION_ARTIFACTS : "NXCommandCenter", ext);
 	}
 	else
 	{
 		const list = [cTempl.nxmheapv, cTempl.nxmtherv];
-		const ext = {
-			limit: [4, 4], //paired with list array
-			alternate: true,
-			altIdx: 0
-		};
-		camSetVtolData(CAM_NEXUS, "vtolAppearPos", "vtolRemovePos", list, camChangeOnDiff(camMinutesToMilliseconds(2)), "NXCommandCenter", ext);
+		const ext = {limit: [4, 4], alternate: true, altIdx: 0};
+		camSetVtolData(CAM_NEXUS, "vtolAppearPos", "vtolRemoveZone", list, camChangeOnDiff(camMinutesToMilliseconds(2)), (difficulty >= INSANE) ? CAM_REINFORCE_CONDITION_ARTIFACTS : "NXCommandCenter", ext);
 		queue("wave2", camChangeOnDiff(camSecondsToMilliseconds(30)));
 		queue("wave3", camChangeOnDiff(camSecondsToMilliseconds(60)));
 	}
+}
+
+function insaneReinforcementSpawn()
+{
+	const units = [cTempl.nxcyrail, cTempl.nxcyscou, cTempl.nxcylas, cTempl.nxmscouh, cTempl.nxmrailh];
+	const limits = {minimum: 12, maxRandom: 6};
+	const location = ["northWestSpawnPos", "northEastSpawnPos"];
+	camSendGenericSpawn(CAM_REINFORCE_GROUND, CAM_NEXUS, CAM_REINFORCE_CONDITION_ARTIFACTS, location, units, limits.minimum, limits.maxRandom);
+}
+
+function insaneTransporterAttack()
+{
+	const units = [cTempl.nxcyrail, cTempl.nxcyscou, cTempl.nxcylas];
+	const limits = {minimum: 10, maxRandom: 0};
+	const location = camGenerateRandomMapCoordinate(getObject("startPosition"), CAM_GENERIC_LAND_STAT, 6, 1);
+	camSendGenericSpawn(CAM_REINFORCE_TRANSPORT, CAM_NEXUS, CAM_REINFORCE_CONDITION_ARTIFACTS, location, units, limits.minimum, limits.maxRandom);
 }
 
 function enableAllFactories()
@@ -421,4 +417,9 @@ function eventStartLevel()
 
 	queue("transferPower", camSecondsToMilliseconds(3));
 	queue("vtolAttack", camChangeOnDiff(camMinutesToMilliseconds(5)));
+	if (difficulty >= INSANE)
+	{
+		setTimer("insaneTransporterAttack", camMinutesToMilliseconds(2));
+		setTimer("insaneReinforcementSpawn", camMinutesToMilliseconds(3.5));
+	}
 }

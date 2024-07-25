@@ -26,7 +26,7 @@ const mis_collectiveResClassic = [
 
 camAreaEvent("vtolRemoveZone", function(droid)
 {
-	if (isVTOL(droid))
+	if ((droid.player !== CAM_HUMAN_PLAYER) && camVtolCanDisappear(droid))
 	{
 		camSafeRemoveObject(droid, false);
 	}
@@ -96,23 +96,15 @@ function ambushPlayer()
 function wave2()
 {
 	const list = [cTempl.colatv, cTempl.colatv];
-	const ext = {
-		limit: [4, 4], //paired with list array
-		alternate: true,
-		altIdx: 0
-	};
-	camSetVtolData(CAM_THE_COLLECTIVE, "vtolAppearPos", "vtolRemove", list, camChangeOnDiff(camMinutesToMilliseconds(5)), "COCommandCenter", ext);
+	const ext = {limit: [4, 4], alternate: true, altIdx: 0};
+	camSetVtolData(CAM_THE_COLLECTIVE, "vtolAppearPos", "vtolRemoveZone", list, camChangeOnDiff(camMinutesToMilliseconds(5)), (difficulty >= INSANE) ? CAM_REINFORCE_CONDITION_ARTIFACTS : "COCommandCenter", ext);
 }
 
 function wave3()
 {
 	const list = [cTempl.colcbv, cTempl.colcbv];
-	const ext = {
-		limit: [4, 4], //paired with list array
-		alternate: true,
-		altIdx: 0
-	};
-	camSetVtolData(CAM_THE_COLLECTIVE, "vtolAppearPos", "vtolRemove", list, camChangeOnDiff(camMinutesToMilliseconds(5)), "COCommandCenter", ext);
+	const ext = {limit: [4, 4], alternate: true, altIdx: 0};
+	camSetVtolData(CAM_THE_COLLECTIVE, "vtolAppearPos", "vtolRemoveZone", list, camChangeOnDiff(camMinutesToMilliseconds(5)), (difficulty >= INSANE) ? CAM_REINFORCE_CONDITION_ARTIFACTS : "COCommandCenter", ext);
 }
 
 function vtolAttack()
@@ -120,25 +112,33 @@ function vtolAttack()
 	if (camClassicMode())
 	{
 		const list = [cTempl.colcbv, cTempl.colatv];
-		const ext = {
-			limit: [4, 4], //paired with list array
-			alternate: true,
-			altIdx: 0
-		};
-		camSetVtolData(CAM_THE_COLLECTIVE, "vtolAppearPos", "vtolRemove", list, camChangeOnDiff(camMinutesToMilliseconds(5)), "COCommandCenter", ext);
+		const ext = {limit: [4, 4], alternate: true, altIdx: 0};
+		camSetVtolData(CAM_THE_COLLECTIVE, "vtolAppearPos", "vtolRemoveZone", list, camChangeOnDiff(camMinutesToMilliseconds(5)), (difficulty >= INSANE) ? CAM_REINFORCE_CONDITION_ARTIFACTS : "COCommandCenter", ext);
 	}
 	else
 	{
 		const list = [cTempl.colpbv, cTempl.colpbv];
-		const ext = {
-			limit: [4, 4], //paired with list array
-			alternate: true,
-			altIdx: 0
-		};
-		camSetVtolData(CAM_THE_COLLECTIVE, "vtolAppearPos", "vtolRemove", list, camChangeOnDiff(camMinutesToMilliseconds(5)), "COCommandCenter", ext);
+		const ext = {limit: [4, 4], alternate: true, altIdx: 0};
+		camSetVtolData(CAM_THE_COLLECTIVE, "vtolAppearPos", "vtolRemoveZone", list, camChangeOnDiff(camMinutesToMilliseconds(5)), (difficulty >= INSANE) ? CAM_REINFORCE_CONDITION_ARTIFACTS : "COCommandCenter", ext);
 		queue("wave2", camChangeOnDiff(camSecondsToMilliseconds(30)));
 		queue("wave3", camChangeOnDiff(camSecondsToMilliseconds(60)));
 	}
+}
+
+function insaneReinforcementSpawn()
+{
+	const units = [cTempl.comatt, cTempl.comit, cTempl.cohct];
+	const limits = {minimum: 16, maxRandom: 4};
+	const location = ["insaneSpawnPos1", "insaneSpawnPos2", "insaneSpawnPos3", "insaneSpawnPos4"];
+	camSendGenericSpawn(CAM_REINFORCE_GROUND, CAM_THE_COLLECTIVE, CAM_REINFORCE_CONDITION_ARTIFACTS, location, units, limits.minimum, limits.maxRandom);
+}
+
+function insaneTransporterAttack()
+{
+	const units = {units: [cTempl.cohct, cTempl.commrl, cTempl.comorb], appended: cTempl.comsens};
+	const limits = {minimum: 9, maxRandom: 0};
+	const location = camGenerateRandomMapCoordinate(getObject("startPosition"), CAM_GENERIC_LAND_STAT, 6, 1);
+	camSendGenericSpawn(CAM_REINFORCE_TRANSPORT, CAM_THE_COLLECTIVE, CAM_REINFORCE_CONDITION_ARTIFACTS, location, units, limits.minimum, limits.maxRandom);
 }
 
 function truckDefense()
@@ -318,6 +318,11 @@ function eventStartLevel()
 	queue("activateBase1Defenders2", camChangeOnDiff(camMinutesToMilliseconds(20)));
 	queue("activateBase1Defenders", camChangeOnDiff(camMinutesToMilliseconds(30)));
 	setTimer("truckDefense", camChangeOnDiff(camMinutesToMilliseconds(3)));
+	if (difficulty >= INSANE)
+	{
+		setTimer("insaneReinforcementSpawn", camMinutesToMilliseconds(2));
+		setTimer("insaneTransporterAttack", camMinutesToMilliseconds(3));
+	}
 
 	truckDefense();
 }

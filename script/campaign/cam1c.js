@@ -66,6 +66,14 @@ function sendTankForce()
 	*/
 }
 
+function insaneReinforcementSpawn()
+{
+	const units = [cTempl.npsmct, cTempl.nppod];
+	const limits = {minimum: 8, maxRandom: 6};
+	const location = ["reinforceNorth", "reinforceSouthEast"];
+	camSendGenericSpawn(CAM_REINFORCE_GROUND, CAM_NEW_PARADIGM, CAM_REINFORCE_CONDITION_ARTIFACTS, location, units, limits.minimum, limits.maxRandom);
+}
+
 function enableNPFactory()
 {
 	camEnableFactory("NPCentralFactory");
@@ -360,4 +368,8 @@ function eventStartLevel()
 	queue("sendTankScoutForce", camSecondsToMilliseconds(30));
 	queue("sendTankForce", camSecondsToMilliseconds(100)); // in wzcam it moves back and then forward
 	queue("enableNPFactory", camMinutesToMilliseconds(5));
+	if (difficulty >= INSANE)
+	{
+		setTimer("insaneReinforcementSpawn", camMinutesToMilliseconds(3.5));
+	}
 }

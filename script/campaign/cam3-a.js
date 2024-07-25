@@ -9,14 +9,10 @@ var truckLocCounter;
 //Remove Nexus VTOL droids.
 camAreaEvent("vtolRemoveZone", function(droid)
 {
-	if (droid.player !== CAM_HUMAN_PLAYER)
+	if (droid.player !== CAM_HUMAN_PLAYER && camVtolCanDisappear(droid))
 	{
-		if (isVTOL(droid))
-		{
-			camSafeRemoveObject(droid, false);
-		}
+		camSafeRemoveObject(droid, false);
 	}
-
 	resetLabel("vtolRemoveZone", CAM_NEXUS);
 });
 
@@ -196,23 +192,15 @@ function sendPlayerTransporter()
 function wave2()
 {
 	const list = [cTempl.nxlscouv, cTempl.nxlscouv];
-	const ext = {
-		limit: [2, 2], //paired with list array
-		alternate: true,
-		altIdx: 0
-	};
-	camSetVtolData(CAM_NEXUS, "vtolAppearPos", "vtolRemovePos", list, camChangeOnDiff(camMinutesToMilliseconds(5)), "NXCommandCenter", ext);
+	const ext = {limit: [2, 2], alternate: true, altIdx: 0};
+	camSetVtolData(CAM_NEXUS, "vtolAppearPos", "vtolRemoveZone", list, camChangeOnDiff(camMinutesToMilliseconds(5)), (difficulty >= INSANE) ? CAM_REINFORCE_CONDITION_ARTIFACTS : "NXCommandCenter", ext);
 }
 
 function wave3()
 {
 	const list = [cTempl.nxlneedv, cTempl.nxlneedv];
-	const ext = {
-		limit: [3, 3], //paired with list array
-		alternate: true,
-		altIdx: 0
-	};
-	camSetVtolData(CAM_NEXUS, "vtolAppearPos", "vtolRemovePos", list, camChangeOnDiff(camMinutesToMilliseconds(5)), "NXCommandCenter", ext);
+	const ext = {limit: [3, 3], alternate: true, altIdx: 0};
+	camSetVtolData(CAM_NEXUS, "vtolAppearPos", "vtolRemoveZone", list, camChangeOnDiff(camMinutesToMilliseconds(5)), (difficulty >= INSANE) ? CAM_REINFORCE_CONDITION_ARTIFACTS : "NXCommandCenter", ext);
 }
 
 //Setup Nexus VTOL hit and runners.
@@ -221,22 +209,14 @@ function vtolAttack()
 	if (camClassicMode())
 	{
 		const list = [cTempl.nxlscouv, cTempl.nxmtherv, cTempl.nxlneedv, cTempl.nxlscouv];
-		const ext = {
-			limit: [2, 4, 2, 2], //paired with list array
-			alternate: true,
-			altIdx: 0
-		};
-		camSetVtolData(CAM_NEXUS, "vtolAppearPos", "vtolRemovePos", list, camChangeOnDiff(camMinutesToMilliseconds(5)), "NXCommandCenter", ext);
+		const ext = {limit: [2, 4, 2, 2], alternate: true, altIdx: 0};
+		camSetVtolData(CAM_NEXUS, "vtolAppearPos", "vtolRemoveZone", list, camChangeOnDiff(camMinutesToMilliseconds(5)), (difficulty >= INSANE) ? CAM_REINFORCE_CONDITION_ARTIFACTS : "NXCommandCenter", ext);
 	}
 	else
 	{
 		const list = [cTempl.nxmtherv, cTempl.nxmtherv];
-		const ext = {
-			limit: [2, 2], //paired with list array
-			alternate: true,
-			altIdx: 0
-		};
-		camSetVtolData(CAM_NEXUS, "vtolAppearPos", "vtolRemovePos", list, camChangeOnDiff(camMinutesToMilliseconds(5)), "NXCommandCenter", ext);
+		const ext = {limit: [2, 2], alternate: true, altIdx: 0};
+		camSetVtolData(CAM_NEXUS, "vtolAppearPos", "vtolRemoveZone", list, camChangeOnDiff(camMinutesToMilliseconds(5)), (difficulty >= INSANE) ? CAM_REINFORCE_CONDITION_ARTIFACTS : "NXCommandCenter", ext);
 		queue("wave2", camChangeOnDiff(camSecondsToMilliseconds(30)));
 		queue("wave3", camChangeOnDiff(camSecondsToMilliseconds(60)));
 	}
@@ -273,6 +253,22 @@ function groupPatrolNoTrigger()
 	});
 
 	camManageGroup(camMakeGroup("NAmbushCyborgs"), CAM_ORDER_ATTACK);
+}
+
+function insaneReinforcementSpawn()
+{
+	const units = [cTempl.nxcyrail, cTempl.nxcyscou, cTempl.nxmscouh, cTempl.nxmrailh];
+	const limits = {minimum: 8, maxRandom: 5};
+	const location = ["northSpawnPos", "southSpawnPos"];
+	camSendGenericSpawn(CAM_REINFORCE_GROUND, CAM_NEXUS, CAM_REINFORCE_CONDITION_ARTIFACTS, location, units, limits.minimum, limits.maxRandom);
+}
+
+function insaneTransporterAttack()
+{
+	const units = [cTempl.nxmscouh, cTempl.nxmrailh];
+	const limits = {minimum: 10, maxRandom: 0};
+	const location = camGenerateRandomMapCoordinate(getObject("startPosition"), CAM_GENERIC_WATER_STAT, 6, 1);
+	camSendGenericSpawn(CAM_REINFORCE_TRANSPORT, CAM_NEXUS, CAM_REINFORCE_CONDITION_ARTIFACTS, location, units, limits.minimum, limits.maxRandom);
 }
 
 //Gives starting tech and research.
@@ -521,4 +517,9 @@ function eventStartLevel()
 	queue("vtolAttack", camChangeOnDiff(camMinutesToMilliseconds(8)));
 	queue("enableAllFactories", camChangeOnDiff(camMinutesToMilliseconds(20)));
 	queue("improveNexusAlloys", camChangeOnDiff(camMinutesToMilliseconds(25)));
+	if (difficulty >= INSANE)
+	{
+		setTimer("insaneTransporterAttack", camMinutesToMilliseconds(4));
+		setTimer("insaneReinforcementSpawn", camMinutesToMilliseconds(5));
+	}
 }
