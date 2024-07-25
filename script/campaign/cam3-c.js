@@ -106,6 +106,14 @@ function truckDefense()
 	camQueueBuilding(CAM_NEXUS, list[camRand(list.length)], position);
 }
 
+function sendInsaneReinforcementSpawn()
+{
+	const units = {units: [cTempl.nxcyrail, cTempl.nxcyscou, cTempl.nxcylas, cTempl.nxmscouh, cTempl.nxmrailh, cTempl.nxmangel], appended: cTempl.nxmsens};
+	const limits = {minimum: 12, maxRandom: 6};
+	const location = ["southSpawnPos", "eastSpawnPos"];
+	camSendGenericSpawn(CAM_REINFORCE_GROUND, CAM_NEXUS, CAM_REINFORCE_CONDITION_NO_UNITS, location, units, limits.minimum, limits.maxRandom);
+}
+
 function discoverGammaBase()
 {
 	reunited = true;
@@ -128,6 +136,10 @@ function discoverGammaBase()
 	setTimer("truckDefense", camChangeOnDiff(camMinutesToMilliseconds(4.5)));
 	truckDefense();
 	enableAllFactories();
+	if (difficulty >= INSANE)
+	{
+		setTimer("sendInsaneReinforcementSpawn", camMinutesToMilliseconds(6));
+	}
 }
 
 function findBetaUnitIds()

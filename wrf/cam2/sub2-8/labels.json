@@ -63,6 +63,14 @@
 		"label": "buildPos3",
 		"pos": [2304, 3072]
 	},
+	"position_16": {
+		"label": "vtolRemoveZone",
+		"pos": [256, 256]
+	},
+	"position_17": {
+		"label": "southWestSpawn",
+		"pos": [256, 7040]
+	},
 
 	"area_0": {
 		"label": "landingZone",

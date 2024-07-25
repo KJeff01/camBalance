@@ -35,12 +35,11 @@ camAreaEvent("vtolRemoveZone", function(droid)
 {
 	if (droid.player !== CAM_HUMAN_PLAYER)
 	{
-		if (isVTOL(droid))
+		if (isVTOL(droid) && (droid.weapons[0].armed < 100) || (droid.health < 100))
 		{
 			camSafeRemoveObject(droid, false);
 		}
 	}
-
 	resetLabel("vtolRemoveZone", CAM_NEXUS);
 });
 
@@ -127,15 +126,7 @@ function phantomFactorySE()
 
 function sendEdgeMapDroids(droidCount, location, list)
 {
-	const droids = [];
-	for (let i = 0; i < droidCount; ++i)
-	{
-		droids.push(list[camRand(list.length)]);
-	}
-
-	camSendReinforcement(CAM_NEXUS, camMakePos(location), droids, CAM_REINFORCE_GROUND, {
-		data: {regroup: true, count: -1}
-	});
+	camSendGenericSpawn(CAM_REINFORCE_GROUND, CAM_NEXUS, CAM_REINFORCE_CONDITION_NONE, location, list, droidCount);
 }
 
 function setupPatrolGroups()

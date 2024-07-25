@@ -28,11 +28,10 @@ var commandGroup;
 
 camAreaEvent("vtolRemoveZone", function(droid)
 {
-	if (isVTOL(droid) && (droid.weapons[0].armed < 20) || (droid.health < 60))
+	if ((droid.player === CAM_THE_COLLECTIVE) && isVTOL(droid) && (droid.weapons[0].armed < 100) || (droid.health < 100))
 	{
 		camSafeRemoveObject(droid, false);
 	}
-
 	resetLabel("vtolRemoveZone", CAM_THE_COLLECTIVE);
 });
 
@@ -109,23 +108,15 @@ camAreaEvent("failZone", function(droid)
 function wave2()
 {
 	const list = [cTempl.colatv, cTempl.colatv];
-	const ext = {
-		limit: [3, 3], //paired with list array
-		alternate: true,
-		altIdx: 0
-	};
-	camSetVtolData(CAM_THE_COLLECTIVE, "vtolAppearPoint", "vtolRemovePoint", list, camChangeOnDiff(camMinutesToMilliseconds(5)), "COCommandCenter", ext);
+	const ext = {limit: [3, 3], alternate: true, altIdx: 0 };
+	camSetVtolData(CAM_THE_COLLECTIVE, (difficulty >= INSANE) ? undefined : "vtolAppearPoint", "vtolRemovePoint", list, camChangeOnDiff(camMinutesToMilliseconds(5)), "COCommandCenter", ext);
 }
 
 function wave3()
 {
 	const list = [cTempl.colcbv, cTempl.colcbv];
-	const ext = {
-		limit: [3, 3], //paired with list array
-		alternate: true,
-		altIdx: 0
-	};
-	camSetVtolData(CAM_THE_COLLECTIVE, "vtolAppearPoint", "vtolRemovePoint", list, camChangeOnDiff(camMinutesToMilliseconds(5)), "COCommandCenter", ext);
+	const ext = {limit: [3, 3], alternate: true, altIdx: 0};
+	camSetVtolData(CAM_THE_COLLECTIVE, (difficulty >= INSANE) ? undefined : "vtolAppearPoint", "vtolRemovePoint", list, camChangeOnDiff(camMinutesToMilliseconds(5)), "COCommandCenter", ext);
 }
 
 function vtolAttack()
@@ -133,25 +124,26 @@ function vtolAttack()
 	if (camClassicMode())
 	{
 		const list = [cTempl.colatv, cTempl.colatv];
-		const ext = {
-			limit: [5, 5], //paired with list array
-			alternate: true,
-			altIdx: 0
-		};
-		camSetVtolData(CAM_THE_COLLECTIVE, "vtolAppearPoint", "vtolRemovePoint", list, camChangeOnDiff(camMinutesToMilliseconds(5)), "COCommandCenter", ext);
+		const ext = {limit: [5, 5], alternate: true, altIdx: 0};
+		camSetVtolData(CAM_THE_COLLECTIVE, (difficulty >= INSANE) ? undefined : "vtolAppearPoint", "vtolRemovePoint", list, camChangeOnDiff(camMinutesToMilliseconds(5)), "COCommandCenter", ext);
 	}
 	else
 	{
 		const list = [cTempl.colpbv, cTempl.colpbv];
-		const ext = {
-			limit: [3, 3], //paired with list array
-			alternate: true,
-			altIdx: 0
-		};
-		camSetVtolData(CAM_THE_COLLECTIVE, "vtolAppearPoint", "vtolRemovePoint", list, camChangeOnDiff(camMinutesToMilliseconds(5)), "COCommandCenter", ext);
+		const ext = {limit: [3, 3], alternate: true, altIdx: 0};
+		camSetVtolData(CAM_THE_COLLECTIVE, (difficulty >= INSANE) ? undefined : "vtolAppearPoint", "vtolRemovePoint", list, camChangeOnDiff(camMinutesToMilliseconds(5)), "COCommandCenter", ext);
 		queue("wave2", camChangeOnDiff(camSecondsToMilliseconds(30)));
 		queue("wave3", camChangeOnDiff(camSecondsToMilliseconds(60)));
 	}
+}
+
+function sendInsaneReinforcementSpawn()
+{
+	const USE_WEST_SPAWN = (camRand(100) < 20);
+	const units = (USE_WEST_SPAWN) ? [ cTempl.cohct, cTempl.comtathh, cTempl.comorb ] : [ cTempl.cohhch, cTempl.comtath ];
+	const limits = {minimum: 10, maxRandom: 5};
+	const location = (USE_WEST_SPAWN) ? getObject("westSpawnPos") : camGenerateRandomMapEdgeCoordinate(getObject("startPosition"));
+	camSendGenericSpawn(CAM_REINFORCE_GROUND, CAM_NEW_PARADIGM, CAM_REINFORCE_CONDITION_NO_BASES, location, units, limits.minimum, limits.maxRandom);
 }
 
 //Order the truck to build some defenses.
@@ -291,5 +283,9 @@ function eventStartLevel()
 
 	queue("vtolAttack", camMinutesToMilliseconds(3));
 	setTimer("truckDefense", camChangeOnDiff(camMinutesToMilliseconds(3)));
+	if (difficulty >= INSANE)
+	{
+		setTimer("sendInsaneReinforcementSpawn", camMinutesToMilliseconds(2.5));
+	}
 	truckDefense();
 }

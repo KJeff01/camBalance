@@ -117,6 +117,22 @@ function truckDefense()
 	camQueueBuilding(CAM_NEXUS, list[camRand(list.length)], position);
 }
 
+function sendInsaneReinforcementSpawn()
+{
+	const units = {units: [cTempl.nxmpulseh, cTempl.nxmscouh, cTempl.nxmrailh, cTempl.nxmangel], appended: cTempl.nxmsens};
+	const limits = {minimum: 12, maxRandom: 6};
+	const location = camMakePos("southSpawnPos");
+	camSendGenericSpawn(CAM_REINFORCE_GROUND, CAM_NEXUS, CAM_REINFORCE_CONDITION_NO_UNITS, location, units, limits.minimum, limits.maxRandom);
+}
+
+function insaneTransporterAttack()
+{
+	const units = [cTempl.nxcyscou, cTempl.nxcyscou, cTempl.nxcyscou, cTempl.nxcylas];
+	const limits = {minimum: 10, maxRandom: 0};
+	const location = camGenerateRandomMapCoordinate(getObject("startPosition"), CAM_GENERIC_LAND_STAT, 4, 1);
+	camSendGenericSpawn(CAM_REINFORCE_TRANSPORT, CAM_NEXUS, CAM_REINFORCE_CONDITION_NO_UNITS, location, units, limits.minimum, limits.maxRandom);
+}
+
 //Choose a target to fire the LasSat at. Automatically increases the limits
 //when no target is found in the area.
 function vaporizeTarget()
@@ -388,4 +404,9 @@ function eventStartLevel()
 	queue("enableAllFactories", camChangeOnDiff(camMinutesToMilliseconds(5)));
 
 	setTimer("vaporizeTarget", camSecondsToMilliseconds(10));
+	if (difficulty >= INSANE)
+	{
+		setTimer("sendInsaneReinforcementSpawn", camMinutesToMilliseconds(4));
+		setTimer("insaneTransporterAttack", camMinutesToMilliseconds(2.5));
+	}
 }

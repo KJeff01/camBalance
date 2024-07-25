@@ -51,7 +51,7 @@ function checkEnemyVtolArea()
 
 	for (let i = 0, l = vtols.length; i < l; ++i)
 	{
-		if ((vtols[i].weapons[0].armed < 20) || (vtols[i].health < 60))
+		if ((vtols[i].weapons[0].armed < 100) || (vtols[i].health < 100))
 		{
 			camSafeRemoveObject(vtols[i], false);
 		}
@@ -213,7 +213,7 @@ function tankAttackWest()
 	});
 }
 
-function transporterAttack()
+function insaneTransporterAttack()
 {
 	const droids = [cTempl.cohact, cTempl.comhltat, cTempl.cohhpv];
 	if (getMissionTime() < (60 * 22))
@@ -221,7 +221,7 @@ function transporterAttack()
 		droids.push(cTempl.cohbbt);
 	}
 
-	camSendReinforcement(CAM_THE_COLLECTIVE, camMakePos(camGenerateRandomMapCoordinate(mis_Labels.startPos, 10, 1)), randomTemplates(droids, true, false),
+	camSendReinforcement(CAM_THE_COLLECTIVE, camMakePos(camGenerateRandomMapCoordinate(mis_Labels.startPos, CAM_GENERIC_LAND_STAT, 10, 1)), randomTemplates(droids, true, false),
 		CAM_REINFORCE_TRANSPORT, {
 			entry: camGenerateRandomMapEdgeCoordinate(),
 			exit: camGenerateRandomMapEdgeCoordinate()
@@ -287,7 +287,7 @@ function eventStartLevel()
 	if (difficulty === INSANE)
 	{
 		setPower(playerPower(CAM_HUMAN_PLAYER) + 12000);
-		setTimer("transporterAttack", camMinutesToMilliseconds(5));
+		setTimer("insaneTransporterAttack", camMinutesToMilliseconds(5));
 	}
 	if (difficulty >= HARD)
 	{

@@ -51,6 +51,10 @@
 		"label": "hillGroupPos",
 		"pos": [1728, 7744]
 	},
+	"position_13": {
+		"label": "vtolRemoveZone",
+		"pos": [256, 256]
+	},
 
 	"area_0": {
 		"label": "landingZone",

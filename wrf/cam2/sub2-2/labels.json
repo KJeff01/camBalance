@@ -67,6 +67,10 @@
 		"label": "defensePos",
 		"pos": [1664, 7040]
 	},
+	"position_17": {
+		"label": "westSpawnPos",
+		"pos": [256, 6912]
+	},
 
 	"area_0": {
 		"label": "landingZone",

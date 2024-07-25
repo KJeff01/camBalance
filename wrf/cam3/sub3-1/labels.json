@@ -119,6 +119,14 @@
 		"label": "patrolPos8",
 		"pos": [6272, 7552]
 	},
+	"position_30": {
+		"label": "northWestSpawnPos",
+		"pos": [1280, 256]
+	},
+	"position_31": {
+		"label": "northEastSpawnPos",
+		"pos": [7680, 256]
+	},
 
 	"area_0": {
 		"label": "landingZone",
