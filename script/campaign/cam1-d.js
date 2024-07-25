@@ -66,6 +66,14 @@ function transportBaseSetup()
 	});
 }
 
+function insaneReinforcementSpawn()
+{
+	const units = [cTempl.nphmgh, cTempl.npltath, cTempl.nphch];
+	const limits = {minimum: 6, maxRandom: 4};
+	const location = camGenerateRandomMapEdgeCoordinate(getObject("startPosition"), CAM_GENERIC_WATER_STAT);
+	camSendGenericSpawn(CAM_REINFORCE_GROUND, CAM_NEW_PARADIGM, CAM_REINFORCE_CONDITION_BASES, location, units, limits.minimum, limits.maxRandom);
+}
+
 function getDroidsForNPLZ()
 {
 	let lim = 8;
@@ -301,4 +309,8 @@ function eventStartLevel()
 	hackAddMessage("C1D_OBJ1", PROX_MSG, CAM_HUMAN_PLAYER, false);
 
 	queue("setupPatrols", camMinutesToMilliseconds(2.5));
+	if (difficulty >= INSANE)
+	{
+		setTimer("insaneReinforcementSpawn", camMinutesToMilliseconds(3));
+	}
 }

@@ -519,17 +519,21 @@ function __camTacticsTickForGroup(group)
 		//Rearm vtols.
 		if (__VTOL_UNIT)
 		{
-			const __ARM = droid.weapons[0].armed;
-			const __IS_REARMING = droid.order === DORDER_REARM;
-
-			if ((__ARM < 1) || (__IS_REARMING && (__ARM < 100 || droid.health < 100)))
+			const __ALLOWS_REARM = camDef(gi.data.useRearmPads) ? gi.data.useRearmPads : true;
+			if (__ALLOWS_REARM)
 			{
-				const __HAVE_PADS = enumStruct(droid.player, REARM_PAD).length > 0;
-				if (__HAVE_PADS && !__IS_REARMING)
+				const __ARM = droid.weapons[0].armed;
+				const __IS_REARMING = droid.order === DORDER_REARM;
+
+				if ((__ARM < 1) || (__IS_REARMING && (__ARM < 100 || droid.health < 100)))
 				{
-					orderDroid(droid, DORDER_REARM);
+					const __HAVE_PADS = enumStruct(droid.player, REARM_PAD).length > 0;
+					if (__HAVE_PADS && !__IS_REARMING)
+					{
+						orderDroid(droid, DORDER_REARM);
+					}
+					continue; //Rearming. Try not to attack stuff.
 				}
-				continue; //Rearming. Try not to attack stuff.
 			}
 		}
 
