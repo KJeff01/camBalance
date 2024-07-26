@@ -144,7 +144,7 @@ function sendTransport()
 	totalTransportLoads += 1;
 }
 
-function sendInsaneReinforcementSpawn()
+function insaneReinforcementSpawn()
 {
 	if (totalTransportLoads > MIN_TRANSPORT_RUNS)
 	{
@@ -198,6 +198,6 @@ function eventStartLevel()
 	queue("startTransporterAttack", camSecondsToMilliseconds(10));
 	if (difficulty >= INSANE)
 	{
-		setTimer("sendInsaneReinforcementSpawn", camMinutesToMilliseconds(2.5));
+		setTimer("insaneReinforcementSpawn", camMinutesToMilliseconds(2.5));
 	}
 }

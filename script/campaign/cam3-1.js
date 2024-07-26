@@ -133,7 +133,7 @@ function hoverAttack()
 	});
 }
 
-function sendInsaneReinforcementSpawn()
+function insaneReinforcementSpawn()
 {
 	const units = [cTempl.nxcyrail, cTempl.nxcyscou, cTempl.nxcylas, cTempl.nxmscouh, cTempl.nxmrailh];
 	const limits = {minimum: 10, maxRandom: 5};
@@ -437,6 +437,6 @@ function eventStartLevel()
 	queue("enableAllFactories", camChangeOnDiff(camMinutesToMilliseconds(5)));
 	if (difficulty >= INSANE)
 	{
-		setTimer("sendInsaneReinforcementSpawn", camMinutesToMilliseconds(4.5));
+		setTimer("insaneReinforcementSpawn", camMinutesToMilliseconds(4.5));
 	}
 }

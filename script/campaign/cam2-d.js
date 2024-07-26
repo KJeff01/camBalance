@@ -83,7 +83,7 @@ function vtolAttack()
 	}
 }
 
-function sendInsaneReinforcementSpawn()
+function insaneReinforcementSpawn()
 {
 	const units = [cTempl.comltath, cTempl.cohhvch, cTempl.comagh];
 	const limits = {minimum: 14, maxRandom: 6};
@@ -221,7 +221,7 @@ function eventStartLevel()
 	setTimer("truckDefense", camChangeOnDiff(camMinutesToMilliseconds(4)));
 	if (difficulty >= INSANE)
 	{
-		setTimer("sendInsaneReinforcementSpawn", camMinutesToMilliseconds(4.5));
+		setTimer("insaneReinforcementSpawn", camMinutesToMilliseconds(4.5));
 		setTimer("insaneTransporterAttack", camMinutesToMilliseconds(3));
 	}
 

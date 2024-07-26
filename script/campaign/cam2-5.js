@@ -125,14 +125,23 @@ function wave3()
 
 function insaneVtolAttack()
 {
-	const list = [cTempl.commorvt, cTempl.commorvt];
-	const ext = {limit: [4, 4], alternate: true, altIdx: 0};
-	camSetVtolData(CAM_THE_COLLECTIVE, undefined, "vtolRemove", list, camMinutesToMilliseconds(3.5), undefined, ext);
-	queue("wave2", camChangeOnDiff(camSecondsToMilliseconds(30)));
-	queue("wave3", camChangeOnDiff(camSecondsToMilliseconds(60)));
+	if (camClassicMode())
+	{
+		const list = [cTempl.commorvt, cTempl.commorv, cTempl.colhvat];
+		const ext = {limit: [4, 4, 3], alternate: true, altIdx: 0};
+		camSetVtolData(CAM_THE_COLLECTIVE, undefined, "vtolRemove", list, camMinutesToMilliseconds(3.5), undefined, ext);
+	}
+	else
+	{
+		const list = [cTempl.commorvt, cTempl.commorvt];
+		const ext = {limit: [4, 4], alternate: true, altIdx: 0};
+		camSetVtolData(CAM_THE_COLLECTIVE, undefined, "vtolRemove", list, camMinutesToMilliseconds(3.5), undefined, ext);
+		queue("wave2", camChangeOnDiff(camSecondsToMilliseconds(30)));
+		queue("wave3", camChangeOnDiff(camSecondsToMilliseconds(60)));
+	}
 }
 
-function sendInsaneReinforcementSpawn()
+function insaneReinforcementSpawn()
 {
 	const units = [cTempl.comltath, cTempl.cohhvch, cTempl.comagh];
 	const limits = {minimum: 10, maxRandom: 8};
@@ -259,7 +268,7 @@ function eventStartLevel()
 	if (difficulty >= INSANE)
 	{
 		queue("insaneVtolAttack", camMinutesToMilliseconds(4.5));
-		setTimer("sendInsaneReinforcementSpawn", camMinutesToMilliseconds(3.5));
+		setTimer("insaneReinforcementSpawn", camMinutesToMilliseconds(3.5));
 		setTimer("insaneTransporterAttack", camMinutesToMilliseconds(4));
 	}
 }

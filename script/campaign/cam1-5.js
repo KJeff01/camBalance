@@ -88,7 +88,7 @@ function getDroidsForNPLZ(args)
 	return list;
 }
 
-function sendInsaneReinforcementSpawn()
+function insaneReinforcementSpawn()
 {
 	const units = [cTempl.npcybc, cTempl.npcybr];
 	const limits = {minimum: 8, maxRandom: 2};
@@ -125,7 +125,7 @@ camAreaEvent("NPFactoryTrigger", function(droid)
 
 		if (difficulty >= INSANE)
 		{
-			setTimer("sendInsaneReinforcementSpawn", camMinutesToMilliseconds(1.5)); // Very fast with small groups
+			setTimer("insaneReinforcementSpawn", camMinutesToMilliseconds(1.5)); // Very fast with small groups
 		}
 	}
 	else
@@ -186,7 +186,7 @@ function enableNPFactories()
 
 	if (difficulty >= INSANE)
 	{
-		setTimer("sendInsaneReinforcementSpawn", camMinutesToMilliseconds(1.5)); // Very fast with small groups
+		setTimer("insaneReinforcementSpawn", camMinutesToMilliseconds(1.5)); // Very fast with small groups
 	}
 }
 

@@ -66,7 +66,7 @@ function sendTankForce()
 	*/
 }
 
-function sendInsaneReinforcementSpawn()
+function insaneReinforcementSpawn()
 {
 	const units = [cTempl.npsmct, cTempl.nppod];
 	const limits = {minimum: 8, maxRandom: 6};
@@ -193,7 +193,7 @@ camAreaEvent("NPLZ2Trigger", function()
 
 	if (difficulty >= INSANE)
 	{
-		removeTimer("sendInsaneReinforcementSpawn");
+		removeTimer("insaneReinforcementSpawn");
 	}
 });
 
@@ -375,6 +375,6 @@ function eventStartLevel()
 	queue("enableNPFactory", camMinutesToMilliseconds(5));
 	if (difficulty >= INSANE)
 	{
-		setTimer("sendInsaneReinforcementSpawn", camMinutesToMilliseconds(5));
+		setTimer("insaneReinforcementSpawn", camMinutesToMilliseconds(5));
 	}
 }

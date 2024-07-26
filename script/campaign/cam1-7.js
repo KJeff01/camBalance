@@ -79,7 +79,7 @@ camAreaEvent("NPTransportTrigger", function(droid)
 	}
 });
 
-function sendInsaneReinforcementSpawn()
+function insaneReinforcementSpawn()
 {
 	const units = [cTempl.nphct, cTempl.npcybr, cTempl.npmrl, cTempl.npcybc];
 	const limits = {minimum: 5, maxRandom: 3};
@@ -390,6 +390,6 @@ function eventStartLevel()
 	queue("startArtifactCollection", camChangeOnDiff(camMinutesToMilliseconds(1.5)));
 	if (difficulty >= INSANE)
 	{
-		setTimer("sendInsaneReinforcementSpawn", camMinutesToMilliseconds(2.5));
+		setTimer("insaneReinforcementSpawn", camMinutesToMilliseconds(2.5));
 	}
 }

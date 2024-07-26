@@ -66,7 +66,7 @@ function transportBaseSetup()
 	});
 }
 
-function sendInsaneReinforcementSpawn()
+function insaneReinforcementSpawn()
 {
 	const units = [cTempl.nphmgh, cTempl.npltath, cTempl.nphch];
 	const limits = {minimum: 6, maxRandom: 4};
@@ -311,6 +311,6 @@ function eventStartLevel()
 	queue("setupPatrols", camMinutesToMilliseconds(2.5));
 	if (difficulty >= INSANE)
 	{
-		setTimer("sendInsaneReinforcementSpawn", camMinutesToMilliseconds(3));
+		setTimer("insaneReinforcementSpawn", camMinutesToMilliseconds(3));
 	}
 }

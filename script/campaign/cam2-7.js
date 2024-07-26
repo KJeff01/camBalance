@@ -121,27 +121,36 @@ function truckDefense()
 function wave2()
 {
 	const list = [cTempl.colhvat, cTempl.colhvat];
-	const ext = {limit: [4, 4], alternate: true, altIdx: 0, useRearmPads: false};
+	const ext = {limit: [4, 4], alternate: true, altIdx: 0};
 	camSetVtolData(CAM_THE_COLLECTIVE, undefined, "vtolRemovePos", list, camMinutesToMilliseconds(3), undefined, ext);
 }
 
 function wave3()
 {
 	const list = [cTempl.commorv, cTempl.commorv];
-	const ext = {limit: [4, 4], alternate: true, altIdx: 0, useRearmPads: false};
+	const ext = {limit: [4, 4], alternate: true, altIdx: 0};
 	camSetVtolData(CAM_THE_COLLECTIVE, undefined, "vtolRemovePos", list, camMinutesToMilliseconds(3), undefined, ext);
 }
 
 function insaneVtolAttack()
 {
-	const list = [cTempl.commorvt, cTempl.commorvt];
-	const ext = {limit: [4, 4], alternate: true, altIdx: 0, useRearmPads: false};
-	camSetVtolData(CAM_THE_COLLECTIVE, undefined, "vtolRemovePos", list, camMinutesToMilliseconds(3), undefined, ext);
-	queue("wave2", camChangeOnDiff(camSecondsToMilliseconds(30)));
-	queue("wave3", camChangeOnDiff(camSecondsToMilliseconds(60)));
+	if (camClassicMode())
+	{
+		const list = [cTempl.colhvat, cTempl.commorvt];
+		const ext = {limit: [4, 5], alternate: true, altIdx: 0};
+		camSetVtolData(CAM_THE_COLLECTIVE, undefined, "vtolRemovePos", list, camMinutesToMilliseconds(3), undefined, ext);
+	}
+	else
+	{
+		const list = [cTempl.commorvt, cTempl.commorvt];
+		const ext = {limit: [4, 4], alternate: true, altIdx: 0};
+		camSetVtolData(CAM_THE_COLLECTIVE, undefined, "vtolRemovePos", list, camMinutesToMilliseconds(3), undefined, ext);
+		queue("wave2", camChangeOnDiff(camSecondsToMilliseconds(30)));
+		queue("wave3", camChangeOnDiff(camSecondsToMilliseconds(60)));
+	}
 }
 
-function sendInsaneReinforcementSpawn()
+function insaneReinforcementSpawn()
 {
 	const units = [cTempl.cohhvch, cTempl.comagh, cTempl.cohach, cTempl.comltath];
 	const limits = {minimum: 14, maxRandom: 4};
@@ -318,7 +327,7 @@ function eventStartLevel()
 	if (difficulty >= INSANE)
 	{
 		queue("insaneVtolAttack", camMinutesToMilliseconds(8));
-		setTimer("sendInsaneReinforcementSpawn", camMinutesToMilliseconds(3.5));
+		setTimer("insaneReinforcementSpawn", camMinutesToMilliseconds(3.5));
 		setTimer("insaneTransporterAttack", camMinutesToMilliseconds(4));
 	}
 

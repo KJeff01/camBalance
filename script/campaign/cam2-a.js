@@ -151,7 +151,7 @@ function mapEdgeDroids(useInsaneLocations)
 	camSendGenericSpawn(CAM_REINFORCE_GROUND, CAM_THE_COLLECTIVE, CAM_REINFORCE_CONDITION_NO_UNITS, location, units, limits.minimum, limits.maxRandom);
 }
 
-function sendInsaneReinforcementSpawn()
+function insaneReinforcementSpawn()
 {
 	mapEdgeDroids(true);
 }
@@ -445,7 +445,7 @@ function eventStartLevel()
 	setTimer("mapEdgeDroids", camChangeOnDiff(camMinutesToMilliseconds(7)));
 	if (difficulty >= INSANE)
 	{
-		setTimer("sendInsaneReinforcementSpawn", camMinutesToMilliseconds(2.5));
+		setTimer("insaneReinforcementSpawn", camMinutesToMilliseconds(2.5));
 	}
 
 	truckDefense();

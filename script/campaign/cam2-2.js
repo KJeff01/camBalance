@@ -137,7 +137,7 @@ function vtolAttack()
 	}
 }
 
-function sendInsaneReinforcementSpawn()
+function insaneReinforcementSpawn()
 {
 	const USE_WEST_SPAWN = (camRand(100) < 20);
 	const units = (USE_WEST_SPAWN) ? [ cTempl.cohct, cTempl.comtathh, cTempl.comorb ] : [ cTempl.cohhch, cTempl.comtath ];
@@ -285,7 +285,7 @@ function eventStartLevel()
 	setTimer("truckDefense", camChangeOnDiff(camMinutesToMilliseconds(3)));
 	if (difficulty >= INSANE)
 	{
-		setTimer("sendInsaneReinforcementSpawn", camMinutesToMilliseconds(2.5));
+		setTimer("insaneReinforcementSpawn", camMinutesToMilliseconds(2.5));
 	}
 	truckDefense();
 }

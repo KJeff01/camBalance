@@ -67,8 +67,8 @@ function enableNP(args)
 
 	if (difficulty === INSANE)
 	{
-		queue("sendInsaneReinforcementSpawn", camSecondsToMilliseconds(10));
-		setTimer("sendInsaneReinforcementSpawn", camSecondsToMilliseconds(180));
+		queue("insaneReinforcementSpawn", camSecondsToMilliseconds(10));
+		setTimer("insaneReinforcementSpawn", camSecondsToMilliseconds(180));
 	}
 
 	camManageGroup(NPScoutGroup, CAM_ORDER_COMPROMISE, {
@@ -91,7 +91,7 @@ function enableNP(args)
 	camPlayVideos([cam_sounds.incoming.incomingTransmission, {video: "SB1_3_MSG4", type: MISS_MSG}]);
 }
 
-function sendInsaneReinforcementSpawn()
+function insaneReinforcementSpawn()
 {
 	const units = [cTempl.nphmg, cTempl.npblc, cTempl.nppod, cTempl.nphmg, cTempl.npblc];
 	const limits = {minimum: 5, maxRandom: 5};

@@ -80,11 +80,11 @@ camAreaEvent("LandingZoneTrigger", function()
 
 	if (difficulty >= INSANE)
 	{
-		setTimer("sendInsaneReinforcementSpawn", camMinutesToSeconds(4));
+		setTimer("insaneReinforcementSpawn", camMinutesToSeconds(4));
 	}
 });
 
-function sendInsaneReinforcementSpawn()
+function insaneReinforcementSpawn()
 {
 	const units = [cTempl.npltat, cTempl.npmrl, cTempl.npmmct];
 	const limits = {minimum: 8, maxRandom: 6};

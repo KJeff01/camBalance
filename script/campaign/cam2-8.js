@@ -110,28 +110,37 @@ function truckDefense()
 
 function wave2()
 {
-	const list = [cTempl.colhvat, cTempl.colhvat];
-	const ext = {limit: [3, 3], alternate: true, altIdx: 0, useRearmPads: false};
+	const list = [cTempl.colhvat, cTempl.comagt];
+	const ext = {limit: [3, 5], alternate: true, altIdx: 0, useRearmPads: false};
 	camSetVtolData(CAM_THE_COLLECTIVE, undefined, "vtolRemovePos", list, camMinutesToMilliseconds(3), undefined, ext);
 }
 
 function wave3()
 {
-	const list = [cTempl.commorv, cTempl.commorv];
-	const ext = {limit: [3, 3], alternate: true, altIdx: 0, useRearmPads: false};
+	const list = [cTempl.comagt, cTempl.commorv];
+	const ext = {limit: [5, 3], alternate: true, altIdx: 0, useRearmPads: false};
 	camSetVtolData(CAM_THE_COLLECTIVE, undefined, "vtolRemovePos", list, camMinutesToMilliseconds(3), undefined, ext);
 }
 
 function insaneVtolAttack()
 {
-	const list = [cTempl.commorvt, cTempl.commorvt];
-	const ext = {limit: [3, 3], alternate: true, altIdx: 0, useRearmPads: false};
-	camSetVtolData(CAM_THE_COLLECTIVE, undefined, "vtolRemovePos", list, camMinutesToMilliseconds(3), undefined, ext);
-	queue("wave2", camChangeOnDiff(camSecondsToMilliseconds(30)));
-	queue("wave3", camChangeOnDiff(camSecondsToMilliseconds(60)));
+	if (camClassicMode())
+	{
+		const list = [cTempl.commorvt, cTempl.commorvt];
+		const ext = {limit: [5, 5], alternate: true, altIdx: 0, useRearmPads: false};
+		camSetVtolData(CAM_THE_COLLECTIVE, undefined, "vtolRemovePos", list, camMinutesToMilliseconds(3), undefined, ext);
+	}
+	else
+	{
+		const list = [cTempl.commorvt, cTempl.commorvt];
+		const ext = {limit: [3, 3], alternate: true, altIdx: 0, useRearmPads: false};
+		camSetVtolData(CAM_THE_COLLECTIVE, undefined, "vtolRemovePos", list, camMinutesToMilliseconds(3), undefined, ext);
+		queue("wave2", camChangeOnDiff(camSecondsToMilliseconds(30)));
+		queue("wave3", camChangeOnDiff(camSecondsToMilliseconds(60)));
+	}
 }
 
-function sendInsaneReinforcementSpawn()
+function insaneReinforcementSpawn()
 {
 	const units = [cTempl.cohhvch, cTempl.comagh, cTempl.cohach, cTempl.comltath];
 	const limits = {minimum: 15, maxRandom: 3};
@@ -273,7 +282,7 @@ function eventStartLevel()
 	if (difficulty >= INSANE)
 	{
 		queue("insaneVtolAttack", camMinutesToMilliseconds(8));
-		setTimer("sendInsaneReinforcementSpawn", camMinutesToMilliseconds(7));
+		setTimer("insaneReinforcementSpawn", camMinutesToMilliseconds(7));
 		setTimer("insaneTransporterAttack", camMinutesToMilliseconds(3));
 	}
 	truckDefense();

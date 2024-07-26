@@ -255,7 +255,7 @@ function groupPatrolNoTrigger()
 	camManageGroup(camMakeGroup("NAmbushCyborgs"), CAM_ORDER_ATTACK);
 }
 
-function sendInsaneReinforcementSpawn()
+function insaneReinforcementSpawn()
 {
 	const units = [cTempl.nxcyrail, cTempl.nxcyscou, cTempl.nxmscouh, cTempl.nxmrailh];
 	const limits = {minimum: 8, maxRandom: 5};
@@ -511,6 +511,6 @@ function eventStartLevel()
 	queue("improveNexusAlloys", camChangeOnDiff(camMinutesToMilliseconds(25)));
 	if (difficulty >= INSANE)
 	{
-		setTimer("sendInsaneReinforcementSpawn", camMinutesToMilliseconds(5));
+		setTimer("insaneReinforcementSpawn", camMinutesToMilliseconds(5));
 	}
 }

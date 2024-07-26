@@ -63,6 +63,10 @@
 		"label": "southSpawnPos",
 		"pos": [3328, 32384]
 	},
+	"position_16": {
+		"label": "vtolRemoveZone",
+		"pos": [7040, 32384]
+	},
 
 	"area_0": {
 		"label": "landingZone",

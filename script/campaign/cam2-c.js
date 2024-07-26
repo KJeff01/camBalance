@@ -78,7 +78,7 @@ function camEnemyBaseEliminated_COAirBase()
 	camCallOnce("videoTrigger");
 }
 
-function sendInsaneReinforcementSpawn()
+function insaneReinforcementSpawn()
 {
 	const units = [cTempl.comatt, cTempl.comit, cTempl.cohct, cTempl.cohct, cTempl.npcybc];
 	const limits = {minimum: 14, maxRandom: 6};
@@ -455,7 +455,7 @@ function eventStartLevel()
 	if (difficulty >= INSANE)
 	{
 		setTimer("insaneTransporterAttack", camMinutesToMilliseconds(4));
-		setTimer("sendInsaneReinforcementSpawn", camMinutesToMilliseconds(5));
+		setTimer("insaneReinforcementSpawn", camMinutesToMilliseconds(5));
 	}
 
 	truckDefense();

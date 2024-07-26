@@ -169,7 +169,7 @@ function cyborgAttack()
 	});
 }
 
-function cyborgAttackRandom()
+function hardCyborgAttackRandom()
 {
 	let list = []; //favor cannon cyborg
 	if (camClassicMode())
@@ -200,7 +200,7 @@ function tankAttack()
 	});
 }
 
-function tankAttackWest()
+function hardTankAttackWest()
 {
 	const list = [cTempl.comhltat, cTempl.cohact, cTempl.cohhpv, cTempl.comagt];
 	if (getMissionTime() < (60 * 22))
@@ -291,8 +291,8 @@ function eventStartLevel()
 	}
 	if (difficulty >= HARD)
 	{
-		setTimer("tankAttackWest", camChangeOnDiff(camMinutesToMilliseconds(7)));
-		setTimer("cyborgAttackRandom", camChangeOnDiff(camMinutesToMilliseconds(6)));
+		setTimer("hardTankAttackWest", camChangeOnDiff(camMinutesToMilliseconds(7)));
+		setTimer("hardCyborgAttackRandom", camChangeOnDiff(camMinutesToMilliseconds(6)));
 	}
 	setTimer("cyborgAttack", camChangeOnDiff(camMinutesToMilliseconds(4)));
 	setTimer("tankAttack", camChangeOnDiff(camMinutesToMilliseconds(3)));

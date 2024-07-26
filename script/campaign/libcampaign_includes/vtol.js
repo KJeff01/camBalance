@@ -93,6 +93,13 @@ function camSetVtolSpawnStateAll(state)
 	}
 }
 
+//;; ## camVtolCanDisappear(droid)
+//;;
+//;; Checks if the given VTOL can fly off map if damage or ammo amount allows.
+//;;
+//;; @param {Object} droid
+//;; @returns {Boolean}
+//;;
 function camVtolCanDisappear(droid)
 {
 	if (!camDef(droid))

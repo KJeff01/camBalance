@@ -61,6 +61,49 @@ camAreaEvent("NWDefenseZone", function(droid) {
 	});
 });
 
+//Remove Nexus VTOL droids.
+camAreaEvent("vtolRemoveZone", function(droid)
+{
+	if (droid.player !== CAM_HUMAN_PLAYER && camVtolCanDisappear(droid))
+	{
+		camSafeRemoveObject(droid, false);
+	}
+	resetLabel("vtolRemoveZone", CAM_NEXUS);
+});
+
+function wave2()
+{
+	const list = [cTempl.nxlpulsev, cTempl.nxlpulsev];
+	const ext = {limit: [4, 4], alternate: true, altIdx: 0, useRearmPads: false};
+	camSetVtolData(CAM_NEXUS, undefined, "vtolRemovePos", list, camChangeOnDiff(camMinutesToMilliseconds(3)), undefined, ext);
+}
+
+function wave3()
+{
+	const list = [cTempl.nxlpulsev, cTempl.nxmheapv];
+	const ext = {limit: [4, 4], alternate: true, altIdx: 0, useRearmPads: false};
+	camSetVtolData(CAM_NEXUS, undefined, "vtolRemovePos", list, camChangeOnDiff(camMinutesToMilliseconds(3)), undefined, ext);
+}
+
+//Setup Nexus VTOL hit and runners. Choose a random spawn point for the VTOLs.
+function insaneVtolAttack()
+{
+	if (camClassicMode())
+	{
+		const list = [cTempl.nxmtherv, cTempl.nxmheapv];
+		const ext = {limit: [5, 5], alternate: true, altIdx: 0, useRearmPads: false};
+		camSetVtolData(CAM_NEXUS, undefined, "vtolRemovePos", list, camChangeOnDiff(camMinutesToMilliseconds(3)), undefined, ext);
+	}
+	else
+	{
+		const list = [cTempl.nxmheapv, cTempl.nxmtherv];
+		const ext = {limit: [4, 4], alternate: true, altIdx: 0, useRearmPads: false};
+		camSetVtolData(CAM_NEXUS, undefined, "vtolRemovePos", list, camChangeOnDiff(camMinutesToMilliseconds(3)), undefined, ext);
+		queue("wave2", camChangeOnDiff(camSecondsToMilliseconds(30)));
+		queue("wave3", camChangeOnDiff(camSecondsToMilliseconds(60)));
+	}
+}
+
 function setupGroups()
 {
 	camManageGroup(camMakeGroup("NXVtolBaseCleanup"), CAM_ORDER_ATTACK, {
@@ -117,7 +160,7 @@ function truckDefense()
 	camQueueBuilding(CAM_NEXUS, list[camRand(list.length)], position);
 }
 
-function sendInsaneReinforcementSpawn()
+function insaneReinforcementSpawn()
 {
 	const units = {units: [cTempl.nxmpulseh, cTempl.nxmscouh, cTempl.nxmrailh, cTempl.nxmangel], appended: cTempl.nxmsens};
 	const limits = {minimum: 12, maxRandom: 6};
@@ -406,7 +449,7 @@ function eventStartLevel()
 	setTimer("vaporizeTarget", camSecondsToMilliseconds(10));
 	if (difficulty >= INSANE)
 	{
-		setTimer("sendInsaneReinforcementSpawn", camMinutesToMilliseconds(4));
+		setTimer("insaneReinforcementSpawn", camMinutesToMilliseconds(4));
 		setTimer("insaneTransporterAttack", camMinutesToMilliseconds(2.5));
 	}
 }

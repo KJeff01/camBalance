@@ -95,7 +95,7 @@ function vtolAttack()
 	}
 }
 
-function sendInsaneReinforcementSpawn()
+function insaneReinforcementSpawn()
 {
 	const units = [cTempl.nxcyrail, cTempl.nxcyscou, cTempl.nxcylas, cTempl.nxmscouh, cTempl.nxmrailh];
 	const limits = {minimum: 12, maxRandom: 6};
@@ -411,6 +411,6 @@ function eventStartLevel()
 	queue("vtolAttack", camChangeOnDiff(camMinutesToMilliseconds(5)));
 	if (difficulty >= INSANE)
 	{
-		setTimer("sendInsaneReinforcementSpawn", camMinutesToMilliseconds(6));
+		setTimer("insaneReinforcementSpawn", camMinutesToMilliseconds(6));
 	}
 }
