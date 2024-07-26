@@ -63,10 +63,6 @@
 		"label": "southSpawnPos",
 		"pos": [3328, 32384]
 	},
-	"position_16": {
-		"label": "vtolRemoveZone",
-		"pos": [7040, 32384]
-	},
 
 	"area_0": {
 		"label": "landingZone",
@@ -145,5 +141,12 @@
 		"label": "NXcyborgFac2Arti",
 		"player": 3,
 		"type": 1
+	},
+
+	"radius_0": {
+		"label": "vtolRemoveZone",
+		"subscriber": 3,
+		"pos": [7040, 32384],
+		"radius": 250
 	}
 }

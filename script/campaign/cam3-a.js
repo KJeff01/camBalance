@@ -193,14 +193,14 @@ function wave2()
 {
 	const list = [cTempl.nxlscouv, cTempl.nxlscouv];
 	const ext = {limit: [2, 2], alternate: true, altIdx: 0};
-	camSetVtolData(CAM_NEXUS, "vtolAppearPos", "vtolRemovePos", list, camChangeOnDiff(camMinutesToMilliseconds(5)), "NXCommandCenter", ext);
+	camSetVtolData(CAM_NEXUS, "vtolAppearPos", "vtolRemoveZone", list, camChangeOnDiff(camMinutesToMilliseconds(5)), "NXCommandCenter", ext);
 }
 
 function wave3()
 {
 	const list = [cTempl.nxlneedv, cTempl.nxlneedv];
 	const ext = {limit: [3, 3], alternate: true, altIdx: 0};
-	camSetVtolData(CAM_NEXUS, "vtolAppearPos", "vtolRemovePos", list, camChangeOnDiff(camMinutesToMilliseconds(5)), "NXCommandCenter", ext);
+	camSetVtolData(CAM_NEXUS, "vtolAppearPos", "vtolRemoveZone", list, camChangeOnDiff(camMinutesToMilliseconds(5)), "NXCommandCenter", ext);
 }
 
 //Setup Nexus VTOL hit and runners.
@@ -210,13 +210,13 @@ function vtolAttack()
 	{
 		const list = [cTempl.nxlscouv, cTempl.nxmtherv, cTempl.nxlneedv, cTempl.nxlscouv];
 		const ext = {limit: [2, 4, 2, 2], alternate: true, altIdx: 0};
-		camSetVtolData(CAM_NEXUS, "vtolAppearPos", "vtolRemovePos", list, camChangeOnDiff(camMinutesToMilliseconds(5)), "NXCommandCenter", ext);
+		camSetVtolData(CAM_NEXUS, "vtolAppearPos", "vtolRemoveZone", list, camChangeOnDiff(camMinutesToMilliseconds(5)), "NXCommandCenter", ext);
 	}
 	else
 	{
 		const list = [cTempl.nxmtherv, cTempl.nxmtherv];
 		const ext = {limit: [2, 2], alternate: true, altIdx: 0};
-		camSetVtolData(CAM_NEXUS, "vtolAppearPos", "vtolRemovePos", list, camChangeOnDiff(camMinutesToMilliseconds(5)), "NXCommandCenter", ext);
+		camSetVtolData(CAM_NEXUS, "vtolAppearPos", "vtolRemoveZone", list, camChangeOnDiff(camMinutesToMilliseconds(5)), "NXCommandCenter", ext);
 		queue("wave2", camChangeOnDiff(camSecondsToMilliseconds(30)));
 		queue("wave3", camChangeOnDiff(camSecondsToMilliseconds(60)));
 	}
@@ -260,7 +260,7 @@ function insaneReinforcementSpawn()
 	const units = [cTempl.nxcyrail, cTempl.nxcyscou, cTempl.nxmscouh, cTempl.nxmrailh];
 	const limits = {minimum: 8, maxRandom: 5};
 	const location = ["northSpawnPos", "southSpawnPos"];
-	camSendGenericSpawn(CAM_REINFORCE_GROUND, CAM_NEXUS, CAM_REINFORCE_CONDITION_NO_UNITS, location, units, limits.minimum, limits.maxRandom);
+	camSendGenericSpawn(CAM_REINFORCE_GROUND, CAM_NEXUS, CAM_REINFORCE_CONDITION_UNITS, location, units, limits.minimum, limits.maxRandom);
 }
 
 //Gives starting tech and research.

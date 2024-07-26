@@ -109,14 +109,14 @@ function wave2()
 {
 	const list = [cTempl.colatv, cTempl.colatv];
 	const ext = {limit: [3, 3], alternate: true, altIdx: 0 };
-	camSetVtolData(CAM_THE_COLLECTIVE, (difficulty >= INSANE) ? undefined : "vtolAppearPoint", "vtolRemovePoint", list, camChangeOnDiff(camMinutesToMilliseconds(5)), "COCommandCenter", ext);
+	camSetVtolData(CAM_THE_COLLECTIVE, (difficulty >= INSANE) ? undefined : "vtolAppearPos", "vtolRemoveZone", list, camChangeOnDiff(camMinutesToMilliseconds(5)), "COCommandCenter", ext);
 }
 
 function wave3()
 {
 	const list = [cTempl.colcbv, cTempl.colcbv];
 	const ext = {limit: [3, 3], alternate: true, altIdx: 0};
-	camSetVtolData(CAM_THE_COLLECTIVE, (difficulty >= INSANE) ? undefined : "vtolAppearPoint", "vtolRemovePoint", list, camChangeOnDiff(camMinutesToMilliseconds(5)), "COCommandCenter", ext);
+	camSetVtolData(CAM_THE_COLLECTIVE, (difficulty >= INSANE) ? undefined : "vtolAppearPos", "vtolRemoveZone", list, camChangeOnDiff(camMinutesToMilliseconds(5)), "COCommandCenter", ext);
 }
 
 function vtolAttack()
@@ -125,13 +125,13 @@ function vtolAttack()
 	{
 		const list = [cTempl.colatv, cTempl.colatv];
 		const ext = {limit: [5, 5], alternate: true, altIdx: 0};
-		camSetVtolData(CAM_THE_COLLECTIVE, (difficulty >= INSANE) ? undefined : "vtolAppearPoint", "vtolRemovePoint", list, camChangeOnDiff(camMinutesToMilliseconds(5)), "COCommandCenter", ext);
+		camSetVtolData(CAM_THE_COLLECTIVE, (difficulty >= INSANE) ? undefined : "vtolAppearPos", "vtolRemoveZone", list, camChangeOnDiff(camMinutesToMilliseconds(5)), "COCommandCenter", ext);
 	}
 	else
 	{
 		const list = [cTempl.colpbv, cTempl.colpbv];
 		const ext = {limit: [3, 3], alternate: true, altIdx: 0};
-		camSetVtolData(CAM_THE_COLLECTIVE, (difficulty >= INSANE) ? undefined : "vtolAppearPoint", "vtolRemovePoint", list, camChangeOnDiff(camMinutesToMilliseconds(5)), "COCommandCenter", ext);
+		camSetVtolData(CAM_THE_COLLECTIVE, (difficulty >= INSANE) ? undefined : "vtolAppearPos", "vtolRemoveZone", list, camChangeOnDiff(camMinutesToMilliseconds(5)), "COCommandCenter", ext);
 		queue("wave2", camChangeOnDiff(camSecondsToMilliseconds(30)));
 		queue("wave3", camChangeOnDiff(camSecondsToMilliseconds(60)));
 	}
@@ -143,7 +143,7 @@ function insaneReinforcementSpawn()
 	const units = (USE_WEST_SPAWN) ? [ cTempl.cohct, cTempl.comtathh, cTempl.comorb ] : [ cTempl.cohhch, cTempl.comtath ];
 	const limits = {minimum: 10, maxRandom: 5};
 	const location = (USE_WEST_SPAWN) ? getObject("westSpawnPos") : camGenerateRandomMapEdgeCoordinate(getObject("startPosition"));
-	camSendGenericSpawn(CAM_REINFORCE_GROUND, CAM_NEW_PARADIGM, CAM_REINFORCE_CONDITION_NO_BASES, location, units, limits.minimum, limits.maxRandom);
+	camSendGenericSpawn(CAM_REINFORCE_GROUND, CAM_NEW_PARADIGM, CAM_REINFORCE_CONDITION_BASES, location, units, limits.minimum, limits.maxRandom);
 }
 
 //Order the truck to build some defenses.

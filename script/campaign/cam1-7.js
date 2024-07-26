@@ -84,7 +84,7 @@ function insaneReinforcementSpawn()
 	const units = [cTempl.nphct, cTempl.npcybr, cTempl.npmrl, cTempl.npcybc];
 	const limits = {minimum: 5, maxRandom: 3};
 	const location = camGenerateRandomMapEdgeCoordinate(getObject("startPosition"));
-	camSendGenericSpawn(CAM_REINFORCE_GROUND, CAM_NEW_PARADIGM, CAM_REINFORCE_CONDITION_NO_UNITS, location, units, limits.minimum, limits.maxRandom);
+	camSendGenericSpawn(CAM_REINFORCE_GROUND, CAM_NEW_PARADIGM, CAM_REINFORCE_CONDITION_UNITS, location, units, limits.minimum, limits.maxRandom);
 }
 
 //Only called once when the New Paradigm takes the artifact for the first time.

@@ -148,7 +148,7 @@ function mapEdgeDroids(useInsaneLocations)
 	}
 	const units = (!camClassicMode()) ? [cTempl.npcybm, cTempl.npcybr, cTempl.commrp, cTempl.cohct] : [cTempl.npcybm, cTempl.npcybr, cTempl.commc, cTempl.cohct];
 	const limits = {minimum: 8, maxRandom: 5};
-	camSendGenericSpawn(CAM_REINFORCE_GROUND, CAM_THE_COLLECTIVE, CAM_REINFORCE_CONDITION_NO_UNITS, location, units, limits.minimum, limits.maxRandom);
+	camSendGenericSpawn(CAM_REINFORCE_GROUND, CAM_THE_COLLECTIVE, CAM_REINFORCE_CONDITION_UNITS, location, units, limits.minimum, limits.maxRandom);
 }
 
 function insaneReinforcementSpawn()

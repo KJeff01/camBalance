@@ -55,10 +55,6 @@
 		"label": "buildPos2",
 		"pos": [2688, 512]
 	},
-	"position_14": {
-		"label": "vtolRemoveZone",
-		"pos": [7936, 2560]
-	},
 
 	"area_0": {
 		"label": "landingZone",
@@ -158,5 +154,12 @@
 		"id": 107,
 		"player": 2,
 		"type": 1
+	},
+
+	"radius_0": {
+		"label": "vtolRemoveZone",
+		"subscriber": 2,
+		"pos": [7936, 2560],
+		"radius": 300
 	}
 }

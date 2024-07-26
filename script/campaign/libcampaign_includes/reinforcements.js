@@ -94,11 +94,11 @@ function camSendReinforcement(playerId, position, templates, kind, data)
 //;; `player`: The player that will own these units.
 //;; `condition`: Basic conditions to not spawn anything, can be one of:
 //;;   * `CAM_REINFORCE_CONDITION_NONE` or `undefined`: Do not use a condition, will always attempt a spawn.
-//;;   * `CAM_REINFORCE_CONDITION_NO_BASES`: Do not spawn if all bases are eliminated.
-//;;   * `CAM_REINFORCE_CONDITION_NO_UNITS`: Do not spawn if `player` has zero units.
+//;;   * `CAM_REINFORCE_CONDITION_BASES`: Do not spawn if all bases are eliminated.
+//;;   * `CAM_REINFORCE_CONDITION_UNITS`: Do not spawn if `player` has zero units.
 //;;   * `Object`: {condition: CAM_REINFORCE_CONDITION_OBJECT, object: label_of_object}, spawns only if object is alive.
 //;; `position`: An object that contains coordinate data, such as {x: x, y: y}, to tell where units will appear.
-//;; May be a label or even an array of labels or objects containing coordinates, and if so, will be randomly selected.
+//;;   May be a label or even an array of labels or objects containing coordinates, and if so, will be randomly selected.
 //;; `unitList`: An array of units that will randomly be chosen from, or, a single template.
 //;; May also be an object like so: {units: array_of_units|single_template, appended: array_of_units|single_template}
 //;; `appended` will always additionally be added to the randomly selected units.
@@ -129,8 +129,8 @@ function camSendGenericSpawn(kind, player, condition, position, unitList, minimu
 		switch (realCondition)
 		{
 			case CAM_REINFORCE_CONDITION_NONE: shouldSpawn = true; break;
-			case CAM_REINFORCE_CONDITION_NO_BASES: shouldSpawn = !camAllEnemyBasesEliminated(); break;
-			case CAM_REINFORCE_CONDITION_NO_UNITS: shouldSpawn = (countDroid(DROID_ANY, player) <= 0); break;
+			case CAM_REINFORCE_CONDITION_BASES: shouldSpawn = !camAllEnemyBasesEliminated(); break;
+			case CAM_REINFORCE_CONDITION_UNITS: shouldSpawn = (countDroid(DROID_ANY, player) <= 0); break;
 			case CAM_REINFORCE_CONDITION_OBJECT: shouldSpawn = (getObject(conditionObject) !== null); break;
 			default: camDebug("Unknown generic spawn condition: " + condition);
 		}

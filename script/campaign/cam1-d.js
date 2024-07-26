@@ -71,7 +71,7 @@ function insaneReinforcementSpawn()
 	const units = [cTempl.nphmgh, cTempl.npltath, cTempl.nphch];
 	const limits = {minimum: 6, maxRandom: 4};
 	const location = camGenerateRandomMapEdgeCoordinate(getObject("startPosition"), CAM_GENERIC_WATER_STAT);
-	camSendGenericSpawn(CAM_REINFORCE_GROUND, CAM_NEW_PARADIGM, CAM_REINFORCE_CONDITION_NO_BASES, location, units, limits.minimum, limits.maxRandom);
+	camSendGenericSpawn(CAM_REINFORCE_GROUND, CAM_NEW_PARADIGM, CAM_REINFORCE_CONDITION_BASES, location, units, limits.minimum, limits.maxRandom);
 }
 
 function getDroidsForNPLZ()

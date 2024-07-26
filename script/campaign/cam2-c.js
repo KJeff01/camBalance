@@ -83,7 +83,7 @@ function insaneReinforcementSpawn()
 	const units = [cTempl.comatt, cTempl.comit, cTempl.cohct, cTempl.cohct, cTempl.npcybc];
 	const limits = {minimum: 14, maxRandom: 6};
 	const location = camMakePos(getObject("southWestSpawnPos"));
-	camSendGenericSpawn(CAM_REINFORCE_GROUND, CAM_THE_COLLECTIVE, CAM_REINFORCE_CONDITION_NO_UNITS, location, units, limits.minimum, limits.maxRandom);
+	camSendGenericSpawn(CAM_REINFORCE_GROUND, CAM_THE_COLLECTIVE, CAM_REINFORCE_CONDITION_UNITS, location, units, limits.minimum, limits.maxRandom);
 }
 
 function insaneTransporterAttack()
@@ -91,7 +91,7 @@ function insaneTransporterAttack()
 	const units = [cTempl.cohct, cTempl.commrl, cTempl.comhpv, cTempl.comtathh];
 	const limits = {minimum: 10, maxRandom: 0};
 	const location = camGenerateRandomMapCoordinate(getObject("startPosition"), CAM_GENERIC_LAND_STAT, 10, 1);
-	camSendGenericSpawn(CAM_REINFORCE_TRANSPORT, CAM_THE_COLLECTIVE, CAM_REINFORCE_CONDITION_NO_UNITS, location, units, limits.minimum, limits.maxRandom);
+	camSendGenericSpawn(CAM_REINFORCE_TRANSPORT, CAM_THE_COLLECTIVE, CAM_REINFORCE_CONDITION_UNITS, location, units, limits.minimum, limits.maxRandom);
 }
 
 function enableFactories()

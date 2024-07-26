@@ -293,8 +293,8 @@ const CAM_REINFORCE_NONE = 0;
 const CAM_REINFORCE_GROUND = 1;
 const CAM_REINFORCE_TRANSPORT = 2;
 const CAM_REINFORCE_CONDITION_NONE = 0;
-const CAM_REINFORCE_CONDITION_NO_BASES = 1;
-const CAM_REINFORCE_CONDITION_NO_UNITS = 2;
+const CAM_REINFORCE_CONDITION_BASES = 1;
+const CAM_REINFORCE_CONDITION_UNITS = 2;
 const CAM_REINFORCE_CONDITION_OBJECT = 3;
 
 //debug
@@ -389,6 +389,9 @@ var __camAllowVictoryMsgClear;
 var __camVideoSequences;
 
 //vtol
+const CAM_VTOL_CONDITION_NONE = 0;
+const CAM_VTOL_CONDITION_BASES = 1;
+const CAM_VTOL_CONDITION_UNITS = 2;
 var __camVtolDataSystem;
 //////////globals vars end
 

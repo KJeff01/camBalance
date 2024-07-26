@@ -93,7 +93,7 @@ function insaneReinforcementSpawn()
 	const units = [cTempl.npcybc, cTempl.npcybr];
 	const limits = {minimum: 8, maxRandom: 2};
 	const location = ["insaneSpawnPos1", "insaneSpawnPos2", "insaneSpawnPos3", "insaneSpawnPos4"];
-	camSendGenericSpawn(CAM_REINFORCE_GROUND, CAM_NEW_PARADIGM, CAM_REINFORCE_CONDITION_NO_BASES, location, units, limits.minimum, limits.maxRandom);
+	camSendGenericSpawn(CAM_REINFORCE_GROUND, CAM_NEW_PARADIGM, CAM_REINFORCE_CONDITION_BASES, location, units, limits.minimum, limits.maxRandom);
 }
 
 //These enable Scav and NP factories when close enough

@@ -122,14 +122,14 @@ function wave2()
 {
 	const list = [cTempl.colhvat, cTempl.colhvat];
 	const ext = {limit: [4, 4], alternate: true, altIdx: 0};
-	camSetVtolData(CAM_THE_COLLECTIVE, undefined, "vtolRemovePos", list, camMinutesToMilliseconds(3), undefined, ext);
+	camSetVtolData(CAM_THE_COLLECTIVE, undefined, "vtolRemoveZone", list, camMinutesToMilliseconds(3), undefined, ext);
 }
 
 function wave3()
 {
 	const list = [cTempl.commorv, cTempl.commorv];
 	const ext = {limit: [4, 4], alternate: true, altIdx: 0};
-	camSetVtolData(CAM_THE_COLLECTIVE, undefined, "vtolRemovePos", list, camMinutesToMilliseconds(3), undefined, ext);
+	camSetVtolData(CAM_THE_COLLECTIVE, undefined, "vtolRemoveZone", list, camMinutesToMilliseconds(3), undefined, ext);
 }
 
 function insaneVtolAttack()
@@ -138,13 +138,13 @@ function insaneVtolAttack()
 	{
 		const list = [cTempl.colhvat, cTempl.commorvt];
 		const ext = {limit: [4, 5], alternate: true, altIdx: 0};
-		camSetVtolData(CAM_THE_COLLECTIVE, undefined, "vtolRemovePos", list, camMinutesToMilliseconds(3), undefined, ext);
+		camSetVtolData(CAM_THE_COLLECTIVE, undefined, "vtolRemoveZone", list, camMinutesToMilliseconds(3), undefined, ext);
 	}
 	else
 	{
 		const list = [cTempl.commorvt, cTempl.commorvt];
 		const ext = {limit: [4, 4], alternate: true, altIdx: 0};
-		camSetVtolData(CAM_THE_COLLECTIVE, undefined, "vtolRemovePos", list, camMinutesToMilliseconds(3), undefined, ext);
+		camSetVtolData(CAM_THE_COLLECTIVE, undefined, "vtolRemoveZone", list, camMinutesToMilliseconds(3), undefined, ext);
 		queue("wave2", camChangeOnDiff(camSecondsToMilliseconds(30)));
 		queue("wave3", camChangeOnDiff(camSecondsToMilliseconds(60)));
 	}
@@ -155,7 +155,7 @@ function insaneReinforcementSpawn()
 	const units = [cTempl.cohhvch, cTempl.comagh, cTempl.cohach, cTempl.comltath];
 	const limits = {minimum: 14, maxRandom: 4};
 	const location = camGenerateRandomMapEdgeCoordinate(getObject("startPosition"), CAM_GENERIC_WATER_STAT);
-	camSendGenericSpawn(CAM_REINFORCE_GROUND, CAM_THE_COLLECTIVE, CAM_REINFORCE_CONDITION_NO_UNITS, location, units, limits.minimum, limits.maxRandom);
+	camSendGenericSpawn(CAM_REINFORCE_GROUND, CAM_THE_COLLECTIVE, CAM_REINFORCE_CONDITION_UNITS, location, units, limits.minimum, limits.maxRandom);
 }
 
 function insaneTransporterAttack()
@@ -163,7 +163,7 @@ function insaneTransporterAttack()
 	const units = [cTempl.cohact, cTempl.comrotmh, cTempl.cohhpv, cTempl.comhltat];
 	const limits = {minimum: 10, maxRandom: 0};
 	const location = camGenerateRandomMapCoordinate(getObject("startPosition"), CAM_GENERIC_LAND_STAT, 4, 1);
-	camSendGenericSpawn(CAM_REINFORCE_TRANSPORT, CAM_THE_COLLECTIVE, CAM_REINFORCE_CONDITION_NO_UNITS, location, units, limits.minimum, limits.maxRandom);
+	camSendGenericSpawn(CAM_REINFORCE_TRANSPORT, CAM_THE_COLLECTIVE, CAM_REINFORCE_CONDITION_UNITS, location, units, limits.minimum, limits.maxRandom);
 }
 
 function eventStartLevel()

@@ -5,7 +5,7 @@
 // Vtol rearming is handled in group management.
 ////////////////////////////////////////////////////////////////////////////////
 
-//;; ## camSetVtolData(player, startPos, exitPos, templates, timer, [obj[, extras]])
+//;; ## camSetVtolData(player, startPos, exitPos, templates, timer, [condition[, extras]])
 //;;
 //;; Setup hit and runner VTOLs. NOTE: Will almost immediately spawn VTOLs upon calling this function.
 //;; `Player`: What player number the VTOLs will belong to.
@@ -13,7 +13,10 @@
 //;; `ExitPos`: Exit position object where VTOLs will despawn at.
 //;; `Templates`: An array of templates that the spawn uses.
 //;; `Timer`: How much time in milliseconds the VTOLs will wait to spawn again.
-//;; `Obj`: A game object that will stop the spawn when it no longer exists. May be undefined for no explicit end condition.
+//;; `Condition`: A game object label that will stop the spawn when it no longer exists. Also may be one these generic conditions:
+//;;		`CAM_VTOL_CONDITION_NONE` or `undefined`: No explicit end condition. Mission script must disable if it wants to.
+//;;		`CAM_VTOL_CONDITION_BASES`: Disable when all bases are destroyed.
+//;;		`CAM_VTOL_CONDITION_UNITS`: Disable when all enemy units of `Player` are destroyed.
 //;; `Extras`: An object with possible members:
 //;;		`limit`: Numeric limit of a VTOL design in regards to the parameter Templates. May be an array paired to Templates.
 //;;		`alternate`: A boolean to force the spawn to use one of the designs at a time in parameter Templates.
@@ -27,18 +30,18 @@
 //;; @param {Object} exitPos
 //;; @param {Object[]} templates
 //;; @param {number} timer
-//;; @param {Object} obj
+//;; @param {Object|Number} Condition
 //;; @param {Object} extras
 //;; @returns {void}
 //;;
-function camSetVtolData(player, startPos, exitPos, templates, timer, obj, extras)
+function camSetVtolData(player, startPos, exitPos, templates, timer, condition, extras)
 {
 	__camVtolDataSystem.push({
 		player: player,
 		startPosition: startPos,
 		exitPosition: camMakePos(exitPos),
 		templates: templates,
-		spawnStopObject: obj,
+		spawnStopCondition: condition,
 		extras: extras,
 		timer: timer,
 		nextSpawnTime: timer + gameTime,
@@ -66,7 +69,7 @@ function camSetVtolSpawnState(state, identifier)
 	{
 		for (let idx = 0, len = __camVtolDataSystem.length; idx < len; ++idx)
 		{
-			if (__camVtolDataSystem[idx].spawnStopObject === identifier)
+			if (__camVtolDataSystem[idx].spawnStopCondition === identifier)
 			{
 				__camVtolDataSystem[idx].active = state;
 			}
@@ -126,9 +129,27 @@ function __checkVtolSpawnObject()
 {
 	for (let idx = 0, len = __camVtolDataSystem.length; idx < len; ++idx)
 	{
-		if (__camVtolDataSystem[idx].active && camDef(__camVtolDataSystem[idx].spawnStopObject))
+		if (__camVtolDataSystem[idx].active && camDef(__camVtolDataSystem[idx].spawnStopCondition))
 		{
-			if (getObject(__camVtolDataSystem[idx].spawnStopObject) === null)
+			let deactivateSpawner = false;
+			const __CONDITION = __camVtolDataSystem[idx].spawnStopCondition;
+			if (__CONDITION === CAM_VTOL_CONDITION_NONE)
+			{
+				continue;
+			}
+			if ((__CONDITION === CAM_VTOL_CONDITION_BASES) && camAllEnemyBasesEliminated())
+			{
+				deactivateSpawner = true;
+			}
+			else if ((__CONDITION === CAM_VTOL_CONDITION_UNITS) && (countDroid(DROID_ANY, __camVtolDataSystem[idx].player) <= 0))
+			{
+				deactivateSpawner = true;
+			}
+			else if (getObject(__CONDITION) === null)
+			{
+				deactivateSpawner = true;
+			}
+			if (deactivateSpawner)
 			{
 				camSetVtolSpawnState(false, idx); //Deactivate hit and runner VTOLs.
 			}

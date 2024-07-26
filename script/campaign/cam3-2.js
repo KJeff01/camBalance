@@ -203,7 +203,7 @@ function wave2()
 		alternate: true,
 		altIdx: 0
 	};
-	camSetVtolData(CAM_NEXUS, "vtolAppearPos", "vtolRemovePos", list, camChangeOnDiff(camMinutesToMilliseconds(2)), "NXvtolStrikeTower", ext);
+	camSetVtolData(CAM_NEXUS, "vtolAppearPos", "vtolRemoveZone", list, camChangeOnDiff(camMinutesToMilliseconds(2)), (difficulty >= INSANE) ? undefined : "NXvtolStrikeTower", ext);
 }
 
 function wave3()
@@ -214,7 +214,7 @@ function wave3()
 		alternate: true,
 		altIdx: 0
 	};
-	camSetVtolData(CAM_NEXUS, "vtolAppearPos", "vtolRemovePos", list, camChangeOnDiff(camMinutesToMilliseconds(2)), "NXvtolStrikeTower", ext);
+	camSetVtolData(CAM_NEXUS, "vtolAppearPos", "vtolRemoveZone", list, camChangeOnDiff(camMinutesToMilliseconds(2)), (difficulty >= INSANE) ? undefined : "NXvtolStrikeTower", ext);
 }
 
 //Setup Nexus VTOL hit and runners.
@@ -228,7 +228,7 @@ function vtolAttack()
 			alternate: true,
 			altIdx: 0
 		};
-		camSetVtolData(CAM_NEXUS, "vtolAppearPos", "vtolRemovePos", list, camChangeOnDiff(camMinutesToMilliseconds(2)), "NXvtolStrikeTower", ext);
+		camSetVtolData(CAM_NEXUS, "vtolAppearPos", "vtolRemoveZone", list, camChangeOnDiff(camMinutesToMilliseconds(2)), (difficulty >= INSANE) ? undefined : "NXvtolStrikeTower", ext);
 	}
 	else
 	{
@@ -238,7 +238,7 @@ function vtolAttack()
 			alternate: true,
 			altIdx: 0
 		};
-		camSetVtolData(CAM_NEXUS, "vtolAppearPos", "vtolRemovePos", list, camChangeOnDiff(camMinutesToMilliseconds(2)), "NXvtolStrikeTower", ext);
+		camSetVtolData(CAM_NEXUS, "vtolAppearPos", "vtolRemoveZone", list, camChangeOnDiff(camMinutesToMilliseconds(2)), (difficulty >= INSANE) ? undefined : "NXvtolStrikeTower", ext);
 		queue("wave2", camChangeOnDiff(camSecondsToMilliseconds(30)));
 		queue("wave3", camChangeOnDiff(camSecondsToMilliseconds(60)));
 	}

@@ -49,14 +49,14 @@ function wave2()
 {
 	const list = [cTempl.nxlpulsev, cTempl.nxlpulsev];
 	const ext = {limit: [4, 4], alternate: true, altIdx: 0, useRearmPads: false};
-	camSetVtolData(CAM_NEXUS, undefined, "vtolRemovePos", list, camChangeOnDiff(camMinutesToMilliseconds(3)), undefined, ext);
+	camSetVtolData(CAM_NEXUS, undefined, "vtolRemoveZone", list, camChangeOnDiff(camMinutesToMilliseconds(3)), undefined, ext);
 }
 
 function wave3()
 {
 	const list = [cTempl.nxlpulsev, cTempl.nxmheapv];
 	const ext = {limit: [4, 4], alternate: true, altIdx: 0, useRearmPads: false};
-	camSetVtolData(CAM_NEXUS, undefined, "vtolRemovePos", list, camChangeOnDiff(camMinutesToMilliseconds(3)), undefined, ext);
+	camSetVtolData(CAM_NEXUS, undefined, "vtolRemoveZone", list, camChangeOnDiff(camMinutesToMilliseconds(3)), undefined, ext);
 }
 
 //Setup Nexus VTOL hit and runners. Choose a random spawn point for the VTOLs.
@@ -66,13 +66,13 @@ function insaneVtolAttack()
 	{
 		const list = [cTempl.nxlpulsev, cTempl.nxmheapv];
 		const ext = {limit: [5, 5], alternate: true, altIdx: 0, useRearmPads: false};
-		camSetVtolData(CAM_NEXUS, undefined, "vtolRemovePos", list, camChangeOnDiff(camMinutesToMilliseconds(3)), undefined, ext);
+		camSetVtolData(CAM_NEXUS, undefined, "vtolRemoveZone", list, camChangeOnDiff(camMinutesToMilliseconds(3)), undefined, ext);
 	}
 	else
 	{
 		const list = [cTempl.nxmheapv, cTempl.nxmtherv];
 		const ext = {limit: [4, 4], alternate: true, altIdx: 0, useRearmPads: false};
-		camSetVtolData(CAM_NEXUS, undefined, "vtolRemovePos", list, camChangeOnDiff(camMinutesToMilliseconds(3)), undefined, ext);
+		camSetVtolData(CAM_NEXUS, undefined, "vtolRemoveZone", list, camChangeOnDiff(camMinutesToMilliseconds(3)), undefined, ext);
 		queue("wave2", camChangeOnDiff(camSecondsToMilliseconds(30)));
 		queue("wave3", camChangeOnDiff(camSecondsToMilliseconds(60)));
 	}
@@ -154,7 +154,7 @@ function insaneReinforcementSpawn()
 	const units = {units: [cTempl.nxcyrail, cTempl.nxcyscou, cTempl.nxcylas, cTempl.nxmscouh, cTempl.nxmrailh, cTempl.nxmangel], appended: cTempl.nxmsens};
 	const limits = {minimum: 12, maxRandom: 6};
 	const location = ["southSpawnPos", "eastSpawnPos"];
-	camSendGenericSpawn(CAM_REINFORCE_GROUND, CAM_NEXUS, CAM_REINFORCE_CONDITION_NO_UNITS, location, units, limits.minimum, limits.maxRandom);
+	camSendGenericSpawn(CAM_REINFORCE_GROUND, CAM_NEXUS, CAM_REINFORCE_CONDITION_UNITS, location, units, limits.minimum, limits.maxRandom);
 }
 
 function discoverGammaBase()

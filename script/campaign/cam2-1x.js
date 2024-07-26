@@ -64,14 +64,14 @@ function wave2()
 {
 	const list = [cTempl.colatv, cTempl.colatv];
 	const ext = {limit: [3, 3], alternate: true, altIdx: 0};
-	camSetVtolData(CAM_THE_COLLECTIVE, undefined, "vtolRemove", list, camMinutesToMilliseconds(2.5), undefined, ext);
+	camSetVtolData(CAM_THE_COLLECTIVE, undefined, "vtolRemoveZone", list, camMinutesToMilliseconds(2.5), CAM_VTOL_CONDITION_BASES, ext);
 }
 
 function wave3()
 {
 	const list = [cTempl.colcbv, cTempl.colcbv];
 	const ext = {limit: [2, 2], alternate: true, altIdx: 0};
-	camSetVtolData(CAM_THE_COLLECTIVE, undefined, "vtolRemove", list, camMinutesToMilliseconds(2.5), undefined, ext);
+	camSetVtolData(CAM_THE_COLLECTIVE, undefined, "vtolRemoveZone", list, camMinutesToMilliseconds(2.5), CAM_VTOL_CONDITION_BASES, ext);
 }
 
 function insaneVtolAttack()
@@ -80,13 +80,13 @@ function insaneVtolAttack()
 	{
 		const list = [cTempl.colpbv, cTempl.cTempl.colcbv];
 		const ext = {limit: [5, 5], alternate: true, altIdx: 0};
-		camSetVtolData(CAM_THE_COLLECTIVE, undefined, "vtolRemove", list, camMinutesToMilliseconds(2.5), undefined, ext);
+		camSetVtolData(CAM_THE_COLLECTIVE, undefined, "vtolRemoveZone", list, camMinutesToMilliseconds(2.5), CAM_VTOL_CONDITION_BASES, ext);
 	}
 	else
 	{
 		const list = [cTempl.colpbv, cTempl.colpbv];
 		const ext = {limit: [2, 2], alternate: true, altIdx: 0};
-		camSetVtolData(CAM_THE_COLLECTIVE, undefined, "vtolRemove", list, camMinutesToMilliseconds(2.5), undefined, ext);
+		camSetVtolData(CAM_THE_COLLECTIVE, undefined, "vtolRemoveZone", list, camMinutesToMilliseconds(2.5), CAM_VTOL_CONDITION_BASES, ext);
 		queue("wave2", camChangeOnDiff(camSecondsToMilliseconds(30)));
 		queue("wave3", camChangeOnDiff(camSecondsToMilliseconds(60)));
 	}
@@ -97,7 +97,7 @@ function insaneReinforcementSpawn()
 	const units = [cTempl.commc, cTempl.commrl, cTempl.commrp, cTempl.npcybc];
 	const limits = {minimum: 8, maxRandom: 2};
 	const location = camGenerateRandomMapEdgeCoordinate(getObject("startPosition"));
-	camSendGenericSpawn(CAM_REINFORCE_GROUND, CAM_THE_COLLECTIVE, CAM_REINFORCE_CONDITION_NO_BASES, location, units, limits.minimum, limits.maxRandom);
+	camSendGenericSpawn(CAM_REINFORCE_GROUND, CAM_THE_COLLECTIVE, CAM_REINFORCE_CONDITION_BASES, location, units, limits.minimum, limits.maxRandom);
 }
 
 //function that applies damage to units in the downed transport transport team.
