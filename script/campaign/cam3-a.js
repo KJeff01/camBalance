@@ -263,6 +263,19 @@ function insaneReinforcementSpawn()
 	camSendGenericSpawn(CAM_REINFORCE_GROUND, CAM_NEXUS, CAM_REINFORCE_CONDITION_UNITS, location, units, limits.minimum, limits.maxRandom);
 }
 
+function insaneTransporterAttack()
+{
+	if (getMissionTime() <= camMinutesToSeconds(50))
+	{
+		removeTimer("insaneTransporterAttack");
+		return; // Custom condition: stop after a certain time limit is reached.
+	}
+	const units = [cTempl.nxmscouh, cTempl.nxmrailh];
+	const limits = {minimum: 10, maxRandom: 0};
+	const location = camGenerateRandomMapCoordinate(getObject("startPosition"), CAM_GENERIC_WATER_STAT, 6, 1);
+	camSendGenericSpawn(CAM_REINFORCE_TRANSPORT, CAM_NEXUS, CAM_REINFORCE_CONDITION_NONE, location, units, limits.minimum, limits.maxRandom);
+}
+
 //Gives starting tech and research.
 function cam3Setup()
 {
@@ -512,5 +525,6 @@ function eventStartLevel()
 	if (difficulty >= INSANE)
 	{
 		setTimer("insaneReinforcementSpawn", camMinutesToMilliseconds(5));
+		setTimer("insaneTransporterAttack", camMinutesToMilliseconds(4.5));
 	}
 }

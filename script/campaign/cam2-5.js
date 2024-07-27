@@ -118,7 +118,7 @@ function wave2()
 
 function wave3()
 {
-	const list = [cTempl.commorv, cTempl.commorv];
+	const list = [cTempl.commorv, cTempl.cohcv];
 	const ext = {limit: [4, 4], alternate: true, altIdx: 0};
 	camSetVtolData(CAM_THE_COLLECTIVE, undefined, "vtolRemoveZone", list, camMinutesToMilliseconds(3.5), undefined, ext);
 }

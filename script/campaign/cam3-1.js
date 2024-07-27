@@ -141,6 +141,14 @@ function insaneReinforcementSpawn()
 	camSendGenericSpawn(CAM_REINFORCE_GROUND, CAM_NEXUS, CAM_REINFORCE_CONDITION_NONE, location, units, limits.minimum, limits.maxRandom);
 }
 
+function insaneTransporterAttack()
+{
+	const units = cTempl.nxmscouh;
+	const limits = {minimum: 10, maxRandom: 0};
+	const location = camGenerateRandomMapCoordinate(getObject("startPosition"), CAM_GENERIC_WATER_STAT, 10, 1);
+	camSendGenericSpawn(CAM_REINFORCE_TRANSPORT, CAM_NEXUS, CAM_REINFORCE_CONDITION_NONE, location, units, limits.minimum, limits.maxRandom);
+}
+
 //Setup next mission part if all missile silos are destroyed (setupNextMission()).
 function missileSilosDestroyed()
 {
@@ -437,6 +445,7 @@ function eventStartLevel()
 	queue("enableAllFactories", camChangeOnDiff(camMinutesToMilliseconds(5)));
 	if (difficulty >= INSANE)
 	{
-		setTimer("insaneReinforcementSpawn", camMinutesToMilliseconds(4.5));
+		setTimer("insaneReinforcementSpawn", camMinutesToMilliseconds(3.5));
+		setTimer("insaneTransporterAttack", camMinutesToMilliseconds(2.5));
 	}
 }

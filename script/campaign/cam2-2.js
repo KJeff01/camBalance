@@ -146,6 +146,14 @@ function insaneReinforcementSpawn()
 	camSendGenericSpawn(CAM_REINFORCE_GROUND, CAM_NEW_PARADIGM, CAM_REINFORCE_CONDITION_BASES, location, units, limits.minimum, limits.maxRandom);
 }
 
+function insaneTransporterAttack()
+{
+	const units = cTempl.cohct;
+	const limits = {minimum: 10, maxRandom: 0};
+	const location = camGenerateRandomMapCoordinate(getObject("startPosition"), CAM_GENERIC_LAND_STAT, 8, 1);
+	camSendGenericSpawn(CAM_REINFORCE_TRANSPORT, CAM_THE_COLLECTIVE, CAM_REINFORCE_CONDITION_BASES, location, units, limits.minimum, limits.maxRandom);
+}
+
 //Order the truck to build some defenses.
 function truckDefense()
 {
@@ -286,6 +294,7 @@ function eventStartLevel()
 	if (difficulty >= INSANE)
 	{
 		setTimer("insaneReinforcementSpawn", camMinutesToMilliseconds(2.5));
+		setTimer("insaneTransporterAttack", camMinutesToMilliseconds(3.5));
 	}
 	truckDefense();
 }

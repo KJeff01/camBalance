@@ -98,6 +98,14 @@ function sendCOTransporter()
 	}
 }
 
+function insaneTransporterAttack()
+{
+	const units = getDroidsForCOLZ();
+	const limits = {minimum: 10, maxRandom: 0};
+	const location = camGenerateRandomMapCoordinate(getObject("startPosition"), CAM_GENERIC_LAND_STAT, 6, 1);
+	camSendGenericSpawn(CAM_REINFORCE_TRANSPORT, CAM_THE_COLLECTIVE, CAM_REINFORCE_CONDITION_NONE, location, units, limits.minimum, limits.maxRandom);
+}
+
 //Extra transport units are only awarded to those who start Beta campaign
 //from the main menu. Otherwise a player can just bring in there Alpha units
 function sendPlayerTransporter()
@@ -446,6 +454,7 @@ function eventStartLevel()
 	if (difficulty >= INSANE)
 	{
 		setTimer("insaneReinforcementSpawn", camMinutesToMilliseconds(2.5));
+		setTimer("insaneTransporterAttack", camMinutesToMilliseconds(2));
 	}
 
 	truckDefense();
