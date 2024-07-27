@@ -524,7 +524,7 @@ function eventStartLevel()
 	queue("improveNexusAlloys", camChangeOnDiff(camMinutesToMilliseconds(25)));
 	if (difficulty >= INSANE)
 	{
-		setTimer("insaneReinforcementSpawn", camMinutesToMilliseconds(5));
 		setTimer("insaneTransporterAttack", camMinutesToMilliseconds(4.5));
+		setTimer("insaneReinforcementSpawn", camMinutesToMilliseconds(5));
 	}
 }

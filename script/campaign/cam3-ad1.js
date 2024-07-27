@@ -449,7 +449,7 @@ function eventStartLevel()
 	setTimer("vaporizeTarget", camSecondsToMilliseconds(10));
 	if (difficulty >= INSANE)
 	{
-		setTimer("insaneReinforcementSpawn", camMinutesToMilliseconds(4));
 		setTimer("insaneTransporterAttack", camMinutesToMilliseconds(2.5));
+		setTimer("insaneReinforcementSpawn", camMinutesToMilliseconds(4));
 	}
 }

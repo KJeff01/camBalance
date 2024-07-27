@@ -107,7 +107,7 @@ function insaneTransporterAttack()
 {
 	const units = [cTempl.nxcyrail, cTempl.nxcyscou, cTempl.nxcylas];
 	const limits = {minimum: 10, maxRandom: 0};
-	const location = camGenerateRandomMapCoordinate(getObject("startPosition"), CAM_GENERIC_LAND_STAT, 10, 1);
+	const location = camGenerateRandomMapCoordinate(getObject("startPosition"), CAM_GENERIC_LAND_STAT, 6, 1);
 	camSendGenericSpawn(CAM_REINFORCE_TRANSPORT, CAM_NEXUS, CAM_REINFORCE_CONDITION_UNITS, location, units, limits.minimum, limits.maxRandom);
 }
 
@@ -419,7 +419,7 @@ function eventStartLevel()
 	queue("vtolAttack", camChangeOnDiff(camMinutesToMilliseconds(5)));
 	if (difficulty >= INSANE)
 	{
-		setTimer("insaneReinforcementSpawn", camMinutesToMilliseconds(5));
 		setTimer("insaneTransporterAttack", camMinutesToMilliseconds(3.5));
+		setTimer("insaneReinforcementSpawn", camMinutesToMilliseconds(5));
 	}
 }

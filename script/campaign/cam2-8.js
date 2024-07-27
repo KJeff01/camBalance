@@ -282,8 +282,8 @@ function eventStartLevel()
 	if (difficulty >= INSANE)
 	{
 		queue("insaneVtolAttack", camMinutesToMilliseconds(8));
-		setTimer("insaneReinforcementSpawn", camMinutesToMilliseconds(7));
 		setTimer("insaneTransporterAttack", camMinutesToMilliseconds(3));
+		setTimer("insaneReinforcementSpawn", camMinutesToMilliseconds(7));
 	}
 	truckDefense();
 }
