@@ -89,7 +89,7 @@ function insaneReinforcementSpawn()
 {
 	const units = [cTempl.npltat, cTempl.npmrl, cTempl.npmmct];
 	const limits = {minimum: 8, maxRandom: 6};
-	const location = camGenerateRandomMapEdgeCoordinate(getObject("startPosition"));
+	const location = ["insaneSpawnPos1", "insaneSpawnPos2", "insaneSpawnPos3", "insaneSpawnPos4"];
 	camSendGenericSpawn(CAM_REINFORCE_GROUND, CAM_NEW_PARADIGM, CAM_REINFORCE_CONDITION_BASES, location, units, limits.minimum, limits.maxRandom);
 }
 

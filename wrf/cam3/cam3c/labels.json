@@ -59,10 +59,6 @@
 		"label": "eastSpawnPos",
 		"pos": [8000, 21440]
 	},
-	"position_15": {
-		"label": "vtolRemoveZone",
-		"pos": [1536, 24320]
-	},
 
 	"area_0": {
 		"label": "landingZone",
@@ -165,7 +161,7 @@
 	"radius_0": {
 		"label": "vtolRemoveZone",
 		"subscriber": 3,
-		"pos": [128, 10240],
+		"pos": [1536, 24320],
 		"radius": 250
 	}
 }

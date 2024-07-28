@@ -99,7 +99,7 @@ function insaneReinforcementSpawn()
 {
 	const units = [cTempl.nxcyrail, cTempl.nxcyscou, cTempl.nxcylas, cTempl.nxmscouh, cTempl.nxmrailh];
 	const limits = {minimum: 12, maxRandom: 6};
-	const location = ["northWestSpawnPos", "northEastSpawnPos"];
+	const location = ["westPhantomFactory", "southSpawnPos"];
 	camSendGenericSpawn(CAM_REINFORCE_GROUND, CAM_NEXUS, CAM_REINFORCE_CONDITION_ARTIFACTS, location, units, limits.minimum, limits.maxRandom);
 }
 
