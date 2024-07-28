@@ -158,8 +158,9 @@ function camSendGenericSpawn(kind, player, condition, position, unitList, minimu
 	}
 	camSendReinforcement(player, camMakePos(realPosition), droids, kind, {
 		data: {regroup: false, repair: 66, count: -1},
-		entry: camGenerateRandomMapEdgeCoordinate(), // These two only get used for transporters.
-		exit: camGenerateRandomMapEdgeCoordinate()
+		entry: camGenerateRandomMapEdgeCoordinate(), // These three below only get used for transporters.
+		exit: camGenerateRandomMapEdgeCoordinate(),
+		ignoreBlipRemoval: true
 	});
 	return true;
 }

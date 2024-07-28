@@ -182,8 +182,8 @@ function nexusManufacture()
 
 function manualGrouping()
 {
-	const vtols = enumDroid(CAM_NEXUS).filter((obj) => (obj.group === null && isVTOL(obj)));
-	const nonVtols = enumDroid(CAM_NEXUS).filter((obj) => (obj.group === null && !isVTOL(obj)));
+	const vtols = enumDroid(CAM_NEXUS).filter((obj) => (obj.group === null && !camIsTransporter(obj) && isVTOL(obj)));
+	const nonVtols = enumDroid(CAM_NEXUS).filter((obj) => (obj.group === null && !camIsTransporter(obj) && !isVTOL(obj)));
 	if (vtols.length)
 	{
 		camManageGroup(camMakeGroup(vtols), CAM_ORDER_ATTACK, { regroup: false, count: -1 });
