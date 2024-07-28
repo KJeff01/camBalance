@@ -137,7 +137,7 @@ function insaneTransporterAttack()
 {
 	const units = {units: [cTempl.cohct, cTempl.commrl, cTempl.comorb], appended: cTempl.comsens};
 	const limits = {minimum: 9, maxRandom: 0};
-	const location = camGenerateRandomMapCoordinate(getObject("startPosition"), CAM_GENERIC_LAND_STAT, 6, 1);
+	const location = camGenerateRandomMapCoordinate(getObject("startPosition"), CAM_GENERIC_LAND_STAT, 30, 1); // Western sides are still within limits...
 	camSendGenericSpawn(CAM_REINFORCE_TRANSPORT, CAM_THE_COLLECTIVE, CAM_REINFORCE_CONDITION_ARTIFACTS, location, units, limits.minimum, limits.maxRandom);
 }
 

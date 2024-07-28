@@ -133,7 +133,7 @@ function camSendGenericSpawn(kind, player, condition, position, unitList, minimu
 	let droids = [];
 	const __UNITS_ARE_OBJ = (unitList instanceof Object); // Note: Arrays are "Objects" too.
 	const __UNITS_ARE_ARRAY = (unitList instanceof Array); // So check if actually Array.
-	const realUnitList = (!__UNITS_ARE_ARRAY && __UNITS_ARE_OBJ) ? unitList.units : unitList;
+	const realUnitList = (!__UNITS_ARE_ARRAY && __UNITS_ARE_OBJ && camDef(unitList.units)) ? unitList.units : unitList;
 	for (let i = 0; i < maxSpawns; ++i)
 	{
 		if (__UNITS_ARE_ARRAY || (!__UNITS_ARE_ARRAY && __UNITS_ARE_OBJ && (realUnitList instanceof Array)))

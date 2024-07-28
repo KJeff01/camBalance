@@ -222,6 +222,11 @@ function setupNextMission()
 
 		setReinforcementTime(-1);
 		removeTimer("setupNextMission");
+		if (difficulty >= INSANE)
+		{
+			queue("insaneReinforcementSpawn", camSecondsToMilliseconds(5));
+			setTimer("insaneReinforcementSpawn", camMinutesToMilliseconds(3));
+		}
 	}
 }
 
@@ -446,6 +451,5 @@ function eventStartLevel()
 	if (difficulty >= INSANE)
 	{
 		setTimer("insaneTransporterAttack", camMinutesToMilliseconds(2));
-		setTimer("insaneReinforcementSpawn", camMinutesToMilliseconds(3));
 	}
 }

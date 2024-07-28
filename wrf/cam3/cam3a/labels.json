@@ -97,11 +97,11 @@
 	},
 	"position_24": {
 		"label": "northSpawnPos",
-		"pos": [3968, 3456]
+		"pos": [3584, 8448]
 	},
 	"position_25": {
 		"label": "southSpawnPos",
-		"pos": [3584, 8192]
+		"pos": [4736, 16128]
 	},
 
 	"area_0": {
