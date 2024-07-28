@@ -74,14 +74,14 @@ camAreaEvent("vtolRemoveZone", function(droid)
 function wave2()
 {
 	const list = [cTempl.nxlpulsev, cTempl.nxlpulsev];
-	const ext = {limit: [4, 4], alternate: true, altIdx: 0, useRearmPads: false};
+	const ext = {limit: [4, 4], alternate: true, altIdx: 0};
 	camSetVtolData(CAM_NEXUS, undefined, "vtolRemoveZone", list, camMinutesToMilliseconds(2.5), CAM_REINFORCE_CONDITION_ARTIFACTS, ext);
 }
 
 function wave3()
 {
 	const list = [cTempl.nxlpulsev, cTempl.nxmheapv];
-	const ext = {limit: [4, 4], alternate: true, altIdx: 0, useRearmPads: false};
+	const ext = {limit: [4, 4], alternate: true, altIdx: 0};
 	camSetVtolData(CAM_NEXUS, undefined, "vtolRemoveZone", list, camMinutesToMilliseconds(2.5), CAM_REINFORCE_CONDITION_ARTIFACTS, ext);
 }
 
@@ -91,13 +91,13 @@ function insaneVtolAttack()
 	if (camClassicMode())
 	{
 		const list = [cTempl.nxmtherv, cTempl.nxmheapv];
-		const ext = {limit: [5, 5], alternate: true, altIdx: 0, useRearmPads: false};
+		const ext = {limit: [5, 5], alternate: true, altIdx: 0};
 		camSetVtolData(CAM_NEXUS, undefined, "vtolRemoveZone", list, camMinutesToMilliseconds(2.5), CAM_REINFORCE_CONDITION_ARTIFACTS, ext);
 	}
 	else
 	{
 		const list = [cTempl.nxmheapv, cTempl.nxmtherv];
-		const ext = {limit: [4, 4], alternate: true, altIdx: 0, useRearmPads: false};
+		const ext = {limit: [4, 4], alternate: true, altIdx: 0};
 		camSetVtolData(CAM_NEXUS, undefined, "vtolRemoveZone", list, camMinutesToMilliseconds(2.5), CAM_REINFORCE_CONDITION_ARTIFACTS, ext);
 		queue("wave2", camChangeOnDiff(camSecondsToMilliseconds(30)));
 		queue("wave3", camChangeOnDiff(camSecondsToMilliseconds(60)));

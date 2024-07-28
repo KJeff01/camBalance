@@ -133,14 +133,14 @@ function enableTimeBasedFactories()
 function wave2()
 {
 	const list = [cTempl.colhvat, cTempl.colhvat];
-	const ext = {limit: [3, 3], alternate: true, altIdx: 0, useRearmPads: false};
+	const ext = {limit: [3, 3], alternate: true, altIdx: 0};
 	camSetVtolData(CAM_THE_COLLECTIVE, undefined, "vtolRemoveZone", list, camMinutesToMilliseconds(2.5), CAM_REINFORCE_CONDITION_ARTIFACTS, ext);
 }
 
 function wave3()
 {
 	const list = [cTempl.commorv, cTempl.comhvcv];
-	const ext = {limit: [4, 4], alternate: true, altIdx: 0, useRearmPads: false};
+	const ext = {limit: [4, 4], alternate: true, altIdx: 0};
 	camSetVtolData(CAM_THE_COLLECTIVE, undefined, "vtolRemoveZone", list, camMinutesToMilliseconds(2.5), CAM_REINFORCE_CONDITION_ARTIFACTS, ext);
 }
 
@@ -149,13 +149,13 @@ function insaneVtolAttack()
 	if (camClassicMode())
 	{
 		const list = [cTempl.commorvt, cTempl.commorv, cTempl.colhvat];
-		const ext = {limit: [5, 5, 4], alternate: true, altIdx: 0, useRearmPads: false};
+		const ext = {limit: [5, 5, 4], alternate: true, altIdx: 0};
 		camSetVtolData(CAM_THE_COLLECTIVE, undefined, "vtolRemoveZone", list, camMinutesToMilliseconds(2.5), CAM_REINFORCE_CONDITION_ARTIFACTS, ext);
 	}
 	else
 	{
 		const list = [cTempl.commorvt, cTempl.commorvt];
-		const ext = {limit: [4, 4], alternate: true, altIdx: 0, useRearmPads: false};
+		const ext = {limit: [4, 4], alternate: true, altIdx: 0};
 		camSetVtolData(CAM_THE_COLLECTIVE, undefined, "vtolRemoveZone", list, camMinutesToMilliseconds(2.5), CAM_REINFORCE_CONDITION_ARTIFACTS, ext);
 		queue("wave2", camChangeOnDiff(camSecondsToMilliseconds(30)));
 		queue("wave3", camChangeOnDiff(camSecondsToMilliseconds(60)));

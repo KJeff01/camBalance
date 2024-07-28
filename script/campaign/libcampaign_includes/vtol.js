@@ -20,7 +20,6 @@
 //;;		`altIdx`: Which design index the spawn will first cycle through the list of templates from.
 //;;		`minVTOLs`: Minimum amount of VTOLs that will spawn.
 //;;		`maxRandomVTOLs`: Random amount of VTOLs that will spawn in addition to minVTOLs.
-//;;		`useRearmPads`: Boolean that tells VTOLs to use VTOL Rearming Pads or not.
 //;;
 //;; @param {number} player
 //;; @param {Object|Object[]|undefined} startPos
@@ -163,7 +162,6 @@ function __camSpawnVtols()
 		// Default VTOL amounts
 		let minVtolAmount = 5;
 		let maxRandomAdditions = 2;
-		let allowRearm = true;
 
 		if (camDef(__camVtolDataSystem[idx].extras))
 		{
@@ -174,10 +172,6 @@ function __camSpawnVtols()
 			if (camDef(__camVtolDataSystem[idx].extras.maxRandomVTOLs))
 			{
 				maxRandomAdditions = __camVtolDataSystem[idx].extras.maxRandomVTOLs;
-			}
-			if (camDef(__camVtolDataSystem[idx].extras.useRearmPads))
-			{
-				allowRearm = __camVtolDataSystem[idx].extras.useRearmPads;
 			}
 		}
 
@@ -257,7 +251,7 @@ function __camSpawnVtols()
 		//...And send them.
 		camSendReinforcement(__camVtolDataSystem[idx].player, camMakePos(pos), droids, CAM_REINFORCE_GROUND, {
 			order: CAM_ORDER_ATTACK,
-			data: { regroup: false, count: -1, useRearmPads: allowRearm }
+			data: { regroup: false, count: -1 }
 		});
 	}
 }
@@ -268,9 +262,7 @@ function __camRetreatVtols()
 	{
 		if (camDef(__camVtolDataSystem[idx].exitPosition.x) &&
 			camDef(__camVtolDataSystem[idx].exitPosition.y) &&
-			((enumStruct(__camVtolDataSystem[idx].player, REARM_PAD).length === 0) ||
-			(camDef(__camVtolDataSystem[idx].extras) && camDef(__camVtolDataSystem[idx].extras.useRearmPads) &&
-			!__camVtolDataSystem[idx].extras.useRearmPads)))
+			(enumStruct(__camVtolDataSystem[idx].player, REARM_PAD).length === 0))
 		{
 			const vtols = enumDroid(__camVtolDataSystem[idx].player).filter((obj) => (isVTOL(obj)));
 			for (let i = 0, len = vtols.length; i < len; ++i)

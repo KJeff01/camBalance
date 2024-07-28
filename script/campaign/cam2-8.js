@@ -111,14 +111,14 @@ function truckDefense()
 function wave2()
 {
 	const list = [cTempl.colhvat, cTempl.comacv];
-	const ext = {limit: [3, 5], alternate: true, altIdx: 0, useRearmPads: false};
+	const ext = {limit: [3, 5], alternate: true, altIdx: 0};
 	camSetVtolData(CAM_THE_COLLECTIVE, undefined, "vtolRemoveZone", list, camMinutesToMilliseconds(3), CAM_REINFORCE_CONDITION_ARTIFACTS, ext);
 }
 
 function wave3()
 {
 	const list = [cTempl.comacv, cTempl.commorv];
-	const ext = {limit: [5, 3], alternate: true, altIdx: 0, useRearmPads: false};
+	const ext = {limit: [5, 3], alternate: true, altIdx: 0};
 	camSetVtolData(CAM_THE_COLLECTIVE, undefined, "vtolRemoveZone", list, camMinutesToMilliseconds(3), CAM_REINFORCE_CONDITION_ARTIFACTS, ext);
 }
 
@@ -127,13 +127,13 @@ function insaneVtolAttack()
 	if (camClassicMode())
 	{
 		const list = [cTempl.commorvt, cTempl.commorvt];
-		const ext = {limit: [5, 5], alternate: true, altIdx: 0, useRearmPads: false};
+		const ext = {limit: [5, 5], alternate: true, altIdx: 0};
 		camSetVtolData(CAM_THE_COLLECTIVE, undefined, "vtolRemoveZone", list, camMinutesToMilliseconds(3), CAM_REINFORCE_CONDITION_ARTIFACTS, ext);
 	}
 	else
 	{
 		const list = [cTempl.commorvt, cTempl.commorvt];
-		const ext = {limit: [3, 3], alternate: true, altIdx: 0, useRearmPads: false};
+		const ext = {limit: [3, 3], alternate: true, altIdx: 0};
 		camSetVtolData(CAM_THE_COLLECTIVE, undefined, "vtolRemoveZone", list, camMinutesToMilliseconds(3), CAM_REINFORCE_CONDITION_ARTIFACTS, ext);
 		queue("wave2", camChangeOnDiff(camSecondsToMilliseconds(30)));
 		queue("wave3", camChangeOnDiff(camSecondsToMilliseconds(60)));
