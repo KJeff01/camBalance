@@ -220,6 +220,10 @@ function camReinforcementConditionPasses(condition, player)
 	let conditionObject = condition; // Can be a String directly for example.
 	let realCondition = condition;
 	let shouldSpawn = false;
+	if (camIsString(condition))
+	{
+		realCondition = CAM_REINFORCE_CONDITION_OBJECT;
+	}
 	if (condition instanceof Object)
 	{
 		realCondition = condition.condition;

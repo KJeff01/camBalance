@@ -143,7 +143,7 @@ function insaneReinforcementSpawn()
 	const units = (USE_WEST_SPAWN) ? [ cTempl.cohct, cTempl.comtathh, cTempl.comorb ] : [ cTempl.cohhch, cTempl.comtath ];
 	const limits = {minimum: 10, maxRandom: 5};
 	const location = (USE_WEST_SPAWN) ? getObject("westSpawnPos") : camGenerateRandomMapEdgeCoordinate(getObject("startPosition"));
-	camSendGenericSpawn(CAM_REINFORCE_GROUND, CAM_NEW_PARADIGM, CAM_REINFORCE_CONDITION_BASES, location, units, limits.minimum, limits.maxRandom);
+	camSendGenericSpawn(CAM_REINFORCE_GROUND, CAM_THE_COLLECTIVE, CAM_REINFORCE_CONDITION_BASES, location, units, limits.minimum, limits.maxRandom);
 }
 
 function insaneTransporterAttack()
