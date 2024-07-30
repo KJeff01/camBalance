@@ -87,8 +87,8 @@ camAreaEvent("LandingZoneTrigger", function()
 
 function insaneReinforcementSpawn()
 {
-	const units = [cTempl.nppod, cTempl.nppod, cTempl.npsmct, cTempl.npsmct, cTempl.npmmct];
-	const limits = {minimum: 6, maxRandom: 2};
+	const units = [cTempl.nppod, cTempl.npltat, cTempl.npsmct, cTempl.npsmct, cTempl.npmmct];
+	const limits = {minimum: 6, maxRandom: 4};
 	const location = ["insaneSpawnPos1", "insaneSpawnPos2", "insaneSpawnPos3", "insaneSpawnPos4"];
 	camSendGenericSpawn(CAM_REINFORCE_GROUND, CAM_NEW_PARADIGM, CAM_REINFORCE_CONDITION_BASES, location, units, limits.minimum, limits.maxRandom);
 }

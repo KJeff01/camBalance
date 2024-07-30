@@ -445,7 +445,7 @@ function camBreakAlliances()
 	}
 }
 
-//;; ## camGenerateRandomMapEdgeCoordinate(reachPosition [, propulsion])
+//;; ## camGenerateRandomMapEdgeCoordinate(reachPosition [, propulsion [, distFromReach]])
 //;;
 //;; Returns a random coordinate anywhere on the edge of the map that reachs a position.
 //;; `reachPosition` may be undefined if you just want a random edge coordinate.
@@ -454,11 +454,15 @@ function camBreakAlliances()
 //;; @param {String} propulsion
 //;; @returns {Object}
 //;;
-function camGenerateRandomMapEdgeCoordinate(reachPosition, propulsion)
+function camGenerateRandomMapEdgeCoordinate(reachPosition, propulsion, distFromReach)
 {
 	if (!camDef(propulsion))
 	{
 		propulsion = CAM_GENERIC_LAND_STAT;
+	}
+	if (!camDef(distFromReach))
+	{
+		distFromReach = 0;
 	}
 
 	const limits = getScrollLimits();
@@ -512,8 +516,10 @@ function camGenerateRandomMapEdgeCoordinate(reachPosition, propulsion)
 		loc = location;
 
 		if ((attempts > __MAX_ATTEMPTS) ||
-			!__DEFINED_POS ||
-			(__DEFINED_POS && propulsionCanReach(propulsion, reachPosition.x, reachPosition.y, loc.x, loc.y)))
+			((!__DEFINED_POS ||
+			(__DEFINED_POS &&
+			(camDist(reachPosition.x, reachPosition.y, loc.x, loc.y) >= distFromReach) &&
+			propulsionCanReach(propulsion, reachPosition.x, reachPosition.y, loc.x, loc.y)))))
 		{
 			breakOut = true;
 		}
