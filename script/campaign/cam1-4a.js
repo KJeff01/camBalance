@@ -80,23 +80,23 @@ camAreaEvent("LandingZoneTrigger", function()
 
 	if (difficulty >= INSANE)
 	{
-		setTimer("insaneTransporterAttack", camMinutesToMilliseconds(2.5));
-		setTimer("insaneReinforcementSpawn", camMinutesToMilliseconds(3));
+		setTimer("insaneTransporterAttack", camMinutesToMilliseconds(4));
+		setTimer("insaneReinforcementSpawn", camMinutesToMilliseconds(5));
 	}
 });
 
 function insaneReinforcementSpawn()
 {
-	const units = [cTempl.npltat, cTempl.npmrl, cTempl.npmmct];
-	const limits = {minimum: 8, maxRandom: 6};
+	const units = [cTempl.nppod, cTempl.nppod, cTempl.npsmct, cTempl.npsmct, cTempl.npmmct];
+	const limits = {minimum: 6, maxRandom: 2};
 	const location = ["insaneSpawnPos1", "insaneSpawnPos2", "insaneSpawnPos3", "insaneSpawnPos4"];
 	camSendGenericSpawn(CAM_REINFORCE_GROUND, CAM_NEW_PARADIGM, CAM_REINFORCE_CONDITION_BASES, location, units, limits.minimum, limits.maxRandom);
 }
 
 function insaneTransporterAttack()
 {
-	const units = [cTempl.npmrl, cTempl.npmmct];
-	const limits = {minimum: 10, maxRandom: 0};
+	const units = [cTempl.npmorb, cTempl.npmorb, cTempl.npmorb, cTempl.npsmct];
+	const limits = {minimum: 6, maxRandom: 4};
 	const location = camGenerateRandomMapCoordinate(getObject("StartPosition"), CAM_GENERIC_LAND_STAT, 5, 1);
 	camSendGenericSpawn(CAM_REINFORCE_TRANSPORT, CAM_NEW_PARADIGM, CAM_REINFORCE_CONDITION_BASES, location, units, limits.minimum, limits.maxRandom);
 }

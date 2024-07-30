@@ -45,12 +45,12 @@ function extraVictoryCondition()
 //Makes a large group of ground units appear on map
 function checkForGroundForces()
 {
-	if ((index < 2 && switchLZ === 3) || (difficulty >= INSANE))
+	if (((index < 2) || (difficulty >= INSANE)) && (switchLZ === 3))
 	{
 		//Amounts for the ground force
 		const MAX_CANNON_TANKS = 10;
 		const MAX_ARTILLERY_TANKS = 6;
-		const MAX_INSANE_ADDITIONAL_UNITS = 8 + camRand(3);
+		const MAX_INSANE_ADDITIONAL_UNITS = 2 + camRand(3);
 
 		const droids = [];
 		const insaneTemplates = [ cTempl.npcybr, cTempl.nphct, cTempl.nphmgt ];

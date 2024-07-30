@@ -91,9 +91,17 @@ function getDroidsForNPLZ(args)
 function insaneReinforcementSpawn()
 {
 	const units = [cTempl.npcybc, cTempl.npcybr];
-	const limits = {minimum: 8, maxRandom: 2};
+	const limits = {minimum: 6, maxRandom: 4};
 	const location = ["insaneSpawnPos1", "insaneSpawnPos2", "insaneSpawnPos3", "insaneSpawnPos4"];
 	camSendGenericSpawn(CAM_REINFORCE_GROUND, CAM_NEW_PARADIGM, CAM_REINFORCE_CONDITION_ARTIFACTS, location, units, limits.minimum, limits.maxRandom);
+}
+
+function insaneSetupSpawns()
+{
+	if (difficulty >= INSANE)
+	{
+		setTimer("insaneReinforcementSpawn", camMinutesToMilliseconds(2.5));
+	}
 }
 
 //These enable Scav and NP factories when close enough
@@ -122,11 +130,7 @@ camAreaEvent("NPFactoryTrigger", function(droid)
 		camEnableFactory("NPCyborgFactory");
 		camEnableFactory("NPLeftFactory");
 		camEnableFactory("NPRightFactory");
-
-		if (difficulty >= INSANE)
-		{
-			setTimer("insaneReinforcementSpawn", camMinutesToMilliseconds(1.5));
-		}
+		camCallOnce("insaneSetupSpawns");
 	}
 	else
 	{
@@ -183,11 +187,7 @@ function enableNPFactories()
 	camEnableFactory("NPCyborgFactory");
 	camEnableFactory("NPLeftFactory");
 	camEnableFactory("NPRightFactory");
-
-	if (difficulty >= INSANE)
-	{
-		setTimer("insaneReinforcementSpawn", camMinutesToMilliseconds(1.5));
-	}
+	camCallOnce("insaneSetupSpawns");
 }
 
 //Destroying the New Paradigm base will activate all scav factories

@@ -311,6 +311,6 @@ function eventStartLevel()
 	queue("setupPatrols", camMinutesToMilliseconds(2.5));
 	if (difficulty >= INSANE)
 	{
-		setTimer("insaneReinforcementSpawn", camMinutesToMilliseconds(3));
+		setTimer("insaneReinforcementSpawn", camMinutesToMilliseconds(4.5));
 	}
 }

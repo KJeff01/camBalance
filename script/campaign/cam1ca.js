@@ -151,7 +151,7 @@ function insaneReinforcementSpawn()
 		return;
 	}
 	const units = [cTempl.npltat, cTempl.npmrl, cTempl.npmmct, cTempl.nphmg];
-	const limits = {minimum: 12, maxRandom: 8};
+	const limits = {minimum: 10, maxRandom: 4};
 	const location = ["reinforceNorth", "reinforceNorthEast"];
 	camSendGenericSpawn(CAM_REINFORCE_GROUND, CAM_NEW_PARADIGM, CAM_REINFORCE_CONDITION_NONE, location, units, limits.minimum, limits.maxRandom);
 }
