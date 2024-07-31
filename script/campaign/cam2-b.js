@@ -128,7 +128,7 @@ function vtolAttack()
 function insaneReinforcementSpawn()
 {
 	const units = [cTempl.comatt, cTempl.comit, cTempl.cohct];
-	const limits = {minimum: 16, maxRandom: 4};
+	const limits = {minimum: 7, maxRandom: 3};
 	const location = ["insaneSpawnPos1", "insaneSpawnPos2", "insaneSpawnPos3", "insaneSpawnPos4"];
 	camSendGenericSpawn(CAM_REINFORCE_GROUND, CAM_THE_COLLECTIVE, CAM_REINFORCE_CONDITION_ARTIFACTS, location, units, limits.minimum, limits.maxRandom);
 }
@@ -137,7 +137,7 @@ function insaneTransporterAttack()
 {
 	const units = {units: [cTempl.cohct, cTempl.commrl, cTempl.comorb], appended: cTempl.comsens};
 	const limits = {minimum: 9, maxRandom: 0};
-	const location = camGenerateRandomMapCoordinate(getObject("startPosition"), CAM_GENERIC_LAND_STAT, 30, 1); // Western sides are still within limits...
+	const location = camGenerateRandomMapCoordinate(getObject("startPosition"), CAM_GENERIC_LAND_STAT, 40, 1); // Western sides are still within limits...
 	camSendGenericSpawn(CAM_REINFORCE_TRANSPORT, CAM_THE_COLLECTIVE, CAM_REINFORCE_CONDITION_ARTIFACTS, location, units, limits.minimum, limits.maxRandom);
 }
 
@@ -320,8 +320,8 @@ function eventStartLevel()
 	setTimer("truckDefense", camChangeOnDiff(camMinutesToMilliseconds(3)));
 	if (difficulty >= INSANE)
 	{
-		setTimer("insaneReinforcementSpawn", camMinutesToMilliseconds(2));
-		setTimer("insaneTransporterAttack", camMinutesToMilliseconds(3));
+		setTimer("insaneReinforcementSpawn", camMinutesToMilliseconds(3.5));
+		setTimer("insaneTransporterAttack", camMinutesToMilliseconds(4.5));
 	}
 
 	truckDefense();

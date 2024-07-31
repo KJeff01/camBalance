@@ -92,7 +92,7 @@ function camSendReinforcement(playerId, position, templates, kind, data)
 //;; for maps with VTOL Rearming Pads present, it could be ok as long as the mission script is careful.
 //;; `kind`: Works similar to `camSendReinforcement()`.
 //;; `player`: The player that will own these units.
-//;; `condition`: Works similar to `camSetBaseReinforcements()`.
+//;; `condition`: Works similar to `camReinforcementConditionPasses()`.
 //;; `position`: An object that contains coordinate data, such as {x: x, y: y}, to tell where units will appear.
 //;;   May be a label or even an array of labels or objects containing coordinates, and if so, will be randomly selected.
 //;; `unitList`: An array of units that will randomly be chosen from, or, a single template.

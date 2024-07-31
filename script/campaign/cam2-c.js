@@ -80,8 +80,8 @@ function camEnemyBaseEliminated_COAirBase()
 
 function insaneReinforcementSpawn()
 {
-	const units = [cTempl.comatt, cTempl.comit, cTempl.cohct, cTempl.cohct, cTempl.npcybc];
-	const limits = {minimum: 14, maxRandom: 6};
+	const units = [cTempl.comatt, cTempl.comit, cTempl.cohct, cTempl.commrl, cTempl.comhpv, cTempl.npcybc];
+	const limits = {minimum: 8, maxRandom: 8};
 	const location = camMakePos(getObject("southWestSpawnPos"));
 	camSendGenericSpawn(CAM_REINFORCE_GROUND, CAM_THE_COLLECTIVE, CAM_REINFORCE_CONDITION_UNITS, location, units, limits.minimum, limits.maxRandom);
 }
@@ -90,7 +90,7 @@ function insaneTransporterAttack()
 {
 	const units = [cTempl.cohct, cTempl.commrl, cTempl.comhpv, cTempl.comtathh];
 	const limits = {minimum: 10, maxRandom: 0};
-	const location = camGenerateRandomMapCoordinate(getObject("startPosition"), CAM_GENERIC_LAND_STAT, 6, 1);
+	const location = camGenerateRandomMapCoordinate(getObject("startPosition"), CAM_GENERIC_LAND_STAT, 40, 1);
 	camSendGenericSpawn(CAM_REINFORCE_TRANSPORT, CAM_THE_COLLECTIVE, CAM_REINFORCE_CONDITION_UNITS, location, units, limits.minimum, limits.maxRandom);
 }
 
@@ -454,8 +454,8 @@ function eventStartLevel()
 	setTimer("truckDefense", camChangeOnDiff(camMinutesToMilliseconds(3)));
 	if (difficulty >= INSANE)
 	{
-		setTimer("insaneTransporterAttack", camMinutesToMilliseconds(2.5));
-		setTimer("insaneReinforcementSpawn", camMinutesToMilliseconds(3));
+		setTimer("insaneTransporterAttack", camMinutesToMilliseconds(4));
+		setTimer("insaneReinforcementSpawn", camMinutesToMilliseconds(5));
 	}
 
 	truckDefense();

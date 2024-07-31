@@ -66,14 +66,6 @@ function sendTankForce()
 	*/
 }
 
-function insaneReinforcementSpawn()
-{
-	const units = [cTempl.npsmct, cTempl.nppod];
-	const limits = {minimum: 6, maxRandom: 4};
-	const location = ["reinforceNorth", "reinforceSouthEast"];
-	camSendGenericSpawn(CAM_REINFORCE_GROUND, CAM_NEW_PARADIGM, CAM_REINFORCE_CONDITION_ARTIFACTS, location, units, limits.minimum, limits.maxRandom);
-}
-
 function enableNPFactory()
 {
 	camEnableFactory("NPCentralFactory");
@@ -191,6 +183,14 @@ camAreaEvent("NPLZ2Trigger", function()
 		}
 	);
 });
+
+function insaneReinforcementSpawn()
+{
+	const units = [cTempl.npsmct, cTempl.nppod];
+	const limits = {minimum: 6, maxRandom: 4};
+	const location = ["reinforceNorth", "reinforceSouthEast"];
+	camSendGenericSpawn(CAM_REINFORCE_GROUND, CAM_NEW_PARADIGM, CAM_REINFORCE_CONDITION_ARTIFACTS, location, units, limits.minimum, limits.maxRandom);
+}
 
 function eventStartLevel()
 {
