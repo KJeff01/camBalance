@@ -26,6 +26,7 @@ const mis_collectiveResClassic = [
 	"R-Wpn-Rocket-ROF03", "R-Wpn-RocketSlow-Accuracy03", "R-Wpn-RocketSlow-Damage06",
 	"R-Wpn-RocketSlow-ROF03"
 ];
+const mis_vtolAppearPositions = ["vtolAppearPos1", "vtolAppearPos2", "vtolAppearPos3"];
 
 function camEnemyBaseDetected_COMainBase()
 {
@@ -133,15 +134,15 @@ function enableTimeBasedFactories()
 function wave2()
 {
 	const list = [cTempl.colhvat, cTempl.colhvat];
-	const ext = {limit: [3, 3], alternate: true, altIdx: 0};
-	camSetVtolData(CAM_THE_COLLECTIVE, undefined, "vtolRemoveZone", list, camMinutesToMilliseconds(2.5), CAM_REINFORCE_CONDITION_ARTIFACTS, ext);
+	const ext = {limit: [2, 2], alternate: true, altIdx: 0};
+	camSetVtolData(CAM_THE_COLLECTIVE, mis_vtolAppearPositions, "vtolRemoveZone", list, camMinutesToMilliseconds(3.5), CAM_REINFORCE_CONDITION_ARTIFACTS, ext);
 }
 
 function wave3()
 {
 	const list = [cTempl.commorv, cTempl.comhvcv];
-	const ext = {limit: [4, 4], alternate: true, altIdx: 0};
-	camSetVtolData(CAM_THE_COLLECTIVE, undefined, "vtolRemoveZone", list, camMinutesToMilliseconds(2.5), CAM_REINFORCE_CONDITION_ARTIFACTS, ext);
+	const ext = {limit: [2, 4], alternate: true, altIdx: 0};
+	camSetVtolData(CAM_THE_COLLECTIVE, mis_vtolAppearPositions, "vtolRemoveZone", list, camMinutesToMilliseconds(3.5), CAM_REINFORCE_CONDITION_ARTIFACTS, ext);
 }
 
 function insaneVtolAttack()
@@ -150,13 +151,13 @@ function insaneVtolAttack()
 	{
 		const list = [cTempl.commorvt, cTempl.commorv, cTempl.colhvat];
 		const ext = {limit: [5, 5, 4], alternate: true, altIdx: 0};
-		camSetVtolData(CAM_THE_COLLECTIVE, undefined, "vtolRemoveZone", list, camMinutesToMilliseconds(2.5), CAM_REINFORCE_CONDITION_ARTIFACTS, ext);
+		camSetVtolData(CAM_THE_COLLECTIVE, mis_vtolAppearPositions, "vtolRemoveZone", list, camMinutesToMilliseconds(3.5), CAM_REINFORCE_CONDITION_ARTIFACTS, ext);
 	}
 	else
 	{
 		const list = [cTempl.commorvt, cTempl.commorvt];
-		const ext = {limit: [4, 4], alternate: true, altIdx: 0};
-		camSetVtolData(CAM_THE_COLLECTIVE, undefined, "vtolRemoveZone", list, camMinutesToMilliseconds(2.5), CAM_REINFORCE_CONDITION_ARTIFACTS, ext);
+		const ext = {limit: [2, 2], alternate: true, altIdx: 0};
+		camSetVtolData(CAM_THE_COLLECTIVE, mis_vtolAppearPositions, "vtolRemoveZone", list, camMinutesToMilliseconds(3.5), CAM_REINFORCE_CONDITION_ARTIFACTS, ext);
 		queue("wave2", camChangeOnDiff(camSecondsToMilliseconds(30)));
 		queue("wave3", camChangeOnDiff(camSecondsToMilliseconds(60)));
 	}
@@ -164,8 +165,8 @@ function insaneVtolAttack()
 
 function insaneReinforcementSpawn()
 {
-	const units = {units: [cTempl.comltath, cTempl.cohact, cTempl.comrotm, cTempl.comit], appended: cTempl.comsensh};
-	const limits = {minimum: 12, maxRandom: 4};
+	const units = {units: [cTempl.comltath, cTempl.cohact, cTempl.comrotm, cTempl.comrotm], appended: cTempl.comsensh};
+	const limits = {minimum: 6, maxRandom: 4};
 	const location = camMakePos(getObject("southEastSpawn"));
 	camSendGenericSpawn(CAM_REINFORCE_GROUND, CAM_THE_COLLECTIVE, CAM_REINFORCE_CONDITION_ARTIFACTS, location, units, limits.minimum, limits.maxRandom);
 }
@@ -323,8 +324,8 @@ function eventStartLevel()
 	}
 	if (difficulty >= INSANE)
 	{
-		queue("insaneVtolAttack", camMinutesToMilliseconds(5));
-		setTimer("insaneReinforcementSpawn", camMinutesToMilliseconds(3));
+		queue("insaneVtolAttack", camMinutesToMilliseconds(7));
+		setTimer("insaneReinforcementSpawn", camMinutesToMilliseconds(4.5));
 	}
 
 	queue("northWestAttack", camChangeOnDiff(camMinutesToMilliseconds(3)));

@@ -86,23 +86,23 @@ function vtolAttack()
 function insaneReinforcementSpawn()
 {
 	const units = [cTempl.comltath, cTempl.cohhvch, cTempl.comagh];
-	const limits = {minimum: 14, maxRandom: 6};
-	const location = camGenerateRandomMapEdgeCoordinate(getObject("startPosition"), CAM_GENERIC_WATER_STAT);
+	const limits = {minimum: 5, maxRandom: 3};
+	const location = camGenerateRandomMapEdgeCoordinate(getObject("startPosition"), CAM_GENERIC_WATER_STAT, 20);
 	camSendGenericSpawn(CAM_REINFORCE_GROUND, CAM_THE_COLLECTIVE, CAM_REINFORCE_CONDITION_BASES, location, units, limits.minimum, limits.maxRandom);
 }
 
 function insaneTransporterAttack()
 {
-	const units = (!camClassicMode()) ? [cTempl.cocybsn, cTempl.cocybth, cTempl.cocybtk, cTempl.cocybag] : [cTempl.cohhpv, cTempl.comhltat, cTempl.cohct];
-	const limits = {minimum: 10, maxRandom: 0};
+	const units = (!camClassicMode()) ? [cTempl.cocybsn, cTempl.cocybtk, cTempl.comltath, cTempl.cohhvch] : [cTempl.comltath, cTempl.cohhvch, cTempl.comagh];
+	const limits = {minimum: 6, maxRandom: 4};
 	const location = camGenerateRandomMapCoordinate(getObject("startPosition"), CAM_GENERIC_LAND_STAT, 15, 1);
 	camSendGenericSpawn(CAM_REINFORCE_TRANSPORT, CAM_THE_COLLECTIVE, CAM_REINFORCE_CONDITION_BASES, location, units, limits.minimum, limits.maxRandom);
 }
 
 function insaneSetupSpawns()
 {
-	setTimer("insaneTransporterAttack", camMinutesToMilliseconds(1.5));
-	setTimer("insaneReinforcementSpawn", camMinutesToMilliseconds(2.5));
+	setTimer("insaneTransporterAttack", camMinutesToMilliseconds(2.5));
+	setTimer("insaneReinforcementSpawn", camMinutesToMilliseconds(4));
 }
 
 //The project captured the uplink.

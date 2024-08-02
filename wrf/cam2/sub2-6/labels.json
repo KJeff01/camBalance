@@ -71,6 +71,18 @@
 		"label": "southEastSpawn",
 		"pos": [6272, 7808]
 	},
+	"position_18": {
+		"label": "vtolAppearPos1",
+		"pos": [896, 256]
+	},
+	"position_19": {
+		"label": "vtolAppearPos2",
+		"pos": [7808, 4992]
+	},
+	"position_20": {
+		"label": "vtolAppearPos3",
+		"pos": [6144, 256]
+	},
 
 	"area_0": {
 		"label": "landingZone",

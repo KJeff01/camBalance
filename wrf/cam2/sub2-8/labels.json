@@ -64,8 +64,8 @@
 		"pos": [2304, 3072]
 	},
 	"position_16": {
-		"label": "southWestSpawn",
-		"pos": [256, 7040]
+		"label": "vtolAppearPos",
+		"pos": [2688, 256]
 	},
 
 	"area_0": {

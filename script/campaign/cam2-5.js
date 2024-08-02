@@ -26,6 +26,7 @@ const mis_collectiveResClassic = [
 	"R-Wpn-Rocket-ROF03", "R-Wpn-RocketSlow-Accuracy03", "R-Wpn-RocketSlow-Damage05",
 	"R-Wpn-RocketSlow-ROF03"
 ];
+const mis_vtolAppearPositions = ["vtolAppearPos1", "vtolAppearPos2"];
 
 camAreaEvent("factoryTrigger", function(droid)
 {
@@ -107,35 +108,41 @@ function enableFactories()
 	camEnableFactory("COMediumFactory");
 	camEnableFactory("COCyborgFactoryL");
 	camEnableFactory("COCyborgFactoryR");
+	if (difficulty >= INSANE)
+	{
+		queue("insaneVtolAttack", camMinutesToMilliseconds(2.5));
+		setTimer("insaneReinforcementSpawn", camMinutesToMilliseconds(6));
+		setTimer("insaneTransporterAttack", camMinutesToMilliseconds(7));
+	}
 }
 
 function wave2()
 {
 	const list = [cTempl.colhvat, cTempl.colhvat];
-	const ext = {limit: [4, 4], alternate: true, altIdx: 0};
-	camSetVtolData(CAM_THE_COLLECTIVE, undefined, "vtolRemoveZone", list, camMinutesToMilliseconds(3), CAM_REINFORCE_CONDITION_ARTIFACTS, ext);
+	const ext = {limit: [2, 2], alternate: true, altIdx: 0};
+	camSetVtolData(CAM_THE_COLLECTIVE, mis_vtolAppearPositions, "vtolRemoveZone", list, camMinutesToMilliseconds(4.5), CAM_REINFORCE_CONDITION_ARTIFACTS, ext);
 }
 
 function wave3()
 {
 	const list = [cTempl.commorv, cTempl.comhvcv];
-	const ext = {limit: [4, 4], alternate: true, altIdx: 0};
-	camSetVtolData(CAM_THE_COLLECTIVE, undefined, "vtolRemoveZone", list, camMinutesToMilliseconds(3), CAM_REINFORCE_CONDITION_ARTIFACTS, ext);
+	const ext = {limit: [2, 2], alternate: true, altIdx: 0};
+	camSetVtolData(CAM_THE_COLLECTIVE, mis_vtolAppearPositions, "vtolRemoveZone", list, camMinutesToMilliseconds(4.5), CAM_REINFORCE_CONDITION_ARTIFACTS, ext);
 }
 
 function insaneVtolAttack()
 {
 	if (camClassicMode())
 	{
-		const list = [cTempl.commorvt, cTempl.commorv, cTempl.colhvat];
-		const ext = {limit: [4, 4, 3], alternate: true, altIdx: 0};
-		camSetVtolData(CAM_THE_COLLECTIVE, undefined, "vtolRemoveZone", list, camMinutesToMilliseconds(3), CAM_REINFORCE_CONDITION_ARTIFACTS, ext);
+		const list = [cTempl.colpbv, cTempl.colhvat, cTempl.commorv];
+		const ext = {limit: [4, 3, 4], alternate: true, altIdx: 0};
+		camSetVtolData(CAM_THE_COLLECTIVE, mis_vtolAppearPositions, "vtolRemoveZone", list, camMinutesToMilliseconds(4.5), CAM_REINFORCE_CONDITION_ARTIFACTS, ext);
 	}
 	else
 	{
-		const list = [cTempl.commorvt, cTempl.commorvt];
-		const ext = {limit: [4, 4], alternate: true, altIdx: 0};
-		camSetVtolData(CAM_THE_COLLECTIVE, undefined, "vtolRemoveZone", list, camMinutesToMilliseconds(3), CAM_REINFORCE_CONDITION_ARTIFACTS, ext);
+		const list = [cTempl.colpbv, cTempl.colpbv];
+		const ext = {limit: [2, 2], alternate: true, altIdx: 0};
+		camSetVtolData(CAM_THE_COLLECTIVE, mis_vtolAppearPositions, "vtolRemoveZone", list, camMinutesToMilliseconds(4.5), CAM_REINFORCE_CONDITION_ARTIFACTS, ext);
 		queue("wave2", camChangeOnDiff(camSecondsToMilliseconds(30)));
 		queue("wave3", camChangeOnDiff(camSecondsToMilliseconds(60)));
 	}
@@ -144,16 +151,16 @@ function insaneVtolAttack()
 function insaneReinforcementSpawn()
 {
 	const units = [cTempl.comltath, cTempl.cohhvch, cTempl.comagh];
-	const limits = {minimum: 10, maxRandom: 8};
-	const location = camGenerateRandomMapEdgeCoordinate(getObject("startPosition"), CAM_GENERIC_WATER_STAT);
+	const limits = {minimum: 4, maxRandom: 2};
+	const location = camGenerateRandomMapEdgeCoordinate(getObject("startPosition"), CAM_GENERIC_WATER_STAT, 30);
 	camSendGenericSpawn(CAM_REINFORCE_GROUND, CAM_THE_COLLECTIVE, CAM_REINFORCE_CONDITION_ARTIFACTS, location, units, limits.minimum, limits.maxRandom);
 }
 
 function insaneTransporterAttack()
 {
 	const units = [cTempl.comhltat, cTempl.comhpv, cTempl.comagt];
-	const limits = {minimum: 10, maxRandom: 0};
-	const location = camGenerateRandomMapCoordinate(getObject("startPosition"), CAM_GENERIC_LAND_STAT, 6, 1);
+	const limits = {minimum: 4, maxRandom: 3};
+	const location = camGenerateRandomMapCoordinate(getObject("startPosition"), CAM_GENERIC_LAND_STAT, 30, 1);
 	camSendGenericSpawn(CAM_REINFORCE_TRANSPORT, CAM_THE_COLLECTIVE, CAM_REINFORCE_CONDITION_ARTIFACTS, location, units, limits.minimum, limits.maxRandom);
 }
 
@@ -265,10 +272,4 @@ function eventStartLevel()
 	queue("setupCyborgsEast", camChangeOnDiff(camMinutesToMilliseconds(3)));
 	queue("enableFactories", camChangeOnDiff(camMinutesToMilliseconds(8)));
 	queue("setupCyborgsNorth", camChangeOnDiff(camMinutesToMilliseconds(10)));
-	if (difficulty >= INSANE)
-	{
-		queue("insaneVtolAttack", camMinutesToMilliseconds(4.5));
-		setTimer("insaneReinforcementSpawn", camMinutesToMilliseconds(3));
-		setTimer("insaneTransporterAttack", camMinutesToMilliseconds(3.5));
-	}
 }

@@ -415,7 +415,7 @@ function camMakeGroup(what, playerFilter)
 				camDebug("Trying to add", o);
 				continue;
 			}
-			if (o.type === DROID && o.droidType !== DROID_CONSTRUCT && camPlayerMatchesFilter(o.player, playerFilter))
+			if (o.type === DROID && o.droidType !== DROID_CONSTRUCT && !camIsTransporter(o) && camPlayerMatchesFilter(o.player, playerFilter))
 			{
 				groupAdd(group, o);
 			}
