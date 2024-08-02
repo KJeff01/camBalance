@@ -105,7 +105,7 @@ function camVtolCanDisappear(droid)
 	{
 		return false;
 	}
-	if (!isVTOL(droid))
+	if (!isVTOL(droid) || camIsTransporter(droid))
 	{
 		return false;
 	}
