@@ -20,6 +20,7 @@ camAreaEvent("vtolRemoveZone", function(droid)
 camAreaEvent("northFactoryTrigger", function(droid)
 {
 	improveNexusAlloys();
+	camCallOnce("insaneSetupSpawns");
 	camEnableFactory("NXcybFac-b3");
 	camEnableFactory("NXcybFac-b4");
 
@@ -56,11 +57,22 @@ camAreaEvent ("middleTrigger", function(droid)
 {
 	improveNexusAlloys();
 	enableAllFactories();
+	camCallOnce("insaneSetupSpawns");
 });
+
+function insaneSetupSpawns()
+{
+	if (difficulty >= INSANE)
+	{
+		setTimer("insaneTransporterAttack", camMinutesToMilliseconds(6));
+		setTimer("insaneReinforcementSpawn", camMinutesToMilliseconds(7));
+	}
+}
 
 function enableWestFactories()
 {
 	improveNexusAlloys();
+	camCallOnce("insaneSetupSpawns");
 	camEnableFactory("NXcybFac-b2-1");
 	camEnableFactory("NXcybFac-b2-2");
 	camEnableFactory("NXHvyFac-b2");
@@ -101,6 +113,7 @@ function enableAllFactories()
 		"NXcybFac-b3", "NXcybFac-b2-1", "NXcybFac-b2-2", "NXHvyFac-b2", "NXcybFac-b4",
 	];
 
+	camCallOnce("insaneSetupSpawns");
 	for (let j = 0, i = factoryNames.length; j < i; ++j)
 	{
 		camEnableFactory(factoryNames[j]);
@@ -258,16 +271,16 @@ function groupPatrolNoTrigger()
 function insaneReinforcementSpawn()
 {
 	const units = [cTempl.nxcyrail, cTempl.nxcyscou, cTempl.nxmscouh, cTempl.nxmrailh];
-	const limits = {minimum: 8, maxRandom: 5};
+	const limits = {minimum: 4, maxRandom: 2};
 	const location = ["northSpawnPos", "southSpawnPos"];
 	camSendGenericSpawn(CAM_REINFORCE_GROUND, CAM_NEXUS, CAM_REINFORCE_CONDITION_ARTIFACTS, location, units, limits.minimum, limits.maxRandom);
 }
 
 function insaneTransporterAttack()
 {
-	const units = [cTempl.nxmscouh, cTempl.nxmrailh];
-	const limits = {minimum: 10, maxRandom: 0};
-	const location = camGenerateRandomMapCoordinate(getObject("startPosition"), CAM_GENERIC_WATER_STAT, 6, 1);
+	const units = [cTempl.nxcyrail, cTempl.nxcyscou, cTempl.nxmscouh, cTempl.nxmrailh];
+	const limits = {minimum: 4, maxRandom: 2};
+	const location = camMakePos("NexusTransporterLandingPos");
 	camSendGenericSpawn(CAM_REINFORCE_TRANSPORT, CAM_NEXUS, CAM_REINFORCE_CONDITION_ARTIFACTS, location, units, limits.minimum, limits.maxRandom);
 }
 
@@ -517,9 +530,4 @@ function eventStartLevel()
 	queue("vtolAttack", camChangeOnDiff(camMinutesToMilliseconds(8)));
 	queue("enableAllFactories", camChangeOnDiff(camMinutesToMilliseconds(20)));
 	queue("improveNexusAlloys", camChangeOnDiff(camMinutesToMilliseconds(25)));
-	if (difficulty >= INSANE)
-	{
-		setTimer("insaneTransporterAttack", camMinutesToMilliseconds(4));
-		setTimer("insaneReinforcementSpawn", camMinutesToMilliseconds(5));
-	}
 }

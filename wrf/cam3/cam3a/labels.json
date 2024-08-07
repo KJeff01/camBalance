@@ -103,6 +103,10 @@
 		"label": "southSpawnPos",
 		"pos": [4736, 16128]
 	},
+	"position_26": {
+		"label": "NexusTransporterLandingPos",
+		"pos": [1152, 12544]
+	},
 
 	"area_0": {
 		"label": "landingZone",
