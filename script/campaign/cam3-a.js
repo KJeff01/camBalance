@@ -64,8 +64,8 @@ function insaneSetupSpawns()
 {
 	if (difficulty >= INSANE)
 	{
-		setTimer("insaneTransporterAttack", camMinutesToMilliseconds(6));
-		setTimer("insaneReinforcementSpawn", camMinutesToMilliseconds(7));
+		setTimer("insaneTransporterAttack", camMinutesToMilliseconds(4.5));
+		setTimer("insaneReinforcementSpawn", camMinutesToMilliseconds(5.5));
 	}
 }
 

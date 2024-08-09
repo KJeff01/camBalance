@@ -136,16 +136,16 @@ function hoverAttack()
 function insaneReinforcementSpawn()
 {
 	const units = [cTempl.nxcyrail, cTempl.nxcyscou, cTempl.nxcylas, cTempl.nxmscouh, cTempl.nxmrailh];
-	const limits = {minimum: 10, maxRandom: 5};
+	const limits = {minimum: 8, maxRandom: 4};
 	const location = ["northWestSpawnPos", "northEastSpawnPos"];
 	camSendGenericSpawn(CAM_REINFORCE_GROUND, CAM_NEXUS, CAM_REINFORCE_CONDITION_NONE, location, units, limits.minimum, limits.maxRandom);
 }
 
 function insaneTransporterAttack()
 {
-	const units = cTempl.nxmscouh;
-	const limits = {minimum: 10, maxRandom: 0};
-	const location = camGenerateRandomMapCoordinate(getObject("startPosition"), CAM_GENERIC_WATER_STAT, 6, 1);
+	const units = [cTempl.nxmscouh, cTempl.nxmrailh, cTempl.nxmrailh];
+	const limits = {minimum: 5, maxRandom: 5};
+	const location = camGenerateRandomMapCoordinate(getObject("startPosition"), CAM_GENERIC_WATER_STAT, 30, 1);
 	camSendGenericSpawn(CAM_REINFORCE_TRANSPORT, CAM_NEXUS, CAM_REINFORCE_CONDITION_NONE, location, units, limits.minimum, limits.maxRandom);
 }
 
@@ -225,7 +225,7 @@ function setupNextMission()
 		if (difficulty >= INSANE)
 		{
 			queue("insaneReinforcementSpawn", camSecondsToMilliseconds(5));
-			setTimer("insaneReinforcementSpawn", camMinutesToMilliseconds(3));
+			setTimer("insaneReinforcementSpawn", camMinutesToMilliseconds(2.5));
 		}
 	}
 }
@@ -450,6 +450,6 @@ function eventStartLevel()
 	queue("enableAllFactories", camChangeOnDiff(camMinutesToMilliseconds(5)));
 	if (difficulty >= INSANE)
 	{
-		setTimer("insaneTransporterAttack", camMinutesToMilliseconds(2));
+		setTimer("insaneTransporterAttack", camMinutesToMilliseconds(4));
 	}
 }
