@@ -357,7 +357,7 @@ function eventStartLevel()
 	if (difficulty >= HARD)
 	{
 		addDroid(CAM_NEXUS, 31, 185, "Truck Retribution Hover", tBody.tank.retribution, tProp.tank.hover2, "", "", tConstruct.truck);
-		camManageTrucks(CAM_NEXUS);
+		camManageTrucks(CAM_NEXUS, false);
 	}
 
 	camPlayVideos([{video: "MB3_C_MSG", type: CAMP_MSG}, {video: "MB3_C_MSG2", type: MISS_MSG}]);

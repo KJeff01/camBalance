@@ -281,7 +281,7 @@ function eventStartLevel()
 	}
 
 	setupNexusPatrols();
-	camManageTrucks(CAM_NEXUS);
+	camManageTrucks(CAM_NEXUS, false);
 
 	camSetArtifacts({
 		"NX-NWCyborgFactory": { tech: "R-Wpn-RailGun03" },

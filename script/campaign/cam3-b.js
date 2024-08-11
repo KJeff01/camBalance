@@ -65,15 +65,15 @@ function camEnemyBaseEliminated_NXWestBase()
 function wave2()
 {
 	const list = [cTempl.nxlscouv, cTempl.nxlscouv];
-	const ext = {limit: [4, 4], alternate: true, altIdx: 0};
-	camSetVtolData(CAM_NEXUS, "vtolAppearPos", "vtolRemoveZone", list, camChangeOnDiff(camMinutesToMilliseconds(2)), (difficulty >= INSANE) ? CAM_REINFORCE_CONDITION_ARTIFACTS : "NXCommandCenter", ext);
+	const ext = {limit: [3, 3], alternate: true, altIdx: 0};
+	camSetVtolData(CAM_NEXUS, "vtolAppearPos", "vtolRemoveZone", list, camChangeOnDiff(camMinutesToMilliseconds(3.5)), (difficulty >= INSANE) ? CAM_REINFORCE_CONDITION_ARTIFACTS : "NXCommandCenter", ext);
 }
 
 function wave3()
 {
 	const list = [cTempl.nxlneedv, cTempl.nxlneedv];
 	const ext = {limit: [4, 4], alternate: true, altIdx: 0};
-	camSetVtolData(CAM_NEXUS, "vtolAppearPos", "vtolRemoveZone", list, camChangeOnDiff(camMinutesToMilliseconds(2)), (difficulty >= INSANE) ? CAM_REINFORCE_CONDITION_ARTIFACTS : "NXCommandCenter", ext);
+	camSetVtolData(CAM_NEXUS, "vtolAppearPos", "vtolRemoveZone", list, camChangeOnDiff(camMinutesToMilliseconds(3.5)), (difficulty >= INSANE) ? CAM_REINFORCE_CONDITION_ARTIFACTS : "NXCommandCenter", ext);
 }
 
 //Setup Nexus VTOL hit and runners.
@@ -88,8 +88,8 @@ function vtolAttack()
 	else
 	{
 		const list = [cTempl.nxmheapv, cTempl.nxmtherv];
-		const ext = {limit: [4, 4], alternate: true, altIdx: 0};
-		camSetVtolData(CAM_NEXUS, "vtolAppearPos", "vtolRemoveZone", list, camChangeOnDiff(camMinutesToMilliseconds(2)), (difficulty >= INSANE) ? CAM_REINFORCE_CONDITION_ARTIFACTS : "NXCommandCenter", ext);
+		const ext = {limit: [3, 2], alternate: true, altIdx: 0};
+		camSetVtolData(CAM_NEXUS, "vtolAppearPos", "vtolRemoveZone", list, camChangeOnDiff(camMinutesToMilliseconds(3.5)), (difficulty >= INSANE) ? CAM_REINFORCE_CONDITION_ARTIFACTS : "NXCommandCenter", ext);
 		queue("wave2", camChangeOnDiff(camSecondsToMilliseconds(30)));
 		queue("wave3", camChangeOnDiff(camSecondsToMilliseconds(60)));
 	}
@@ -97,18 +97,10 @@ function vtolAttack()
 
 function insaneReinforcementSpawn()
 {
-	const units = [cTempl.nxcyrail, cTempl.nxcyscou, cTempl.nxcylas, cTempl.nxmscouh, cTempl.nxmrailh];
-	const limits = {minimum: 12, maxRandom: 6};
-	const location = ["westPhantomFactory", "southSpawnPos"];
+	const units = [cTempl.nxcyrail, cTempl.nxcyscou, cTempl.nxcylas, cTempl.nxmlinkh, cTempl.nxmrailh];
+	const limits = {minimum: 4, maxRandom: 4};
+	const location = ["westPhantomFactory", "eastPhantomFactory"];
 	camSendGenericSpawn(CAM_REINFORCE_GROUND, CAM_NEXUS, CAM_REINFORCE_CONDITION_ARTIFACTS, location, units, limits.minimum, limits.maxRandom);
-}
-
-function insaneTransporterAttack()
-{
-	const units = [cTempl.nxcyrail, cTempl.nxcyscou, cTempl.nxcylas];
-	const limits = {minimum: 10, maxRandom: 0};
-	const location = camGenerateRandomMapCoordinate(getObject("startPosition"), CAM_GENERIC_LAND_STAT, 6, 1);
-	camSendGenericSpawn(CAM_REINFORCE_TRANSPORT, CAM_NEXUS, CAM_REINFORCE_CONDITION_ARTIFACTS, location, units, limits.minimum, limits.maxRandom);
 }
 
 function enableAllFactories()
@@ -284,6 +276,10 @@ function trapSprung()
 	setTimer("sendNXTransporter", camChangeOnDiff(camMinutesToMilliseconds(3)));
 	setTimer("sendNXlandReinforcements", camChangeOnDiff(camMinutesToMilliseconds(4)));
 	setTimer("truckDefense", camChangeOnDiff(camMinutesToMilliseconds(4.5)));
+	if (difficulty >= INSANE)
+	{
+		setTimer("insaneReinforcementSpawn", camMinutesToMilliseconds(6));
+	}
 }
 
 function setupCapture()
@@ -405,7 +401,7 @@ function eventStartLevel()
 	if (difficulty >= HARD)
 	{
 		addDroid(MIS_GAMMA_PLAYER, 28, 5, "Truck Python Tracks", tBody.tank.python, tProp.tank.tracks, "", "", tConstruct.truck);
-		camManageTrucks(MIS_GAMMA_PLAYER);
+		camManageTrucks(MIS_GAMMA_PLAYER, false);
 	}
 
 	setAlliance(MIS_GAMMA_PLAYER, CAM_HUMAN_PLAYER, true);
@@ -417,9 +413,4 @@ function eventStartLevel()
 
 	queue("transferPower", camSecondsToMilliseconds(3));
 	queue("vtolAttack", camChangeOnDiff(camMinutesToMilliseconds(5)));
-	if (difficulty >= INSANE)
-	{
-		setTimer("insaneTransporterAttack", camMinutesToMilliseconds(2));
-		setTimer("insaneReinforcementSpawn", camMinutesToMilliseconds(3.5));
-	}
 }

@@ -68,6 +68,11 @@ camAreaEvent("phantomFacTrigger", function(droid)
 	camPlayVideos([cam_sounds.incoming.incomingIntelligenceReport, {video: "MB3_2_MSG3", type: CAMP_MSG}]); //Warn about VTOLs.
 	queue("enableReinforcements", camSecondsToMilliseconds(5));
 	queue("vtolAttack", camChangeOnDiff(camMinutesToMilliseconds(2)));
+	if (difficulty >= INSANE)
+	{
+		queue("insaneTransporterAttack", camSecondsToMilliseconds(20));
+		setTimer("insaneTransporterAttack", camMinutesToMilliseconds(3.5));
+	}
 });
 
 function setAlphaExp()
@@ -124,6 +129,14 @@ function phantomFactorySE()
 function sendEdgeMapDroids(droidCount, location, list)
 {
 	camSendGenericSpawn(CAM_REINFORCE_GROUND, CAM_NEXUS, CAM_REINFORCE_CONDITION_NONE, location, list, droidCount);
+}
+
+function insaneTransporterAttack()
+{
+	const units = [cTempl.nxcyrail, cTempl.nxcyscou, cTempl.nxcylas, cTempl.nxmscouh, cTempl.nxlflash, cTempl.nxmrailh];
+	const limits = {minimum: 8, maxRandom: 2};
+	const location = camGenerateRandomMapCoordinate(getObject("startPosition"), CAM_GENERIC_LAND_STAT, 30, 1);
+	camSendGenericSpawn(CAM_REINFORCE_TRANSPORT, CAM_NEXUS, CAM_REINFORCE_CONDITION_NONE, location, units, limits.minimum, limits.maxRandom);
 }
 
 function setupPatrolGroups()

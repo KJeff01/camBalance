@@ -505,7 +505,7 @@ function eventStartLevel()
 	if (difficulty >= HARD)
 	{
 		addDroid(CAM_NEXUS, 8, 112, "Truck Retribution Hover", tBody.tank.retribution, tProp.tank.hover2, "", "", tConstruct.truck);
-		camManageTrucks(CAM_NEXUS);
+		camManageTrucks(CAM_NEXUS, false);
 		setTimer("truckDefense", camChangeOnDiff(camMinutesToMilliseconds(4.5)));
 	}
 
