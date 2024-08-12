@@ -106,7 +106,7 @@ function vtolAttack()
 
 function insaneTransporterAttack()
 {
-	if (getResearch(cam_resistance_circuits.fourth).done)
+	if (getResearch(cam_resistance_circuits.third).done)
 	{
 		return;
 	}
@@ -317,6 +317,6 @@ function eventStartLevel()
 	setTimer("sendEdgeMapDroids", camChangeOnDiff(camMinutesToMilliseconds(4)));
 	if (difficulty >= INSANE)
 	{
-		setTimer("insaneTransporterAttack", camMinutesToMilliseconds(3));
+		setTimer("insaneTransporterAttack", camMinutesToMilliseconds(5));
 	}
 }
