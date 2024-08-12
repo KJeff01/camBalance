@@ -27,6 +27,7 @@ const mis_nexusResClassic = [
 	"R-Wpn-Rail-Damage02", "R-Wpn-Rail-ROF02", "R-Sys-Sensor-Upgrade01",
 	"R-Sys-NEXUSrepair", "R-Wpn-Flamer-Damage06", "R-Sys-NEXUSsensor",
 ];
+const mis_vtolAppearPositions = ["vtolSpawnPos1", "vtolSpawnPos2"];
 var reunited;
 var betaUnitIds;
 var truckLocCounter;
@@ -47,16 +48,16 @@ camAreaEvent("vtolRemoveZone", function(droid)
 
 function wave2()
 {
-	const list = [cTempl.nxlpulsev, cTempl.nxlpulsev];
-	const ext = {limit: [4, 4], alternate: true, altIdx: 0};
-	camSetVtolData(CAM_NEXUS, undefined, "vtolRemoveZone", list, camMinutesToMilliseconds(3), CAM_REINFORCE_CONDITION_ARTIFACTS, ext);
+	const list = [cTempl.nxlscouv, cTempl.nxlscouv];
+	const ext = {limit: [2, 2], alternate: true, altIdx: 0};
+	camSetVtolData(CAM_NEXUS, mis_vtolAppearPositions, "vtolRemoveZone", list, camMinutesToMilliseconds(4.5), CAM_REINFORCE_CONDITION_ARTIFACTS, ext);
 }
 
 function wave3()
 {
-	const list = [cTempl.nxlpulsev, cTempl.nxmheapv];
-	const ext = {limit: [4, 4], alternate: true, altIdx: 0};
-	camSetVtolData(CAM_NEXUS, undefined, "vtolRemoveZone", list, camMinutesToMilliseconds(3), CAM_REINFORCE_CONDITION_ARTIFACTS, ext);
+	const list = [cTempl.nxlpulsev, cTempl.nxlpulsev];
+	const ext = {limit: [3, 3], alternate: true, altIdx: 0};
+	camSetVtolData(CAM_NEXUS, mis_vtolAppearPositions, "vtolRemoveZone", list, camMinutesToMilliseconds(4.5), CAM_REINFORCE_CONDITION_ARTIFACTS, ext);
 }
 
 //Setup Nexus VTOL hit and runners. Choose a random spawn point for the VTOLs.
@@ -66,13 +67,13 @@ function insaneVtolAttack()
 	{
 		const list = [cTempl.nxlpulsev, cTempl.nxmheapv];
 		const ext = {limit: [5, 5], alternate: true, altIdx: 0};
-		camSetVtolData(CAM_NEXUS, undefined, "vtolRemoveZone", list, camMinutesToMilliseconds(3), CAM_REINFORCE_CONDITION_ARTIFACTS, ext);
+		camSetVtolData(CAM_NEXUS, mis_vtolAppearPositions, "vtolRemoveZone", list, camMinutesToMilliseconds(4.5), CAM_REINFORCE_CONDITION_ARTIFACTS, ext);
 	}
 	else
 	{
 		const list = [cTempl.nxmheapv, cTempl.nxmtherv];
-		const ext = {limit: [4, 4], alternate: true, altIdx: 0};
-		camSetVtolData(CAM_NEXUS, undefined, "vtolRemoveZone", list, camMinutesToMilliseconds(3), CAM_REINFORCE_CONDITION_ARTIFACTS, ext);
+		const ext = {limit: [2, 2], alternate: true, altIdx: 0};
+		camSetVtolData(CAM_NEXUS, mis_vtolAppearPositions, "vtolRemoveZone", list, camMinutesToMilliseconds(4.5), CAM_REINFORCE_CONDITION_ARTIFACTS, ext);
 		queue("wave2", camChangeOnDiff(camSecondsToMilliseconds(30)));
 		queue("wave3", camChangeOnDiff(camSecondsToMilliseconds(60)));
 	}
@@ -152,7 +153,7 @@ function truckDefense()
 function insaneReinforcementSpawn()
 {
 	const units = {units: [cTempl.nxcyrail, cTempl.nxcyscou, cTempl.nxcylas, cTempl.nxmscouh, cTempl.nxmrailh, cTempl.nxmangel], appended: cTempl.nxmsens};
-	const limits = {minimum: 12, maxRandom: 6};
+	const limits = {minimum: 4, maxRandom: 4};
 	const location = ["southSpawnPos", "eastSpawnPos"];
 	camSendGenericSpawn(CAM_REINFORCE_GROUND, CAM_NEXUS, CAM_REINFORCE_CONDITION_ARTIFACTS, location, units, limits.minimum, limits.maxRandom);
 }
@@ -181,8 +182,8 @@ function discoverGammaBase()
 	enableAllFactories();
 	if (difficulty >= INSANE)
 	{
-		setTimer("insaneReinforcementSpawn", camMinutesToMilliseconds(2.5));
-		queue("insaneVtolAttack", camMinutesToMilliseconds(1));
+		setTimer("insaneReinforcementSpawn", camMinutesToMilliseconds(6.5));
+		queue("insaneVtolAttack", camMinutesToMilliseconds(10));
 	}
 }
 

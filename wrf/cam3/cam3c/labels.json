@@ -59,6 +59,14 @@
 		"label": "eastSpawnPos",
 		"pos": [8000, 21440]
 	},
+	"position_15": {
+		"label": "vtolSpawnPos1",
+		"pos": [3840, 24704]
+	},
+	"position_16": {
+		"label": "vtolSpawnPos2",
+		"pos": [7808, 22400]
+	},
 
 	"area_0": {
 		"label": "landingZone",
