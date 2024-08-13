@@ -415,7 +415,7 @@ function camMakeGroup(what, playerFilter)
 				camDebug("Trying to add", o);
 				continue;
 			}
-			if (o.type === DROID && o.droidType !== DROID_CONSTRUCT && camPlayerMatchesFilter(o.player, playerFilter))
+			if (o.type === DROID && o.droidType !== DROID_CONSTRUCT && !camIsTransporter(o) && camPlayerMatchesFilter(o.player, playerFilter))
 			{
 				groupAdd(group, o);
 			}
@@ -445,20 +445,36 @@ function camBreakAlliances()
 	}
 }
 
-//;; ## camGenerateRandomMapEdgeCoordinate(reachPosition)
+//;; ## camGenerateRandomMapEdgeCoordinate(reachPosition [, propulsion [, distFromReach]])
 //;;
 //;; Returns a random coordinate anywhere on the edge of the map that reachs a position.
+//;; `reachPosition` may be undefined if you just want a random edge coordinate.
 //;;
 //;; @param {Object} reachPosition
+//;; @param {String} propulsion
 //;; @returns {Object}
 //;;
-function camGenerateRandomMapEdgeCoordinate(reachPosition)
+function camGenerateRandomMapEdgeCoordinate(reachPosition, propulsion, distFromReach)
 {
+	if (!camDef(propulsion))
+	{
+		propulsion = CAM_GENERIC_LAND_STAT;
+	}
+	if (!camDef(distFromReach))
+	{
+		distFromReach = 0;
+	}
+
 	const limits = getScrollLimits();
+	const __MAX_ATTEMPTS = 10000;
+	const __DEFINED_POS = (camDef(reachPosition) && reachPosition);
+	let attempts = 0;
+	let breakOut = false;
 	let loc;
 
-	do
+	while (!breakOut)
 	{
+		++attempts;
 		const location = {x: 0, y: 0};
 		let xWasRandom = false;
 
@@ -498,34 +514,59 @@ function camGenerateRandomMapEdgeCoordinate(reachPosition)
 		}
 
 		loc = location;
-	} while (camDef(reachPosition) && reachPosition && !propulsionCanReach(CAM_GENERIC_LAND_STAT, reachPosition.x, reachPosition.y, loc.x, loc.y));
+
+		if ((attempts > __MAX_ATTEMPTS) ||
+			((!__DEFINED_POS ||
+			(__DEFINED_POS &&
+			(camDist(reachPosition.x, reachPosition.y, loc.x, loc.y) >= distFromReach) &&
+			propulsionCanReach(propulsion, reachPosition.x, reachPosition.y, loc.x, loc.y)))))
+		{
+			breakOut = true;
+		}
+	}
 
 	return loc;
 }
 
-//;; ## camGenerateRandomMapCoordinate(reachPosition)
+//;; ## camGenerateRandomMapCoordinate(reachPosition [, propulsion [, distFromReach [, scanObjectRadius]]])
 //;;
 //;; Returns a random coordinate anywhere on the map
 //;;
 //;; @param {Object} reachPosition
+//;; @param {String} propulsion
+//;; @param {Number} distFromReach
+//;; @param {Number} scanObjectRadius
 //;; @returns {Object}
 //;;
-function camGenerateRandomMapCoordinate(reachPosition, distFromReach, scanObjectRadius)
+function camGenerateRandomMapCoordinate(reachPosition, propulsion, distFromReach, scanObjectRadius)
 {
+	if (!camDef(reachPosition) || !reachPosition)
+	{
+		camDebug("Undefined reachPosition when attempting to generate random coordinate.");
+		return {x: (mapWidth / 2), y: (mapHeight / 2)}; // Better than nothing.
+	}
 	if (!camDef(distFromReach))
 	{
 		distFromReach = 10;
 	}
 	if (!camDef(scanObjectRadius))
 	{
-		scanObjectRadius = 2;
+		scanObjectRadius = 1;
+	}
+	if (!camDef(propulsion))
+	{
+		propulsion = CAM_GENERIC_LAND_STAT;
 	}
 
 	const limits = getScrollLimits();
+	const __MAX_ATTEMPTS = 10000;
+	let attempts = 0;
+	let breakOut = false;
 	let pos;
 
-	do
+	while (!breakOut)
 	{
+		++attempts;
 		let randomPos = {x: camRand(limits.x2), y: camRand(limits.y2)};
 
 		if (randomPos.x < (limits.x + 2))
@@ -547,11 +588,14 @@ function camGenerateRandomMapCoordinate(reachPosition, distFromReach, scanObject
 		}
 
 		pos = randomPos;
-	} while (camDef(reachPosition) &&
-		reachPosition &&
-		!propulsionCanReach(CAM_GENERIC_LAND_STAT, reachPosition.x, reachPosition.y, pos.x, pos.y) &&
-		(camDist(pos, reachPosition) < distFromReach) &&
-		(enumRange(pos.x, pos.y, scanObjectRadius, ALL_PLAYERS, false).length > 0));
+		if ((attempts > __MAX_ATTEMPTS) ||
+			((camDist(pos, reachPosition) >= distFromReach) &&
+			propulsionCanReach(propulsion, reachPosition.x, reachPosition.y, pos.x, pos.y) &&
+			!enumRange(pos.x, pos.y, scanObjectRadius, ALL_PLAYERS, false).length))
+		{
+			breakOut = true;
+		}
+	}
 
 	return pos;
 }
