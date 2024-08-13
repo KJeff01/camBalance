@@ -50,27 +50,6 @@ camAreaEvent("vtolRemoveZone", function(droid)
 	resetLabel("vtolRemoveZone", CAM_NEXUS);
 });
 
-//Return a random assortment of droids with the given templates.
-function randomTemplates(list)
-{
-	const extras = [cTempl.nxmsens, cTempl.nxmsamh];
-	const droids = [];
-	const SIZE = 12 + camRand(4); //Max of 15.
-
-	for (let i = 0; i < SIZE; ++i)
-	{
-		droids.push(list[camRand(list.length)]);
-	}
-
-	//Sensor and vindicator hovers.
-	for (let i = 0; i < 4; ++i)
-	{
-		droids.push(extras[camRand(extras.length)]);
-	}
-
-	return droids;
-}
-
 function wave2()
 {
 	const list = [cTempl.nxlpulsev, cTempl.nxlpulsev];
@@ -112,38 +91,43 @@ function phantomFactorySpawn()
 		return;
 	}
 
-	let list;
-	let chosenFactory;
+	let units;
+	let location;
+	const extraUnits = [cTempl.nxmsens, cTempl.nxmsens, cTempl.nxmsamh, cTempl.nxmsamh];
+	const UNIT_LIMIT_FOR_SPAWN = 40;
 
 	switch (camRand(3))
 	{
 		case 0:
-			list = [cTempl.nxhgauss, cTempl.nxmpulseh, cTempl.nxmlinkh];
-			chosenFactory = "phantomFacWest";
+			units = {units: [cTempl.nxhgauss, cTempl.nxmpulseh, cTempl.nxmlinkh], appended: extraUnits};
+			location = "phantomFacWest";
 			break;
 		case 1:
-			list = [cTempl.nxhgauss, cTempl.nxmpulseh, cTempl.nxmlinkh];
-			chosenFactory = "phantomFacEast";
+			units = {units: [cTempl.nxhgauss, cTempl.nxmpulseh, cTempl.nxmlinkh], appended: extraUnits};
+			location = "phantomFacEast";
 			break;
 		case 2:
-			list = [cTempl.nxcylas, cTempl.nxcyrail, cTempl.nxcyscou, cTempl.nxhgauss, cTempl.nxmpulseh, cTempl.nxmlinkh];
-			chosenFactory = "phantomFacMiddle";
+			units = {units: [cTempl.nxcylas, cTempl.nxcyrail, cTempl.nxcyscou, cTempl.nxhgauss, cTempl.nxmpulseh, cTempl.nxmlinkh], appended: extraUnits};
+			location = "phantomFacMiddle";
 			break;
 		default:
-			list = [cTempl.nxhgauss, cTempl.nxmpulseh, cTempl.nxmlinkh];
-			chosenFactory = "phantomFacWest";
+			units = {units: [cTempl.nxhgauss, cTempl.nxmpulseh, cTempl.nxmlinkh], appended: extraUnits};
+			location = "phantomFacWest";
 	}
-	if (difficulty >= INSANE && camRand(100) < 25)
+	if (difficulty >= INSANE)
 	{
-		list = [cTempl.nxhgauss, cTempl.nxmpulseh, cTempl.nxmscouh];
-		chosenFactory = "phantomFacSouth";
+		if (camRand(100) < 20)
+		{
+			units = {units: [cTempl.nxhgauss, cTempl.nxmpulseh, cTempl.nxmscouh], appended: extraUnits};
+			location = "phantomFacSouth";
+		}
+		units.units.push(cTempl.nxmangel); //Insane adds Angel units as a possibility.
 	}
 
-	if (countDroid(DROID_ANY, CAM_NEXUS) < 80)
+	if (countDroid(DROID_ANY, CAM_NEXUS) < UNIT_LIMIT_FOR_SPAWN)
 	{
-		camSendReinforcement(CAM_NEXUS, camMakePos(chosenFactory), randomTemplates(list), CAM_REINFORCE_GROUND, {
-			data: { regroup: false, count: -1, },
-		});
+		const limits = {minimum: 12, maxRandom: 3};
+		camSendGenericSpawn(CAM_REINFORCE_GROUND, CAM_NEXUS, CAM_REINFORCE_CONDITION_NONE, location, units, limits.minimum, limits.maxRandom);
 	}
 }
 
@@ -153,9 +137,9 @@ function insaneTransporterAttack()
 	{
 		return;
 	}
-	const units = [cTempl.nxhgauss, cTempl.nxmpulseh, cTempl.nxmscouh];
+	const units = [cTempl.nxhgauss, cTempl.nxhgauss, cTempl.nxmpulseh, cTempl.nxmpulseh, cTempl.nxmscouh];
 	const limits = {minimum: 10, maxRandom: 0};
-	const location = camGenerateRandomMapCoordinate(getObject("startPosition"), CAM_GENERIC_WATER_STAT, 4, 1);
+	const location = camGenerateRandomMapCoordinate(getObject("startPosition"), CAM_GENERIC_WATER_STAT, 25, 2);
 	camSendGenericSpawn(CAM_REINFORCE_TRANSPORT, CAM_NEXUS, CAM_REINFORCE_CONDITION_NONE, location, units, limits.minimum, limits.maxRandom);
 }
 
