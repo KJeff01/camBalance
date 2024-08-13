@@ -26,6 +26,16 @@ const mis_collectiveResClassic = [
 	"R-Wpn-Rocket-ROF03", "R-Wpn-RocketSlow-Accuracy03", "R-Wpn-RocketSlow-Damage06",
 	"R-Wpn-RocketSlow-ROF03"
 ];
+const mis_vtolAppearPositions = ["vtolAppearPos1", "vtolAppearPos2"];
+
+camAreaEvent("vtolRemoveZone", function(droid)
+{
+	if ((droid.player !== CAM_HUMAN_PLAYER) && camVtolCanDisappear(droid))
+	{
+		camSafeRemoveObject(droid, false);
+	}
+	resetLabel("vtolRemoveZone", CAM_THE_COLLECTIVE);
+});
 
 function camEnemyBaseDetected_COBase1()
 {
@@ -107,6 +117,66 @@ function truckDefense()
 	const list = ["Emplacement-Howitzer105", "Emplacement-Rocket06-IDF", "Sys-CB-Tower01", "Emplacement-Howitzer105", "Emplacement-Rocket06-IDF", "Sys-SensoTower02"];
 	camQueueBuilding(CAM_THE_COLLECTIVE, list[camRand(list.length)], camMakePos("buildPos1"));
 	camQueueBuilding(CAM_THE_COLLECTIVE, list[camRand(list.length)], camMakePos("buildPos2"));
+}
+
+function wave2()
+{
+	const list = [cTempl.colhvat, cTempl.colhvat];
+	const ext = {limit: [2, 2], alternate: true, altIdx: 0};
+	camSetVtolData(CAM_THE_COLLECTIVE, mis_vtolAppearPositions, "vtolRemoveZone", list, camMinutesToMilliseconds(4.5), CAM_REINFORCE_CONDITION_ARTIFACTS, ext);
+}
+
+function wave3()
+{
+	const list = [cTempl.commorv, cTempl.comacv];
+	const ext = {limit: [2, 3], alternate: true, altIdx: 0};
+	camSetVtolData(CAM_THE_COLLECTIVE, mis_vtolAppearPositions, "vtolRemoveZone", list, camMinutesToMilliseconds(4.5), CAM_REINFORCE_CONDITION_ARTIFACTS, ext);
+}
+
+function insaneVtolAttack()
+{
+	if (camClassicMode())
+	{
+		const list = [cTempl.colhvat, cTempl.commorvt];
+		const ext = {limit: [4, 5], alternate: true, altIdx: 0};
+		camSetVtolData(CAM_THE_COLLECTIVE, mis_vtolAppearPositions, "vtolRemoveZone", list, camMinutesToMilliseconds(4.5), CAM_REINFORCE_CONDITION_ARTIFACTS, ext);
+	}
+	else
+	{
+		const list = [cTempl.commorvt, cTempl.commorvt];
+		const ext = {limit: [2, 2], alternate: true, altIdx: 0};
+		camSetVtolData(CAM_THE_COLLECTIVE, mis_vtolAppearPositions, "vtolRemoveZone", list, camMinutesToMilliseconds(4.5), CAM_REINFORCE_CONDITION_ARTIFACTS, ext);
+		queue("wave2", camChangeOnDiff(camSecondsToMilliseconds(30)));
+		queue("wave3", camChangeOnDiff(camSecondsToMilliseconds(60)));
+	}
+}
+
+function insaneReinforcementSpawn()
+{
+	const DISTANCE_FROM_POS = 30;
+	const units = [cTempl.cohhvch, cTempl.comagh, cTempl.cohach, cTempl.comltath];
+	const limits = {minimum: 4, maxRandom: 2};
+	const location = camGenerateRandomMapEdgeCoordinate(getObject("startPosition"), CAM_GENERIC_WATER_STAT, DISTANCE_FROM_POS);
+	camSendGenericSpawn(CAM_REINFORCE_GROUND, CAM_THE_COLLECTIVE, CAM_REINFORCE_CONDITION_ARTIFACTS, location, units, limits.minimum, limits.maxRandom);
+}
+
+function insaneTransporterAttack()
+{
+	const DISTANCE_FROM_POS = 30;
+	const units = [cTempl.cohact, cTempl.comrotmh, cTempl.cohhpv, cTempl.comhltat];
+	const limits = {minimum: 4, maxRandom: 2};
+	const location = camGenerateRandomMapCoordinate(getObject("startPosition"), CAM_GENERIC_LAND_STAT, DISTANCE_FROM_POS);
+	camSendGenericSpawn(CAM_REINFORCE_TRANSPORT, CAM_THE_COLLECTIVE, CAM_REINFORCE_CONDITION_ARTIFACTS, location, units, limits.minimum, limits.maxRandom);
+}
+
+function insaneSetupSpawns()
+{
+	if (difficulty >= INSANE)
+	{
+		queue("insaneVtolAttack", camMinutesToMilliseconds(2));
+		setTimer("insaneReinforcementSpawn", camMinutesToMilliseconds(5.5));
+		setTimer("insaneTransporterAttack", camMinutesToMilliseconds(6.5));
+	}
 }
 
 function eventStartLevel()
@@ -271,4 +341,5 @@ function eventStartLevel()
 	queue("baseThreeVtolAttack", camChangeOnDiff(camSecondsToMilliseconds(90)));
 	queue("baseFourVtolAttack", camChangeOnDiff(camMinutesToMilliseconds(2)));
 	queue("enableFactoriesAndHovers", camSecondsToMilliseconds(90));
+	queue("insaneSetupSpawns", camMinutesToMilliseconds(7));
 }
