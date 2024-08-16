@@ -3910,8 +3910,8 @@
 			"R-Wpn-Cannon5",
 			"R-Defense-WallTower-HPVcannon"
 		],
-		"researchPoints": 2400,
-		"researchPower": 75,
+		"researchPoints": 5400,
+		"researchPower": 168,
 		"resultStructures": [
 			"Wall-VulcanCan"
 		],
@@ -3929,8 +3929,8 @@
 			"R-Wpn-Cannon4AMk1",
 			"R-Defense-WallTower04"
 		],
-		"researchPoints": 7200,
-		"researchPower": 225,
+		"researchPoints": 3600,
+		"researchPower": 112,
 		"resultStructures": [
 			"WallTower-HPVcannon"
 		],
