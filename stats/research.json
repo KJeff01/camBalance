@@ -3718,8 +3718,8 @@
 		"requiredResearch": [
 			"R-Wpn-Cannon4AMk1"
 		],
-		"researchPoints": 900,
-		"researchPower": 28,
+		"researchPoints": 1200,
+		"researchPower": 37,
 		"resultStructures": [
 			"Emplacement-HPVcannon"
 		],
@@ -6740,8 +6740,8 @@
 			"R-Wpn-RailGun03",
 			"R-Defense-Rail2"
 		],
-		"researchPoints": 7200,
-		"researchPower": 225,
+		"researchPoints": 4600,
+		"researchPower": 143,
 		"resultStructures": [
 			"Emplacement-Rail3"
 		],
