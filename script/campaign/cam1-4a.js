@@ -178,7 +178,7 @@ function eventStartLevel()
 		camUpgradeOnMapTemplates(cTempl.rbjeep, cTempl.rbjeep8, CAM_SCAV_7);
 
 		camSetArtifacts({
-			"NPCommandCenter": { tech: "R-Vehicle-Metals01" },
+			"NPCommandCenter": { tech: "R-Vehicle-Metals02" },
 			"NPResearchFacility": { tech: "R-Wpn-MG-Damage04" },
 			"MediumNPFactory": { tech: "R-Wpn-Rocket02-MRL" },
 			"HeavyNPFactory": { tech: "R-Wpn-Rocket-Damage02" },
