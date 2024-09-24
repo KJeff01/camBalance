@@ -468,6 +468,7 @@ function camGenerateRandomMapEdgeCoordinate(reachPosition, propulsion, distFromR
 	const limits = getScrollLimits();
 	const __MAX_ATTEMPTS = 10000;
 	const __DEFINED_POS = (camDef(reachPosition) && reachPosition);
+	const __OFFSET = 3; // Gives transporters enough space to turn around near map edges.
 	let attempts = 0;
 	let breakOut = false;
 	let loc;
@@ -481,36 +482,36 @@ function camGenerateRandomMapEdgeCoordinate(reachPosition, propulsion, distFromR
 		if (camRand(100) < 50)
 		{
 			location.x = camRand(limits.x2 + 1);
-			if (location.x < (limits.x + 2))
+			if (location.x < (limits.x + __OFFSET))
 			{
-				location.x = limits.x + 2;
+				location.x = limits.x + __OFFSET;
 			}
-			else if (location.x > (limits.x2 - 2))
+			else if (location.x > (limits.x2 - __OFFSET))
 			{
-				location.x = limits.x2 - 2;
+				location.x = limits.x2 - __OFFSET;
 			}
 			xWasRandom = true;
 		}
 		else
 		{
-			location.x = (camRand(100) < 50) ? (limits.x2 - 2) : (limits.x + 2);
+			location.x = (camRand(100) < 50) ? (limits.x2 - __OFFSET) : (limits.x + __OFFSET);
 		}
 
 		if (!xWasRandom && (camRand(100) < 50))
 		{
 			location.y = camRand(limits.y2 + 1);
-			if (location.y < (limits.y + 2))
+			if (location.y < (limits.y + __OFFSET))
 			{
-				location.y = limits.y + 2;
+				location.y = limits.y + __OFFSET;
 			}
-			else if (location.y > (limits.y2 - 2))
+			else if (location.y > (limits.y2 - __OFFSET))
 			{
-				location.y = limits.y2 - 2;
+				location.y = limits.y2 - __OFFSET;
 			}
 		}
 		else
 		{
-			location.y = (camRand(100) < 50) ? (limits.y2 - 2) : (limits.y + 2);
+			location.y = (camRand(100) < 50) ? (limits.y2 - __OFFSET) : (limits.y + __OFFSET);
 		}
 
 		loc = location;
@@ -560,6 +561,7 @@ function camGenerateRandomMapCoordinate(reachPosition, propulsion, distFromReach
 
 	const limits = getScrollLimits();
 	const __MAX_ATTEMPTS = 10000;
+	const __OFFSET = 3; // Gives transporters enough space to turn around near map edges.
 	let attempts = 0;
 	let breakOut = false;
 	let pos;
@@ -569,22 +571,22 @@ function camGenerateRandomMapCoordinate(reachPosition, propulsion, distFromReach
 		++attempts;
 		let randomPos = {x: camRand(limits.x2), y: camRand(limits.y2)};
 
-		if (randomPos.x < (limits.x + 2))
+		if (randomPos.x < (limits.x + __OFFSET))
 		{
-			randomPos.x = limits.x + 2;
+			randomPos.x = limits.x + __OFFSET;
 		}
-		else if (randomPos.x > (limits.x2 - 2))
+		else if (randomPos.x > (limits.x2 - __OFFSET))
 		{
-			randomPos.x = limits.x2 - 2;
+			randomPos.x = limits.x2 - __OFFSET;
 		}
 
-		if (randomPos.y < (limits.y + 2))
+		if (randomPos.y < (limits.y + __OFFSET))
 		{
 			randomPos.y = limits.y;
 		}
-		else if (randomPos.y > (limits.y2 - 2))
+		else if (randomPos.y > (limits.y2 - __OFFSET))
 		{
-			randomPos.y = limits.y2 - 2;
+			randomPos.y = limits.y2 - __OFFSET;
 		}
 
 		pos = randomPos;
