@@ -176,6 +176,7 @@ function eventStartLevel()
 		camUpgradeOnMapTemplates(cTempl.buggy, cTempl.buggyheavy, CAM_SCAV_7);
 		camUpgradeOnMapTemplates(cTempl.bjeep, cTempl.bjeepheavy, CAM_SCAV_7);
 		camUpgradeOnMapTemplates(cTempl.rbjeep, cTempl.rbjeep8, CAM_SCAV_7);
+		camUpgradeOnMapTemplates(cTempl.npmor, cTempl.npmorb, CAM_NEW_PARADIGM);
 
 		camSetArtifacts({
 			"NPCommandCenter": { tech: "R-Vehicle-Metals01" },
