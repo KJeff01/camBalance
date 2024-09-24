@@ -179,7 +179,7 @@ function eventStartLevel()
 		camUpgradeOnMapTemplates(cTempl.npmor, cTempl.npmorb, CAM_NEW_PARADIGM);
 
 		camSetArtifacts({
-			"NPCommandCenter": { tech: "R-Vehicle-Metals01" },
+			"NPCommandCenter": { tech: "R-Vehicle-Metals02" },
 			"NPResearchFacility": { tech: "R-Wpn-MG-Damage04" },
 			"MediumNPFactory": { tech: "R-Wpn-Rocket02-MRL" },
 			"HeavyNPFactory": { tech: "R-Wpn-Rocket-Damage02" },
