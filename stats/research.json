@@ -3169,8 +3169,8 @@
 			"R-Wpn-Mortar-Damage02",
 			"R-Vehicle-Metals02"
 		],
-		"researchPoints": 7200,
-		"researchPower": 225,
+		"researchPoints": 4800,
+		"researchPower": 150,
 		"resultComponents": [
 			"Mortar2Mk1"
 		],
