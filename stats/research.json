@@ -1277,8 +1277,8 @@
 		"requiredResearch": [
 			"R-Wpn-Missile2A-T"
 		],
-		"researchPoints": 14400,
-		"researchPower": 450,
+		"researchPoints": 6400,
+		"researchPower": 200,
 		"resultComponents": [
 			"Cyb-Wpn-Atmiss"
 		],
@@ -1292,8 +1292,8 @@
 		"requiredResearch": [
 			"R-Wpn-Laser01"
 		],
-		"researchPoints": 14400,
-		"researchPower": 450,
+		"researchPoints": 4800,
+		"researchPower": 150,
 		"resultComponents": [
 			"Cyb-Wpn-Laser"
 		],
@@ -1310,8 +1310,8 @@
 		"requiredResearch": [
 			"R-Wpn-RailGun01"
 		],
-		"researchPoints": 14400,
-		"researchPower": 450,
+		"researchPoints": 5600,
+		"researchPower": 175,
 		"resultComponents": [
 			"Cyb-Wpn-Rail1"
 		],
