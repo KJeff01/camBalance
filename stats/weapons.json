@@ -2087,7 +2087,7 @@
 		"effectSize": 100,
 		"explosionWav": "lsrexpl.ogg",
 		"facePlayer": 1,
-		"firePause": 30,
+		"firePause": 22,
 		"flags": "ShootAir",
 		"flightGfx": "FXPLAmmo.PIE",
 		"flightSpeed": 1800,
