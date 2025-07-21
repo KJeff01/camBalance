@@ -2897,7 +2897,7 @@
 		"weaponEffect": "ANTI AIRCRAFT",
 		"weaponSubClass": "MISSILE",
 		"weaponWav": "rocket.ogg",
-		"weight": 6000
+		"weight": 600
 	},
 	"Missile-LtSAM": {
 		"buildPoints": 800,
