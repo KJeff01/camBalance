@@ -320,7 +320,7 @@ function eventStartLevel()
 		}
 
 		camSetArtifacts({
-			"artifact1": { tech: ["R-Wpn-Cannon3Mk1", "R-Wpn-RocketSlow-Damage03"] },
+			"artifact1": { tech: ["R-Wpn-Cannon3Mk1", "R-Wpn-RocketSlow-Damage03", "R-Wpn-Rocket-Damage03"] },
 		});
 	}
 
