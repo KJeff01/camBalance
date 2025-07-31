@@ -129,7 +129,7 @@ function eventGroupLoss(obj, group, newsize)
 			}
 			else
 			{
-				camAddArtifact(MIS_NEW_ARTI_LABEL, ["R-Wpn-Cannon3Mk1", "R-Wpn-RocketSlow-Damage03"]);
+				camAddArtifact(MIS_NEW_ARTI_LABEL, ["R-Wpn-Cannon3Mk1", "R-Wpn-RocketSlow-Damage03", "R-Wpn-Rocket-Damage03"]);
 			}
 
 			droidWithArtiID = undefined;
