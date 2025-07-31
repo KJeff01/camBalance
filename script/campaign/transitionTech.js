@@ -58,7 +58,7 @@ const mis_alphaResearchNew = [
 
 	// 11
 	"R-Wpn-Cannon3Mk1", "R-Defense-WallTower04", "R-Wpn-RocketSlow-Damage03",
-	"R-Cyborg-Wpn-Cannon", "R-Wpn-Rocket-Damage03"
+	"R-Cyborg-Wpn-Cannon", "R-Wpn-Rocket-Damage03",
 
 	//12
 	"R-Vehicle-Prop-Hover", "R-Vehicle-Metals03", "R-Vehicle-Body12", "R-Vehicle-Engine03",
