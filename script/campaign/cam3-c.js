@@ -4,7 +4,7 @@ include("script/campaign/transitionTech.js");
 
 const MIS_GAMMA_PLAYER = 1; //Gamma is player one.
 const mis_nexusRes = [
-	"R-Sys-Engineering03", "R-Defense-WallUpgrade09", "R-Struc-Materials09",
+	"R-Sys-Engineering03", "R-Defense-WallUpgrade11", "R-Struc-Materials09",
 	"R-Struc-VTOLPad-Upgrade06", "R-Wpn-Bomb-Damage03", "R-Sys-NEXUSrepair",
 	"R-Vehicle-Prop-Hover02", "R-Vehicle-Prop-VTOL02", "R-Cyborg-Legs02",
 	"R-Wpn-Mortar-Acc03", "R-Wpn-MG-Damage10", "R-Wpn-Mortar-ROF04",
