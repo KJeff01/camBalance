@@ -6097,7 +6097,8 @@
 		"name": "HEAP Mortar Shells Mk2",
 		"requiredResearch": [
 			"R-Wpn-Mortar-Damage04",
-			"R-Wpn-Mortar-ROF02"
+			"R-Wpn-Mortar-ROF01",
+			"R-Wpn-Mortar3"
 		],
 		"researchPoints": 11200,
 		"researchPower": 350,
@@ -6242,10 +6243,10 @@
 	"R-Wpn-Mortar-Damage09": {
 		"iconID": "IMAGE_RES_WEAPONTECH",
 		"id": "R-Wpn-Mortar-Damage09",
-		"keyTopic": 1,
 		"name": "Improved HEAP Mortar Shells Mk3",
 		"requiredResearch": [
-			"R-Wpn-Mortar-Damage08"
+			"R-Wpn-Mortar-Damage08",
+			"R-Wpn-Cannon-Damage08"
 		],
 		"researchPoints": 13200,
 		"researchPower": 412,
@@ -6279,10 +6280,10 @@
 	"R-Wpn-Mortar-Damage10": {
 		"iconID": "IMAGE_RES_WEAPONTECH",
 		"id": "R-Wpn-Mortar-Damage10",
-		"keyTopic": 1,
 		"name": "Improved HEAP Mortar Shells Mk4",
 		"requiredResearch": [
-			"R-Wpn-Mortar-Damage09"
+			"R-Wpn-Mortar-Damage09",
+			"R-Wpn-Cannon-Damage09"
 		],
 		"researchPoints": 13200,
 		"researchPower": 412,
@@ -6376,6 +6377,7 @@
 	"R-Wpn-Mortar3": {
 		"iconID": "IMAGE_RES_WEAPONTECH",
 		"id": "R-Wpn-Mortar3",
+		"keyTopic": 1,
 		"msgName": "RES_W_M3",
 		"name": "Rotary Mortar - Pepperpot",
 		"redComponents": [
@@ -6384,7 +6386,7 @@
 		],
 		"requiredResearch": [
 			"R-Wpn-Mortar02Hvy",
-			"R-Wpn-Mortar-ROF02"
+			"R-Wpn-Mortar-ROF01"
 		],
 		"researchPoints": 10000,
 		"researchPower": 312,
@@ -8882,7 +8884,7 @@
 		"iconID": "IMAGE_RES_WEAPONTECH",
 		"id": "R-Wpn-Howitzer-ROF04",
 		"msgName": "RES_W_HOWRF4",
-		"name": "Fast Loader",
+		"name": "Howitzer Fast Loader",
 		"requiredResearch": [
 			"R-Wpn-Mortar-ROF04",
 			"R-Wpn-Howitzer-ROF03",
@@ -9348,7 +9350,7 @@
 		"requiredResearch": [
 			"R-Wpn-Mortar-Acc02",
 			"R-Wpn-Mortar-ROF04",
-			"R-Wpn-Howitzer-Accuracy02"
+			"R-Wpn-Howitzer-Accuracy01"
 		],
 		"researchPoints": 9200,
 		"researchPower": 287,

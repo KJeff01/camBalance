@@ -127,7 +127,7 @@ const mis_betaResearchNew = [
 	"R-Defense-Emplacement-HPVcannon", "R-Defense-HvyA-Trocket",
 	"R-Defense-WallTower-HPVcannon", "R-Defense-WallTower-HvyA-Trocket", "R-Sys-VTOLCBS-Turret01",
 	"R-Wpn-AAGun04", "R-Wpn-AAGun-Damage03", "R-Defense-AASite-QuadRotMg",
-	"R-Cyborg-Wpn-Cannon02", "R-Cyborg-Wpn-Rocket02", "R-Wpn-Mortar-ROF04",
+	"R-Cyborg-Wpn-Cannon02", "R-Cyborg-Wpn-Rocket02", "R-Wpn-Mortar-ROF04", "R-Wpn-Mortar-Acc03",
 
 	// 9
 	"R-Wpn-Cannon5", "R-Wpn-RocketSlow-Damage06", "R-Defense-Wall-VulcanCan",
@@ -137,7 +137,7 @@ const mis_betaResearchNew = [
 	// 10
 	"R-Vehicle-Body09", "R-Wpn-HvyHowitzer", "R-Defense-HvyHowitzer", "R-Vehicle-Metals06",
 	"R-Wpn-Howitzer-Damage03", "R-Cyborg-Metals06", "R-Vehicle-Engine06", "R-Wpn-Howitzer-Accuracy02",
-	"R-Wpn-Howitzer-ROF03", "R-Vehicle-Armor-Heat03", "R-Cyborg-Armor-Heat03", "R-Wpn-Mortar-Acc03",
+	"R-Wpn-Howitzer-ROF03", "R-Vehicle-Armor-Heat03", "R-Cyborg-Armor-Heat03", "R-Wpn-Mortar-Acc04",
 
 	// 11
 ];
@@ -150,10 +150,11 @@ const mis_gammaResearchNew = [
 	"R-Wpn-Howitzer03-Rot", "R-Wpn-MG-Damage09", "R-Struc-Power-Upgrade02", "R-Sys-Engineering03",
 	"R-Wpn-Cannon-Damage07", "R-Wpn-AAGun-Damage04", "R-Defense-WallUpgrade07", "R-Struc-Materials09",
 	"R-Defense-RotHow", "R-Wpn-Howitzer-Damage04", "R-Wpn-Flamer-ROF04", "R-Wpn-RocketSlow-ROFRR01",
+	"R-Wpn-Mortar-Damage08",
 
 	// 2
 	"R-Wpn-Cannon-Damage08", "R-Wpn-AAGun-Damage05", "R-Wpn-Howitzer-Damage05",
-	"R-Defense-WallUpgrade08",
+	"R-Defense-WallUpgrade08", "R-Wpn-Mortar-Damage09",
 
 	// 3
 	"R-Struc-Research-Upgrade07", "R-Wpn-Laser01", "R-Vehicle-Body03",
@@ -163,12 +164,12 @@ const mis_gammaResearchNew = [
 	"R-Vehicle-Engine07", "R-Wpn-AAGun-ROF04", "R-Wpn-Energy-Damage01",
 	"R-Wpn-Energy-Damage02", "R-Wpn-Energy-ROF01", "R-Cyborg-Metals07", "R-Vehicle-Armor-Heat04",
 	"R-Wpn-Howitzer-ROF04", "R-Cyborg-Armor-Heat04", "R-Wpn-RocketSlow-ROF04",
-	"R-Defense-WallUpgrade09",
+	"R-Defense-WallUpgrade09", "R-Wpn-Mortar-ROF05",
 
 	// 4
 	"R-Wpn-Cannon-ROF05", "R-Wpn-Cannon-ROF06", "R-Wpn-Cannon-Damage09", "R-Wpn-AAGun-Damage06",
 	"R-Wpn-Howitzer-Damage06", "R-Wpn-AAGun-ROF05", "R-Wpn-AAGun-ROF06", "R-Wpn-RocketSlow-ROF05",
-	"R-Wpn-RocketSlow-ROF06", "R-Wpn-MG-Damage10",
+	"R-Wpn-RocketSlow-ROF06", "R-Wpn-MG-Damage10", "R-Wpn-Mortar-Damage10",
 
 	// 5
 	"R-Sys-Resistance-Upgrade01", "R-Sys-Resistance-Upgrade02", "R-Sys-Resistance-Upgrade03",
