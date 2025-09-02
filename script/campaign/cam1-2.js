@@ -14,6 +14,18 @@ function exposeNorthBase()
 {
 	camDetectEnemyBase("NorthGroup"); // no problem if already detected
 	camPlayVideos({video: "SB1_2_MSG2", type: MISS_MSG});
+	if (camAllowInsaneSpawns())
+	{
+		setTimer("insaneReinforcementSpawn", camSecondsToMilliseconds(25));
+	}
+}
+
+function insaneReinforcementSpawn()
+{
+	const units = (!camClassicMode()) ? [cTempl.blokeheavy, cTempl.trikeheavy, cTempl.buggyheavy, cTempl.bjeepheavy] : [cTempl.bloke, cTempl.trike, cTempl.buggy, cTempl.bjeep];
+	const limits = {minimum: 8, maxRandom: 6};
+	const location = camMakePos("InsaneSpawnPos");
+	camSendGenericSpawn(CAM_REINFORCE_GROUND, CAM_SCAV_7, CAM_REINFORCE_CONDITION_ARTIFACTS, location, units, limits.minimum, limits.maxRandom);
 }
 
 function camArtifactPickup_ScavLab()
@@ -89,9 +101,9 @@ function eventStartLevel()
 		camCompleteRequiredResearch(mis_scavengerRes, CAM_SCAV_7);
 
 		camUpgradeOnMapTemplates(cTempl.bloke, cTempl.blokeheavy, CAM_SCAV_7);
-		camUpgradeOnMapTemplates(cTempl.trike, cTempl.triketwin, CAM_SCAV_7);
-		camUpgradeOnMapTemplates(cTempl.buggy, cTempl.buggytwin, CAM_SCAV_7);
-		camUpgradeOnMapTemplates(cTempl.bjeep, cTempl.bjeeptwin, CAM_SCAV_7);
+		camUpgradeOnMapTemplates(cTempl.trike, (camAllowInsaneSpawns()) ? cTempl.trikeheavy : cTempl.triketwin, CAM_SCAV_7);
+		camUpgradeOnMapTemplates(cTempl.buggy, (camAllowInsaneSpawns()) ? cTempl.buggyheavy : cTempl.buggytwin, CAM_SCAV_7);
+		camUpgradeOnMapTemplates(cTempl.bjeep, (camAllowInsaneSpawns()) ? cTempl.bjeepheavy : cTempl.bjeeptwin, CAM_SCAV_7);
 
 		camSetArtifacts({
 			"ScavLab": { tech: "R-Wpn-Mortar01Lt" },
