@@ -59,6 +59,7 @@ function eventPickup(feature, droid)
 	if (droid.player === CAM_HUMAN_PLAYER && feature.stattype === ARTIFACT)
 	{
 		hackRemoveMessage("C1-1_OBJ1", PROX_MSG, CAM_HUMAN_PLAYER);
+		camCallOnce("insaneSetupSpawn");
 	}
 }
 
@@ -82,6 +83,22 @@ function eventAttacked(victim, attacker)
 	{
 		camCallOnce("westScavAction");
 	}
+}
+
+function insaneSetupSpawn()
+{
+	if (camAllowInsaneSpawns())
+	{
+		setTimer("insaneReinforcementSpawn", camSecondsToMilliseconds(1)); // Flood...
+	}
+}
+
+function insaneReinforcementSpawn()
+{
+	const units = (!camClassicMode()) ? [cTempl.blokeheavy, cTempl.trikeheavy, cTempl.buggyheavy, cTempl.bjeepheavy] : [cTempl.bloke, cTempl.trike, cTempl.buggy, cTempl.bjeep];
+	const limits = {minimum: 1, maxRandom: 0};
+	const location = camMakePos(camGenerateRandomMapEdgeCoordinate(getObject("landingZone")));
+	camSendGenericSpawn(CAM_REINFORCE_GROUND, CAM_SCAV_7, CAM_REINFORCE_CONDITION_NONE, location, units, limits.minimum, limits.maxRandom);
 }
 
 //Send the south-eastern scavs in the main base on an attack run when the front bunkers get destroyed.
@@ -155,9 +172,9 @@ function eventStartLevel()
 		}
 
 		camUpgradeOnMapTemplates(cTempl.bloke, cTempl.blokeheavy, CAM_SCAV_7);
-		camUpgradeOnMapTemplates(cTempl.trike, cTempl.triketwin, CAM_SCAV_7);
-		camUpgradeOnMapTemplates(cTempl.buggy, cTempl.buggytwin, CAM_SCAV_7);
-		camUpgradeOnMapTemplates(cTempl.bjeep, cTempl.bjeeptwin, CAM_SCAV_7);
+		camUpgradeOnMapTemplates(cTempl.trike, (camAllowInsaneSpawns()) ? cTempl.trikeheavy : cTempl.triketwin, CAM_SCAV_7);
+		camUpgradeOnMapTemplates(cTempl.buggy, (camAllowInsaneSpawns()) ? cTempl.buggyheavy : cTempl.buggytwin, CAM_SCAV_7);
+		camUpgradeOnMapTemplates(cTempl.bjeep, (camAllowInsaneSpawns()) ? cTempl.bjeepheavy : cTempl.bjeeptwin, CAM_SCAV_7);
 
 		camSetArtifacts({
 			"scavFactory1": { tech: "R-Wpn-MG3Mk1" }, //Heavy machine gun
