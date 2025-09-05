@@ -338,9 +338,10 @@ function eventStartLevel()
 			"quadbof": { tech: "R-Wpn-AAGun02" },
 			"howitzer": { tech: "R-Wpn-HowitzerMk1" },
 			"COHeavyFac-Leopard": { tech: "R-Vehicle-Body06" }, //Panther
-			"COHeavyFac-Upgrade": { tech: ["R-Struc-Factory-Upgrade04", "R-Wpn-Mortar3"] },
+			"COHeavyFac-Upgrade": { tech: "R-Struc-Factory-Upgrade04" },
 			"COVtolFacLeft-Prop": { tech: "R-Vehicle-Prop-VTOL" },
 			"COInfernoEmplacement-Arti": { tech: "R-Wpn-Flamer-ROF02" },
+			"COPepperpotPitNE": { tech: "R-Wpn-Mortar3" },
 		});
 	}
 

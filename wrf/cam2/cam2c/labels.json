@@ -238,5 +238,11 @@
 		"id": 4308,
 		"player": 2,
 		"type": 1
+	},
+	"object_11": {
+		"label": "COPepperpotPitNE",
+		"id": 4693,
+		"player": 2,
+		"type": 1
 	}
 }
