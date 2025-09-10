@@ -341,6 +341,7 @@ function eventStartLevel()
 			"COHeavyFac-Upgrade": { tech: "R-Struc-Factory-Upgrade04" },
 			"COVtolFacLeft-Prop": { tech: "R-Vehicle-Prop-VTOL" },
 			"COInfernoEmplacement-Arti": { tech: "R-Wpn-Flamer-ROF02" },
+			"COPepperpotPitNE": { tech: "R-Wpn-Mortar3" },
 		});
 	}
 
