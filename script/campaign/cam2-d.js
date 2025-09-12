@@ -88,7 +88,7 @@ function vtolAttack()
 
 function insaneReinforcementSpawn()
 {
-	const DISTANCE_FROM_POS = 20;
+	const DISTANCE_FROM_POS = 25;
 	const units = [cTempl.comltath, cTempl.cohhvch, cTempl.comagh];
 	const limits = {minimum: 5, maxRandom: 3};
 	const location = camGenerateRandomMapEdgeCoordinate(getObject("startPosition"), CAM_GENERIC_WATER_STAT, DISTANCE_FROM_POS);
@@ -97,7 +97,7 @@ function insaneReinforcementSpawn()
 
 function insaneTransporterAttack()
 {
-	const DISTANCE_FROM_POS = 15;
+	const DISTANCE_FROM_POS = 25;
 	const units = (!camClassicMode()) ? [cTempl.cocybsn, cTempl.cocybtk, cTempl.comltath, cTempl.cohhvch] : [cTempl.comltath, cTempl.cohhvch, cTempl.comagh];
 	const limits = {minimum: 6, maxRandom: 4};
 	const location = camGenerateRandomMapCoordinate(getObject("startPosition"), CAM_GENERIC_LAND_STAT, DISTANCE_FROM_POS);
