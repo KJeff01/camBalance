@@ -26,7 +26,7 @@ const mis_collectiveResClassic = [
 	"R-Wpn-Rocket-ROF03", "R-Wpn-RocketSlow-Accuracy03", "R-Wpn-RocketSlow-Damage06",
 	"R-Wpn-RocketSlow-ROF03"
 ];
-const mis_vtolAppearPositions = ["vtolAppearPos1", "vtolAppearPos2", "vtolAppearPos3"];
+const mis_vtolAppearPositions = ["insaneVtolAppearPos1", "insaneVtolAppearPos2", "insaneVtolAppearPos3"];
 
 function camEnemyBaseDetected_COMainBase()
 {
@@ -167,7 +167,7 @@ function insaneReinforcementSpawn()
 {
 	const units = {units: [cTempl.comltath, cTempl.cohact, cTempl.comrotm, cTempl.comrotm], appended: cTempl.comsensh};
 	const limits = {minimum: 6, maxRandom: 4};
-	const location = camMakePos(getObject("southEastSpawn"));
+	const location = ["insaneSouthEastSpawn", "insaneWestSpawn", "insaneNorthSpawn"];
 	camSendGenericSpawn(CAM_REINFORCE_GROUND, CAM_THE_COLLECTIVE, CAM_REINFORCE_CONDITION_ARTIFACTS, location, units, limits.minimum, limits.maxRandom);
 }
 
