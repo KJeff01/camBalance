@@ -138,6 +138,7 @@ const mis_betaResearchNew = [
 	"R-Vehicle-Body09", "R-Wpn-HvyHowitzer", "R-Defense-HvyHowitzer", "R-Vehicle-Metals06",
 	"R-Wpn-Howitzer-Damage03", "R-Cyborg-Metals06", "R-Vehicle-Engine06", "R-Wpn-Howitzer-Accuracy02",
 	"R-Wpn-Howitzer-ROF03", "R-Vehicle-Armor-Heat03", "R-Cyborg-Armor-Heat03", "R-Wpn-Mortar-Acc04",
+	"R-Wpn-Mortar-Damage07",
 
 	// 11
 ];
@@ -169,7 +170,7 @@ const mis_gammaResearchNew = [
 	// 4
 	"R-Wpn-Cannon-ROF05", "R-Wpn-Cannon-ROF06", "R-Wpn-Cannon-Damage09", "R-Wpn-AAGun-Damage06",
 	"R-Wpn-Howitzer-Damage06", "R-Wpn-AAGun-ROF05", "R-Wpn-AAGun-ROF06", "R-Wpn-RocketSlow-ROF05",
-	"R-Wpn-RocketSlow-ROF06", "R-Wpn-MG-Damage10", "R-Wpn-Mortar-Damage10",
+	"R-Wpn-RocketSlow-ROF06", "R-Wpn-MG-Damage10", "R-Wpn-Mortar-ROF06",
 
 	// 5
 	"R-Sys-Resistance-Upgrade01", "R-Sys-Resistance-Upgrade02", "R-Sys-Resistance-Upgrade03",
