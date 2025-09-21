@@ -1910,7 +1910,7 @@
 	"Howitzer03-Rot": {
 		"buildPoints": 1600,
 		"buildPower": 400,
-		"damage": 120,
+		"damage": 148,
 		"designable": 1,
 		"effectSize": 200,
 		"explosionWav": "lrgexpl.ogg",
@@ -2000,7 +2000,7 @@
 	"Howitzer150Mk1": {
 		"buildPoints": 1250,
 		"buildPower": 350,
-		"damage": 190,
+		"damage": 240,
 		"designable": 1,
 		"effectSize": 200,
 		"explosionWav": "lrgexpl.ogg",
@@ -3034,7 +3034,7 @@
 	"Mortar1Mk1": {
 		"buildPoints": 500,
 		"buildPower": 100,
-		"damage": 50,
+		"damage": 75,
 		"designable": 1,
 		"effectSize": 75,
 		"explosionWav": "lrgexpl.ogg",
@@ -3075,13 +3075,13 @@
 	"Mortar2Mk1": {
 		"buildPoints": 1000,
 		"buildPower": 200,
-		"damage": 100,
+		"damage": 125,
 		"designable": 1,
 		"effectSize": 100,
 		"explosionWav": "lrgexpl.ogg",
 		"facePlayer": 1,
 		"fireOnMove": 0,
-		"firePause": 90,
+		"firePause": 100,
 		"flightGfx": "FXCAmmo.PIE",
 		"flightSpeed": 1000,
 		"hitGfx": "FXMNExp.PIE",
@@ -3116,7 +3116,7 @@
 	"Mortar3ROTARYMk1": {
 		"buildPoints": 900,
 		"buildPower": 300,
-		"damage": 75,
+		"damage": 50,
 		"designable": 1,
 		"effectSize": 100,
 		"explosionWav": "lrgexpl.ogg",
