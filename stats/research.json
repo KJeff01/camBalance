@@ -5639,21 +5639,21 @@
 				"filterParameter": "ImpactClass",
 				"filterValue": "HOWITZERS",
 				"parameter": "Damage",
-				"value": 25
+				"value": 30
 			},
 			{
 				"class": "Weapon",
 				"filterParameter": "ImpactClass",
 				"filterValue": "HOWITZERS",
 				"parameter": "RepeatDamage",
-				"value": 25
+				"value": 30
 			},
 			{
 				"class": "Weapon",
 				"filterParameter": "ImpactClass",
 				"filterValue": "HOWITZERS",
 				"parameter": "RadiusDamage",
-				"value": 25
+				"value": 30
 			}
 		],
 		"statID": "Howitzer105Mk1",
@@ -5749,14 +5749,14 @@
 				"filterParameter": "ImpactClass",
 				"filterValue": "HOWITZERS",
 				"parameter": "FirePause",
-				"value": -10
+				"value": -30
 			},
 			{
 				"class": "Weapon",
 				"filterParameter": "ImpactClass",
 				"filterValue": "HOWITZERS",
 				"parameter": "ReloadTime",
-				"value": -10
+				"value": -30
 			}
 		],
 		"statID": "Howitzer105Mk1",
@@ -6108,21 +6108,21 @@
 				"filterParameter": "ImpactClass",
 				"filterValue": "MORTARS",
 				"parameter": "Damage",
-				"value": 30
+				"value": 10
 			},
 			{
 				"class": "Weapon",
 				"filterParameter": "ImpactClass",
 				"filterValue": "MORTARS",
 				"parameter": "RadiusDamage",
-				"value": 30
+				"value": 10
 			},
 			{
 				"class": "Weapon",
 				"filterParameter": "ImpactClass",
 				"filterValue": "MORTARS",
 				"parameter": "RepeatDamage",
-				"value": 30
+				"value": 10
 			}
 		],
 		"statID": "Mortar1Mk1",
@@ -6219,21 +6219,21 @@
 				"filterParameter": "ImpactClass",
 				"filterValue": "MORTARS",
 				"parameter": "Damage",
-				"value": 30
+				"value": 40
 			},
 			{
 				"class": "Weapon",
 				"filterParameter": "ImpactClass",
 				"filterValue": "MORTARS",
 				"parameter": "RadiusDamage",
-				"value": 30
+				"value": 40
 			},
 			{
 				"class": "Weapon",
 				"filterParameter": "ImpactClass",
 				"filterValue": "MORTARS",
 				"parameter": "RepeatDamage",
-				"value": 30
+				"value": 40
 			}
 		],
 		"statID": "Mortar2Mk1",
@@ -6256,58 +6256,21 @@
 				"filterParameter": "ImpactClass",
 				"filterValue": "MORTARS",
 				"parameter": "Damage",
-				"value": 30
+				"value": 40
 			},
 			{
 				"class": "Weapon",
 				"filterParameter": "ImpactClass",
 				"filterValue": "MORTARS",
 				"parameter": "RadiusDamage",
-				"value": 30
+				"value": 40
 			},
 			{
 				"class": "Weapon",
 				"filterParameter": "ImpactClass",
 				"filterValue": "MORTARS",
 				"parameter": "RepeatDamage",
-				"value": 30
-			}
-		],
-		"statID": "Mortar2Mk1",
-		"subgroupIconID": "IMAGE_RES_GRPDAM",
-		"techCode": 1
-	},
-	"R-Wpn-Mortar-Damage10": {
-		"iconID": "IMAGE_RES_WEAPONTECH",
-		"id": "R-Wpn-Mortar-Damage10",
-		"name": "Improved HEAP Mortar Shells Mk4",
-		"requiredResearch": [
-			"R-Wpn-Mortar-Damage09",
-			"R-Wpn-Cannon-Damage09"
-		],
-		"researchPoints": 13200,
-		"researchPower": 412,
-		"results": [
-			{
-				"class": "Weapon",
-				"filterParameter": "ImpactClass",
-				"filterValue": "MORTARS",
-				"parameter": "Damage",
-				"value": 30
-			},
-			{
-				"class": "Weapon",
-				"filterParameter": "ImpactClass",
-				"filterValue": "MORTARS",
-				"parameter": "RadiusDamage",
-				"value": 30
-			},
-			{
-				"class": "Weapon",
-				"filterParameter": "ImpactClass",
-				"filterValue": "MORTARS",
-				"parameter": "RepeatDamage",
-				"value": 30
+				"value": 40
 			}
 		],
 		"statID": "Mortar2Mk1",
@@ -6329,14 +6292,14 @@
 				"filterParameter": "ImpactClass",
 				"filterValue": "MORTARS",
 				"parameter": "FirePause",
-				"value": -10
+				"value": -5
 			},
 			{
 				"class": "Weapon",
 				"filterParameter": "ImpactClass",
 				"filterValue": "MORTARS",
 				"parameter": "ReloadTime",
-				"value": -10
+				"value": -5
 			}
 		],
 		"statID": "Mortar1Mk1",
@@ -6360,14 +6323,14 @@
 				"filterParameter": "ImpactClass",
 				"filterValue": "MORTARS",
 				"parameter": "FirePause",
-				"value": -10
+				"value": -25
 			},
 			{
 				"class": "Weapon",
 				"filterParameter": "ImpactClass",
 				"filterValue": "MORTARS",
 				"parameter": "ReloadTime",
-				"value": -10
+				"value": -25
 			}
 		],
 		"statID": "Mortar2Mk1",
@@ -9439,6 +9402,35 @@
 		"requiredResearch": [
 			"R-Wpn-Mortar-Damage09",
 			"R-Wpn-Mortar-ROF04",
+			"R-Wpn-Cannon-ROF04"
+		],
+		"researchPoints": 10000,
+		"researchPower": 312,
+		"results": [
+			{
+				"class": "Weapon",
+				"filterParameter": "ImpactClass",
+				"filterValue": "MORTARS",
+				"parameter": "FirePause",
+				"value": -10
+			},
+			{
+				"class": "Weapon",
+				"filterParameter": "ImpactClass",
+				"filterValue": "MORTARS",
+				"parameter": "ReloadTime",
+				"value": -10
+			}
+		],
+		"statID": "Mortar2Mk1",
+		"subgroupIconID": "IMAGE_RES_GRPROF"
+	},
+	"R-Wpn-Mortar-ROF06": {
+		"iconID": "IMAGE_RES_WEAPONTECH",
+		"id": "R-Wpn-Mortar-ROF05",
+		"name": "Mortar Fast Loader Mk2",
+		"requiredResearch": [
+			"R-Wpn-Mortar-ROF05",
 			"R-Wpn-Cannon-ROF04"
 		],
 		"researchPoints": 10000,
