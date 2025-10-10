@@ -6145,21 +6145,21 @@
 				"filterParameter": "ImpactClass",
 				"filterValue": "MORTARS",
 				"parameter": "Damage",
-				"value": 30
+				"value": 50
 			},
 			{
 				"class": "Weapon",
 				"filterParameter": "ImpactClass",
 				"filterValue": "MORTARS",
 				"parameter": "RadiusDamage",
-				"value": 30
+				"value": 50
 			},
 			{
 				"class": "Weapon",
 				"filterParameter": "ImpactClass",
 				"filterValue": "MORTARS",
 				"parameter": "RepeatDamage",
-				"value": 30
+				"value": 50
 			}
 		],
 		"statID": "Mortar2Mk1",
@@ -6183,21 +6183,21 @@
 				"filterParameter": "ImpactClass",
 				"filterValue": "MORTARS",
 				"parameter": "Damage",
-				"value": 30
+				"value": 60
 			},
 			{
 				"class": "Weapon",
 				"filterParameter": "ImpactClass",
 				"filterValue": "MORTARS",
 				"parameter": "RadiusDamage",
-				"value": 30
+				"value": 60
 			},
 			{
 				"class": "Weapon",
 				"filterParameter": "ImpactClass",
 				"filterValue": "MORTARS",
 				"parameter": "RepeatDamage",
-				"value": 30
+				"value": 60
 			}
 		],
 		"statID": "Mortar2Mk1",
@@ -6220,21 +6220,21 @@
 				"filterParameter": "ImpactClass",
 				"filterValue": "MORTARS",
 				"parameter": "Damage",
-				"value": 40
+				"value": 70
 			},
 			{
 				"class": "Weapon",
 				"filterParameter": "ImpactClass",
 				"filterValue": "MORTARS",
 				"parameter": "RadiusDamage",
-				"value": 40
+				"value": 70
 			},
 			{
 				"class": "Weapon",
 				"filterParameter": "ImpactClass",
 				"filterValue": "MORTARS",
 				"parameter": "RepeatDamage",
-				"value": 40
+				"value": 70
 			}
 		],
 		"statID": "Mortar2Mk1",
