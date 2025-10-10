@@ -6175,8 +6175,8 @@
 			"R-Wpn-Mortar-Damage06",
 			"R-Wpn-Howitzer-Damage03"
 		],
-		"researchPoints": 13200,
-		"researchPower": 412,
+		"researchPoints": 15200,
+		"researchPower": 485,
 		"results": [
 			{
 				"class": "Weapon",
@@ -6212,8 +6212,8 @@
 			"R-Wpn-Mortar-Damage07",
 			"R-Wpn-Howitzer-Damage04"
 		],
-		"researchPoints": 13200,
-		"researchPower": 412,
+		"researchPoints": 17200,
+		"researchPower": 548,
 		"results": [
 			{
 				"class": "Weapon",
@@ -6249,8 +6249,8 @@
 			"R-Wpn-Mortar-Damage08",
 			"R-Wpn-Cannon-Damage08"
 		],
-		"researchPoints": 13200,
-		"researchPower": 412,
+		"researchPoints": 19200,
+		"researchPower": 610,
 		"results": [
 			{
 				"class": "Weapon",
@@ -9345,8 +9345,8 @@
 			"R-Wpn-Mortar-Acc03",
 			"R-Wpn-Mortar-Damage07"
 		],
-		"researchPoints": 9200,
-		"researchPower": 287,
+		"researchPoints": 11200,
+		"researchPower": 350,
 		"results": [
 			{
 				"class": "Weapon",
@@ -9405,8 +9405,8 @@
 			"R-Wpn-Mortar-ROF04",
 			"R-Wpn-Cannon-ROF04"
 		],
-		"researchPoints": 10000,
-		"researchPower": 312,
+		"researchPoints": 12000,
+		"researchPower": 385,
 		"results": [
 			{
 				"class": "Weapon",
@@ -9434,8 +9434,8 @@
 			"R-Wpn-Mortar-ROF05",
 			"R-Wpn-Cannon-ROF04"
 		],
-		"researchPoints": 10000,
-		"researchPower": 312,
+		"researchPoints": 14000,
+		"researchPower": 448,
 		"results": [
 			{
 				"class": "Weapon",
