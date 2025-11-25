@@ -6201,8 +6201,7 @@
 			}
 		],
 		"statID": "Mortar2Mk1",
-		"subgroupIconID": "IMAGE_RES_GRPDAM",
-		"techCode": 1
+		"subgroupIconID": "IMAGE_RES_GRPDAM"
 	},
 	"R-Wpn-Mortar-Damage08": {
 		"iconID": "IMAGE_RES_WEAPONTECH",
