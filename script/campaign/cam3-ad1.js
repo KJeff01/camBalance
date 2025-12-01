@@ -164,7 +164,7 @@ function truckDefense()
 function insaneReinforcementSpawn()
 {
 	const units = {units: [cTempl.nxmpulseh, cTempl.nxmscouh, cTempl.nxmrailh, cTempl.nxmangel], appended: cTempl.nxmsens};
-	const limits = {minimum: 8, maxRandom: 2};
+	const limits = {minimum: 10, maxRandom: 5};
 	const location = camMakePos("southSpawnPos");
 	camSendGenericSpawn(CAM_REINFORCE_GROUND, CAM_NEXUS, CAM_REINFORCE_CONDITION_ARTIFACTS, location, units, limits.minimum, limits.maxRandom);
 }
@@ -471,8 +471,8 @@ function eventStartLevel()
 	setTimer("vaporizeTarget", camSecondsToMilliseconds(10));
 	if (camAllowInsaneSpawns())
 	{
-		queue("insaneVtolAttack", camMinutesToMilliseconds(7));
+		queue("insaneVtolAttack", camMinutesToMilliseconds(3));
 		setTimer("insaneTransporterAttack", camMinutesToMilliseconds(3));
-		setTimer("insaneReinforcementSpawn", camMinutesToMilliseconds(5));
+		setTimer("insaneReinforcementSpawn", camMinutesToMilliseconds(2.5));
 	}
 }
