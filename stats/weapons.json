@@ -1158,7 +1158,7 @@
 		"weaponEffect": "ALL ROUNDER",
 		"weaponSubClass": "CANNON",
 		"weaponWav": "hivelcan.ogg",
-		"weight": 1000
+		"weight": 1500
 	},
 	"Cannon4AUTOMk1": {
 		"buildPoints": 900,
@@ -1199,7 +1199,7 @@
 		"weaponEffect": "ALL ROUNDER",
 		"weaponSubClass": "CANNON",
 		"weaponWav": "hivelcan.ogg",
-		"weight": 5000
+		"weight": 7500
 	},
 	"Cannon5Vulcan-VTOL": {
 		"buildPoints": 900,
@@ -1241,11 +1241,11 @@
 		"weaponEffect": "ALL ROUNDER",
 		"weaponSubClass": "CANNON",
 		"weaponWav": "rapdcan.ogg",
-		"weight": 1500
+		"weight": 1000
 	},
 	"Cannon5VulcanMk1": {
 		"buildPoints": 900,
-		"buildPower": 300,
+		"buildPower": 250,
 		"damage": 52,
 		"designable": 1,
 		"effectSize": 50,
@@ -1282,7 +1282,7 @@
 		"weaponEffect": "ALL ROUNDER",
 		"weaponSubClass": "CANNON",
 		"weaponWav": "rapdcan.ogg",
-		"weight": 7500
+		"weight": 5000
 	},
 	"CommandTurret1": {
 		"buildPoints": 100,
