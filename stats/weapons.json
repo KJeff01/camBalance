@@ -1203,7 +1203,7 @@
 	},
 	"Cannon5Vulcan-VTOL": {
 		"buildPoints": 900,
-		"buildPower": 300,
+		"buildPower": 250,
 		"damage": 175,
 		"designable": 1,
 		"effectSize": 50,
