@@ -144,7 +144,11 @@ function truckDefense()
 		return;
 	}
 
-	const list = ["Emplacement-Howitzer150", "NX-Emp-MedArtMiss-Pit"];
+	const list = [
+		"Emplacement-Howitzer150", "Emplacement-Howitzer150",
+		"NX-Emp-MedArtMiss-Pit", "NX-Emp-MedArtMiss-Pit", "NX-Emp-MedArtMiss-Pit",
+		"Sys-NX-CBTower"
+	];
 	let position;
 
 	if (truckLocCounter === 0)
@@ -453,8 +457,9 @@ function eventStartLevel()
 	if (difficulty >= HARD)
 	{
 		addDroid(CAM_NEXUS, 15, 234, "Truck Retribution Hover", tBody.tank.retribution, tProp.tank.hover2, "", "", tConstruct.truck);
+		addDroid(CAM_NEXUS, 8, 226, "Truck Retribution Hover", tBody.tank.retribution, tProp.tank.hover2, "", "", tConstruct.truck);
 		camManageTrucks(CAM_NEXUS, false);
-		setTimer("truckDefense", camChangeOnDiff(camMinutesToMilliseconds(4.5)));
+		setTimer("truckDefense", camChangeOnDiff(camMinutesToMilliseconds(1.2)));
 	}
 
 	camPlayVideos([{video: "MB3_AD1_MSG", type: CAMP_MSG}, {video: "MB3_AD1_MSG2", type: CAMP_MSG}, {video: "MB3_AD1_MSG3", type: MISS_MSG}]);
