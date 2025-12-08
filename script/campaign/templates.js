@@ -393,6 +393,9 @@ nxlpulsev: { body: tBody.tank.retaliation, prop: tProp.air.vtol2, weap: tWeap.ai
 // SUB_3_4
 nxllinkh: { body: tBody.tank.retaliation, prop: tProp.tank.hover2, weap: tWeap.tank.nexusLink },
 nxmpulsev: { body: tBody.tank.retribution, prop: tProp.air.vtol2, weap: tWeap.air.pulseLaser },
+nxhvscourge: { body: tBody.tank.vengeance, prop: tProp.tank.hover2, weap: tWeap.tank.scourgeMissile },
+nxhvpulse: { body: tBody.tank.vengeance, prop: tProp.tank.hover2, weap: tWeap.tank.pulseLaser },
+nxhvarch: { body: tBody.tank.vengeance, prop: tProp.tank.hover2, weap: tWeap.tank.archAngel },
 
 
 ////////////////////////////////////////////////////////////////////////////////

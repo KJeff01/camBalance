@@ -457,9 +457,12 @@ function eventStartLevel()
 	if (difficulty >= HARD)
 	{
 		addDroid(CAM_NEXUS, 15, 234, "Truck Retribution Hover", tBody.tank.retribution, tProp.tank.hover2, "", "", tConstruct.truck);
-		addDroid(CAM_NEXUS, 8, 226, "Truck Retribution Hover", tBody.tank.retribution, tProp.tank.hover2, "", "", tConstruct.truck);
+		if (camAllowInsaneSpawns())
+		{
+			addDroid(CAM_NEXUS, 8, 226, "Truck Retribution Hover", tBody.tank.retribution, tProp.tank.hover2, "", "", tConstruct.truck);
+		}
 		camManageTrucks(CAM_NEXUS, false);
-		setTimer("truckDefense", camChangeOnDiff(camMinutesToMilliseconds(1.2)));
+		setTimer("truckDefense", camChangeOnDiff(camMinutesToMilliseconds(2.5)));
 	}
 
 	camPlayVideos([{video: "MB3_AD1_MSG", type: CAMP_MSG}, {video: "MB3_AD1_MSG2", type: CAMP_MSG}, {video: "MB3_AD1_MSG3", type: MISS_MSG}]);
