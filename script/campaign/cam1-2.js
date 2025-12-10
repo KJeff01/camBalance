@@ -16,14 +16,15 @@ function exposeNorthBase()
 	camPlayVideos({video: "SB1_2_MSG2", type: MISS_MSG});
 	if (camAllowInsaneSpawns())
 	{
-		setTimer("insaneReinforcementSpawn", camSecondsToMilliseconds(25));
+		insaneReinforcementSpawn();
+		setTimer("insaneReinforcementSpawn", camSecondsToMilliseconds(50));
 	}
 }
 
 function insaneReinforcementSpawn()
 {
 	const units = (!camClassicMode()) ? [cTempl.blokeheavy, cTempl.trikeheavy, cTempl.buggyheavy, cTempl.bjeepheavy] : [cTempl.bloke, cTempl.trike, cTempl.buggy, cTempl.bjeep];
-	const limits = {minimum: 8, maxRandom: 6};
+	const limits = {minimum: 10, maxRandom: 6};
 	const location = camMakePos("InsaneSpawnPos");
 	camSendGenericSpawn(CAM_REINFORCE_GROUND, CAM_SCAV_7, CAM_REINFORCE_CONDITION_ARTIFACTS, location, units, limits.minimum, limits.maxRandom);
 }

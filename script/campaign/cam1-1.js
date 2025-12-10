@@ -59,7 +59,6 @@ function eventPickup(feature, droid)
 	if (droid.player === CAM_HUMAN_PLAYER && feature.stattype === ARTIFACT)
 	{
 		hackRemoveMessage("C1-1_OBJ1", PROX_MSG, CAM_HUMAN_PLAYER);
-		camCallOnce("insaneSetupSpawn");
 	}
 }
 
@@ -85,18 +84,10 @@ function eventAttacked(victim, attacker)
 	}
 }
 
-function insaneSetupSpawn()
-{
-	if (camAllowInsaneSpawns())
-	{
-		setTimer("insaneReinforcementSpawn", camSecondsToMilliseconds(1)); // Flood...
-	}
-}
-
 function insaneReinforcementSpawn()
 {
 	const units = (!camClassicMode()) ? [cTempl.blokeheavy, cTempl.trikeheavy, cTempl.buggyheavy, cTempl.bjeepheavy] : [cTempl.bloke, cTempl.trike, cTempl.buggy, cTempl.bjeep];
-	const limits = {minimum: 1, maxRandom: 0};
+	const limits = {minimum: 8, maxRandom: 2};
 	const location = camMakePos(camGenerateRandomMapEdgeCoordinate(getObject("landingZone")));
 	camSendGenericSpawn(CAM_REINFORCE_GROUND, CAM_SCAV_7, CAM_REINFORCE_CONDITION_NONE, location, units, limits.minimum, limits.maxRandom);
 }
@@ -206,5 +197,10 @@ function eventStartLevel()
 	else
 	{
 		queue("blowupNonOriginalStructures", camSecondsToMilliseconds(2));
+	}
+
+	if (camAllowInsaneSpawns())
+	{
+		setTimer("insaneReinforcementSpawn", camSecondsToMilliseconds(30));
 	}
 }
