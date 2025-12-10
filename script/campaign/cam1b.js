@@ -88,8 +88,8 @@ function insaneReinforcementSpawn()
 {
 	const units = (!camClassicMode()) ? [cTempl.bloketwin, cTempl.triketwin, cTempl.buggytwin, cTempl.bjeeptwin] : [cTempl.bloke, cTempl.trike, cTempl.buggy, cTempl.bjeep];
 	const limits = {minimum: 15, maxRandom: 5};
-	const location = camMakePos(getObject("NPSensorRemove"));
-	camSendGenericSpawn(CAM_REINFORCE_GROUND, CAM_SCAV_7, CAM_REINFORCE_CONDITION_BASES, location, units, limits.minimum, limits.maxRandom);
+	const location = camMakePos(getObject("insaneSpawnPoint"));
+	camSendGenericSpawn(CAM_REINFORCE_GROUND, CAM_SCAV_7, CAM_REINFORCE_CONDITION_ARTIFACTS, location, units, limits.minimum, limits.maxRandom);
 }
 
 function eventStartLevel()
