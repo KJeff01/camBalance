@@ -167,6 +167,21 @@ function insaneTransporterAttack()
 	camSendGenericSpawn(CAM_REINFORCE_TRANSPORT, CAM_THE_COLLECTIVE, CAM_REINFORCE_CONDITION_ARTIFACTS, location, units, limits.minimum, limits.maxRandom);
 }
 
+function insaneRemoveExtraVtolPads()
+{
+	const objects = enumArea("insaneExtraVtolPadArea", CAM_THE_COLLECTIVE, false);
+
+	for (let i = 0, len = objects.length; i < len; ++i)
+	{
+		const obj = objects[i];
+
+		if (obj.type === STRUCTURE && obj.stattype === REARM_PAD)
+		{
+			camSafeRemoveObject(obj, false);
+		}
+	}
+}
+
 function eventStartLevel()
 {
 	camSetStandardWinLossConditions(CAM_VICTORY_OFFWORLD, cam_levels.beta7.pre,{
@@ -215,6 +230,11 @@ function eventStartLevel()
 			"COCyborgFactoryL": { tech: "R-Wpn-MG4" },
 			"COTankKillerHardpoint": { tech: "R-Wpn-RocketSlow-ROF02" },
 		});
+	}
+
+	if (!camAllowInsaneSpawns())
+	{
+		insaneRemoveExtraVtolPads();
 	}
 
 	camSetEnemyBases({

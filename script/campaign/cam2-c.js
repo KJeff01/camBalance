@@ -285,6 +285,22 @@ function sendCOTransporter()
 	}
 }
 
+// Removes the pepperpot pits in the transporter base for Classic.
+function removeTransportBasePepperpots()
+{
+	const objects = enumArea("transportBaseCleanup", CAM_THE_COLLECTIVE, false);
+
+	for (let i = 0, len = objects.length; i < len; ++i)
+	{
+		const obj = objects[i];
+
+		if (obj.type === STRUCTURE && obj.stattype === DEFENSE && obj.hasIndirect)
+		{
+			camSafeRemoveObject(obj, false);
+		}
+	}
+}
+
 //Check if too many civilians have been captured by the Collective.
 //This will automatically check for civs near landing zones and remove them.
 function extraVictoryCondition()
@@ -333,6 +349,11 @@ function eventStartLevel()
 			"COHeavyFac-Leopard": { tech: "R-Vehicle-Body02" }, //Leopard
 			"COVtolFacLeft-Prop": { tech: "R-Vehicle-Prop-VTOL" },
 		});
+
+		if (!camAllowInsaneSpawns())
+		{
+			removeTransportBasePepperpots();
+		}
 	}
 	else
 	{

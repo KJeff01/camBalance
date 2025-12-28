@@ -160,6 +160,12 @@
 		"pos1": [2560, 5504],
 		"pos2": [8064, 6400]
 	},
+	"area_13": {
+		"label": "insaneExtraVtolPadArea",
+		"subscriber": 0,
+		"pos1": [384, 384],
+		"pos2": [6400, 2048]
+	},
 
 	"object_0": {
 		"label": "COCommandCenter",

@@ -171,6 +171,21 @@ function insaneReinforcementSpawn()
 	camSendGenericSpawn(CAM_REINFORCE_GROUND, CAM_THE_COLLECTIVE, CAM_REINFORCE_CONDITION_ARTIFACTS, location, units, limits.minimum, limits.maxRandom);
 }
 
+function insaneRemoveExtraVtolPads()
+{
+	const objects = enumArea("insaneExtraVtolPadArea", CAM_THE_COLLECTIVE, false);
+
+	for (let i = 0, len = objects.length; i < len; ++i)
+	{
+		const obj = objects[i];
+
+		if (obj.type === STRUCTURE && obj.stattype === REARM_PAD)
+		{
+			camSafeRemoveObject(obj, false);
+		}
+	}
+}
+
 function eventStartLevel()
 {
 	camSetStandardWinLossConditions(CAM_VICTORY_OFFWORLD, cam_levels.beta9.pre, {
@@ -215,6 +230,11 @@ function eventStartLevel()
 			"COMediumFactory": { tech: "R-Wpn-Cannon4AMk1" },
 			"COWhirlwindSite": { tech: "R-Wpn-AAGun04" },
 		});
+	}
+
+	if (!camAllowInsaneSpawns())
+	{
+		insaneRemoveExtraVtolPads();
 	}
 
 	camSetEnemyBases({
