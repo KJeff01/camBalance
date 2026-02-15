@@ -6142,22 +6142,22 @@
 		"results": [
 			{
 				"class": "Weapon",
-				"filterParameter": "ImpactClass",
-				"filterValue": "MORTARS",
+				"filterParameter": "Id",
+				"filterValue": "Mortar3ROTARYMk1",
 				"parameter": "Damage",
 				"value": 50
 			},
 			{
 				"class": "Weapon",
-				"filterParameter": "ImpactClass",
-				"filterValue": "MORTARS",
+				"filterParameter": "Id",
+				"filterValue": "Mortar3ROTARYMk1",
 				"parameter": "RadiusDamage",
 				"value": 50
 			},
 			{
 				"class": "Weapon",
-				"filterParameter": "ImpactClass",
-				"filterValue": "MORTARS",
+				"filterParameter": "Id",
+				"filterValue": "Mortar3ROTARYMk1",
 				"parameter": "RepeatDamage",
 				"value": 50
 			}
