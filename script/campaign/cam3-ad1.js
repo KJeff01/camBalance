@@ -173,6 +173,11 @@ function insaneReinforcementSpawn()
 	camSendGenericSpawn(CAM_REINFORCE_GROUND, CAM_NEXUS, CAM_REINFORCE_CONDITION_ARTIFACTS, location, units, limits.minimum, limits.maxRandom);
 }
 
+function startInsaneReinforcementAttack()
+{
+    setTimer("insaneReinforcementSpawn", camMinutesToMilliseconds(4));
+}
+
 function insaneTransporterAttack()
 {
 	const units = {units: cTempl.nxmangel, appended: cTempl.nxmsens};
@@ -480,7 +485,7 @@ function eventStartLevel()
 	if (camAllowInsaneSpawns())
 	{
 		queue("insaneVtolAttack", camMinutesToMilliseconds(3));
-		setTimer("insaneTransporterAttack", camMinutesToMilliseconds(3));
-		setTimer("insaneReinforcementSpawn", camMinutesToMilliseconds(2.5));
+		queue("startInsaneReinforcementAttack", camMinutesToMilliseconds(1.5));
+		setTimer("insaneTransporterAttack", camMinutesToMilliseconds(4));
 	}
 }
