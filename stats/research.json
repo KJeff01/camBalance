@@ -6180,22 +6180,22 @@
 		"results": [
 			{
 				"class": "Weapon",
-				"filterParameter": "ImpactClass",
-				"filterValue": "MORTARS",
+				"filterParameter": "Id",
+				"filterValue": "Mortar3ROTARYMk1",
 				"parameter": "Damage",
 				"value": 60
 			},
 			{
 				"class": "Weapon",
-				"filterParameter": "ImpactClass",
-				"filterValue": "MORTARS",
+				"filterParameter": "Id",
+				"filterValue": "Mortar3ROTARYMk1",
 				"parameter": "RadiusDamage",
 				"value": 60
 			},
 			{
 				"class": "Weapon",
-				"filterParameter": "ImpactClass",
-				"filterValue": "MORTARS",
+				"filterParameter": "Id",
+				"filterValue": "Mortar3ROTARYMk1",
 				"parameter": "RepeatDamage",
 				"value": 60
 			}
@@ -6216,22 +6216,22 @@
 		"results": [
 			{
 				"class": "Weapon",
-				"filterParameter": "ImpactClass",
-				"filterValue": "MORTARS",
+				"filterParameter": "Id",
+				"filterValue": "Mortar3ROTARYMk1",
 				"parameter": "Damage",
 				"value": 70
 			},
 			{
 				"class": "Weapon",
-				"filterParameter": "ImpactClass",
-				"filterValue": "MORTARS",
+				"filterParameter": "Id",
+				"filterValue": "Mortar3ROTARYMk1",
 				"parameter": "RadiusDamage",
 				"value": 70
 			},
 			{
 				"class": "Weapon",
-				"filterParameter": "ImpactClass",
-				"filterValue": "MORTARS",
+				"filterParameter": "Id",
+				"filterValue": "Mortar3ROTARYMk1",
 				"parameter": "RepeatDamage",
 				"value": 70
 			}
@@ -6253,22 +6253,22 @@
 		"results": [
 			{
 				"class": "Weapon",
-				"filterParameter": "ImpactClass",
-				"filterValue": "MORTARS",
+				"filterParameter": "Id",
+				"filterValue": "Mortar3ROTARYMk1",
 				"parameter": "Damage",
 				"value": 40
 			},
 			{
 				"class": "Weapon",
-				"filterParameter": "ImpactClass",
-				"filterValue": "MORTARS",
+				"filterParameter": "Id",
+				"filterValue": "Mortar3ROTARYMk1",
 				"parameter": "RadiusDamage",
 				"value": 40
 			},
 			{
 				"class": "Weapon",
-				"filterParameter": "ImpactClass",
-				"filterValue": "MORTARS",
+				"filterParameter": "Id",
+				"filterValue": "Mortar3ROTARYMk1",
 				"parameter": "RepeatDamage",
 				"value": 40
 			}
