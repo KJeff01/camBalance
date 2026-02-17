@@ -35,11 +35,27 @@ var index; // Current LZ (SE, N, canyon, south hill, road north of base)
 var switchLZ; // Counter for incrementing index every third landing
 var sentTransports; // Keeps track of how much the transporter dropped off at a specific LZ, and the overall total.
 
+// Remove this function some time far after 4.6.4 since this just serves to allow old saves on this mission to function without victory problems.
+function eventGameLoaded()
+{
+	if (!camDef(sentTransports))
+	{
+		dump("Old Alpha 10 internal data format detected"); // Save to WZ log file.
+		sentTransports = {
+			timesSentAtIndex: [MIS_TOTAL_PER_INDEX, MIS_TOTAL_PER_INDEX, MIS_TOTAL_PER_INDEX, MIS_TOTAL_PER_INDEX, MIS_TOTAL_PER_INDEX],
+			total: MIS_TOTAL_TRANSPORTS
+		};
+		// Simulates last transport load.
+		index = sentTransports.timesSentAtIndex.length - 1;
+		switchLZ = 2;
+	}
+}
+
 //Check if all enemies are gone and win after 15 transports
 function extraVictoryCondition()
 {
 	const enemies = enumArea(0, 0, mapWidth, mapHeight, ENEMIES, false);
-	if (sentTransports.total === MIS_TOTAL_TRANSPORTS && enemies.length === 0)
+	if (sentTransports.total >= MIS_TOTAL_TRANSPORTS && enemies.length === 0)
 	{
 		return true;
 	}
@@ -176,7 +192,7 @@ function sendTransport()
 		switchLZ = 0;
 	}
 
-	if (sentTransports.total === MIS_TOTAL_TRANSPORTS)
+	if (sentTransports.total >= MIS_TOTAL_TRANSPORTS)
 	{
 		removeTimer("sendTransport");
 	}
