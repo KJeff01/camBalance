@@ -25,6 +25,7 @@ const mis_collectiveResClassic = [
 	"R-Wpn-RocketSlow-Damage05", "R-Wpn-RocketSlow-ROF03"
 ];
 var commandGroup;
+var commanderCoordinates;
 
 camAreaEvent("vtolRemoveZone", function(droid)
 {
@@ -45,6 +46,8 @@ camAreaEvent("group1Trigger", function(droid)
 		radius: 0,
 		regroup: false,
 	});
+
+	setTimer("checkCommanderCoordinates", camSecondsToMilliseconds(10));
 });
 
 camAreaEvent("wayPoint1Rad", function(droid)
@@ -195,6 +198,30 @@ function retreatCommander()
 	});
 }
 
+// Fight source code movement issues where the Commander likes to get stuck randomly on objects.
+function checkCommanderCoordinates()
+{
+	const commanderList = enumDroid(CAM_THE_COLLECTIVE, DROID_COMMAND);
+
+	if (!commanderList.length)
+	{
+		removeTimer("checkCommanderCoordinates");
+		return;
+	}
+
+	const commander = commanderList[0]; // Only ever one Commander so...
+
+	if ((commanderCoordinates.x === commander.x) && (commanderCoordinates.y === commander.y))
+	{
+		const RANDOM_X = (camRand(100) < 50) ? 1 : -1;
+		const RANDOM_Y = (camRand(100) < 50) ? 1 : -1;
+
+		orderDroidLoc(commander, DORDER_MOVE, commander.x + RANDOM_X, commander.y + RANDOM_Y);
+	}
+
+	commanderCoordinates = {x: commander.x, y: commander.y};
+}
+
 //Make the enemy commander flee back to the NW base if attacked.
 function eventAttacked(victim, attacker)
 {
@@ -290,6 +317,7 @@ function eventStartLevel()
 	});
 
 	commandGroup = camMakeGroup("group1NBase");
+	commanderCoordinates = {x: 0, y: 0};
 	camManageTrucks(CAM_THE_COLLECTIVE);
 	camEnableFactory("COFactoryWest");
 
