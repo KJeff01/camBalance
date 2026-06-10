@@ -28,14 +28,14 @@ const mis_alphaResearchNew = [
 	"R-Struc-RprFac-Upgrade01", "R-Struc-RprFac-Upgrade02", "R-Defense-MortarPit",
 	"R-Defense-Pillbox01", "R-Defense-Pillbox04", "R-Defense-Pillbox05",
 	"R-Defense-WallTower01", "R-Defense-WallTower02", "R-Defense-WallUpgrade01",
-	"R-Struc-Materials03", "R-Vehicle-Body05", "R-Vehicle-Metals01", "R-Vehicle-Body04",
+	"R-Struc-Materials01", "R-Struc-Materials02", "R-Struc-Materials03",
+	"R-Vehicle-Body05", "R-Vehicle-Metals01", "R-Vehicle-Body04",
 
 	// 6
 	"R-Wpn-Cannon2Mk1", "R-Defense-WallTower03", "R-Wpn-Rocket05-MiniPod", "R-Struc-Research-Module",
 	"R-Vehicle-Prop-Tracks", "R-Vehicle-Engine01", "R-Defense-Tower06", "R-Defense-Pillbox06",
-	"R-Wpn-Rocket-Damage01", "R-Wpn-Rocket-ROF01",
-	"R-Wpn-Rocket-ROF02", "R-Wpn-Rocket-ROF03", "R-Defense-WallTower06",
-	"R-Wpn-Rocket01-LtAT", "R-Wpn-Rocket03-HvAT", "R-Wpn-RocketSlow-Damage01",
+	"R-Wpn-Rocket-Damage01", "R-Wpn-Rocket-ROF01", "R-Wpn-Rocket-ROF02", "R-Wpn-Rocket-ROF03",
+	"R-Defense-WallTower06", "R-Wpn-Rocket01-LtAT", "R-Wpn-Rocket03-HvAT", "R-Wpn-RocketSlow-Damage01",
 	"R-Defense-WallUpgrade02",
 
 	// 7
@@ -44,12 +44,13 @@ const mis_alphaResearchNew = [
 	"R-Vehicle-Metals02", "R-Wpn-MG-Damage04", "R-Wpn-Rocket02-MRL",
 	"R-Wpn-Rocket-Damage02", "R-Wpn-Mortar02Hvy", "R-Wpn-Mortar-Damage03", "R-Wpn-Cannon-Damage03",
 	"R-Wpn-RocketSlow-Damage02", "R-Vehicle-Body11", "R-Defense-MRL", "R-Defense-HvyMor",
+	"R-Vehicle-Body08",
 
 	// 9
 	"R-Struc-Research-Upgrade01", "R-Struc-Research-Upgrade02", "R-Struc-Research-Upgrade03",
 	"R-Wpn-Mortar-Acc01", "R-Wpn-Rocket-Accuracy01", "R-Wpn-Rocket-Accuracy02",
 	"R-Wpn-RocketSlow-Accuracy01", "R-Wpn-Cannon-Accuracy01", "R-Struc-RprFac-Upgrade03",
-	"R-Comp-SynapticLink", "R-Vehicle-Body08", "R-Vehicle-Engine02", "R-Struc-Factory-Upgrade03",
+	"R-Comp-SynapticLink", "R-Vehicle-Engine02", "R-Struc-Factory-Upgrade03",
 	"R-Struc-Factory-Cyborg", "R-Cyborg-Wpn-MG", "R-Cyborg-Metals01", "R-Cyborg-Metals02",
 	"R-Cyborg-Metals03", "R-Cyborg-Wpn-Flamer", "R-Cyborg-Wpn-Rocket",
 	"R-Cyborg-Legs01", "R-Defense-WallUpgrade03",
@@ -118,9 +119,8 @@ const mis_betaResearchNew = [
 	// 7
 	"R-Wpn-Bomb02", "R-Wpn-Howitzer-Accuracy01", "R-Wpn-Howitzer-Damage02",
 	"R-Wpn-AAGun-Accuracy02", "R-Wpn-Howitzer-ROF02", "R-Struc-Research-Upgrade06",
-	"R-Struc-VTOLPad-Upgrade03", "R-Wpn-Bomb-Damage02", "R-Wpn-Bomb04",
-	"R-Defense-WallUpgrade06", "R-Vehicle-Engine05", "R-Wpn-Mortar-ROF03",
-	"R-Wpn-Mortar-Damage06",
+	"R-Struc-VTOLPad-Upgrade03", "R-Wpn-Bomb04", "R-Defense-WallUpgrade06",
+	"R-Vehicle-Engine05", "R-Wpn-Mortar-ROF03", "R-Wpn-Mortar-Damage06",
 
 	// 8
 	"R-Sys-VTOLCBS-Tower01", "R-Wpn-Cannon4AMk1", "R-Wpn-Rocket07-Tank-Killer",
@@ -132,7 +132,7 @@ const mis_betaResearchNew = [
 	// 9
 	"R-Wpn-Cannon5", "R-Wpn-RocketSlow-Damage06", "R-Defense-Wall-VulcanCan",
 	"R-Wpn-Cannon-Damage06", "R-Wpn-RocketSlow-ROF03", "R-Wpn-Cannon-ROF03",
-	"R-Wpn-MG-Damage08",
+	"R-Wpn-MG-Damage08", "R-Wpn-Bomb-Damage02",
 
 	// 10
 	"R-Vehicle-Body09", "R-Wpn-HvyHowitzer", "R-Defense-HvyHowitzer", "R-Vehicle-Metals06",
@@ -182,11 +182,11 @@ const mis_gammaResearchNew = [
 	"R-Wpn-Rail-Damage01", "R-Struc-VTOLPad-Upgrade05", "R-Struc-VTOLPad-Upgrade06", "R-Defense-SamSite1",
 	"R-Wpn-Missile-Damage01", "R-Vehicle-Armor-Heat05", "R-Wpn-Rail-Accuracy01", "R-Wpn-Missile-Accuracy01",
 	"R-Wpn-AAGun-Accuracy03", "R-Wpn-Howitzer-Accuracy03", "R-Wpn-Rail-ROF01", "R-Wpn-Missile2A-T",
-	"R-Cyborg-Wpn-ATMiss", "R-Defense-GuardTower-ATMiss", "R-Defense-WallTower-A-Tmiss", "R-Wpn-Missile-Damage02",
+	"R-Cyborg-Wpn-ATMiss", "R-Defense-GuardTower-ATMiss", "R-Defense-WallTower-A-Tmiss",
 	"R-Wpn-Missile-ROF01", "R-Cyborg-Metals08", "R-Cyborg-Armor-Heat05", "R-Defense-WallUpgrade10",
 
 	// 7
-	"R-Wpn-MdArtMissile", "R-Wpn-Laser02", "R-Wpn-RailGun02",
+	"R-Wpn-MdArtMissile", "R-Wpn-Missile-Damage02", "R-Wpn-Laser02", "R-Wpn-RailGun02",
 	"R-Wpn-Missile-HvSAM", "R-Defense-SamSite2", "R-Wpn-Missile-Accuracy02",
 	"R-Defense-PulseLas", "R-Wpn-Energy-ROF02", "R-Wpn-Energy-Damage03", "R-Wpn-Energy-ROF03",
 	"R-Defense-MdArtMissile", "R-Wpn-Missile-ROF02", "R-Defense-Rail2", "R-Defense-WallTower-Rail2",
