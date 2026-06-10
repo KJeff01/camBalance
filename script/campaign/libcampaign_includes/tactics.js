@@ -41,6 +41,9 @@
 //;;     `CAM_PATROL_CYCLE` forces the group to loop through the entire list of patrol positions one after the other.
 //;;   * `reactToAttack` Defaults to false and can be used to break the group out of patrol and
 //;;      into a `CAM_ORDER_ATTACK` state, if the group is attacked.
+//;;   * `lowWallPriority` If set to `true`, the group will ignore walls unless they have nothing else to interact with. Be careful
+//;;     with this as it can make land based enemy units unable to break through simple wall designs and stall them forever. Best used with VTOLs.
+//;;   * `isVtolGroup` Makes group use tactics variations designed for VTOLs. This is automatically detected and doesn't need to be defined.
 //;; * `CAM_ORDER_COMPROMISE` Same as `CAM_ORDER_ATTACK`, just stay near the last (or only)
 //;;   attack position instead of looking for the player around the whole map. Useful for offworld missions,
 //;;   with player's LZ as the final position. The following data object fields are available:
@@ -89,6 +92,21 @@ function camManageGroup(group, order, data)
 	if (camDef(__camGroupInfo[group]) && order !== __camGroupInfo[group].order)
 	{
 		camTrace("Group", group, "receives a new order:", camOrderToString(order));
+	}
+	if (!camDef(saneData.isVtolGroup))
+	{
+		saneData.isVtolGroup = false;
+		const droids = enumGroup(group);
+		for (let i = 0, len = droids.length; i < len; ++i)
+		{
+			const drObj = droids[i];
+			if (isVTOL(drObj))
+			{
+				// Assume 1 VTOL found means it's true for the whole group, for simplicity.
+				saneData.isVtolGroup = true;
+				break;
+			}
+		}
 	}
 	__camGroupInfo[group] = {
 		target: undefined,
@@ -189,6 +207,7 @@ function __camPickTarget(group)
 	let targets = [];
 	const gi = __camGroupInfo[group];
 	const droids = enumGroup(group);
+	const __LOW_WALL = (camDef(gi.data.lowWallPriority) && gi.data.lowWallPriority);
 	__camFindGroupAvgCoordinate(group);
 	switch (gi.order)
 	{
@@ -196,7 +215,7 @@ function __camPickTarget(group)
 		{
 			if (camDef(gi.target))
 			{
-				targets = enumRange(gi.target.x, gi.target.y,__CAM_TARGET_TRACKING_RADIUS, CAM_HUMAN_PLAYER, false).filter((obj) => (
+				targets = enumRange(gi.target.x, gi.target.y, __CAM_TARGET_TRACKING_RADIUS, CAM_HUMAN_PLAYER, false).filter((obj) => (
 					obj.type === STRUCTURE || (obj.type === DROID && !isVTOL(obj))
 				));
 			}
@@ -230,30 +249,37 @@ function __camPickTarget(group)
 				}
 				else
 				{
+					const dr = droids[0];
 					targets = [ gi.data.pos[gi.data.pos.length - 1] ];
+					targets = targets.filter((pos) => (
+						propulsionCanReach(dr.propulsion, dr.x, dr.y, pos.x, pos.y)
+					));
+					break;
 				}
 			}
 			const dr = droids[0];
-			targets = targets.filter((obj) => (
-				propulsionCanReach(dr.propulsion, dr.x, dr.y, obj.x, obj.y)
-			));
-			if (targets.length === 0)
+			if (__LOW_WALL || gi.data.isVtolGroup)
 			{
-				targets = enumStruct(CAM_HUMAN_PLAYER).filter((obj) => (
-					propulsionCanReach(dr.propulsion, dr.x, dr.y, obj.x, obj.y)
-				));
+				targets = targets.filter((obj) => ( propulsionCanReach(dr.propulsion, dr.x, dr.y, obj.x, obj.y) && (obj.type !== STRUCTURE || obj.stattype !== WALL) ));
 				if (targets.length === 0)
 				{
-					targets = enumDroid(CAM_HUMAN_PLAYER).filter((obj) => (
-						propulsionCanReach(dr.propulsion, dr.x, dr.y, obj.x, obj.y) &&
-							(obj.type === STRUCTURE || (obj.type === DROID && !isVTOL(obj)))
-					));
-					if (targets.length === 0)
-					{
-						targets = enumDroid(CAM_HUMAN_PLAYER).filter((obj) => (
-							propulsionCanReach(dr.propulsion, dr.x, dr.y, obj.x, obj.y)
-						));
-					}
+					targets = enumStruct(CAM_HUMAN_PLAYER).filter((obj) => ( propulsionCanReach(dr.propulsion, dr.x, dr.y, obj.x, obj.y) && obj.stattype !== WALL ));
+				}
+			}
+			else
+			{
+				targets = targets.filter((obj) => ( propulsionCanReach(dr.propulsion, dr.x, dr.y, obj.x, obj.y) ));
+				if (targets.length === 0)
+				{
+					targets = enumStruct(CAM_HUMAN_PLAYER).filter((obj) => ( propulsionCanReach(dr.propulsion, dr.x, dr.y, obj.x, obj.y) ));
+				}
+			}
+			if (targets.length === 0)
+			{
+				targets = enumDroid(CAM_HUMAN_PLAYER).filter((obj) => ( propulsionCanReach(dr.propulsion, dr.x, dr.y, obj.x, obj.y) && !isVTOL(obj) ));
+				if (targets.length === 0)
+				{
+					targets = enumDroid(CAM_HUMAN_PLAYER).filter((obj) => ( propulsionCanReach(dr.propulsion, dr.x, dr.y, obj.x, obj.y) ));
 				}
 			}
 			break;
@@ -298,7 +324,18 @@ function __camPickTarget(group)
 		return undefined;
 	}
 	targets.sort(__camDistToGroupAverage);
-	const target = targets[0];
+	let target = targets[0];
+	if ((__LOW_WALL || gi.data.isVtolGroup) && target.type === STRUCTURE && target.stattype === WALL)
+	{
+		for (let i = 0, len = targets.length; i < len; ++i)
+		{
+			if (targets[i].type !== STRUCTURE || targets[i].stattype !== WALL)
+			{
+				target = targets[i]; // Path to closest non-wall object.
+				break;
+			}
+		}
+	}
 	if (camDef(target) && camDef(target.type) && target.type === DROID && camIsTransporter(target))
 	{
 		return undefined;
@@ -337,7 +374,7 @@ function __camTacticsTick()
 }
 
 //Return the range (in tiles) a droid will scout for stuff to attack around it.
-function __camScanRange(order, drType)
+function __camScanRange(order, drType, extraRangeBonus)
 {
 	let rng = __CAM_TARGET_TRACKING_RADIUS; //default
 	switch (order)
@@ -355,6 +392,10 @@ function __camScanRange(order, drType)
 			break;
 		default:
 			camDebug("Unsupported group order", order, camOrderToString(order));
+	}
+	if (extraRangeBonus)
+	{
+		rng += __CAM_ADDITIONAL_SCAN_RADIUS; // Scouting picks up wall-like structures so try extra hard to avoid them.
 	}
 	if (drType === DROID_SENSOR)
 	{
@@ -610,12 +651,29 @@ function __camTacticsTickForGroup(group)
 		{
 			let closeByObj;
 			const __ARTILLERY_LIKE = (droid.isCB || droid.hasIndirect || droid.isSensor);
-			let closeBy = enumRange(droid.x, droid.y, __camScanRange(gi.order, droid.droidType), CAM_HUMAN_PLAYER, __TRACK);
+			const __LOW_WALL = (camDef(gi.data.lowWallPriority) && gi.data.lowWallPriority);
+			const __LARGE_SCAN = (__LOW_WALL && __VTOL_UNIT); // Tweak option here can enhance the target behavior more.
+			let closeBy = enumRange(droid.x, droid.y, __camScanRange(gi.order, droid.droidType, __LARGE_SCAN), CAM_HUMAN_PLAYER, __TRACK);
 			if (closeBy.length > 0)
 			{
 				__camFindGroupAvgCoordinate(group);
 				closeBy.sort(__camDistToGroupAverage);
 				closeByObj = closeBy[0];
+				if ((__LOW_WALL || gi.data.isVtolGroup) && closeByObj.type === STRUCTURE && closeByObj.stattype === WALL)
+				{
+					for (let i = 0, len = closeBy.length; i < len; ++i)
+					{
+						if (closeBy[i].type !== STRUCTURE || closeBy[i].stattype !== WALL)
+						{
+							closeByObj = closeBy[i];
+							break;
+						}
+					}
+					if (__VTOL_UNIT && closeByObj.type === STRUCTURE && closeByObj.stattype === WALL)
+					{
+						closeByObj = undefined; // VTOLs will just ignore walls completely
+					}
+				}
 			}
 			//We only care about explicit observe/attack if the object is close
 			//on the z coordinate. We should not chase things up or down hills

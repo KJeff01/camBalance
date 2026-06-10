@@ -282,6 +282,7 @@ function eventStartLevel()
 			data: {
 				regroup: false,
 				count: -1,
+				lowWallPriority: true,
 			},
 			templates: [cTempl.comhvat]
 		},
