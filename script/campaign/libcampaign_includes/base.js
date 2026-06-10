@@ -234,7 +234,7 @@ function __camIsValidLeftover(obj)
 {
 	if (camPlayerMatchesFilter(obj.player, ENEMIES))
 	{
-		if (obj.type === STRUCTURE && obj.stattype === WALL)
+		if (obj.type === STRUCTURE && obj.stattype === WALL && obj.status === BUILT)
 		{
 			return true;
 		}
@@ -256,11 +256,7 @@ function __camShouldDestroyLeftover(objInfo, basePlayer)
 	{
 		return false;
 	}
-	return (objInfo.type === STRUCTURE &&
-		object.status === BUILT &&
-		__camIsValidLeftover(object) &&
-		(!camDef(basePlayer) ||
-		(camDef(basePlayer) && camPlayerMatchesFilter(objInfo.player, basePlayer))));
+	return (__camIsValidLeftover(object) && (!camDef(basePlayer) || camPlayerMatchesFilter(objInfo.player, basePlayer)));
 }
 
 function __camCheckBaseEliminated(group)
