@@ -318,6 +318,7 @@ function eventStartLevel()
 			data: {
 				regroup: false,
 				count: -1,
+				lowWallPriority: true,
 			},
 			templates: (!camClassicMode()) ? [cTempl.colagv, cTempl.commorv, cTempl.commorvt, cTempl.colhvat, cTempl.comacv] : [cTempl.colagv, cTempl.commorv]
 		},

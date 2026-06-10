@@ -52,6 +52,8 @@
 //;;   * `repair` Health percentage to fall back to repair facility, if any.
 //;;   * `regroup` If set to `true`, the group will not move forward unless it has at least `count` droids in its biggest cluster.
 //;;     If `count` is set to `-1`, at least ⅔ of group's droids should be in the biggest cluster.
+//;;   * `lowWallPriority` If set to `true`, the group will ignore walls unless they have nothing else to interact with. Be careful
+//;;     with this as it can make land based enemy units unable to break through simple wall designs and stall them forever. Best used with VTOLs.
 //;; * `CAM_ORDER_FOLLOW` Assign the group to commander. The sub-order is defined to be given to the commander.
 //;;   When commander dies, the group continues to execute the sub-order. The following data object fields are available:
 //;;   * `droid` Commander droid label.
@@ -298,7 +300,18 @@ function __camPickTarget(group)
 		return undefined;
 	}
 	targets.sort(__camDistToGroupAverage);
-	const target = targets[0];
+	let target = targets[0];
+	if (camDef(gi.data.lowWallPriority) && gi.data.lowWallPriority && target.type === STRUCTURE && target.stattype === WALL)
+	{
+		for (let i = 0, len = targets.length; i < len; ++i)
+		{
+			if (targets[i].type !== STRUCTURE || targets[i].stattype !== WALL)
+			{
+				target = targets[i]; // Path to closest non-wall object.
+				break;
+			}
+		}
+	}
 	if (camDef(target) && camDef(target.type) && target.type === DROID && camIsTransporter(target))
 	{
 		return undefined;
@@ -616,6 +629,21 @@ function __camTacticsTickForGroup(group)
 				__camFindGroupAvgCoordinate(group);
 				closeBy.sort(__camDistToGroupAverage);
 				closeByObj = closeBy[0];
+				if (camDef(gi.data.lowWallPriority) && gi.data.lowWallPriority && closeByObj.type === STRUCTURE && closeByObj.stattype === WALL)
+				{
+					for (let i = 0, len = closeBy.length; i < len; ++i)
+					{
+						if (closeBy[i].type !== STRUCTURE || closeBy[i].stattype !== WALL)
+						{
+							closeByObj = closeBy[i];
+							break;
+						}
+					}
+					if (__VTOL_UNIT && closeByObj.type === STRUCTURE && closeByObj.stattype === WALL)
+					{
+						closeByObj = undefined; // VTOLs will just ignore walls completely
+					}
+				}
 			}
 			//We only care about explicit observe/attack if the object is close
 			//on the z coordinate. We should not chase things up or down hills

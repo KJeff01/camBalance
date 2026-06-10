@@ -349,6 +349,7 @@ function eventStartLevel()
 				regroup: false,
 				repair: 40,
 				count: -1,
+				lowWallPriority: true,
 			},
 			templates: [cTempl.nxmheapv, cTempl.nxmtherv]
 		},
