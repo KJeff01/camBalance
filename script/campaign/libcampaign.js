@@ -101,6 +101,7 @@ const CAM_THE_COLLECTIVE = 2;
 const CAM_NEXUS = 3;
 const CAM_SCAV_6 = 6;
 const CAM_SCAV_7 = 7;
+const CAM_FEATURE_PLAYER = 12; // Map features are assigned this number to their player value.
 
 const __CAM_MAX_PLAYERS = 8;
 const __CAM_TICKS_PER_FRAME = 100;

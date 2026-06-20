@@ -256,7 +256,10 @@ function __camShouldDestroyLeftover(objInfo, basePlayer)
 	{
 		return false;
 	}
-	return (__camIsValidLeftover(object) && (!camDef(basePlayer) || camPlayerMatchesFilter(objInfo.player, basePlayer)));
+	return (__camIsValidLeftover(object) &&
+		(!camDef(basePlayer) || // generic whole base
+		camPlayerMatchesFilter(objInfo.player, basePlayer) || // specific base
+		(objInfo.player === CAM_FEATURE_PLAYER))); // Always blow up valid features regardless of player
 }
 
 function __camCheckBaseEliminated(group)
@@ -276,10 +279,14 @@ function __camCheckBaseEliminated(group)
 		}
 		if (camDef(bi.cleanup))
 		{
-			const objects = enumArea(bi.cleanup, ENEMIES, false);
+			const objects = enumArea(bi.cleanup, ALL_PLAYERS, false); // Scan everything to pull in features.
 			for (let i = 0, len = objects.length; i < len; ++i)
 			{
 				const object = objects[i];
+				if (object.type === DROID || object.player === CAM_HUMAN_PLAYER)
+				{
+					continue;
+				}
 				const objInfo = {
 					type: object.type,
 					player: object.player,
