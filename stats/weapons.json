@@ -3927,7 +3927,7 @@
 		"movement": "DIRECT",
 		"muzzleGfx": "FXLRocPd.PIE",
 		"name": "VTOL Bunker Buster",
-		"numAttackRuns": 6,
+		"numAttackRuns": 3,
 		"numExplosions": 2,
 		"radiusLife": 10,
 		"rotate": 180,
