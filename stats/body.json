@@ -900,7 +900,7 @@
 		"armourHeat": 6,
 		"armourKinetic": 12,
 		"buildPoints": 115,
-		"buildPower": 25,
+		"buildPower": 10,
 		"class": "Cyborgs",
 		"droidType": "CYBORG",
 		"hitpoints": 200,

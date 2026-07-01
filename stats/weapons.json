@@ -1321,7 +1321,7 @@
 	},
 	"Cyb-Wpn-Atmiss": {
 		"buildPoints": 1000,
-		"buildPower": 250,
+		"buildPower": 164,
 		"damage": 440,
 		"effectSize": 50,
 		"explosionWav": "smlexpl.ogg",
@@ -1360,7 +1360,7 @@
 	},
 	"Cyb-Wpn-Laser": {
 		"buildPoints": 600,
-		"buildPower": 150,
+		"buildPower": 94,
 		"damage": 176,
 		"effectSize": 100,
 		"explosionWav": "lsrexpl.ogg",
@@ -1397,7 +1397,7 @@
 	},
 	"Cyb-Wpn-Rail1": {
 		"buildPoints": 800,
-		"buildPower": 200,
+		"buildPower": 134,
 		"damage": 210,
 		"effectSize": 100,
 		"explosionWav": "gaussgun.ogg",
@@ -1434,7 +1434,7 @@
 	},
 	"CyborgCannon": {
 		"buildPoints": 400,
-		"buildPower": 100,
+		"buildPower": 89,
 		"damage": 82,
 		"effectSize": 80,
 		"explosionWav": "smlexpl.ogg",
@@ -1474,7 +1474,7 @@
 	},
 	"CyborgCannon02": {
 		"buildPoints": 500,
-		"buildPower": 130,
+		"buildPower": 114,
 		"damage": 67,
 		"effectSize": 50,
 		"explosionWav": "smlexpl.ogg",
@@ -1514,7 +1514,7 @@
 	},
 	"CyborgChaingun": {
 		"buildPoints": 160,
-		"buildPower": 40,
+		"buildPower": 29,
 		"damage": 20,
 		"effectSize": 100,
 		"facePlayer": 1,
@@ -1549,7 +1549,7 @@
 	},
 	"CyborgFlamer01": {
 		"buildPoints": 200,
-		"buildPower": 50,
+		"buildPower": 44,
 		"damage": 14,
 		"effectSize": 100,
 		"facePlayer": 1,
@@ -1588,7 +1588,7 @@
 	},
 	"CyborgFlamer02": {
 		"buildPoints": 300,
-		"buildPower": 75,
+		"buildPower": 74,
 		"damage": 42,
 		"effectSize": 100,
 		"facePlayer": 1,
@@ -1627,7 +1627,7 @@
 	},
 	"CyborgRocket": {
 		"buildPoints": 400,
-		"buildPower": 110,
+		"buildPower": 104,
 		"damage": 124,
 		"effectSize": 25,
 		"explosionWav": "lrgexpl.ogg",
@@ -1667,7 +1667,7 @@
 	},
 	"CyborgRocket02": {
 		"buildPoints": 700,
-		"buildPower": 160,
+		"buildPower": 129,
 		"damage": 191,
 		"effectSize": 75,
 		"explosionWav": "lrgexpl.ogg",
@@ -1707,7 +1707,7 @@
 	},
 	"CyborgRotMG": {
 		"buildPoints": 270,
-		"buildPower": 90,
+		"buildPower": 59,
 		"damage": 23,
 		"effectSize": 100,
 		"facePlayer": 1,
