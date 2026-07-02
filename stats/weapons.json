@@ -1320,7 +1320,7 @@
 		"weight": 1000
 	},
 	"Cyb-Wpn-Atmiss": {
-		"buildPoints": 1000,
+		"buildPoints": 750,
 		"buildPower": 164,
 		"damage": 440,
 		"effectSize": 50,
@@ -1359,7 +1359,7 @@
 		"weight": 120
 	},
 	"Cyb-Wpn-Laser": {
-		"buildPoints": 600,
+		"buildPoints": 350,
 		"buildPower": 94,
 		"damage": 176,
 		"effectSize": 100,
@@ -1396,7 +1396,7 @@
 		"weight": 120
 	},
 	"Cyb-Wpn-Rail1": {
-		"buildPoints": 800,
+		"buildPoints": 600,
 		"buildPower": 134,
 		"damage": 210,
 		"effectSize": 100,
@@ -1513,7 +1513,7 @@
 		"weight": 120
 	},
 	"CyborgChaingun": {
-		"buildPoints": 160,
+		"buildPoints": 150,
 		"buildPower": 29,
 		"damage": 20,
 		"effectSize": 100,
@@ -1626,7 +1626,7 @@
 		"weight": 120
 	},
 	"CyborgRocket": {
-		"buildPoints": 400,
+		"buildPoints": 450,
 		"buildPower": 104,
 		"damage": 124,
 		"effectSize": 25,
@@ -1666,7 +1666,7 @@
 		"weight": 120
 	},
 	"CyborgRocket02": {
-		"buildPoints": 700,
+		"buildPoints": 600,
 		"buildPower": 129,
 		"damage": 191,
 		"effectSize": 75,
@@ -1706,7 +1706,7 @@
 		"weight": 120
 	},
 	"CyborgRotMG": {
-		"buildPoints": 270,
+		"buildPoints": 250,
 		"buildPower": 59,
 		"damage": 23,
 		"effectSize": 100,
