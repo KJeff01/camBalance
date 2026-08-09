@@ -109,10 +109,10 @@ function insaneReinforcementSpawn()
 
 function insaneTransporterAttack()
 {
-	const DISTANCE_FROM_POS = 5;
+	const DISTANCE_FROM_POS = 10;
 	const units = {units: [cTempl.npmorb, cTempl.npmrl], appended: cTempl.npmsens};
 	const limits = {minimum: 7, maxRandom: 2};
-	const location = camGenerateRandomMapCoordinate(getObject("StartPosition"), CAM_GENERIC_LAND_STAT, DISTANCE_FROM_POS);
+	const location = camGenerateRandomMapCoordinate(getObject("LandingZone2"), CAM_GENERIC_LAND_STAT, DISTANCE_FROM_POS);
 	camSendGenericSpawn(CAM_REINFORCE_TRANSPORT, CAM_NEW_PARADIGM, CAM_REINFORCE_CONDITION_BASES, location, units, limits.minimum, limits.maxRandom);
 }
 
