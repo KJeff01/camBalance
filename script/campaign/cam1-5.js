@@ -59,7 +59,7 @@ function getDroidsForNPLZ(args)
 		}
 		else
 		{
-			const artillery = (!camClassicMode()) ? [cTempl.npmorb] : [cTempl.npmor];
+			const artillery = [cTempl.npmorb];
 			const other = [cTempl.npmmct];
 			if (camRand(2) > 0)
 			{
