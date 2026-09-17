@@ -186,7 +186,7 @@ function insaneTransporterAttack()
 	camSendGenericSpawn(CAM_REINFORCE_TRANSPORT, CAM_NEXUS, CAM_REINFORCE_CONDITION_ARTIFACTS, location, units, limits.minimum, limits.maxRandom);
 }
 
-// Explode trucks to significantly reduce chances of gaming the lassat.
+// Target trucks to significantly reduce chances of gaming the lassat.
 function destroyTrucksInBlastZone()
 {
 	const objects = enumArea(0, 0, mapWidth, Math.floor(mapLimit), CAM_HUMAN_PLAYER, false);
@@ -195,7 +195,7 @@ function destroyTrucksInBlastZone()
 		const obj = objects[i];
 		if (obj.type === DROID && obj.droidType === DROID_CONSTRUCT)
 		{
-			camSafeRemoveObject(obj, true);
+			fireWeaponAtObj("LasSat", obj, CAM_HUMAN_PLAYER);
 		}
 	}
 }
@@ -255,6 +255,11 @@ function vaporizeTarget()
 		//2.13 / 60 = 0.0355 tiles per second. 0.0355 * 10 = ~0.36 tiles every 10 seconds.
 		//This assumes an hour to completely cover the upper half of the home map.
 		mapLimit += 0.36; //sector clear; move closer
+	}
+	if (Math.floor(mapLimit) >= 1)
+	{
+		hackMarkTiles();
+		hackMarkTiles(0, Math.floor(mapLimit) - 1, mapWidth, Math.floor(mapLimit));
 	}
 	laserSatFuzzyStrike(target);
 }
