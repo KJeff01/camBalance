@@ -279,7 +279,7 @@ function __camCheckBaseEliminated(group)
 		}
 		if (camDef(bi.cleanup))
 		{
-			const objects = enumArea(bi.cleanup, ALL_PLAYERS, false); // Scan everything to pull in features.
+			const objects = enumArea(bi.cleanup, ENEMIES, false); // Use ALL_PLAYERS to scan everything to pull in features if wanted.
 			for (let i = 0, len = objects.length; i < len; ++i)
 			{
 				const object = objects[i];
