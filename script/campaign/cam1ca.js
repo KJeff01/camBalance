@@ -177,10 +177,10 @@ function eventStartLevel()
 	camSetStandardWinLossConditions(CAM_VICTORY_STANDARD, cam_levels.alpha8.pre, {
 		callback: "extraVictoryCondition"
 	});
-	const startPos = getObject("startPosition");
+	const startPos = (!camClassicMode()) ? getObject("startPositionRemastered") : getObject("startPosition");
 	const lz = getObject("landingZone");
 	centreView(startPos.x, startPos.y);
-	setNoGoArea(lz.x, lz.y, lz.x2, lz.y2, CAM_HUMAN_PLAYER);
+	setNoGoArea(lz.x, lz.y, lz.x2, lz.y2, CAM_HUMAN_PLAYER); // Shows LZ light effects at a minimum.
 
 	if (camClassicMode())
 	{
@@ -188,6 +188,9 @@ function eventStartLevel()
 	}
 	else
 	{
+		const lzRem = getObject("landingZoneRemastered");
+		setNoGoArea(lz.x, lz.y, lz.x2, lz.y2, CAM_SCAV_7); // Keep original LZ clear of structures.
+		setNoGoArea(lzRem.x, lzRem.y, lzRem.x2, lzRem.y2, CAM_HUMAN_PLAYER); // Use the plateau one and setup LZ lights.
 		camCompleteRequiredResearch(mis_newParadigmRes, CAM_NEW_PARADIGM);
 	}
 
