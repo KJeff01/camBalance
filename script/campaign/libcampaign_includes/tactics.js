@@ -654,6 +654,7 @@ function __camTacticsTickForGroup(group)
 			const __LOW_WALL = (camDef(gi.data.lowWallPriority) && gi.data.lowWallPriority);
 			const __LARGE_SCAN = (__LOW_WALL && __VTOL_UNIT); // Tweak option here can enhance the target behavior more.
 			let closeBy = enumRange(droid.x, droid.y, __camScanRange(gi.order, droid.droidType, __LARGE_SCAN), CAM_HUMAN_PLAYER, __TRACK);
+			let nothingButWallsNearby = false;
 			if (closeBy.length > 0)
 			{
 				__camFindGroupAvgCoordinate(group);
@@ -672,6 +673,7 @@ function __camTacticsTickForGroup(group)
 					if (__VTOL_UNIT && closeByObj.type === STRUCTURE && closeByObj.stattype === WALL)
 					{
 						closeByObj = undefined; // VTOLs will just ignore walls completely
+						nothingButWallsNearby = true;
 					}
 				}
 			}
@@ -702,7 +704,9 @@ function __camTacticsTickForGroup(group)
 			}
 			else
 			{
-				if (__DEFENDING || !(__ARTILLERY_LIKE || __VTOL_UNIT))
+				const __VTOL_SHOULD_MOVE = ((__LOW_WALL || gi.data.isVtolGroup) && __VTOL_UNIT && nothingButWallsNearby);
+				const __OLD_MOVE_CONDITION = !(__ARTILLERY_LIKE || __VTOL_UNIT);
+				if (__DEFENDING || __VTOL_SHOULD_MOVE || __OLD_MOVE_CONDITION)
 				{
 					orderDroidLoc(droid, DORDER_MOVE, target.x, target.y);
 				}
