@@ -25,7 +25,8 @@ const mis_collectiveResClassic = [
 	"R-Wpn-RocketSlow-Damage05", "R-Wpn-RocketSlow-ROF03"
 ];
 var commandGroup;
-var commanderCoordinates;
+var commanderCoordinates; // Used to check if the Commander got stuck on something before retreating.
+var retreating; // Toggles off the coordinate checks once the Commander starts retreating.
 
 camAreaEvent("vtolRemoveZone", function(droid)
 {
@@ -47,7 +48,7 @@ camAreaEvent("group1Trigger", function(droid)
 		regroup: false,
 	});
 
-	setTimer("checkCommanderCoordinates", camSecondsToMilliseconds(10));
+	setTimer("checkCommanderCoordinates", camSecondsToMilliseconds(30));
 });
 
 camAreaEvent("wayPoint1Rad", function(droid)
@@ -190,6 +191,7 @@ function failSequence()
 
 function retreatCommander()
 {
+	retreating = true;
 	camManageGroup(commandGroup, CAM_ORDER_DEFEND, {
 		pos: camMakePos("wayPoint3"),
 		radius: 6,
@@ -210,6 +212,15 @@ function checkCommanderCoordinates()
 	}
 
 	const commander = commanderList[0]; // Only ever one Commander so...
+
+	if (camDef(retreating) && retreating)
+	{
+		const area = getObject("westBaseCleanup");
+		if (commander.x >= area.x && commander.x <= area.x2 && commander.y >= area.y && commander.y <= area.y2)
+		{
+			removeTimer("checkCommanderCoordinates"); // Still allows one last potential nudge if stuck.
+		}
+	}
 
 	if ((commanderCoordinates.x === commander.x) && (commanderCoordinates.y === commander.y))
 	{
@@ -318,6 +329,7 @@ function eventStartLevel()
 
 	commandGroup = camMakeGroup("group1NBase");
 	commanderCoordinates = {x: 0, y: 0};
+	retreating = false;
 	camManageTrucks(CAM_THE_COLLECTIVE);
 	camEnableFactory("COFactoryWest");
 
