@@ -344,6 +344,7 @@ function eventResearched(research, structure, player)
 			else if (videoInfo[i].res === mis_researchTargets.missileCode3)
 			{
 				winFlag = true;
+				hackMarkTiles(); // Needed to clear tiles when going to next mission.
 			}
 		}
 	}
