@@ -3420,6 +3420,75 @@
 		"subgroupIconID": "IMAGE_RES_GRPROF",
 		"techCode": 1
 	},
+	"R-Wpn-Mini-Rocket-Artillery-ROF01": {
+		"iconID": "IMAGE_RES_WEAPONTECH",
+		"id": "R-Wpn-Mini-Rocket-Artillery-ROF01",
+		"msgName": "RES_W_MRKA_ROF1",
+		"name": "Mini-Rocket Artillery Rapid Loader",
+		"requiredResearch": [
+			"R-Wpn-Rocket06-IDF",
+			"R-Wpn-Mortar3"
+		],
+		"researchPoints": 8400,
+		"researchPower": 262,
+		"results": [
+			{
+				"class": "Weapon",
+				"filterParameter": "Id",
+				"filterValue": "Rocket-MRL",
+				"parameter": "ReloadTime",
+				"value": -10
+			}
+		],
+		"statID": "Rocket-MRL",
+		"subgroupIconID": "IMAGE_RES_GRPROF"
+	},
+	"R-Wpn-Mini-Rocket-Artillery-ROF02": {
+		"iconID": "IMAGE_RES_WEAPONTECH",
+		"id": "R-Wpn-Mini-Rocket-Artillery-ROF02",
+		"name": "Mini-Rocket Artillery Rapid Loader Mk2",
+		"requiredResearch": [
+			"R-Wpn-Mini-Rocket-Artillery-ROF01",
+			"R-Wpn-Mortar-ROF04"
+		],
+		"researchPoints": 9600,
+		"researchPower": 300,
+		"results": [
+			{
+				"class": "Weapon",
+				"filterParameter": "Id",
+				"filterValue": "Rocket-MRL",
+				"parameter": "ReloadTime",
+				"value": -10
+			}
+		],
+		"statID": "Rocket-MRL",
+		"subgroupIconID": "IMAGE_RES_GRPROF",
+		"techCode": 1
+	},
+	"R-Wpn-Mini-Rocket-Artillery-ROF03": {
+		"iconID": "IMAGE_RES_WEAPONTECH",
+		"id": "R-Wpn-Mini-Rocket-Artillery-ROF03",
+		"name": "Mini-Rocket Artillery Rapid Loader Mk3",
+		"requiredResearch": [
+			"R-Wpn-Mini-Rocket-Artillery-ROF02",
+			"R-Wpn-RocketSlow-ROFRR01"
+		],
+		"researchPoints": 10800,
+		"researchPower": 337,
+		"results": [
+			{
+				"class": "Weapon",
+				"filterParameter": "Id",
+				"filterValue": "Rocket-MRL",
+				"parameter": "ReloadTime",
+				"value": -5
+			}
+		],
+		"statID": "Rocket-MRL",
+		"subgroupIconID": "IMAGE_RES_GRPROF",
+		"techCode": 1
+	},
 	"R-Wpn-Rocket01-LtAT": {
 		"iconID": "IMAGE_RES_WEAPONTECH",
 		"id": "R-Wpn-Rocket01-LtAT",
@@ -3875,10 +3944,6 @@
 		"id": "R-Defense-RotMor",
 		"msgName": "RES_EMP_RotMor",
 		"name": "Pepperpot Pit",
-		"redStructures": [
-			"Emplacement-MortarPit02",
-			"Emplacement-MRL-pit"
-		],
 		"requiredResearch": [
 			"R-Wpn-Mortar3",
 			"R-Defense-HvyMor"
@@ -6107,22 +6172,22 @@
 		"results": [
 			{
 				"class": "Weapon",
-				"filterParameter": "Id",
-				"filterValue": "Mortar3ROTARYMk1",
+				"filterParameter": "ImpactClass",
+				"filterValue": "MORTARS",
 				"parameter": "Damage",
 				"value": 20
 			},
 			{
 				"class": "Weapon",
-				"filterParameter": "Id",
-				"filterValue": "Mortar3ROTARYMk1",
+				"filterParameter": "ImpactClass",
+				"filterValue": "MORTARS",
 				"parameter": "RadiusDamage",
 				"value": 20
 			},
 			{
 				"class": "Weapon",
-				"filterParameter": "Id",
-				"filterValue": "Mortar3ROTARYMk1",
+				"filterParameter": "ImpactClass",
+				"filterValue": "MORTARS",
 				"parameter": "RepeatDamage",
 				"value": 20
 			}
@@ -6144,22 +6209,22 @@
 		"results": [
 			{
 				"class": "Weapon",
-				"filterParameter": "Id",
-				"filterValue": "Mortar3ROTARYMk1",
+				"filterParameter": "ImpactClass",
+				"filterValue": "MORTARS",
 				"parameter": "Damage",
 				"value": 50
 			},
 			{
 				"class": "Weapon",
-				"filterParameter": "Id",
-				"filterValue": "Mortar3ROTARYMk1",
+				"filterParameter": "ImpactClass",
+				"filterValue": "MORTARS",
 				"parameter": "RadiusDamage",
 				"value": 50
 			},
 			{
 				"class": "Weapon",
-				"filterParameter": "Id",
-				"filterValue": "Mortar3ROTARYMk1",
+				"filterParameter": "ImpactClass",
+				"filterValue": "MORTARS",
 				"parameter": "RepeatDamage",
 				"value": 50
 			}
@@ -6182,22 +6247,22 @@
 		"results": [
 			{
 				"class": "Weapon",
-				"filterParameter": "Id",
-				"filterValue": "Mortar3ROTARYMk1",
+				"filterParameter": "ImpactClass",
+				"filterValue": "MORTARS",
 				"parameter": "Damage",
 				"value": 60
 			},
 			{
 				"class": "Weapon",
-				"filterParameter": "Id",
-				"filterValue": "Mortar3ROTARYMk1",
+				"filterParameter": "ImpactClass",
+				"filterValue": "MORTARS",
 				"parameter": "RadiusDamage",
 				"value": 60
 			},
 			{
 				"class": "Weapon",
-				"filterParameter": "Id",
-				"filterValue": "Mortar3ROTARYMk1",
+				"filterParameter": "ImpactClass",
+				"filterValue": "MORTARS",
 				"parameter": "RepeatDamage",
 				"value": 60
 			}
@@ -6218,22 +6283,22 @@
 		"results": [
 			{
 				"class": "Weapon",
-				"filterParameter": "Id",
-				"filterValue": "Mortar3ROTARYMk1",
+				"filterParameter": "ImpactClass",
+				"filterValue": "MORTARS",
 				"parameter": "Damage",
 				"value": 70
 			},
 			{
 				"class": "Weapon",
-				"filterParameter": "Id",
-				"filterValue": "Mortar3ROTARYMk1",
+				"filterParameter": "ImpactClass",
+				"filterValue": "MORTARS",
 				"parameter": "RadiusDamage",
 				"value": 70
 			},
 			{
 				"class": "Weapon",
-				"filterParameter": "Id",
-				"filterValue": "Mortar3ROTARYMk1",
+				"filterParameter": "ImpactClass",
+				"filterValue": "MORTARS",
 				"parameter": "RepeatDamage",
 				"value": 70
 			}
@@ -6255,22 +6320,22 @@
 		"results": [
 			{
 				"class": "Weapon",
-				"filterParameter": "Id",
-				"filterValue": "Mortar3ROTARYMk1",
+				"filterParameter": "ImpactClass",
+				"filterValue": "MORTARS",
 				"parameter": "Damage",
 				"value": 40
 			},
 			{
 				"class": "Weapon",
-				"filterParameter": "Id",
-				"filterValue": "Mortar3ROTARYMk1",
+				"filterParameter": "ImpactClass",
+				"filterValue": "MORTARS",
 				"parameter": "RadiusDamage",
 				"value": 40
 			},
 			{
 				"class": "Weapon",
-				"filterParameter": "Id",
-				"filterValue": "Mortar3ROTARYMk1",
+				"filterParameter": "ImpactClass",
+				"filterValue": "MORTARS",
 				"parameter": "RepeatDamage",
 				"value": 40
 			}
@@ -6345,10 +6410,6 @@
 		"keyTopic": 1,
 		"msgName": "RES_W_M3",
 		"name": "Rotary Mortar - Pepperpot",
-		"redComponents": [
-			"Mortar2Mk1",
-			"Rocket-MRL"
-		],
 		"requiredResearch": [
 			"R-Wpn-Mortar02Hvy",
 			"R-Wpn-Mortar-ROF01"

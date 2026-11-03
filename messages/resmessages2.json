@@ -835,6 +835,17 @@
 			"All mini-rockets upgraded automatically"
 		]
 	},
+	"RES_W_MRKA_ROF1": {
+		"id": "RES_W_MRKA_ROF1",
+		"imdName": "MICAPSUL.PIE",
+		"sequenceName": "res_weapons.ogg",
+		"text": [
+			"Mini-Rocket Artillery Upgrade",
+			"Automated reload system",
+			"Increases Mini-Rocket Artillery ROF",
+			"All Mini-Rocket Artillery upgraded automatically"
+		]
+	},
 	"RES_W_SRK_D4": {
 		"id": "RES_W_SRK_D4",
 		"imdName": "MICAPSUL.PIE",

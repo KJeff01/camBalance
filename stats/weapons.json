@@ -3145,7 +3145,7 @@
 		"radiusDamage": 60,
 		"radiusLife": 10,
 		"recoilValue": 150,
-		"shortHit": 40,
+		"shortHit": 45,
 		"shortRange": 1152,
 		"waterGfx": "FXLSplsh.PIE",
 		"weaponClass": "KINETIC",
