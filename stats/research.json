@@ -6498,14 +6498,14 @@
 				"filterParameter": "ImpactClass",
 				"filterValue": "ROCKET",
 				"parameter": "Damage",
-				"value": 30
+				"value": 35
 			},
 			{
 				"class": "Weapon",
 				"filterParameter": "ImpactClass",
 				"filterValue": "ROCKET",
 				"parameter": "RadiusDamage",
-				"value": 30
+				"value": 35
 			}
 		],
 		"statID": "Rocket-Pod",
