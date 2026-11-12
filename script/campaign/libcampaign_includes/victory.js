@@ -36,9 +36,6 @@ function camNextLevel(nextLevel)
 	}
 	__camRemoveNavGunSensorResearch();
 	camBreakAlliances();
-	//Set these limits again for the home map before exiting this mission
-	setStructureLimits(cam_base_structures.commandCenter, 1, CAM_HUMAN_PLAYER);
-	setStructureLimits(cam_base_structures.commandRelay, 1, CAM_HUMAN_PLAYER);
 	loadLevel(nextLevel);
 }
 

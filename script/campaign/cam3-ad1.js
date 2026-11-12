@@ -27,6 +27,7 @@ const mis_nexusResClassic = [
 	"R-Sys-Sensor-Upgrade01", "R-Sys-NEXUSrepair", "R-Wpn-Flamer-Damage06",
 	"R-Sys-NEXUSsensor",
 ];
+const lassatBoundLine = "lassat_bound_line"; // Label string for showing the lassat blast area limits.
 const mis_vtolSpawnPositions = ["vtolSpawnPos1", "vtolSpawnPos2"];
 var capturedSilos; // victory flag letting us know if we captured any silos.
 var mapLimit; //LasSat slowly creeps toward missile silos.
@@ -186,7 +187,17 @@ function insaneTransporterAttack()
 	camSendGenericSpawn(CAM_REINFORCE_TRANSPORT, CAM_NEXUS, CAM_REINFORCE_CONDITION_ARTIFACTS, location, units, limits.minimum, limits.maxRandom);
 }
 
-// Explode trucks to significantly reduce chances of gaming the lassat.
+function showLassatBounds()
+{
+	if (Math.floor(mapLimit) >= 1)
+	{
+		hackMarkTiles(); // Note: this wipes out all marked tiles including the debug mode ones.
+		addLabel({type: AREA, x: 0, y: Math.floor(mapLimit) - 1, x2: mapWidth, y2: Math.floor(mapLimit)}, lassatBoundLine);
+		hackMarkTiles(lassatBoundLine);
+	}
+}
+
+// Target trucks to significantly reduce chances of gaming the lassat.
 function destroyTrucksInBlastZone()
 {
 	const objects = enumArea(0, 0, mapWidth, Math.floor(mapLimit), CAM_HUMAN_PLAYER, false);
@@ -195,7 +206,7 @@ function destroyTrucksInBlastZone()
 		const obj = objects[i];
 		if (obj.type === DROID && obj.droidType === DROID_CONSTRUCT)
 		{
-			camSafeRemoveObject(obj, true);
+			fireWeaponAtObj("LasSat", obj, CAM_HUMAN_PLAYER);
 		}
 	}
 }
@@ -256,6 +267,7 @@ function vaporizeTarget()
 		//This assumes an hour to completely cover the upper half of the home map.
 		mapLimit += 0.36; //sector clear; move closer
 	}
+	showLassatBounds();
 	laserSatFuzzyStrike(target);
 }
 
@@ -418,6 +430,7 @@ function eventStartLevel()
 				regroup: false,
 				repair: 67,
 				count: -1,
+				lowWallPriority: true,
 			},
 			templates: [cTempl.nxmheapv, cTempl.nxlscouv]
 		},

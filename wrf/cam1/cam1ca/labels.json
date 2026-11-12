@@ -95,6 +95,10 @@
 		"label": "reinforceNorthEast",
 		"pos": [15232, 256]
 	},
+	"position_24": {
+		"label": "startPositionRemastered",
+		"pos": [8960, 8832]
+	},
 
 	"area_0": {
 		"label": "landingZone",
@@ -200,5 +204,10 @@
 		"label": "buildArea5",
 		"pos1": [6784, 2176],
 		"pos2": [7423, 4864]
+	},
+	"area_21": {
+		"label": "landingZoneRemastered",
+		"pos1": [8832, 9984],
+		"pos2": [9088, 10240]
 	}
 }

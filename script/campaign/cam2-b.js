@@ -10,7 +10,8 @@ const mis_collectiveRes = [
 	"R-Wpn-Mortar-Damage04", "R-Wpn-Mortar-ROF01",
 	"R-Wpn-Rocket-Accuracy02", "R-Wpn-Rocket-Damage05",
 	"R-Wpn-Rocket-ROF03", "R-Wpn-RocketSlow-Accuracy03",
-	"R-Wpn-RocketSlow-Damage05", "R-Sys-Sensor-Upgrade01", "R-Wpn-RocketSlow-ROF01"
+	"R-Wpn-RocketSlow-Damage05", "R-Sys-Sensor-Upgrade01", "R-Wpn-RocketSlow-ROF01",
+	"R-Wpn-Mini-Rocket-Artillery-ROF01"
 ];
 const mis_collectiveResClassic = [
 	"R-Defense-WallUpgrade03", "R-Struc-Materials04", "R-Struc-Factory-Upgrade04",

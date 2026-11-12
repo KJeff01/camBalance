@@ -188,6 +188,7 @@ function __camSpawnVtols()
 		{
 			pos = camGenerateRandomMapEdgeCoordinate();
 		}
+		let lowWallPref = true; // VTOL spawns ignore walls by default.
 		if (!camDef(__camVtolDataSystem[idx].extras))
 		{
 			//Pick some droids randomly.
@@ -239,11 +240,15 @@ function __camSpawnVtols()
 			{
 				__camVtolDataSystem[idx].extras.altIdx = 0;
 			}
+			if (camDef(__camVtolDataSystem[idx].extras.lowWallPriority))
+			{
+				lowWallPref = __camVtolDataSystem[idx].extras.lowWallPriority;
+			}
 		}
 		//...And send them.
 		camSendReinforcement(__camVtolDataSystem[idx].player, camMakePos(pos), droids, CAM_REINFORCE_GROUND, {
 			order: CAM_ORDER_ATTACK,
-			data: { regroup: false, count: -1 }
+			data: { regroup: false, count: -1, lowWallPriority: lowWallPref }
 		});
 	}
 }
